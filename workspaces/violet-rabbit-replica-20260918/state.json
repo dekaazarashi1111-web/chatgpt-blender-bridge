@@ -9,9 +9,43 @@
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35375819841",
   "started_at": "2026-09-18T17:42:04.875128Z",
-  "steps": [],
-  "latest_snapshot": null,
-  "step_snapshots": {},
+  "steps": [
+    {
+      "id": "surfaces",
+      "tool": "python",
+      "exit_code": 0
+    }
+  ],
+  "latest_snapshot": {
+    "release_tag": "creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1",
+    "release_id": 391666113,
+    "project_id": "violet-rabbit-replica-20260918",
+    "job_id": "refine-v002",
+    "archive_sha256": "d9fc78c87580bec635b17921c91ea381e365362190d18fc4d61b56fdb8762ca0",
+    "manifest_sha256": "599dbed81b8375c763c1318e4e8415625f78ca3601ff3d0eb12029fec3623106",
+    "archive_asset_id": 573126585,
+    "manifest_asset_id": 573126624,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1/manifest.json",
+    "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59"
+  },
+  "step_snapshots": {
+    "surfaces": {
+      "release_tag": "creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1",
+      "release_id": 391666113,
+      "project_id": "violet-rabbit-replica-20260918",
+      "job_id": "refine-v002",
+      "archive_sha256": "d9fc78c87580bec635b17921c91ea381e365362190d18fc4d61b56fdb8762ca0",
+      "manifest_sha256": "599dbed81b8375c763c1318e4e8415625f78ca3601ff3d0eb12029fec3623106",
+      "archive_asset_id": 573126585,
+      "manifest_asset_id": 573126624,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-1/manifest.json",
+      "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59"
+    }
+  },
   "acceptance_criteria": [
     "Compare actual front, right and back renders with the supplied three-view reference; match the T-pose proportions, thick ears, recessed black eyes, continuous muzzle and deep lower jaw.",
     "Match the subdued worn violet and grey-lilac mottled cloth appearance; avoid bright white belly, stone-like relief, regular cloud grids and excessive gloss.",
@@ -20,5 +54,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-18T17:42:05.161587Z"
+  "current_step": "surfaces",
+  "updated_at": "2026-09-18T17:42:33.484814Z"
 }
