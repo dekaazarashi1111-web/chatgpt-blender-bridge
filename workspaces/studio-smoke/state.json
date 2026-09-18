@@ -1,80 +1,21 @@
 {
   "schema_version": 2,
   "project_id": "studio-smoke",
-  "job_id": "blender-v001",
-  "state": "complete",
+  "job_id": "texture-v001",
+  "state": "running",
   "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:3e7adf0a7a1aaab0f218c3a6c8ac572a14b266d21cbafcd74acc19573d62e5b6",
   "run_id": "35353573199",
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35353573199",
-  "started_at": "2026-09-18T14:01:02.496884Z",
-  "steps": [
-    {
-      "id": "model",
-      "tool": "blender",
-      "exit_code": 0
-    }
-  ],
-  "latest_snapshot": {
-    "release_tag": "creative-studio-smoke-blender-v001-35353573199-1-1",
-    "release_id": 391520062,
-    "project_id": "studio-smoke",
-    "job_id": "blender-v001",
-    "archive_sha256": "44fca92ef226d492ca58d22101b627b3f12c1ee837c4f61ece8ead2cb3b10993",
-    "manifest_sha256": "765f872b042e53730b66c1d17bfedac7f77f8187323077bf392698b530e5223b",
-    "archive_asset_id": 572743840,
-    "manifest_asset_id": 572743857,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-blender-v001-35353573199-1-1",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/manifest.json",
-    "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
-  },
-  "step_snapshots": {
-    "model": {
-      "release_tag": "creative-studio-smoke-blender-v001-35353573199-1-1",
-      "release_id": 391520062,
-      "project_id": "studio-smoke",
-      "job_id": "blender-v001",
-      "archive_sha256": "44fca92ef226d492ca58d22101b627b3f12c1ee837c4f61ece8ead2cb3b10993",
-      "manifest_sha256": "765f872b042e53730b66c1d17bfedac7f77f8187323077bf392698b530e5223b",
-      "archive_asset_id": 572743840,
-      "manifest_asset_id": 572743857,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-blender-v001-35353573199-1-1",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/manifest.json",
-      "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
-    }
-  },
+  "started_at": "2026-09-18T14:01:58.682416Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
   "acceptance_criteria": [
-    "Technical Blender execution saves and reopens an editable model with four previews."
+    "Technical image processing steps exit successfully and preserve editable source outputs."
   ],
   "review_required": false,
-  "next_action": "Technical job completed; artifacts are available.",
-  "current_step": "model",
-  "finished_at": "2026-09-18T14:01:20.585506Z",
-  "publication_errors": [],
-  "previews": [
-    {
-      "path": "output/model/previews/back.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/back.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/back.png"
-    },
-    {
-      "path": "output/model/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/front.png"
-    },
-    {
-      "path": "output/model/previews/right.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/right.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/right.png"
-    },
-    {
-      "path": "output/model/previews/three_quarter.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/three_quarter.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-v001/output/model/previews/three_quarter.png"
-    }
-  ],
-  "updated_at": "2026-09-18T14:01:25.503641Z"
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T14:01:58.879546Z"
 }
