@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "project_id": "violet-rabbit-replica-20260918",
+  "job_id": "refine-v002",
+  "title": "Refine reviewed rabbit profile, connections and lossless-source worn surfaces",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "acceptance_criteria": [
+    "Compare actual front, right and back renders with the supplied three-view reference; match the T-pose proportions, thick ears, recessed black eyes, continuous muzzle and deep lower jaw.",
+    "Match the subdued worn violet and grey-lilac mottled cloth appearance; avoid bright white belly, stone-like relief, regular cloud grids and excessive gloss.",
+    "Preserve an editable packed Blender scene, explicit UVs, reconstructed texture maps, source scripts and the genuine saved reference copy; reopen with no missing external dependencies.",
+    "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance."
+  ],
+  "resume": {
+    "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4",
+    "project_id": "violet-rabbit-replica-20260918",
+    "job_id": "build-v001",
+    "archive_sha256": "3983aa75878c17d00535d3c9dda4d9992a2a5f4ee5dc28cc5548225ef0a6502b",
+    "manifest_sha256": "cecd13eb98bb4a9fc8e435de844673af67d9d05607a7bb9964c5de4f80fe33d2"
+  },
+  "inputs": [
+    {"path": "projects/violet-rabbit-replica-20260918/inputs/reference.webp", "target": "reference.webp", "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"},
+    {"path": "projects/violet-rabbit-replica-20260918/inputs/purple_lossless.webp", "target": "purple_lossless.webp", "sha256": "40153af37914113d5c67d6cfb55236ef05ae19a4cbf945500d35b1110fd2f85e"},
+    {"path": "projects/violet-rabbit-replica-20260918/inputs/pale_lossless.webp", "target": "pale_lossless.webp", "sha256": "f13651d417ab46e31c5ad9f3220ae1d3904995fc7ad6375f73cadf72075bef79"},
+    {"path": "projects/violet-rabbit-replica-20260918/inputs/inner_lossless.webp", "target": "inner_lossless.webp", "sha256": "80d0d6896c6da30b4e5c8ce4115612b572b684e9758f922b17ec71c0bc0b4879"}
+  ],
+  "steps": [
+    {"id": "surfaces", "tool": "python", "script": "surfaces.py", "timeout_seconds": 1800},
+    {
+      "id": "model", "tool": "blender", "script": "refine.py", "timeout_seconds": 5400,
+      "source_blend": "workspace/resume/output/lookdev/model.blend",
+      "preview": {"views": ["front", "right", "back", "three_quarter"], "width": 384, "height": 384, "samples": 8}
+    },
+    {
+      "id": "lookdev", "tool": "blender", "script": "render.py", "timeout_seconds": 7200,
+      "source_blend": "workspace/output/model/model.blend",
+      "params": {"resolution": 896, "samples": 96},
+      "preview": {"views": ["front"], "width": 128, "height": 128, "samples": 1}
+    },
+    {"id": "package", "tool": "python", "script": "package.py", "timeout_seconds": 600}
+  ]
+}
