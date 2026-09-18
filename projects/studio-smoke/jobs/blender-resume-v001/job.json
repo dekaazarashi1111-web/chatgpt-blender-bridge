@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "project_id": "studio-smoke",
+  "job_id": "blender-resume-v001",
+  "title": "Technical test: restore a published Blender workspace, verify it and continue editing",
+  "timeout_seconds": 600,
+  "review_required": false,
+  "acceptance_criteria": [
+    "Restore the exact pinned blender-v001 workspace and load its editable model.",
+    "Assert the metric scene, named cube, mesh, bevel and original blue material before editing.",
+    "Persist resume_evidence.json plus the renamed and recolored cube, reopen the new blend and render four previews."
+  ],
+  "resume": {
+    "release_tag": "creative-studio-smoke-blender-v001-35353573199-1-1",
+    "release_id": 391520062,
+    "project_id": "studio-smoke",
+    "job_id": "blender-v001",
+    "archive_sha256": "44fca92ef226d492ca58d22101b627b3f12c1ee837c4f61ece8ead2cb3b10993",
+    "manifest_sha256": "765f872b042e53730b66c1d17bfedac7f77f8187323077bf392698b530e5223b",
+    "archive_asset_id": 572743840,
+    "manifest_asset_id": 572743857,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-blender-v001-35353573199-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/manifest.json",
+    "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
+  },
+  "steps": [
+    {
+      "id": "model",
+      "tool": "blender",
+      "script": "model.py",
+      "source_blend": "workspace/resume/output/model/model.blend",
+      "preview": {
+        "views": [
+          "front",
+          "right",
+          "back",
+          "three_quarter"
+        ],
+        "width": 256,
+        "height": 256,
+        "samples": 8
+      }
+    }
+  ]
+}
