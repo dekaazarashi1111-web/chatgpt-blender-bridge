@@ -68,6 +68,7 @@ def command_smoke(args: argparse.Namespace) -> int:
         publish_updates=False,
         publish_results=False,
         run_dir_override=run_dir,
+        status_path_override=smoke_root / "status" / "demo-cube.json",
     )
     passed = manifest.get("state") == "complete"
     print(f"SMOKE={'PASS' if passed else 'FAIL'} state={manifest.get('state')} output={run_dir}")

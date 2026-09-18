@@ -66,8 +66,15 @@ def _status_path(job_id: str) -> Path:
     return ROOT / "queue" / "status" / f"{job_id}.json"
 
 
-def _write_status(job_id: str, payload: dict, *, config: dict, publish_update: bool) -> str | None:
-    path = _status_path(job_id)
+def _write_status(
+    job_id: str,
+    payload: dict,
+    *,
+    config: dict,
+    publish_update: bool,
+    path_override: Path | None = None,
+) -> str | None:
+    path = path_override or _status_path(job_id)
     atomic_write_json(path, payload)
     if publish_update:
         return publish(
@@ -132,6 +139,7 @@ def process_job(
     publish_updates: bool = True,
     publish_results: bool = True,
     run_dir_override: Path | None = None,
+    status_path_override: Path | None = None,
 ) -> dict:
     job: dict | None = None
     try:
@@ -148,7 +156,13 @@ def process_job(
             "reason_detail": str(exc),
         }
         if fallback and all(character.isalnum() or character in "._-" for character in fallback):
-            _write_status(fallback, payload, config=config, publish_update=publish_updates)
+            _write_status(
+                fallback,
+                payload,
+                config=config,
+                publish_update=publish_updates,
+                path_override=status_path_override,
+            )
         return payload
 
     author = "local-smoke"
@@ -166,7 +180,13 @@ def process_job(
                 "source_commit": source_commit,
                 "author": author,
             }
-            _write_status(job_id, payload, config=config, publish_update=publish_updates)
+            _write_status(
+                job_id,
+                payload,
+                config=config,
+                publish_update=publish_updates,
+                path_override=status_path_override,
+            )
             return payload
 
     run_dir = run_dir_override or (ROOT / ".worker" / "runs" / job_id / source_commit[:12])
@@ -181,7 +201,13 @@ def process_job(
         "author": author,
         "checkpoint": ".worker runtime checkpoint",
     }
-    _write_status(job_id, running, config=config, publish_update=publish_updates)
+    _write_status(
+        job_id,
+        running,
+        config=config,
+        publish_update=publish_updates,
+        path_override=status_path_override,
+    )
 
     blender = locate_blender(config["blender_bin"])
     command = [str(blender), "--background", "--factory-startup", "--disable-autoexec"]
@@ -284,7 +310,7 @@ def process_job(
         "reason_code": "timeout" if timed_out else ("verification_failed" if state == "failed" else None),
         "manifest": (Path("results") / job_id / "manifest.json").as_posix() if publish_results else str(manifest_path),
     }
-    status_path = _status_path(job_id)
+    status_path = status_path_override or _status_path(job_id)
     atomic_write_json(status_path, status)
     if publish_updates:
         publish_paths = [status_path]
