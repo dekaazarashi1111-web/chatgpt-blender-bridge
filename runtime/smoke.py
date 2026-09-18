@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import signal
 import subprocess
 import sys
 import traceback
@@ -33,6 +34,7 @@ def main() -> int:
     work.mkdir(parents=True, exist_ok=True)
     inputs, outputs, checkpoints = work / "inputs", work / "outputs", work / "checkpoints"
     inputs.mkdir(exist_ok=True)
+    print("SMOKE capabilities", flush=True)
     report = {"capabilities": capabilities(), "operations": [], "pass": False}
 
     def execute(step: dict) -> Path:
@@ -44,7 +46,18 @@ def main() -> int:
         log = work / (step["id"] + ".log")
         print("SMOKE " + step["id"], flush=True)
         with log.open("w", encoding="utf-8") as stream:
-            process = subprocess.run(command, stdout=stream, stderr=subprocess.STDOUT, timeout=360, check=False)
+            process = subprocess.Popen(command, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
+            try:
+                process.wait(timeout=360)
+            except subprocess.TimeoutExpired:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+                process.wait(timeout=10)
+                stream.flush()
+                report["operations"].append({"step": step["id"], "exit_code": 124, "log": log.name})
+                raise RuntimeError(f"{step['id']} timed out after 360s: {log.read_text()[-10000:]}")
         report["operations"].append({"step": step["id"], "exit_code": process.returncode, "log": log.name})
         if process.returncode:
             raise RuntimeError(f"{step['id']} exited {process.returncode}: {log.read_text()[-10000:]}")

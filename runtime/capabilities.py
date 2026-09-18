@@ -7,12 +7,41 @@ import importlib
 import json
 import os
 from pathlib import Path
+import signal
 import shutil
 import subprocess
 import sys
 
 
+def run_probe(command: list[str], environment: dict, timeout: float = 30) -> tuple[int, str]:
+    """Bound the entire Xvfb/tool process group, including inherited pipes."""
+    process = subprocess.Popen(command, text=True, stdout=subprocess.PIPE,
+                               stderr=subprocess.STDOUT, env=environment,
+                               start_new_session=True)
+    try:
+        output, _ = process.communicate(timeout=timeout)
+        return process.returncode, output
+    except subprocess.TimeoutExpired as error:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        try:
+            output, _ = process.communicate(timeout=5)
+        except subprocess.TimeoutExpired:
+            # Even a child that detached its session must not hold this probe
+            # indefinitely. Container teardown is the final cleanup boundary.
+            output = error.output or ""
+            if isinstance(output, bytes):
+                output = output.decode("utf-8", errors="replace")
+            if process.stdout:
+                process.stdout.close()
+            process.wait(timeout=5)
+        return 124, output
+
+
 def executable(name: str, arguments: list[str]) -> dict:
+    print(f"CAPABILITY_PROBE {name}", file=sys.stderr, flush=True)
     path = shutil.which(name)
     if not path:
         return {"available": False, "reason": "not installed"}
@@ -26,12 +55,10 @@ def executable(name: str, arguments: list[str]) -> dict:
         command = [display, "-a", *command]
         environment["QT_QPA_PLATFORM"] = "xcb"
     try:
-        result = subprocess.run(command, text=True, stdout=subprocess.PIPE,
-                                stderr=subprocess.STDOUT, timeout=30, check=False,
-                                env=environment)
-        lines = [line for line in result.stdout.splitlines() if line.strip()]
-        if result.returncode:
-            return {"available": False, "reason": f"version probe exited {result.returncode}", "output": lines[-10:]}
+        returncode, output = run_probe(command, environment)
+        lines = [line for line in output.splitlines() if line.strip()]
+        if returncode:
+            return {"available": False, "reason": f"version probe exited {returncode}", "output": lines[-10:]}
         # Qt may print an XDG warning before its actual version.
         versions = [line for line in lines if any(token in line.lower() for token in (name, "version", "blender"))]
         return {"available": True, "executable": path, "version": (versions or lines or ["unknown"])[0]}
