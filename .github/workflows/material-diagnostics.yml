@@ -32,4 +32,8 @@ jobs:
           (pathlib.Path('/tmp/mm-diagnostic') / lock['archive_root'] / 'override.cfg').write_text('[autoload]\nmm_renderer="*' + str(patch) + '"\n')
           PY
           mkdir -p /tmp/mm-diagnostic-output
-          timeout 180s xvfb-run -a /tmp/mm-diagnostic/material_maker_1_7_linux/material_maker.x86_64 --verbose --audio-driver Dummy --accessibility disabled --export-material --target Blender -o /tmp/mm-diagnostic-output --output-file test "$PWD/runtime/fixtures/material/terracotta.ptex"
+          set +e
+          timeout -s INT -k 10s 45s xvfb-run -a gdb --batch -ex 'set pagination off' -ex run -ex 'thread apply all bt 8' --args /tmp/mm-diagnostic/material_maker_1_7_linux/material_maker.x86_64 --verbose --audio-driver Dummy --accessibility disabled --export-material --target Blender -o /tmp/mm-diagnostic-output --output-file test "$PWD/runtime/fixtures/material/terracotta.ptex"
+          probe_status=$?
+          find /tmp/mm-diagnostic-output -type f -printf "%p %s bytes\n"
+          exit "$probe_status"
