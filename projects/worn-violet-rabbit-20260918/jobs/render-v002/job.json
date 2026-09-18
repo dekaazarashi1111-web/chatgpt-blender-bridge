@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "render-v002",
+  "title": "Resume saved rabbit model: OIDN-free comparison renders and verified packaging",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "acceptance_criteria": [
+    "The saved build-v001 model and materials are retained without regeneration.",
+    "Reference-aligned front, right, back, face and surface Cycles views are actually rendered.",
+    "The packed deliverable reopens without missing external files; output hashes and Release manifests are checked.",
+    "Appearance is inspected against the supplied reference and remaining differences are recorded honestly."
+  ],
+  "resume": {
+    "release_tag": "creative-worn-violet-rabbit-20260918-build-v001-35364229702-1-2",
+    "project_id": "worn-violet-rabbit-20260918",
+    "job_id": "build-v001",
+    "archive_sha256": "ef849df8211ccb60e4fc64a3899384720f1e31d428575e432d8b1a4e2da30ef8",
+    "manifest_sha256": "a05be2b321e5345acac7f6905dce8fb63d4a33d702c92139ec580ac6da929dc1"
+  },
+  "inputs": [
+    {"path": "projects/worn-violet-rabbit-20260918/inputs/reference.webp", "target": "reference.webp", "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"}
+  ],
+  "steps": [
+    {"id": "carry", "tool": "python", "script": "carry.py", "timeout_seconds": 900},
+    {"id": "presentation", "tool": "blender", "script": "render.py", "timeout_seconds": 15000,
+     "source_blend": "workspace/output/model/model.blend", "preview": {"views": ["front"], "width": 128, "height": 128, "samples": 1}},
+    {"id": "package", "tool": "python", "script": "package.py", "timeout_seconds": 900}
+  ]
+}
