@@ -20,7 +20,6 @@ permissions:
   packages: read
   actions: read
 
-# Each run scans all durable pending descriptors; a later queued run includes earlier submissions.
 concurrency:
   group: creative-workspace-main
   cancel-in-progress: false
@@ -83,6 +82,13 @@ jobs:
           JOB_PATH: ${{ matrix.job }}
           RUNTIME_IMAGE: ${{ steps.runtime.outputs.image }}
         run: python3 ci/run_creative_job.py --job "$JOB_PATH" --image "$RUNTIME_IMAGE"
+      - name: Read back exact Release manifest evidence
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_PATH: ${{ matrix.job }}
+        run: python3 ci/readback_creative_evidence.py --job "$JOB_PATH"
       - name: Preserve host logs even on failure
         uses: actions/upload-artifact@v4
         if: always()
@@ -91,9 +97,9 @@ jobs:
           path: |
             .creative-runs/*/host/*.log
             .creative-runs/*/host/result.json
+            .creative-runs/*/host/evidence/
           include-hidden-files: true
           retention-days: 30
-      # Connector-readable copies for actual visual review; Releases remain authoritative.
       - name: Preserve editable outputs and previews for review download
         uses: actions/upload-artifact@v4
         if: always()
