@@ -1,0 +1,21 @@
+{
+ "schema_version":1,
+ "job_id":"blue-animatronic-v003",
+ "title":"Reference-based blue animatronic v003 - visually refined editable test model",
+ "created_at":"2026-09-18T10:54:00Z",
+ "script":"script.py",
+ "source_blend":null,
+ "timeout_seconds":1800,
+ "preview":{"views":["front","right","back","three_quarter"],"width":1000,"height":1100,"samples":48},
+ "acceptance_criteria":[
+  {"id":"C01","description":"Blender build exits successfully","kind":"automatic","check":"script_exit"},
+  {"id":"C02","description":"Editable nonempty blend is saved","kind":"automatic","check":"blend_exists"},
+  {"id":"C03","description":"Saved blend reopens and validates","kind":"automatic","check":"reopen_ok"},
+  {"id":"C04","description":"Geometry and preview report exists","kind":"automatic","check":"report_exists"},
+  {"id":"C05","description":"Front preview exists; every requested view must also pass worker gates","kind":"automatic","check":"preview:front"},
+  {"id":"C06","description":"Four-view test-model review: complete rounded head/body silhouette and coherent segmented limbs broadly follow reference proportions","kind":"review","check":"reference_proportions"},
+  {"id":"C07","description":"Reference features present: two incisors, muzzle, rounded striped glasses, ears, headphones, tuft, hat, bow, bands and toes; v002 visible defects corrected","kind":"review","check":"reference_features"},
+  {"id":"C08","description":"Named separate parts and rigid armature; no missing major components or gross floating hat/panel; test model is not claimed as production-ready topology","kind":"review","check":"editable_structure"}
+ ],
+ "review_required":true
+}
