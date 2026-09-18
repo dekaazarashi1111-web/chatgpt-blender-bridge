@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "refine-v003",
+  "state": "running",
+  "source_commit": "991e68d180c8bbf6038b298fa011f92b6490ae09",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
+  "run_id": "35368608273",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35368608273",
+  "started_at": "2026-09-18T16:28:32.235774Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Reference-aligned silhouettes and proportions, recessed dark eyes, central muzzle, padded ears, fitted shoulders and irregular shell damage are faithful to the reference.",
+    "Muted worn violet and pale surfaces reproduce the reference character without the previous overly bright grid-like pattern; source-derived texture provenance is retained.",
+    "The editable packed Blender scene reopens without missing dependencies, and the produced files match the pinned Release manifest.",
+    "Actual front, side, back, face, face-profile and surface views have been inspected against the reference and no major visual defects remain."
+  ],
+  "review_required": true,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T16:28:32.629276Z"
+}
