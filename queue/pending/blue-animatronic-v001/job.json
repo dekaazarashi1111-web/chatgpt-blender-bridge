@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "job_id": "blue-animatronic-v001",
+  "title": "User reference: blue animatronic, editable character test v001",
+  "created_at": "2026-09-18T10:29:20Z",
+  "script": "script.py",
+  "source_blend": null,
+  "timeout_seconds": 1800,
+  "preview": {
+    "views": ["front", "right", "back", "three_quarter"],
+    "width": 900,
+    "height": 1000,
+    "samples": 32
+  },
+  "acceptance_criteria": [
+    {"id":"C01","description":"Blender build script exits successfully","kind":"automatic","check":"script_exit"},
+    {"id":"C02","description":"Editable nonempty .blend is saved","kind":"automatic","check":"blend_exists"},
+    {"id":"C03","description":"Saved .blend reopens and validates","kind":"automatic","check":"reopen_ok"},
+    {"id":"C04","description":"Machine-readable geometry and preview report exists","kind":"automatic","check":"report_exists"},
+    {"id":"C05","description":"Front preview is published; all four requested views must also pass worker gates","kind":"automatic","check":"preview:front"},
+    {"id":"C06","description":"Inspect all four previews: full body, large rounded head, squat torso and segmented limbs are coherent with the supplied reference","kind":"review","check":"reference_proportions"},
+    {"id":"C07","description":"Inspect distinctive details: two incisors, twin muzzle, glasses with white stripes, ears, headphones, tuft, hat, bow, bands and pale toes","kind":"review","check":"reference_features"},
+    {"id":"C08","description":"Inspect geometry and report: named separate editable parts, rigid limb rig and no missing or grossly detached major components","kind":"review","check":"editable_structure"}
+  ],
+  "review_required": true
+}
