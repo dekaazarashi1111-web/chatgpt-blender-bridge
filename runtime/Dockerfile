@@ -5,7 +5,7 @@ FROM ubuntu:24.04
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
       blender python3 python3-pil python3-numpy \
-      imagemagick ffmpeg krita xvfb xauth fonts-dejavu-core \
+      imagemagick libmagickcore-6.q16-7-extra ffmpeg krita xvfb xauth fonts-dejavu-core \
       libgl1-mesa-dri mesa-vulkan-drivers libvulkan1 ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
     && useradd --uid 10001 --create-home --home-dir /home/creative creative

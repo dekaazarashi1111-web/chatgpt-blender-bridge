@@ -70,8 +70,11 @@ def inspect_outputs(directory: Path, prefix: str, required: list[str]) -> dict:
         if path.is_symlink() or not path.is_file() or path.stat().st_size == 0:
             raise RuntimeError("Invalid Material Maker output: " + path.name)
         # ImageMagick decodes PNG and EXR; existence alone is insufficient.
-        result = subprocess.run(["identify", "-format", "%w %h", str(path)],
-                                capture_output=True, text=True, check=True, timeout=90)
+        try:
+            result = subprocess.run(["identify", "-format", "%w %h", str(path)],
+                                    capture_output=True, text=True, check=True, timeout=90)
+        except subprocess.CalledProcessError as exc:
+            raise RuntimeError(f"Could not decode {path.name}: {exc.stderr}") from exc
         width, height = map(int, result.stdout.split())
         if (width, height) != (2048, 2048):
             raise RuntimeError(f"Unexpected Material Maker image dimensions: {path.name} {width}x{height}")
@@ -104,7 +107,7 @@ def main() -> int:
         # Keep --export-material first: upstream parses application arguments
         # starting at index 1. Godot's own switches are consumed by the engine.
         command = ["xvfb-run", "-a", "-e", "/dev/stderr", "material-maker",
-                   "--verbose", "--audio-driver", "Dummy", "--accessibility", "disabled", "--export-material",
+                   "--audio-driver", "Dummy", "--accessibility", "disabled", "--export-material",
                    "--target", "Blender", "-o", str(output), "--output-file", args.prefix, str(staged)]
         print("MATERIAL_MAKER_EXPORT " + str(staged), flush=True)
         subprocess.run(command, check=True, env={**os.environ, "VK_LOADER_DEBUG": "error,warn"})
