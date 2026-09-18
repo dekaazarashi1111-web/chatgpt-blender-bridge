@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "worn-violet-rabbit-20260918",
   "job_id": "render-v002",
-  "state": "needs_review",
+  "state": "changes_requested",
   "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
   "run_id": "35365556050",
@@ -91,7 +91,7 @@
     "Appearance is inspected against the supplied reference and remaining differences are recorded honestly."
   ],
   "review_required": true,
-  "next_action": "Inspect real previews against references; submit a pinned review or a new revision.",
+  "next_action": "Create a new revision using latest_snapshot.",
   "current_step": "package",
   "finished_at": "2026-09-18T16:07:00.166106Z",
   "publication_errors": [],
@@ -157,5 +157,20 @@
       "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/presentation/previews/front.png"
     }
   ],
-  "updated_at": "2026-09-18T16:07:15.972423Z"
+  "updated_at": "2026-09-18T16:21:20.762921Z",
+  "review": {
+    "schema_version": 1,
+    "project_id": "worn-violet-rabbit-20260918",
+    "job_id": "render-v002",
+    "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
+    "snapshot_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
+    "verdict": "changes_requested",
+    "criteria": {
+      "The saved build-v001 model and materials are retained without regeneration.": "pass",
+      "Reference-aligned front, right, back, face and surface Cycles views are actually rendered.": "pass",
+      "The packed deliverable reopens without missing external files; output hashes and Release manifests are checked.": "pass",
+      "Appearance is inspected against the supplied reference and remaining differences are recorded honestly.": "pass"
+    },
+    "summary": "The four operational objectives of this render-resume job passed, but the artistic result is NOT accepted as the user's final faithful reconstruction. Opened the actual reference comparison, three-view, face and surface images. Materials are too bright and grid-like; the muzzle is too wide, eyes protrude with duplicate pupil highlights, ear backs are too thin, shoulder gaps are too large, damage resembles rectangular access panels, belly/toes need contour refinement. See render-v002.md for actual image paths, sample RGB measurements, 53-file hash verification and concrete partial-edit plan. Create a new revision from this valid saved scene; do not remake unaffected geometry or regenerate unchanged work."
+  }
 }
