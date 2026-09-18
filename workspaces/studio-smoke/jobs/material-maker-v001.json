@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "project_id": "studio-smoke",
+  "job_id": "material-maker-v001",
+  "state": "running",
+  "source_commit": "518a86bda31cbece3c4af467f3c00568ee6d5385",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:4cf4f26a3b60bb56615aadbaa2730a5cbfb41a263ea75a5558ff32a4f0d98fe8",
+  "run_id": "35359664873",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35359664873",
+  "started_at": "2026-09-18T15:00:21.636646Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Material Maker exports six real 2048px PBR maps and preserves editable source.",
+    "Blender imports verified maps, connects PBR inputs, packs images, renders four views and reopens its saved model."
+  ],
+  "review_required": false,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T15:00:22.030819Z"
+}
