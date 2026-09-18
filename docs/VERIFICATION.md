@@ -57,3 +57,17 @@ Material Maker 1.7 の公式配布ファイルに、CPU描画の初期化待ち�
 - [実行環境の構築・ネットワークなしの実ツール検証](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35359330307)：6種類の2048×2048 PBR画像を生成し、Blenderで接続・画像pack・保存後再読込・4方向レンダーを検証。
 - [schema・単体テスト](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35359330358)：59件成功、skipなし。
 - 使用するジョブは [`material-maker-v001`](../projects/studio-smoke/jobs/material-maker-v001/job.json)。
+
+通常の Creative workspace でも [run 35359664873](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35359664873) が成功しました。
+
+- [状態JSON](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/jobs/material-maker-v001.json)：`complete`、2工程とも exit code 0、`publication_errors` は空。
+- [保存済み workspace](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-material-maker-v001-35359664873-1-2)：元の `.ptex`、PNG/EXRの6マップ、画像pack済み `.blend`、チェックポイント、プレビューを保存。
+- [材質プレビュー](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/material/previews/albedo.png) と [Blenderの斜めプレビュー](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/three_quarter.png) を開いて、レンガ模様の生成・適用を確認。
+
+追加後の実行環境：
+
+```text
+ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:4cf4f26a3b60bb56615aadbaa2730a5cbfb41a263ea75a5558ff32a4f0d98fe8
+```
+
+runtime commit は `165e77e7127c41544affb869bf20b1e38242e0c9`、通常ジョブの commit は `518a86bda31cbece3c4af467f3c00568ee6d5385` です。runtime検証での材質生成は約6秒、その後のBlender連携は約8秒でした。これは小さなサンプルの実測で、複雑な材質すべての所要時間を示すものではありません。
