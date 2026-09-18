@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "render-v002",
+  "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
+  "snapshot_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
+  "verdict": "changes_requested",
+  "criteria": {
+    "The saved build-v001 model and materials are retained without regeneration.": "pass",
+    "Reference-aligned front, right, back, face and surface Cycles views are actually rendered.": "pass",
+    "The packed deliverable reopens without missing external files; output hashes and Release manifests are checked.": "pass",
+    "Appearance is inspected against the supplied reference and remaining differences are recorded honestly.": "pass"
+  },
+  "summary": "The four operational objectives of this render-resume job passed, but the artistic result is NOT accepted as the user's final faithful reconstruction. Opened the actual reference comparison, three-view, face and surface images. Materials are too bright and grid-like; the muzzle is too wide, eyes protrude with duplicate pupil highlights, ear backs are too thin, shoulder gaps are too large, damage resembles rectangular access panels, belly/toes need contour refinement. See render-v002.md for actual image paths, sample RGB measurements, 53-file hash verification and concrete partial-edit plan. Create a new revision from this valid saved scene; do not remake unaffected geometry or regenerate unchanged work."
+}
