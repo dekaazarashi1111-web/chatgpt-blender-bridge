@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "format": "creative-workspace",
+  "repository": "dekaazarashi1111-web/chatgpt-blender-bridge",
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "refine-v003",
+  "run_id": "35368608273",
+  "attempt": 1,
+  "sequence": 5,
+  "release_tag": "creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-5",
+  "created_at": "2026-09-18T16:37:39.365153Z",
+  "archive": {
+    "name": "workspace.tar.gz",
+    "bytes": 259575097,
+    "sha256": "717e2d3b3ac69f2eea26128d526b33a7280f070b3ebf335510d09ff49577ae5a"
+  },
+  "unpacked_bytes": 300802887,
+  "file_count": 67,
+  "files": [
+    {
+      "path": "output/carry/carry_report.json",
+      "bytes": 3879,
+      "sha256": "b07cd7c34881b4d1fe7c377a90664471d322dd7317995e7d585069319c52c447"
+    },
+    {
+      "path": "output/carry/tool_report.json",
+      "bytes": 207,
+      "sha256": "ba2dad001e8e301deceb35a60767b97e97e24d728aa7afb08283a309e4b81ce2"
+    },
+    {
+      "path": "output/model/geometry_validation.json",
+      "bytes": 2745,
+      "sha256": "cf197428da830cf4bd83092f3efdd357a92d66115a438ba1686d264277a26466"
+    },
+    {
+      "path": "output/model/model.blend",
+      "bytes": 59103320,
+      "sha256": "e317f8bb7ae9d43cd04d9b6c09788848b2fcc6b6a14231e049768aa9931aeb99"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "bytes": 13442,
+      "sha256": "eb398f4ea309ed28aca8ae448f1f83be07fb52e8e0e57e2125e6537fb39d727c"
+    },
+    {
+      "path": "output/model/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/model/textures/cloth_height16.png",
+      "bytes": 7240634,
+      "sha256": "cabf452e59c75a69b74e3299614577e45e67f3758dc1d18ed46cd0c4b37e8037"
+    },
+    {
+      "path": "output/model/textures/cloth_normal.png",
+      "bytes": 6414009,
+      "sha256": "8bf964b4e249151c89fed10a1f4ca52eb413147df6c5a452d092aa968199daf5"
+    },
+    {
+      "path": "output/model/textures/cloth_roughness.png",
+      "bytes": 841026,
+      "sha256": "fe7ab565b53401ea8b929b5a4d5a85bb50cd2026c8c9cc1cfbbcfe5d1937b171"
+    },
+    {
+      "path": "output/model/textures/ear_albedo.png",
+      "bytes": 4584105,
+      "sha256": "02e8d161b49d01379f694c7e237a8edd129a3a9ae0b04b92d23d847b5e3ff7e9"
+    },
+    {
+      "path": "output/model/textures/pale_albedo.png",
+      "bytes": 4241025,
+      "sha256": "8ece59faffe1e1439949bc81573f5dd1adcb5126ee8c533a7096f60e2afb03c4"
+    },
+    {
+      "path": "output/model/textures/violet_albedo.png",
+      "bytes": 4548013,
+      "sha256": "dd7f4d9b2b8b78130fa39a65104f60e3a4a1fccf96a81b0aa0516d5765f49a93"
+    },
+    {
+      "path": "output/model/tool_report.json",
+      "bytes": 448,
+      "sha256": "cf9e099acca4275697476c8f1453eea099f83ad89a1a1e4bdbeda30904c98c83"
+    },
+    {
+      "path": "output/model/validation.json",
+      "bytes": 241,
+      "sha256": "5b320cb222b89b60df794f4b03f1180d2c2e5259c624af9cd2adfcd9ca057b64"
+    },
+    {
+      "path": "output/package/DELIVERY_README.txt",
+      "bytes": 627,
+      "sha256": "176041659a8a83d80383e87953efc261d6057bb13dd8a557758cf89fe4813ecf"
+    },
+    {
+      "path": "output/package/comparison.png",
+      "bytes": 2185650,
+      "sha256": "6c318ce267d3219a347281a0534f2d4a9f31e12b16532a4421825b5fb56034c9"
+    },
+    {
+      "path": "output/package/details.png",
+      "bytes": 2580582,
+      "sha256": "ff63d11b5aac59af8b0f7d3c7d9349b5bc95dfddbe3e919c99d0c1b4ed2ab0cf"
+    },
+    {
+      "path": "output/package/previews/back.png",
+      "bytes": 315158,
+      "sha256": "1e8733881dcd16ed73228531f022cf9ff6f4d2c4e14608d9683970daa904dab6"
+    },
+    {
+      "path": "output/package/previews/comparison.png",
+      "bytes": 615940,
+      "sha256": "8683e6c2cacada9f9c1a099a1c72552d72e750e88ecd07565c6e1247ceb1a409"
+    },
+    {
+      "path": "output/package/previews/details.png",
+      "bytes": 621013,
+      "sha256": "cc5cc92d529888ecf9e1f3a3e80cde92c667c9c6325c49223a27ac2f5b6b0ca0"
+    },
+    {
+      "path": "output/package/previews/front.png",
+      "bytes": 335460,
+      "sha256": "5c65727bdceee5470a8c8507ba06c650dfd5011fe476bff48d296ae7c64e2da8"
+    },
+    {
+      "path": "output/package/previews/right.png",
+      "bytes": 259077,
+      "sha256": "2ffab09a0b4685e7f52199fc1b7df527e55a068d4da1b5d4cad0294923a1f083"
+    },
+    {
+      "path": "output/package/previews/three_quarter.png",
+      "bytes": 319932,
+      "sha256": "6a2d1d7c2899d15a6d63100e10e286dc8494690119ac2ad2d9381cea9e751601"
+    },
+    {
+      "path": "output/package/previews/three_view.png",
+      "bytes": 331178,
+      "sha256": "74f34987a93d209401b76976762fd328f2002eb5bd8d956e4bed0f38f541222e"
+    },
+    {
+      "path": "output/package/three_view.png",
+      "bytes": 1408344,
+      "sha256": "01eaf3592e0f95ec7bda3827ac350bff3ae54787c786b2b965152ef582dd9eab"
+    },
+    {
+      "path": "output/package/tool_report.json",
+      "bytes": 209,
+      "sha256": "c33047b274b13485195c552a903ae117f242babcdbb5bf76b16ce61b320627be"
+    },
+    {
+      "path": "output/package/verification.json",
+      "bytes": 16302,
+      "sha256": "43f38cf5bb57e6eecfaacd3809dcde5827b546f748a53fe3444323557a113c97"
+    },
+    {
+      "path": "output/package/worn_violet_rabbit.blend",
+      "bytes": 59103320,
+      "sha256": "0e3364ed4864498159931be6f31e02bcdec5573833e542a1e2f847f87140b88d"
+    },
+    {
+      "path": "output/presentation/model.blend",
+      "bytes": 59103320,
+      "sha256": "0e3364ed4864498159931be6f31e02bcdec5573833e542a1e2f847f87140b88d"
+    },
+    {
+      "path": "output/presentation/previews/front.png",
+      "bytes": 13449,
+      "sha256": "aa6e258da6b8b82dc9d9f783fcea96b0f42f5bfabaa2ec41bb31e4b0926708b9"
+    },
+    {
+      "path": "output/presentation/render_validation.json",
+      "bytes": 3397,
+      "sha256": "dedd64d97a4c1a99c36e2551d81e37f991b6f89356ffbf96ea26ba4b8dd33e4f"
+    },
+    {
+      "path": "output/presentation/tool_report.json",
+      "bytes": 462,
+      "sha256": "ce997d670b7a04590012d2df8d6ea16f4cf9706000c60e8c7b23d8d5edce2322"
+    },
+    {
+      "path": "output/presentation/validation.json",
+      "bytes": 248,
+      "sha256": "f6500df088343cf5851191d3115b04eb0af54bc812a4851c4758624bbd2a5a4f"
+    },
+    {
+      "path": "output/presentation/views/back.png",
+      "bytes": 751706,
+      "sha256": "22d2bd0fcfc1f15201005e624b63b0d87cbcf44ae8e9fac591016b5dd358c916"
+    },
+    {
+      "path": "output/presentation/views/face.png",
+      "bytes": 1014544,
+      "sha256": "b2ab6e22b1f1b0581d5a0e2428dcb232811afc5c61a982eb6eec754366cdff5e"
+    },
+    {
+      "path": "output/presentation/views/face_profile.png",
+      "bytes": 926326,
+      "sha256": "219003b2d90e14df716a0786c5c88adb0dc569dbcd2d040b3ef28f938097ffd1"
+    },
+    {
+      "path": "output/presentation/views/front.png",
+      "bytes": 787242,
+      "sha256": "f330ac33df50c91333d8938c8ddaf0131d151527cb86530395b8ea13d558cd33"
+    },
+    {
+      "path": "output/presentation/views/right.png",
+      "bytes": 665468,
+      "sha256": "9ed4de2034bab45c93b214351d3aab0e7ba8a73d01ebfd839543d675aad21b02"
+    },
+    {
+      "path": "output/presentation/views/surface.png",
+      "bytes": 1093679,
+      "sha256": "c1011796ccd3fdfc77d66814f81448404ecf02a01597f406b0fc0605c1e00d2d"
+    },
+    {
+      "path": "output/presentation/views/three_quarter.png",
+      "bytes": 765863,
+      "sha256": "fe60203d8be345c659df752bdd93b241ea6dc853ed27e855d8bfb1d3001449dd"
+    },
+    {
+      "path": "output/surfaces/ear_reference_albedo.png",
+      "bytes": 3194352,
+      "sha256": "a7df4bb6cea87be32e767cc7a6506c2be4d9005b2c9252285f0c7805f72f7aab"
+    },
+    {
+      "path": "output/surfaces/ear_reference_crop.png",
+      "bytes": 7878,
+      "sha256": "d71344c9a1196fc8eaba79e72d24a7f7d488c6726f9bf18168331afd3ffa71c6"
+    },
+    {
+      "path": "output/surfaces/ear_reference_height16.png",
+      "bytes": 7121185,
+      "sha256": "86a014b247f02b7b52ee8803572736366ea9cd5934d245bd2dc2f3732742a3b7"
+    },
+    {
+      "path": "output/surfaces/ear_reference_normal.png",
+      "bytes": 4315760,
+      "sha256": "0d18c0c96cc7c1dc4792e0ac2317e0703d478af74e91c0ee71e66bddf66138ab"
+    },
+    {
+      "path": "output/surfaces/ear_reference_roughness.png",
+      "bytes": 2732407,
+      "sha256": "08d6fb687ee8f0792044139243acb31e286b8f243859b584b5208569d3f71e2e"
+    },
+    {
+      "path": "output/surfaces/pale_reference_albedo.png",
+      "bytes": 3291779,
+      "sha256": "b91ce17239e355c11125a74cfbb1e710dfd42dc9c409a0b8accda62de565ac4b"
+    },
+    {
+      "path": "output/surfaces/pale_reference_crop.png",
+      "bytes": 6695,
+      "sha256": "c817d1591d8f6d2cb17e87060d955bd33b902b52478a1cbd3599648628ec3eff"
+    },
+    {
+      "path": "output/surfaces/pale_reference_height16.png",
+      "bytes": 7121476,
+      "sha256": "c0ecedc3e1ac9202caa18a49e236186ddefaa8af22671bbc09b6c0dea17b72b3"
+    },
+    {
+      "path": "output/surfaces/pale_reference_normal.png",
+      "bytes": 4314054,
+      "sha256": "07c168b031bc131e46717e6abd8a2b0a7fa804a6d43422d5c0659a800f68915d"
+    },
+    {
+      "path": "output/surfaces/pale_reference_roughness.png",
+      "bytes": 2732048,
+      "sha256": "be7052ed80838cc2167029176bcf7d0688178846a8d778f65b0600aad6c57350"
+    },
+    {
+      "path": "output/surfaces/surface_provenance.json",
+      "bytes": 5167,
+      "sha256": "ca449a2e9f40c343d30c4572be07fe7d1cb72889bdd8fe14f43f2656d58ae019"
+    },
+    {
+      "path": "output/surfaces/tool_report.json",
+      "bytes": 210,
+      "sha256": "5ef174a8d09410949ec897c31a889bc192a3a3968df3ae81345c95c861f0df4f"
+    },
+    {
+      "path": "output/surfaces/violet_reference_albedo.png",
+      "bytes": 3264046,
+      "sha256": "22565c5b81b5edc90a6d135d523ec8a32f31d0b06cbb9fc94c625bcb5e7795d7"
+    },
+    {
+      "path": "output/surfaces/violet_reference_crop.png",
+      "bytes": 7878,
+      "sha256": "d71344c9a1196fc8eaba79e72d24a7f7d488c6726f9bf18168331afd3ffa71c6"
+    },
+    {
+      "path": "output/surfaces/violet_reference_height16.png",
+      "bytes": 7119759,
+      "sha256": "af83d5f4cba78d8ad3798489bcb841efd92759b6d16bef1dfb1648aa267da6eb"
+    },
+    {
+      "path": "output/surfaces/violet_reference_normal.png",
+      "bytes": 4313401,
+      "sha256": "558c466c3cfc8d1aee137741a63c6cb11312cc11f40706085ec8e7562a9ea71b"
+    },
+    {
+      "path": "output/surfaces/violet_reference_roughness.png",
+      "bytes": 2731943,
+      "sha256": "ffd83ad92619ce359cbe109fe815b8899dfe4a9d5517176851e003524ad06c73"
+    },
+    {
+      "path": "output/textures/cloth_height16.png",
+      "bytes": 7240634,
+      "sha256": "cabf452e59c75a69b74e3299614577e45e67f3758dc1d18ed46cd0c4b37e8037"
+    },
+    {
+      "path": "output/textures/cloth_normal.png",
+      "bytes": 6414009,
+      "sha256": "8bf964b4e249151c89fed10a1f4ca52eb413147df6c5a452d092aa968199daf5"
+    },
+    {
+      "path": "output/textures/cloth_roughness.png",
+      "bytes": 841026,
+      "sha256": "fe7ab565b53401ea8b929b5a4d5a85bb50cd2026c8c9cc1cfbbcfe5d1937b171"
+    },
+    {
+      "path": "output/textures/ear_albedo.png",
+      "bytes": 4584105,
+      "sha256": "02e8d161b49d01379f694c7e237a8edd129a3a9ae0b04b92d23d847b5e3ff7e9"
+    },
+    {
+      "path": "output/textures/pale_albedo.png",
+      "bytes": 4241025,
+      "sha256": "8ece59faffe1e1439949bc81573f5dd1adcb5126ee8c533a7096f60e2afb03c4"
+    },
+    {
+      "path": "output/textures/reference.png",
+      "bytes": 393918,
+      "sha256": "7cca7b778b43daf8a618c33ed23534eea2470018dc411034ccd024ec4df04676"
+    },
+    {
+      "path": "output/textures/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/textures/texture_validation.json",
+      "bytes": 2344,
+      "sha256": "c8769b72ea62d9ccba7d376881c9da7dbaadacbecef3fff50df48f4d8422e99c"
+    },
+    {
+      "path": "output/textures/tool_report.json",
+      "bytes": 209,
+      "sha256": "40e5075a34ef25118d3e7afcda51a19c2c19d16d492e9b2113d04f283ba7663a"
+    },
+    {
+      "path": "output/textures/violet_albedo.png",
+      "bytes": 4548013,
+      "sha256": "dd7f4d9b2b8b78130fa39a65104f60e3a4a1fccf96a81b0aa0516d5765f49a93"
+    }
+  ],
+  "metadata": {
+    "source_commit": "991e68d180c8bbf6038b298fa011f92b6490ae09",
+    "current_step": "package",
+    "kind": "step_complete",
+    "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327"
+  },
+  "excluded_top_level": [
+    "checkpoints",
+    "resume"
+  ]
+}
