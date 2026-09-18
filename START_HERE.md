@@ -2,7 +2,9 @@
 
 新しい制作は GitHub Actions で実行します。Oracle、手元の Blender、常駐 worker は不要です。既存 worker の手順は [`docs/LEGACY_WORKER.md`](docs/LEGACY_WORKER.md) に移しました。
 
-## 1. 初回だけ制作環境を用意する
+**このリポジトリでは実行環境の準備と制作・再開の実行確認を完了しています。通常は手順2から始めてください。** 検証した版と実行記録は [`docs/VERIFICATION.md`](docs/VERIFICATION.md) にあります。手順1はフォークした場合や実行環境を再構築する場合の説明です。
+
+## 1. 初回・再構築時だけ制作環境を用意する
 
 1. リポジトリの **Actions** を有効にする。
 2. **Build creative runtime** の workflow（`runtime.yml`）を実行して完了を確認する。
