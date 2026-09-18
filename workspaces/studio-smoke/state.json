@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "studio-smoke",
   "job_id": "material-maker-v001",
-  "state": "running",
+  "state": "complete",
   "source_commit": "518a86bda31cbece3c4af467f3c00568ee6d5385",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:4cf4f26a3b60bb56615aadbaa2730a5cbfb41a263ea75a5558ff32a4f0d98fe8",
   "run_id": "35359664873",
@@ -70,7 +70,36 @@
     "Blender imports verified maps, connects PBR inputs, packs images, renders four views and reopens its saved model."
   ],
   "review_required": false,
-  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "next_action": "Technical job completed; artifacts are available.",
   "current_step": "model",
-  "updated_at": "2026-09-18T15:00:57.754445Z"
+  "finished_at": "2026-09-18T15:01:00.012003Z",
+  "publication_errors": [],
+  "previews": [
+    {
+      "path": "output/material/previews/albedo.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/material/previews/albedo.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/material/previews/albedo.png"
+    },
+    {
+      "path": "output/model/previews/back.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/back.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/back.png"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/front.png"
+    },
+    {
+      "path": "output/model/previews/right.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/right.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/right.png"
+    },
+    {
+      "path": "output/model/previews/three_quarter.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/three_quarter.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/material-maker-v001/output/model/previews/three_quarter.png"
+    }
+  ],
+  "updated_at": "2026-09-18T15:01:07.963696Z"
 }
