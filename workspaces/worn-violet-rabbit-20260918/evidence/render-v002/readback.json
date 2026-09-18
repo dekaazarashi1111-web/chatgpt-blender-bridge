@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "render-v002",
+  "run_id": "35365556050",
+  "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
+  "evidence": [
+    {
+      "label": "resume",
+      "release_tag": "creative-worn-violet-rabbit-20260918-build-v001-35364229702-1-2",
+      "manifest_sha256": "a05be2b321e5345acac7f6905dce8fb63d4a33d702c92139ec580ac6da929dc1",
+      "archive_sha256": "ef849df8211ccb60e4fc64a3899384720f1e31d428575e432d8b1a4e2da30ef8",
+      "archive_bytes": 83610295,
+      "manifest_downloaded_and_hash_verified": true,
+      "server_archive_digest_verified": true,
+      "local_files_verified_against_manifest": 25,
+      "manifest_state_path": "workspaces/worn-violet-rabbit-20260918/evidence/render-v002/resume-manifest.json"
+    },
+    {
+      "label": "latest",
+      "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
+      "manifest_sha256": "eac9e6554fff91dc88200495e7953bcbc707d47353eaedb0787012635957ba3b",
+      "archive_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
+      "archive_bytes": 153313049,
+      "manifest_downloaded_and_hash_verified": true,
+      "server_archive_digest_verified": true,
+      "local_files_verified_against_manifest": 53,
+      "manifest_state_path": "workspaces/worn-violet-rabbit-20260918/evidence/render-v002/latest-manifest.json"
+    }
+  ],
+  "scope": "Downloaded exact Release manifest bytes; matched every manifest file to stopped local outputs/resume and server archive digest. The archive itself was not downloaded again by this audit."
+}
