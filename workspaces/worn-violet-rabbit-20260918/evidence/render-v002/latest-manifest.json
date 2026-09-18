@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "format": "creative-workspace",
+  "repository": "dekaazarashi1111-web/chatgpt-blender-bridge",
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "render-v002",
+  "run_id": "35365556050",
+  "attempt": 1,
+  "sequence": 3,
+  "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
+  "created_at": "2026-09-18T16:06:52.178517Z",
+  "archive": {
+    "name": "workspace.tar.gz",
+    "bytes": 153313049,
+    "sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f"
+  },
+  "unpacked_bytes": 189407174,
+  "file_count": 53,
+  "files": [
+    {
+      "path": "output/carry/carry_report.json",
+      "bytes": 4412,
+      "sha256": "33225f4fedfec78bc244183f070b0c7cf742530413d6a475127a447b46d2b843"
+    },
+    {
+      "path": "output/carry/tool_report.json",
+      "bytes": 207,
+      "sha256": "1f3ce9272c9d8d263f2afcbdce1e595309d1576971cc6452278eacb7a8cdbe4f"
+    },
+    {
+      "path": "output/model/geometry_validation.json",
+      "bytes": 1469,
+      "sha256": "d6edbce606cc1d1999d7bb409c23a97931e847bd390c17080215535d4f777282"
+    },
+    {
+      "path": "output/model/model.blend",
+      "bytes": 38642020,
+      "sha256": "11b8720b5b1e687db6d7d6e3068b7802dbce303c6eea7a6f1d9e4205ca61d4c6"
+    },
+    {
+      "path": "output/model/previews/back.png",
+      "bytes": 200672,
+      "sha256": "1e48a4d3603789910fe58464e6f9caa19b344f8baa3cca6dbf6dc19ec0d86e4c"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "bytes": 205701,
+      "sha256": "a040c22f5ad4fa305d1118cedd744e76849d0954fc22d44a6dda81408ac3eda3"
+    },
+    {
+      "path": "output/model/previews/right.png",
+      "bytes": 178996,
+      "sha256": "1987a7df1715cdbdca60482aede7438a345e37fb69b5db3b277c589e640fb37c"
+    },
+    {
+      "path": "output/model/previews/three_quarter.png",
+      "bytes": 206365,
+      "sha256": "a70166a4cb615098e93e18491fa6828f754a77d352304e604bbdc669aed576c3"
+    },
+    {
+      "path": "output/model/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/model/textures/cloth_height16.png",
+      "bytes": 7240634,
+      "sha256": "cabf452e59c75a69b74e3299614577e45e67f3758dc1d18ed46cd0c4b37e8037"
+    },
+    {
+      "path": "output/model/textures/cloth_normal.png",
+      "bytes": 6414009,
+      "sha256": "8bf964b4e249151c89fed10a1f4ca52eb413147df6c5a452d092aa968199daf5"
+    },
+    {
+      "path": "output/model/textures/cloth_roughness.png",
+      "bytes": 841026,
+      "sha256": "fe7ab565b53401ea8b929b5a4d5a85bb50cd2026c8c9cc1cfbbcfe5d1937b171"
+    },
+    {
+      "path": "output/model/textures/ear_albedo.png",
+      "bytes": 4584105,
+      "sha256": "02e8d161b49d01379f694c7e237a8edd129a3a9ae0b04b92d23d847b5e3ff7e9"
+    },
+    {
+      "path": "output/model/textures/pale_albedo.png",
+      "bytes": 4241025,
+      "sha256": "8ece59faffe1e1439949bc81573f5dd1adcb5126ee8c533a7096f60e2afb03c4"
+    },
+    {
+      "path": "output/model/textures/violet_albedo.png",
+      "bytes": 4548013,
+      "sha256": "dd7f4d9b2b8b78130fa39a65104f60e3a4a1fccf96a81b0aa0516d5765f49a93"
+    },
+    {
+      "path": "output/model/tool_report.json",
+      "bytes": 801,
+      "sha256": "be3728e4351e364dc6d7e9a71f62074ea7bd052acb3a7cf0bf0524f17397d1f0"
+    },
+    {
+      "path": "output/model/validation.json",
+      "bytes": 241,
+      "sha256": "b72eead32422b3aba1ea15585e812237f3d699fc458af05f6b5340f714ac1dc8"
+    },
+    {
+      "path": "output/package/DELIVERY_README.txt",
+      "bytes": 497,
+      "sha256": "89e2936688c449617fd9dd83260bcd6d086f8c9884a8bc6dbaa19500a6b39c51"
+    },
+    {
+      "path": "output/package/comparison.png",
+      "bytes": 2329077,
+      "sha256": "a0b12ecde90a73f22efb59fdffa0b3634e7df7b5e5fe3e4637e66aeb3f51e779"
+    },
+    {
+      "path": "output/package/details.png",
+      "bytes": 2937699,
+      "sha256": "469642981e44197fa8559da22f724f23b33a691e328862b94e07f65f4723986c"
+    },
+    {
+      "path": "output/package/previews/back.png",
+      "bytes": 356795,
+      "sha256": "13bfe1c8c30ba209fc814aa1702eee15afbe7a51711822ba47120837b2f08c38"
+    },
+    {
+      "path": "output/package/previews/comparison.png",
+      "bytes": 664521,
+      "sha256": "984dd66b0dae0a0c3473bde76d4fdad2a0673da4908ddfd5ecf4b4e309704e42"
+    },
+    {
+      "path": "output/package/previews/details.png",
+      "bytes": 740071,
+      "sha256": "eee2ebcd761485449c54f7b5addc9c52adbff447f6018c5ce546c6730a0344b1"
+    },
+    {
+      "path": "output/package/previews/front.png",
+      "bytes": 374177,
+      "sha256": "08568c4c8d566d4b8407aa52971acd023e6a40111cf53d62096e971d8719c643"
+    },
+    {
+      "path": "output/package/previews/right.png",
+      "bytes": 283727,
+      "sha256": "c61df9e7e8e6da249e8d172c9f2a402261c3916f2060261cd285aa15ad3d141e"
+    },
+    {
+      "path": "output/package/previews/three_quarter.png",
+      "bytes": 358840,
+      "sha256": "82ae1f642c3a827853c0fe66b03ad20e36c09be431f71e683401e2e38b801f72"
+    },
+    {
+      "path": "output/package/previews/three_view.png",
+      "bytes": 379822,
+      "sha256": "98af5d5681d3e750df33b3a24054381849ffe0dd0a830b96b13f7a87484800c8"
+    },
+    {
+      "path": "output/package/three_view.png",
+      "bytes": 1551617,
+      "sha256": "91b221d11cded6825cf33dc87f0300997e07b675f1183e823336e1269e5f84c8"
+    },
+    {
+      "path": "output/package/tool_report.json",
+      "bytes": 209,
+      "sha256": "d54f57dad45ec39bdf6f122d79e93976a42be58baa567c5f344893d9c99f259f"
+    },
+    {
+      "path": "output/package/verification.json",
+      "bytes": 12248,
+      "sha256": "75549714574156ef9c005adcfed03a6ed04d20895d4b6a646aaa5a737b2c6cdc"
+    },
+    {
+      "path": "output/package/worn_violet_rabbit.blend",
+      "bytes": 38642616,
+      "sha256": "847ea35ceadc15e0818b6a252ce625d69913e0cf9b493bcdd011a1fb33305e1f"
+    },
+    {
+      "path": "output/presentation/model.blend",
+      "bytes": 38642616,
+      "sha256": "847ea35ceadc15e0818b6a252ce625d69913e0cf9b493bcdd011a1fb33305e1f"
+    },
+    {
+      "path": "output/presentation/previews/front.png",
+      "bytes": 13474,
+      "sha256": "55b8750ee0092af031d4f6e02840f99d172cc259be0a041128999f00e1498c13"
+    },
+    {
+      "path": "output/presentation/render_validation.json",
+      "bytes": 3257,
+      "sha256": "f6de509afddd199e4bd3413c1f859e5c0260eff7797dba480ba0493871067665"
+    },
+    {
+      "path": "output/presentation/tool_report.json",
+      "bytes": 462,
+      "sha256": "712c7c143b2c4ad2ddc96637da7180cfdb4c70c15873bc1671a86cfeec214219"
+    },
+    {
+      "path": "output/presentation/validation.json",
+      "bytes": 248,
+      "sha256": "ea789546b4f153c387b87eb6d7f1142b9bbd739b6e75d5779e97016d49d0f7ea"
+    },
+    {
+      "path": "output/presentation/views/back.png",
+      "bytes": 800054,
+      "sha256": "4afc050e79b30114fb50ae7ecc695e680b9ef29407a3fca37eba64d5378a50b1"
+    },
+    {
+      "path": "output/presentation/views/face.png",
+      "bytes": 1116178,
+      "sha256": "0f7a276e50f4ee43693c502fd443088b409a058baa8ae63c2a302d3f1cb34c82"
+    },
+    {
+      "path": "output/presentation/views/face_profile.png",
+      "bytes": 1026744,
+      "sha256": "7e7b58f5ed3af37024a33881f90de4c1b5f1af905549285052f438c43f54f771"
+    },
+    {
+      "path": "output/presentation/views/front.png",
+      "bytes": 827999,
+      "sha256": "a8681185020e4059919504a0987ce64fdc9d38ac1ba407d2cf20255076e9518b"
+    },
+    {
+      "path": "output/presentation/views/right.png",
+      "bytes": 695637,
+      "sha256": "93bd611ca9cc3f6623502f99b976dbe4c7df18a3da030d25c0d8a01a480790ef"
+    },
+    {
+      "path": "output/presentation/views/surface.png",
+      "bytes": 1216914,
+      "sha256": "06a1082fb9cf631bc5d1bbef9fd611727feda23c5e65dbd3b353341dcec7ab52"
+    },
+    {
+      "path": "output/presentation/views/three_quarter.png",
+      "bytes": 810720,
+      "sha256": "ab73c4ece3bfab36a4d796ca8da8c98e36f4f02b42cd844f70836690ff755353"
+    },
+    {
+      "path": "output/textures/cloth_height16.png",
+      "bytes": 7240634,
+      "sha256": "cabf452e59c75a69b74e3299614577e45e67f3758dc1d18ed46cd0c4b37e8037"
+    },
+    {
+      "path": "output/textures/cloth_normal.png",
+      "bytes": 6414009,
+      "sha256": "8bf964b4e249151c89fed10a1f4ca52eb413147df6c5a452d092aa968199daf5"
+    },
+    {
+      "path": "output/textures/cloth_roughness.png",
+      "bytes": 841026,
+      "sha256": "fe7ab565b53401ea8b929b5a4d5a85bb50cd2026c8c9cc1cfbbcfe5d1937b171"
+    },
+    {
+      "path": "output/textures/ear_albedo.png",
+      "bytes": 4584105,
+      "sha256": "02e8d161b49d01379f694c7e237a8edd129a3a9ae0b04b92d23d847b5e3ff7e9"
+    },
+    {
+      "path": "output/textures/pale_albedo.png",
+      "bytes": 4241025,
+      "sha256": "8ece59faffe1e1439949bc81573f5dd1adcb5126ee8c533a7096f60e2afb03c4"
+    },
+    {
+      "path": "output/textures/reference.png",
+      "bytes": 393918,
+      "sha256": "7cca7b778b43daf8a618c33ed23534eea2470018dc411034ccd024ec4df04676"
+    },
+    {
+      "path": "output/textures/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/textures/texture_validation.json",
+      "bytes": 2344,
+      "sha256": "c8769b72ea62d9ccba7d376881c9da7dbaadacbecef3fff50df48f4d8422e99c"
+    },
+    {
+      "path": "output/textures/tool_report.json",
+      "bytes": 209,
+      "sha256": "40e5075a34ef25118d3e7afcda51a19c2c19d16d492e9b2113d04f283ba7663a"
+    },
+    {
+      "path": "output/textures/violet_albedo.png",
+      "bytes": 4548013,
+      "sha256": "dd7f4d9b2b8b78130fa39a65104f60e3a4a1fccf96a81b0aa0516d5765f49a93"
+    }
+  ],
+  "metadata": {
+    "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
+    "current_step": "package",
+    "kind": "step_complete",
+    "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327"
+  },
+  "excluded_top_level": [
+    "checkpoints",
+    "resume"
+  ]
+}
