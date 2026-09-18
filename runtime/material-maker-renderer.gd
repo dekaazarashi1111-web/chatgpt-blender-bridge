@@ -20,3 +20,14 @@ func initialize_rendering_thread():
 		get_tree().quit(2)
 	else:
 		print("MATERIAL_MAKER_COMPUTE_READY")
+
+func _exit_tree():
+	# The CLI quits without main_window's asynchronous stop_rendering_thread().
+	# Join synchronously before Godot destroys a semaphore with a waiting thread.
+	if rendering_thread != null and rendering_thread.is_started():
+		rendering_mutex.lock()
+		rendering_thread_running = false
+		rendering_mutex.unlock()
+		rendering_semaphore.post()
+		rendering_thread.wait_to_finish()
+		rendering_thread = null
