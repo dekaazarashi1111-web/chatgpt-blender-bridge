@@ -103,7 +103,8 @@ def main() -> int:
         # Xvfb provides a display; Mesa lavapipe supplies Vulkan compute on CPU.
         # Keep --export-material first: upstream parses application arguments
         # starting at index 1. Godot's own switches are consumed by the engine.
-        command = ["xvfb-run", "-a", "-e", "/dev/stderr", "material-maker", "--export-material",
+        command = ["xvfb-run", "-a", "-e", "/dev/stderr", "material-maker",
+                   "--verbose", "--audio-driver", "Dummy", "--accessibility", "disabled", "--export-material",
                    "--target", "Blender", "-o", str(output), "--output-file", args.prefix, str(staged)]
         print("MATERIAL_MAKER_EXPORT " + str(staged), flush=True)
         subprocess.run(command, check=True, env={**os.environ, "VK_LOADER_DEBUG": "error,warn"})

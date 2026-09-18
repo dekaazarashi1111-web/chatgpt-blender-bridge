@@ -1,15 +1,19 @@
 # Creative runtime
 
-This image includes Blender, Python/Pillow/numpy, ImageMagick, FFmpeg and Krita.
-`tools.json` describes exactly which operations are callable. Material Maker is
-an explicitly unavailable extension: it is not silently downloaded on demand.
-There are no game-engine dependencies or external AI APIs.
+This image includes Blender, Python/Pillow/numpy, ImageMagick, FFmpeg, Krita and
+Material Maker 1.7. `tools.json` describes exactly which operations are callable.
+Material Maker's official distribution includes its Godot runtime internally;
+game creation tools and external AI APIs are not exposed.
 
 ## Build once, execute without external networking
 
 Build `runtime/Dockerfile` from the repository root and run `runtime/smoke.py`
 before approving/publishing that image. Build-time apt downloads require network
 access. Ubuntu 24.04 currently supplies Blender 4.0.2; this is **not Blender 5.2**.
+The official Material Maker release is also downloaded at build time and its
+SHA-256 verified against `material-maker.lock.json`. Mesa lavapipe supplies CPU
+Vulkan compute. Material Maker exports one PBR graph to 2048px PNG/EXR maps;
+its editable source bundle is saved with the images. See `docs/MATERIAL_MAKER.md`.
 `capabilities.json` reports the actual executable and library versions. Pin
 production jobs to the tested GHCR image's `sha256` digest, so later apt/base
 image changes cannot alter an existing job's environment.
@@ -91,3 +95,6 @@ must pass it before its image is promoted for production use. Krita is an export
 adapter here, not automated brush painting or a general GUI-control tool.
 Its version probe and export commands run under Xvfb with Qt's `xcb` backend:
 Krita still initializes its window system for these command-line operations.
+The smoke test also exports a six-map Material Maker terracotta graph, imports
+its verified maps into Blender, verifies non-flat albedo and shader connections,
+packs all texture images, saves/reopens the scene and renders four views.
