@@ -92,3 +92,13 @@ jobs:
             .creative-runs/*/trusted/result.json
           include-hidden-files: true
           retention-days: 30
+      # Connector-readable copies for actual visual review; Releases remain authoritative.
+      - name: Preserve editable outputs and previews for review download
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: creative-review-${{ matrix.project }}-${{ strategy.job-index }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .creative-runs/*/work/output/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 30
