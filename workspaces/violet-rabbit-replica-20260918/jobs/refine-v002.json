@@ -19,20 +19,25 @@
       "id": "model",
       "tool": "blender",
       "exit_code": 0
+    },
+    {
+      "id": "lookdev",
+      "tool": "blender",
+      "exit_code": 0
     }
   ],
   "latest_snapshot": {
-    "release_tag": "creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-2",
-    "release_id": 391666741,
+    "release_tag": "creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3",
+    "release_id": 391668507,
     "project_id": "violet-rabbit-replica-20260918",
     "job_id": "refine-v002",
-    "archive_sha256": "df25a085ff51aa9a34aaab8e47c35cd35e6120e5a8ab7bc7888ae85264a37f4a",
-    "manifest_sha256": "101dcb6812994c7719bf015f58940ac703dfef77d12e292aacd05553a4346d37",
-    "archive_asset_id": 573128398,
-    "manifest_asset_id": 573128518,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-2",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-2/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-2/manifest.json",
+    "archive_sha256": "b9b90f947710400bc119b022e53169ff5bbfd5832061bd1c71c23eb9ff4f1135",
+    "manifest_sha256": "eb5219752cbcde0706c4fa27fcc2aa36ebdd38ec237f6f937dd05dfa0f861129",
+    "archive_asset_id": 573134011,
+    "manifest_asset_id": 573134246,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3/manifest.json",
     "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59"
   },
   "step_snapshots": {
@@ -63,6 +68,20 @@
       "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-2/workspace.tar.gz",
       "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-2/manifest.json",
       "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59"
+    },
+    "lookdev": {
+      "release_tag": "creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3",
+      "release_id": 391668507,
+      "project_id": "violet-rabbit-replica-20260918",
+      "job_id": "refine-v002",
+      "archive_sha256": "b9b90f947710400bc119b022e53169ff5bbfd5832061bd1c71c23eb9ff4f1135",
+      "manifest_sha256": "eb5219752cbcde0706c4fa27fcc2aa36ebdd38ec237f6f937dd05dfa0f861129",
+      "archive_asset_id": 573134011,
+      "manifest_asset_id": 573134246,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-refine-v002-35375819841-1-3/manifest.json",
+      "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59"
     }
   },
   "acceptance_criteria": [
@@ -73,6 +92,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "current_step": "model",
-  "updated_at": "2026-09-18T17:43:44.095888Z"
+  "current_step": "lookdev",
+  "updated_at": "2026-09-18T17:46:59.785569Z"
 }
