@@ -59,7 +59,7 @@ workerが終了コード0を返しただけでは完成になりません。
 ## 安全境界
 
 - workerは`main`だけを監視します。
-- `config.json`の`trusted_authors`に一致するGitHub authorだけを実行します。
+- `job.json`、`script.py`、入力`.blend`の最終commit authorが、すべて`config.json`の`trusted_authors`に一致する場合だけ実行します。
 - ジョブscriptは許可moduleを静的検査し、`os`、`subprocess`、`socket`、`open`、`eval`等を拒否します。
 - `source_blend`とscriptはリポジトリ内だけを参照できます。
 - workerはBlender専用のOS userまたはcontainerで実行してください。

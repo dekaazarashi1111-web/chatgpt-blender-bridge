@@ -17,7 +17,7 @@
 `complete`には次をすべて要求します。
 
 1. ジョブschemaが有効である。
-2. authorが`trusted_authors`に含まれる。
+2. `job.json`、`script.py`、入力`.blend`のauthorがすべて`trusted_authors`に含まれる。
 3. Blender processの終了コードが0である。
 4. `.blend`が保存され、空でない。
 5. 保存ファイルをBlenderで開き直し、検査reportを生成できる。

@@ -167,18 +167,38 @@ def process_job(
 
     author = "local-smoke"
     source_commit = "local"
+    source_commits: dict[str, dict[str, str]] = {
+        "job": {"author": author, "commit": source_commit},
+        "script": {"author": author, "commit": source_commit},
+    }
     if check_author:
-        author, source_commit = github_author(files.descriptor, config["repository"])
-        if config["require_trusted_author"] and author not in config["trusted_authors"]:
+        descriptor_author, source_commit = github_author(files.descriptor, config["repository"])
+        script_author, script_commit = github_author(files.script, config["repository"])
+        source_commits = {
+            "job": {"author": descriptor_author, "commit": source_commit},
+            "script": {"author": script_author, "commit": script_commit},
+        }
+        if job.get("source_blend"):
+            source_path = (ROOT / job["source_blend"]).resolve()
+            blend_author, blend_commit = github_author(source_path, config["repository"])
+            source_commits["source_blend"] = {"author": blend_author, "commit": blend_commit}
+        untrusted = {
+            name: record["author"]
+            for name, record in source_commits.items()
+            if record["author"] not in config["trusted_authors"]
+        }
+        author = descriptor_author
+        if config["require_trusted_author"] and untrusted:
             payload = {
                 "schema_version": 1,
                 "job_id": job_id,
                 "state": "blocked",
                 "updated_at": utc_now(),
                 "reason_code": "untrusted_author",
-                "reason_detail": f"GitHub author {author!r} is not trusted",
+                "reason_detail": f"Untrusted GitHub authors: {untrusted}",
                 "source_commit": source_commit,
                 "author": author,
+                "source_commits": source_commits,
             }
             _write_status(
                 job_id,
@@ -198,6 +218,7 @@ def process_job(
         "state": "running",
         "updated_at": utc_now(),
         "source_commit": source_commit,
+        "source_commits": source_commits,
         "author": author,
         "checkpoint": ".worker runtime checkpoint",
     }
@@ -285,6 +306,7 @@ def process_job(
         "title": job["title"],
         "state": state,
         "started_from_commit": source_commit,
+        "source_commits": source_commits,
         "author": author,
         "finished_at": utc_now(),
         "blender_exit_code": blender_code,
