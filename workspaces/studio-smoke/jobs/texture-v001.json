@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "studio-smoke",
   "job_id": "texture-v001",
-  "state": "running",
+  "state": "complete",
   "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:3e7adf0a7a1aaab0f218c3a6c8ac572a14b266d21cbafcd74acc19573d62e5b6",
   "run_id": "35353573199",
@@ -88,7 +88,10 @@
     "Technical image processing steps exit successfully and preserve editable source outputs."
   ],
   "review_required": false,
-  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "next_action": "Technical job completed; artifacts are available.",
   "current_step": "export",
-  "updated_at": "2026-09-18T14:02:39.037238Z"
+  "finished_at": "2026-09-18T14:02:41.408286Z",
+  "publication_errors": [],
+  "previews": [],
+  "updated_at": "2026-09-18T14:02:41.599117Z"
 }
