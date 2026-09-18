@@ -7,5 +7,6 @@
   "source_commit": "e7a4ae3790cbae3b54da39da4eb3ee63e5d9970f",
   "author": "dekaazarashi1111-web",
   "reason_code": null,
-  "manifest": "results/demo-cube/manifest.json"
+  "manifest": "results/demo-cube/manifest.json",
+  "result_commit": "3d60f465fc36e0df10383bac4a798eefd6a10864"
 }
