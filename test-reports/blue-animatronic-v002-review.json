@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "job_id": "blue-animatronic-v002",
+  "execution_backend": "github-hosted-runner-not-oracle",
+  "workflow_run_id": 35336056310,
+  "artifact_id": 10542972008,
+  "source_commit": "ef507608d9f720dd4ab3d3e682ebca387f3c471f",
+  "blender_version": "4.0.2",
+  "blender_exit_code": 0,
+  "validation_exit_code": 0,
+  "model_bytes": 12468752,
+  "model_sha256": "1b0115154b71e276f403d0b4697e6893d1e790da471571ea0bd38e03a3fdcde9",
+  "archive_sha256": "c288737ffe7ce2505faa406a9b6eb83a87b99b4bb552f09a06308274835a4b7c",
+  "downloaded_and_hashes_verified": true,
+  "views_actually_inspected": ["front", "right", "back", "three_quarter"],
+  "mesh_count": 138,
+  "rig_bones_reported_by_executed_script": 18,
+  "technical_verdict": "pass",
+  "visual_verdict": "changes_requested",
+  "findings": [
+    "Top-hat brim visibly floats above the cranium in side/back views.",
+    "White placeholder eyes are visible behind sunglasses in side view; the reference does not show them.",
+    "Enamel and pale panels have excessive highlights, washing out the reference palette.",
+    "Shoulder ball joints are too exposed; reduce shell gaps.",
+    "Bow-tie lobes are too angular and the lower belly insert projects as a flat plate. Round and fit those parts."
+  ],
+  "next_revision": "blue-animatronic-v003",
+  "oracle_worker_completion_claimed": false
+}
