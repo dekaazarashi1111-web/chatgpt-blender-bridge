@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "project_id": "violet-rabbit-replica-20260918",
+  "job_id": "build-v001",
+  "run_id": "35372299694",
+  "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f",
+  "evidence": [
+    {
+      "label": "latest",
+      "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4",
+      "manifest_sha256": "cecd13eb98bb4a9fc8e435de844673af67d9d05607a7bb9964c5de4f80fe33d2",
+      "archive_sha256": "3983aa75878c17d00535d3c9dda4d9992a2a5f4ee5dc28cc5548225ef0a6502b",
+      "archive_bytes": 215014399,
+      "manifest_downloaded_and_hash_verified": true,
+      "server_archive_digest_verified": true,
+      "local_files_verified_against_manifest": 83,
+      "manifest_state_path": "workspaces/violet-rabbit-replica-20260918/evidence/build-v001/latest-manifest.json"
+    }
+  ],
+  "scope": "Downloaded exact Release manifest bytes; matched every manifest file to stopped local outputs/resume and server archive digest. The archive itself was not downloaded again by this audit."
+}
