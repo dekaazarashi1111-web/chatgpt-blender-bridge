@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "job_id": "character-v001",
+  "title": "参照画像からキャラクターを立体化する",
+  "created_at": "2026-09-18T00:00:00Z",
+  "script": "script.py",
+  "source_blend": null,
+  "timeout_seconds": 7200,
+  "preview": {
+    "views": ["front", "right", "back", "left", "three_quarter"],
+    "width": 768,
+    "height": 768,
+    "samples": 32
+  },
+  "acceptance_criteria": [
+    {"id": "C01", "description": "Blender scriptが正常終了する", "kind": "automatic", "check": "script_exit"},
+    {"id": "C02", "description": "編集可能なblendが保存される", "kind": "automatic", "check": "blend_exists"},
+    {"id": "C03", "description": "保存したblendを開き直せる", "kind": "automatic", "check": "reopen_ok"},
+    {"id": "C04", "description": "全指定方向のpreviewが生成される", "kind": "automatic", "check": "preview:three_quarter"},
+    {"id": "C05", "description": "正面と側面の輪郭・頭身・主要部位が参照画像と一致する", "kind": "review", "check": "reference_shape_match"},
+    {"id": "C06", "description": "背面と斜め方向で破綻や不要な貫通がない", "kind": "review", "check": "multi_view_integrity"}
+  ],
+  "review_required": true
+}

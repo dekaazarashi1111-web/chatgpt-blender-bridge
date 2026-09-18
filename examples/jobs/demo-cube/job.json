@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "job_id": "demo-cube",
+  "title": "Blender bridge smoke cube",
+  "created_at": "2026-09-18T00:00:00Z",
+  "script": "script.py",
+  "source_blend": null,
+  "timeout_seconds": 300,
+  "preview": {
+    "views": [
+      "front",
+      "right",
+      "back",
+      "three_quarter"
+    ],
+    "width": 384,
+    "height": 384,
+    "samples": 8
+  },
+  "acceptance_criteria": [
+    {
+      "id": "C01",
+      "description": "Blender scriptが正常終了する",
+      "kind": "automatic",
+      "check": "script_exit"
+    },
+    {
+      "id": "C02",
+      "description": "編集可能なblendが保存される",
+      "kind": "automatic",
+      "check": "blend_exists"
+    },
+    {
+      "id": "C03",
+      "description": "保存したblendを開き直せる",
+      "kind": "automatic",
+      "check": "reopen_ok"
+    },
+    {
+      "id": "C04",
+      "description": "正面previewが生成される",
+      "kind": "automatic",
+      "check": "preview:front"
+    },
+    {
+      "id": "C05",
+      "description": "斜めpreviewが生成される",
+      "kind": "automatic",
+      "check": "preview:three_quarter"
+    }
+  ],
+  "review_required": false
+}

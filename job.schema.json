@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/job.schema.json",
+  "title": "ChatGPT Blender Bridge Job",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "job_id",
+    "title",
+    "created_at",
+    "script",
+    "timeout_seconds",
+    "preview",
+    "acceptance_criteria",
+    "review_required"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "job_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,79}$"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "created_at": {"type": "string", "format": "date-time"},
+    "script": {"type": "string", "pattern": "^[A-Za-z0-9._-]+\\.py$"},
+    "source_blend": {"type": ["string", "null"]},
+    "timeout_seconds": {"type": "integer", "minimum": 30, "maximum": 21600},
+    "preview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["views", "width", "height", "samples"],
+      "properties": {
+        "views": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["front", "right", "back", "left", "three_quarter"]}
+        },
+        "width": {"type": "integer", "minimum": 128, "maximum": 2048},
+        "height": {"type": "integer", "minimum": 128, "maximum": 2048},
+        "samples": {"type": "integer", "minimum": 1, "maximum": 256}
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "kind", "check"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^C[0-9]{2}$"},
+          "description": {"type": "string", "minLength": 1, "maxLength": 300},
+          "kind": {"enum": ["automatic", "review"]},
+          "check": {"type": "string", "minLength": 1, "maxLength": 100}
+        }
+      }
+    },
+    "review_required": {"type": "boolean"}
+  }
+}
