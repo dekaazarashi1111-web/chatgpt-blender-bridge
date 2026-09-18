@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "format": "creative-workspace",
+  "repository": "dekaazarashi1111-web/chatgpt-blender-bridge",
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "build-v001",
+  "run_id": "35364229702",
+  "attempt": 1,
+  "sequence": 2,
+  "release_tag": "creative-worn-violet-rabbit-20260918-build-v001-35364229702-1-2",
+  "created_at": "2026-09-18T15:46:33.629198Z",
+  "archive": {
+    "name": "workspace.tar.gz",
+    "bytes": 83610295,
+    "sha256": "ef849df8211ccb60e4fc64a3899384720f1e31d428575e432d8b1a4e2da30ef8"
+  },
+  "unpacked_bytes": 95616336,
+  "file_count": 25,
+  "files": [
+    {
+      "path": "output/model/geometry_validation.json",
+      "bytes": 1469,
+      "sha256": "d6edbce606cc1d1999d7bb409c23a97931e847bd390c17080215535d4f777282"
+    },
+    {
+      "path": "output/model/model.blend",
+      "bytes": 38642020,
+      "sha256": "11b8720b5b1e687db6d7d6e3068b7802dbce303c6eea7a6f1d9e4205ca61d4c6"
+    },
+    {
+      "path": "output/model/previews/back.png",
+      "bytes": 200672,
+      "sha256": "1e48a4d3603789910fe58464e6f9caa19b344f8baa3cca6dbf6dc19ec0d86e4c"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "bytes": 205701,
+      "sha256": "a040c22f5ad4fa305d1118cedd744e76849d0954fc22d44a6dda81408ac3eda3"
+    },
+    {
+      "path": "output/model/previews/right.png",
+      "bytes": 178996,
+      "sha256": "1987a7df1715cdbdca60482aede7438a345e37fb69b5db3b277c589e640fb37c"
+    },
+    {
+      "path": "output/model/previews/three_quarter.png",
+      "bytes": 206365,
+      "sha256": "a70166a4cb615098e93e18491fa6828f754a77d352304e604bbdc669aed576c3"
+    },
+    {
+      "path": "output/model/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/model/textures/cloth_height16.png",
+      "bytes": 7240634,
+      "sha256": "cabf452e59c75a69b74e3299614577e45e67f3758dc1d18ed46cd0c4b37e8037"
+    },
+    {
+      "path": "output/model/textures/cloth_normal.png",
+      "bytes": 6414009,
+      "sha256": "8bf964b4e249151c89fed10a1f4ca52eb413147df6c5a452d092aa968199daf5"
+    },
+    {
+      "path": "output/model/textures/cloth_roughness.png",
+      "bytes": 841026,
+      "sha256": "fe7ab565b53401ea8b929b5a4d5a85bb50cd2026c8c9cc1cfbbcfe5d1937b171"
+    },
+    {
+      "path": "output/model/textures/ear_albedo.png",
+      "bytes": 4584105,
+      "sha256": "02e8d161b49d01379f694c7e237a8edd129a3a9ae0b04b92d23d847b5e3ff7e9"
+    },
+    {
+      "path": "output/model/textures/pale_albedo.png",
+      "bytes": 4241025,
+      "sha256": "8ece59faffe1e1439949bc81573f5dd1adcb5126ee8c533a7096f60e2afb03c4"
+    },
+    {
+      "path": "output/model/textures/violet_albedo.png",
+      "bytes": 4548013,
+      "sha256": "dd7f4d9b2b8b78130fa39a65104f60e3a4a1fccf96a81b0aa0516d5765f49a93"
+    },
+    {
+      "path": "output/model/tool_report.json",
+      "bytes": 801,
+      "sha256": "be3728e4351e364dc6d7e9a71f62074ea7bd052acb3a7cf0bf0524f17397d1f0"
+    },
+    {
+      "path": "output/model/validation.json",
+      "bytes": 241,
+      "sha256": "b72eead32422b3aba1ea15585e812237f3d699fc458af05f6b5340f714ac1dc8"
+    },
+    {
+      "path": "output/textures/cloth_height16.png",
+      "bytes": 7240634,
+      "sha256": "cabf452e59c75a69b74e3299614577e45e67f3758dc1d18ed46cd0c4b37e8037"
+    },
+    {
+      "path": "output/textures/cloth_normal.png",
+      "bytes": 6414009,
+      "sha256": "8bf964b4e249151c89fed10a1f4ca52eb413147df6c5a452d092aa968199daf5"
+    },
+    {
+      "path": "output/textures/cloth_roughness.png",
+      "bytes": 841026,
+      "sha256": "fe7ab565b53401ea8b929b5a4d5a85bb50cd2026c8c9cc1cfbbcfe5d1937b171"
+    },
+    {
+      "path": "output/textures/ear_albedo.png",
+      "bytes": 4584105,
+      "sha256": "02e8d161b49d01379f694c7e237a8edd129a3a9ae0b04b92d23d847b5e3ff7e9"
+    },
+    {
+      "path": "output/textures/pale_albedo.png",
+      "bytes": 4241025,
+      "sha256": "8ece59faffe1e1439949bc81573f5dd1adcb5126ee8c533a7096f60e2afb03c4"
+    },
+    {
+      "path": "output/textures/reference.png",
+      "bytes": 393918,
+      "sha256": "7cca7b778b43daf8a618c33ed23534eea2470018dc411034ccd024ec4df04676"
+    },
+    {
+      "path": "output/textures/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/textures/texture_validation.json",
+      "bytes": 2344,
+      "sha256": "c8769b72ea62d9ccba7d376881c9da7dbaadacbecef3fff50df48f4d8422e99c"
+    },
+    {
+      "path": "output/textures/tool_report.json",
+      "bytes": 209,
+      "sha256": "40e5075a34ef25118d3e7afcda51a19c2c19d16d492e9b2113d04f283ba7663a"
+    },
+    {
+      "path": "output/textures/violet_albedo.png",
+      "bytes": 4548013,
+      "sha256": "dd7f4d9b2b8b78130fa39a65104f60e3a4a1fccf96a81b0aa0516d5765f49a93"
+    }
+  ],
+  "metadata": {
+    "source_commit": "397cbc69c21c323727da2e3e6163ce23586d357d",
+    "current_step": "model",
+    "kind": "step_complete",
+    "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:2d4029b9359dcac82a21e726787fa6df0f1d35504d2bcdf1f8506031b62fa8b9"
+  },
+  "excluded_top_level": [
+    "checkpoints",
+    "resume"
+  ]
+}
