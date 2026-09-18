@@ -14,20 +14,25 @@
       "id": "surfaces",
       "tool": "python",
       "exit_code": 0
+    },
+    {
+      "id": "model",
+      "tool": "blender",
+      "exit_code": 0
     }
   ],
   "latest_snapshot": {
-    "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1",
-    "release_id": 391645128,
+    "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2",
+    "release_id": 391645819,
     "project_id": "violet-rabbit-replica-20260918",
     "job_id": "build-v001",
-    "archive_sha256": "98939a7819564d7881f06fd4d6316e5d5420b785dfda2014438fe890e756211f",
-    "manifest_sha256": "2ab1d25b32b1d175ba61ac9fdb2d1843f99228868df5d81ef86e5fc2b97881d3",
-    "archive_asset_id": 573068630,
-    "manifest_asset_id": 573068683,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1/manifest.json",
+    "archive_sha256": "196402cb022254ce643a8ecd950fbbf04d7642c6f81934888192ac3c4e688bda",
+    "manifest_sha256": "4791682d809f133efc3c6b3a4d865ea8b62595d89d8b4a41581ce3953f3a0f57",
+    "archive_asset_id": 573070385,
+    "manifest_asset_id": 573070529,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2/manifest.json",
     "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
   },
   "step_snapshots": {
@@ -44,6 +49,20 @@
       "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1/workspace.tar.gz",
       "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1/manifest.json",
       "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
+    },
+    "model": {
+      "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2",
+      "release_id": 391645819,
+      "project_id": "violet-rabbit-replica-20260918",
+      "job_id": "build-v001",
+      "archive_sha256": "196402cb022254ce643a8ecd950fbbf04d7642c6f81934888192ac3c4e688bda",
+      "manifest_sha256": "4791682d809f133efc3c6b3a4d865ea8b62595d89d8b4a41581ce3953f3a0f57",
+      "archive_asset_id": 573070385,
+      "manifest_asset_id": 573070529,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2/manifest.json",
+      "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
     }
   },
   "acceptance_criteria": [
@@ -54,6 +73,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "current_step": "surfaces",
-  "updated_at": "2026-09-18T17:06:50.029058Z"
+  "current_step": "model",
+  "updated_at": "2026-09-18T17:07:59.245652Z"
 }
