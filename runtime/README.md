@@ -8,7 +8,7 @@ game creation tools and external AI APIs are not exposed.
 ## Build once, execute without external networking
 
 Build `runtime/Dockerfile` from the repository root and run `runtime/smoke.py`
-before approving/publishing that image. Build-time apt downloads require network
+before publishing that image. Build-time apt downloads require network
 access. Ubuntu 24.04 currently supplies Blender 4.0.2; this is **not Blender 5.2**.
 The official Material Maker release is also downloaded at build time and its
 SHA-256 verified against `material-maker.lock.json`. Mesa lavapipe supplies CPU
@@ -18,19 +18,11 @@ its editable source bundle is saved with the images. See `docs/MATERIAL_MAKER.md
 production jobs to the tested GHCR image's `sha256` digest, so later apt/base
 image changes cannot alter an existing job's environment.
 
-The host downloads that image and declared inputs before creative processing.
-The processing container must use all of:
-
-- `--network none --read-only --cap-drop ALL --security-opt no-new-privileges`
-- a non-root user, CPU/memory/PID limits and a writable, size-bounded `/tmp`
-- read-only `/repo` and `/input` mounts, and one writable `/work` mount
-- no tokens, credentials, Docker socket, host home, or other host mounts
-
-GitHub control-plane uploads/downloads still require network access on the host.
-This isolates the actual creative programs; an AST checker alone is not a Python
-sandbox. The repository contains scripts and manifests, while GHCR stores the
-installed software image. Existing image assets must be declared and staged
-before the container starts; online asset searching cannot work inside it.
+The host downloads the image and stages declared inputs before processing.
+The tools run in their own container. Inputs are mounted at `/input`, source at
+`/repo`, and generated files at `/work`. Creative tools use local files; the
+outer runner handles network transfers, GitHub uploads, and state updates.
+ChatGPT uses its available GitHub connection to update source and submit jobs.
 
 ## Script contract
 
@@ -46,7 +38,7 @@ Python and Blender scripts receive these globals:
 | Name | Meaning |
 | --- | --- |
 | `JOB`, `STEP`, `PARAMS` | Job document, current step, and its parameters |
-| `INPUT_DIR` | Read-only, explicitly declared inputs |
+| `INPUT_DIR` | Declared input files |
 | `OUTPUT_DIR` | Current step's editable outputs |
 | `WORKSPACE_DIR` | Persistent project working tree for cross-step input |
 | `OUTPUT_BLEND` | Blender's final `OUTPUT_DIR / 'model.blend'` |
@@ -83,7 +75,7 @@ Blender always saves a checkpoint before generating previews, actually reopens
 the saved scene with embedded Python disabled, checks missing external image and
 library paths, renders requested views, and restores the original saved scene.
 The final editable file keeps the user's scene lighting/camera. Successful
-execution does not approve visual quality; the review gate remains separate.
+execution is followed by a separate visual quality review by ChatGPT.
 
 ## Tested operations
 

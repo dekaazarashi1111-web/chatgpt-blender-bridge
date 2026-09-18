@@ -18,14 +18,14 @@ concurrency:
 
 jobs:
   blender:
-    if: github.repository == 'dekaazarashi1111-web/chatgpt-blender-bridge' && github.actor == github.repository_owner
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
       LIBGL_ALWAYS_SOFTWARE: '1'
       OMP_NUM_THREADS: '2'
     steps:
-      - name: Checkout trusted main-branch source
+      - name: Checkout main-branch source
         uses: actions/checkout@v4
         with:
           persist-credentials: false

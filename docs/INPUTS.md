@@ -11,7 +11,7 @@ ChatGPT が添付画像を見られる場合でも、Actions のコンテナは�
 
 ## 保存の方針
 
-作品の入力は `projects/<project_id>/inputs/` にまとめ、元ファイル名、役割、入手元、利用条件を brief か入力一覧へ記録します。ジョブの `inputs` には `path`（`projects/<project_id>/inputs/` または `source/` 以下）、`target`（コンテナへ配置する相対パス）、`sha256`（元ファイルの SHA-256）を指定します。例えば target が `references/front.png` なら、ツールの入力は `input/references/front.png`、script では `INPUT_DIR / "references/front.png"` です。SHA-256 が一致しない入力は受け付けません。
+作品の入力は `projects/<project_id>/inputs/` にまとめ、元ファイル名、役割、入手元を brief か入力一覧へ記録します。ジョブの `inputs` には `path`（`projects/<project_id>/inputs/` または `source/` 以下）、`target`（コンテナへ配置する相対パス）、`sha256`（元ファイルの SHA-256）を指定します。例えば target が `references/front.png` なら、ツールの入力は `input/references/front.png`、script では `INPUT_DIR / "references/front.png"` です。SHA-256 が一致しない入力は受け付けません。
 
 GitHub 接続でバイナリを直接アップロードできるなら、その操作で保存します。ローカル実行環境を使える場合は、同梱 helper でファイルを配置し、job 用の入力定義を生成できます。
 
@@ -40,7 +40,7 @@ python ci/import_reference.py \
 
 helper はローカルの `projects/my-project/inputs/references/front.png` を新規作成し、`path`・`target`・`sha256` の JSON を出力します。その JSON を job の `inputs` 配列へ追加します。既存ファイルは上書きせず、デコード後のサイズは最大 20 MiB です。
 
-**helper 自体は GitHub へアップロードしません。** 作成されたバイナリを Git の commit/push または対応するアップロード操作で保存してからジョブを追加してください。テキストしか書けない GitHub 接続単独で、この helper を実行して添付画像を自動転送できるわけではありません。実ファイル取得・ローカル実行・GitHub 保存のいずれかが使えなければ、その制約を明示します。
+helper で作成したファイルは、Git の commit/push または GitHub 接続の blob・tree・commit・ref 操作で保存し、続けてジョブを追加します。添付画像の実バイト取得、入力の配置、GitHub への保存をそれぞれ確認します。シェルのネットワークと GitHub 接続は別の経路として扱い、利用できる経路で保存します。
 
 ## 再現性
 
@@ -50,5 +50,3 @@ helper はローカルの `projects/my-project/inputs/references/front.png` を�
 - 復元対象の入力・成果物は manifest のサイズと SHA-256 で照合する。
 
 制作コンテナにネットワークがないため、CC0 素材サイトなどから新しい素材を探してダウンロードする工程は制作実行の外側で行います。収録済み素材がない場合は、手元の入力と登録済みツールで生成できるものを使います。
-
-このリポジトリは公開です。入力画像とその派生物を保存すると公開されるため、公開可能な素材を使ってください。

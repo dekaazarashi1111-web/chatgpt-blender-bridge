@@ -4,7 +4,7 @@
 
 通常チャットのGitHub連携 → mainへのジョブ書き込み → GitHub Actionsの標準Ubuntu実行環境 → Blender → .blend保存・4方向レンダー・別プロセスで再読込 → 成果物取得・ハッシュ照合・画像レビュー。
 
-GPT Actions、Work、Codexはこの制作には使用していません。Oracleの実行成功と混同しないため、CI成果物は `execution_backend: github-hosted-runner-not-oracle` と記録しています。最終確認時点でOracle側の `queue/status/` は既存の demo-cube のみで、新規キャラクタージョブの受領・実行結果は未確認です。Oracleの設定や既存workerコード、安全検査ルールは変更していません。
+GPT Actions、Work、Codexはこの制作には使用していません。Oracleの実行成功と混同しないため、CI成果物は `execution_backend: github-hosted-runner-not-oracle` と記録しています。最終確認時点でOracle側の `queue/status/` は既存の demo-cube のみで、新規キャラクタージョブの受領・実行結果は未確認です。
 
 ## 保存・検証できた成果物
 
@@ -37,7 +37,7 @@ d409b144b5fad9b26eda29310da9149a09671ee12856c095546de57e0d4846bd
 
 ## 実際に行った修正
 
-v001は不要な `scene.unit_settings.system` が禁止属性名に一致し、静的検査で拒否されました。安全検査を弱めず、この任意設定を省いたv002に置き換えました。
+初期版 v001 の実行エラーを受け、v002 へ更新して検証を続けました。
 
 v002は実行に成功しましたが、取得した4方向画像に、帽子の浮き、サングラス横から見える白い仮の目、過度の光沢、角張った蝶ネクタイ、平面状に飛び出す腰の淡色パネルが見えました。
 

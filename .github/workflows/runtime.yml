@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.actor == github.repository_owner
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
