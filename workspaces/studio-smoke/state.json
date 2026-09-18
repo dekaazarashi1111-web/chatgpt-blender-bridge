@@ -9,13 +9,48 @@
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35353573199",
   "started_at": "2026-09-18T14:01:02.496884Z",
-  "steps": [],
-  "latest_snapshot": null,
-  "step_snapshots": {},
+  "steps": [
+    {
+      "id": "model",
+      "tool": "blender",
+      "exit_code": 0
+    }
+  ],
+  "latest_snapshot": {
+    "release_tag": "creative-studio-smoke-blender-v001-35353573199-1-1",
+    "release_id": 391520062,
+    "project_id": "studio-smoke",
+    "job_id": "blender-v001",
+    "archive_sha256": "44fca92ef226d492ca58d22101b627b3f12c1ee837c4f61ece8ead2cb3b10993",
+    "manifest_sha256": "765f872b042e53730b66c1d17bfedac7f77f8187323077bf392698b530e5223b",
+    "archive_asset_id": 572743840,
+    "manifest_asset_id": 572743857,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-blender-v001-35353573199-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/manifest.json",
+    "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
+  },
+  "step_snapshots": {
+    "model": {
+      "release_tag": "creative-studio-smoke-blender-v001-35353573199-1-1",
+      "release_id": 391520062,
+      "project_id": "studio-smoke",
+      "job_id": "blender-v001",
+      "archive_sha256": "44fca92ef226d492ca58d22101b627b3f12c1ee837c4f61ece8ead2cb3b10993",
+      "manifest_sha256": "765f872b042e53730b66c1d17bfedac7f77f8187323077bf392698b530e5223b",
+      "archive_asset_id": 572743840,
+      "manifest_asset_id": 572743857,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-blender-v001-35353573199-1-1",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-v001-35353573199-1-1/manifest.json",
+      "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
+    }
+  },
   "acceptance_criteria": [
     "Technical Blender execution saves and reopens an editable model with four previews."
   ],
   "review_required": false,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-18T14:01:03.441450Z"
+  "current_step": "model",
+  "updated_at": "2026-09-18T14:01:18.460460Z"
 }
