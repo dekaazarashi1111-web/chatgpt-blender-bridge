@@ -19,20 +19,25 @@
       "id": "presentation",
       "tool": "blender",
       "exit_code": 0
+    },
+    {
+      "id": "package",
+      "tool": "python",
+      "exit_code": 0
     }
   ],
   "latest_snapshot": {
-    "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2",
-    "release_id": 391608149,
+    "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
+    "release_id": 391608515,
     "project_id": "worn-violet-rabbit-20260918",
     "job_id": "render-v002",
-    "archive_sha256": "cf4e58c9f85ecbed5fc31526f3728975321cde055477a6cb1d27fb6618766c79",
-    "manifest_sha256": "20288d343298ef4c5bf83121356e12e9c4ed7e9bef8b5d9c5873fa06316e1cc2",
-    "archive_asset_id": 572967103,
-    "manifest_asset_id": 572967223,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2/manifest.json",
+    "archive_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
+    "manifest_sha256": "eac9e6554fff91dc88200495e7953bcbc707d47353eaedb0787012635957ba3b",
+    "archive_asset_id": 572968296,
+    "manifest_asset_id": 572968426,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/manifest.json",
     "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc"
   },
   "step_snapshots": {
@@ -63,6 +68,20 @@
       "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2/workspace.tar.gz",
       "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2/manifest.json",
       "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc"
+    },
+    "package": {
+      "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
+      "release_id": 391608515,
+      "project_id": "worn-violet-rabbit-20260918",
+      "job_id": "render-v002",
+      "archive_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
+      "manifest_sha256": "eac9e6554fff91dc88200495e7953bcbc707d47353eaedb0787012635957ba3b",
+      "archive_asset_id": 572968296,
+      "manifest_asset_id": 572968426,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/manifest.json",
+      "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc"
     }
   },
   "acceptance_criteria": [
@@ -73,6 +92,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "current_step": "presentation",
-  "updated_at": "2026-09-18T16:06:20.990430Z"
+  "current_step": "package",
+  "updated_at": "2026-09-18T16:06:58.311814Z"
 }
