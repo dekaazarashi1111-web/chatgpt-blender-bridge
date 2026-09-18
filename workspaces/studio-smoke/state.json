@@ -10,7 +10,20 @@
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35353761801",
   "started_at": "2026-09-18T14:03:51.286485Z",
   "steps": [],
-  "latest_snapshot": null,
+  "latest_snapshot": {
+    "release_tag": "creative-studio-smoke-blender-resume-v001-35353761801-1-1",
+    "release_id": 391522179,
+    "project_id": "studio-smoke",
+    "job_id": "blender-resume-v001",
+    "archive_sha256": "f2a69fb3b007165cd94745bb5e35a5292f3a3ffdb8c71ed7ae741acfff2091a3",
+    "manifest_sha256": "f9bdcf0b55f309e4a423f645fc09c70a3622eada9d472a8eadbc982bfd6e4aae",
+    "archive_asset_id": 572748826,
+    "manifest_asset_id": 572748846,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-blender-resume-v001-35353761801-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-resume-v001-35353761801-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-blender-resume-v001-35353761801-1-1/manifest.json",
+    "source_commit": "5007df31ab31903cae4a2526bf3dac1a861e9930"
+  },
   "step_snapshots": {},
   "acceptance_criteria": [
     "Restore the exact pinned blender-v001 workspace and load its editable model.",
@@ -19,5 +32,6 @@
   ],
   "review_required": false,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-18T14:03:51.569822Z"
+  "current_step": "model",
+  "updated_at": "2026-09-18T14:04:03.260844Z"
 }
