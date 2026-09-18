@@ -1,176 +1,24 @@
 {
   "schema_version": 2,
   "project_id": "worn-violet-rabbit-20260918",
-  "job_id": "render-v002",
-  "state": "changes_requested",
-  "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
+  "job_id": "refine-v003",
+  "state": "running",
+  "source_commit": "991e68d180c8bbf6038b298fa011f92b6490ae09",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
-  "run_id": "35365556050",
+  "run_id": "35368608273",
   "run_attempt": "1",
-  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35365556050",
-  "started_at": "2026-09-18T15:58:03.638369Z",
-  "steps": [
-    {
-      "id": "carry",
-      "tool": "python",
-      "exit_code": 0
-    },
-    {
-      "id": "presentation",
-      "tool": "blender",
-      "exit_code": 0
-    },
-    {
-      "id": "package",
-      "tool": "python",
-      "exit_code": 0
-    }
-  ],
-  "latest_snapshot": {
-    "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
-    "release_id": 391608515,
-    "project_id": "worn-violet-rabbit-20260918",
-    "job_id": "render-v002",
-    "archive_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
-    "manifest_sha256": "eac9e6554fff91dc88200495e7953bcbc707d47353eaedb0787012635957ba3b",
-    "archive_asset_id": 572968296,
-    "manifest_asset_id": 572968426,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/manifest.json",
-    "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc"
-  },
-  "step_snapshots": {
-    "carry": {
-      "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-1",
-      "release_id": 391602907,
-      "project_id": "worn-violet-rabbit-20260918",
-      "job_id": "render-v002",
-      "archive_sha256": "bb1956cc2c49aa8869c4fd579bda1376192b3cfe770885612fd37775b4d6f832",
-      "manifest_sha256": "415308a6c1cd1a73d11f3a51fc8db3be8a5b03c9e1d5fb6473d3b55babb4191b",
-      "archive_asset_id": 572952993,
-      "manifest_asset_id": 572953071,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-1",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-1/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-1/manifest.json",
-      "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc"
-    },
-    "presentation": {
-      "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2",
-      "release_id": 391608149,
-      "project_id": "worn-violet-rabbit-20260918",
-      "job_id": "render-v002",
-      "archive_sha256": "cf4e58c9f85ecbed5fc31526f3728975321cde055477a6cb1d27fb6618766c79",
-      "manifest_sha256": "20288d343298ef4c5bf83121356e12e9c4ed7e9bef8b5d9c5873fa06316e1cc2",
-      "archive_asset_id": 572967103,
-      "manifest_asset_id": 572967223,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-2/manifest.json",
-      "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc"
-    },
-    "package": {
-      "release_tag": "creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
-      "release_id": 391608515,
-      "project_id": "worn-violet-rabbit-20260918",
-      "job_id": "render-v002",
-      "archive_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
-      "manifest_sha256": "eac9e6554fff91dc88200495e7953bcbc707d47353eaedb0787012635957ba3b",
-      "archive_asset_id": 572968296,
-      "manifest_asset_id": 572968426,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-render-v002-35365556050-1-3/manifest.json",
-      "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc"
-    }
-  },
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35368608273",
+  "started_at": "2026-09-18T16:28:32.235774Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
   "acceptance_criteria": [
-    "The saved build-v001 model and materials are retained without regeneration.",
-    "Reference-aligned front, right, back, face and surface Cycles views are actually rendered.",
-    "The packed deliverable reopens without missing external files; output hashes and Release manifests are checked.",
-    "Appearance is inspected against the supplied reference and remaining differences are recorded honestly."
+    "Reference-aligned silhouettes and proportions, recessed dark eyes, central muzzle, padded ears, fitted shoulders and irregular shell damage are faithful to the reference.",
+    "Muted worn violet and pale surfaces reproduce the reference character without the previous overly bright grid-like pattern; source-derived texture provenance is retained.",
+    "The editable packed Blender scene reopens without missing dependencies, and the produced files match the pinned Release manifest.",
+    "Actual front, side, back, face, face-profile and surface views have been inspected against the reference and no major visual defects remain."
   ],
   "review_required": true,
-  "next_action": "Create a new revision using latest_snapshot.",
-  "current_step": "package",
-  "finished_at": "2026-09-18T16:07:00.166106Z",
-  "publication_errors": [],
-  "previews": [
-    {
-      "path": "output/model/previews/back.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/back.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/back.png"
-    },
-    {
-      "path": "output/model/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/front.png"
-    },
-    {
-      "path": "output/model/previews/right.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/right.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/right.png"
-    },
-    {
-      "path": "output/model/previews/three_quarter.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/three_quarter.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/three_quarter.png"
-    },
-    {
-      "path": "output/package/previews/back.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/back.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/back.png"
-    },
-    {
-      "path": "output/package/previews/comparison.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/comparison.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/comparison.png"
-    },
-    {
-      "path": "output/package/previews/details.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/details.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/details.png"
-    },
-    {
-      "path": "output/package/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/front.png"
-    },
-    {
-      "path": "output/package/previews/right.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/right.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/right.png"
-    },
-    {
-      "path": "output/package/previews/three_quarter.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_quarter.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_quarter.png"
-    },
-    {
-      "path": "output/package/previews/three_view.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_view.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_view.png"
-    },
-    {
-      "path": "output/presentation/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/presentation/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/presentation/previews/front.png"
-    }
-  ],
-  "updated_at": "2026-09-18T16:21:20.762921Z",
-  "review": {
-    "schema_version": 1,
-    "project_id": "worn-violet-rabbit-20260918",
-    "job_id": "render-v002",
-    "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
-    "snapshot_sha256": "210366034138de2015d8d5d7877cb336b9fb90b8ec02e9209226222010540e0f",
-    "verdict": "changes_requested",
-    "criteria": {
-      "The saved build-v001 model and materials are retained without regeneration.": "pass",
-      "Reference-aligned front, right, back, face and surface Cycles views are actually rendered.": "pass",
-      "The packed deliverable reopens without missing external files; output hashes and Release manifests are checked.": "pass",
-      "Appearance is inspected against the supplied reference and remaining differences are recorded honestly.": "pass"
-    },
-    "summary": "The four operational objectives of this render-resume job passed, but the artistic result is NOT accepted as the user's final faithful reconstruction. Opened the actual reference comparison, three-view, face and surface images. Materials are too bright and grid-like; the muzzle is too wide, eyes protrude with duplicate pupil highlights, ear backs are too thin, shoulder gaps are too large, damage resembles rectangular access panels, belly/toes need contour refinement. See render-v002.md for actual image paths, sample RGB measurements, 53-file hash verification and concrete partial-edit plan. Create a new revision from this valid saved scene; do not remake unaffected geometry or regenerate unchanged work."
-  }
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T16:28:32.629276Z"
 }
