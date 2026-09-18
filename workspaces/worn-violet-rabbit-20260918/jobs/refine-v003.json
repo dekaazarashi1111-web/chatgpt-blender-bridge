@@ -9,9 +9,43 @@
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35368608273",
   "started_at": "2026-09-18T16:28:32.235774Z",
-  "steps": [],
-  "latest_snapshot": null,
-  "step_snapshots": {},
+  "steps": [
+    {
+      "id": "carry",
+      "tool": "python",
+      "exit_code": 0
+    }
+  ],
+  "latest_snapshot": {
+    "release_tag": "creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1",
+    "release_id": 391622264,
+    "project_id": "worn-violet-rabbit-20260918",
+    "job_id": "refine-v003",
+    "archive_sha256": "ced6a950004cffcc67dd15f5ca665a24f7ce90347f8bc3c181e46b7760ed3252",
+    "manifest_sha256": "accb89bc24c97301e8b39f6eb1aa72f2a01c31a66647ccb8210e4c74c03c4740",
+    "archive_asset_id": 573004573,
+    "manifest_asset_id": 573004643,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1/manifest.json",
+    "source_commit": "991e68d180c8bbf6038b298fa011f92b6490ae09"
+  },
+  "step_snapshots": {
+    "carry": {
+      "release_tag": "creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1",
+      "release_id": 391622264,
+      "project_id": "worn-violet-rabbit-20260918",
+      "job_id": "refine-v003",
+      "archive_sha256": "ced6a950004cffcc67dd15f5ca665a24f7ce90347f8bc3c181e46b7760ed3252",
+      "manifest_sha256": "accb89bc24c97301e8b39f6eb1aa72f2a01c31a66647ccb8210e4c74c03c4740",
+      "archive_asset_id": 573004573,
+      "manifest_asset_id": 573004643,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-worn-violet-rabbit-20260918-refine-v003-35368608273-1-1/manifest.json",
+      "source_commit": "991e68d180c8bbf6038b298fa011f92b6490ae09"
+    }
+  },
   "acceptance_criteria": [
     "Reference-aligned silhouettes and proportions, recessed dark eyes, central muzzle, padded ears, fitted shoulders and irregular shell damage are faithful to the reference.",
     "Muted worn violet and pale surfaces reproduce the reference character without the previous overly bright grid-like pattern; source-derived texture provenance is retained.",
@@ -20,5 +54,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-18T16:28:32.629276Z"
+  "current_step": "carry",
+  "updated_at": "2026-09-18T16:28:57.573600Z"
 }
