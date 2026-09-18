@@ -9,14 +9,49 @@
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35359664873",
   "started_at": "2026-09-18T15:00:21.636646Z",
-  "steps": [],
-  "latest_snapshot": null,
-  "step_snapshots": {},
+  "steps": [
+    {
+      "id": "material",
+      "tool": "material_maker",
+      "exit_code": 0
+    }
+  ],
+  "latest_snapshot": {
+    "release_tag": "creative-studio-smoke-material-maker-v001-35359664873-1-1",
+    "release_id": 391563838,
+    "project_id": "studio-smoke",
+    "job_id": "material-maker-v001",
+    "archive_sha256": "18d206c348df1931bccb006cb478bdbd450d03109200476687997e2e3d2bc8d7",
+    "manifest_sha256": "3e9e1fda6922115000ae3ab1612dab723d48fb363862fe92e6343ba1ead1993f",
+    "archive_asset_id": 572851208,
+    "manifest_asset_id": 572851236,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-material-maker-v001-35359664873-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-material-maker-v001-35359664873-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-material-maker-v001-35359664873-1-1/manifest.json",
+    "source_commit": "518a86bda31cbece3c4af467f3c00568ee6d5385"
+  },
+  "step_snapshots": {
+    "material": {
+      "release_tag": "creative-studio-smoke-material-maker-v001-35359664873-1-1",
+      "release_id": 391563838,
+      "project_id": "studio-smoke",
+      "job_id": "material-maker-v001",
+      "archive_sha256": "18d206c348df1931bccb006cb478bdbd450d03109200476687997e2e3d2bc8d7",
+      "manifest_sha256": "3e9e1fda6922115000ae3ab1612dab723d48fb363862fe92e6343ba1ead1993f",
+      "archive_asset_id": 572851208,
+      "manifest_asset_id": 572851236,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-material-maker-v001-35359664873-1-1",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-material-maker-v001-35359664873-1-1/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-material-maker-v001-35359664873-1-1/manifest.json",
+      "source_commit": "518a86bda31cbece3c4af467f3c00568ee6d5385"
+    }
+  },
   "acceptance_criteria": [
     "Material Maker exports six real 2048px PBR maps and preserves editable source.",
     "Blender imports verified maps, connects PBR inputs, packs images, renders four views and reopens its saved model."
   ],
   "review_required": false,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-18T15:00:22.030819Z"
+  "current_step": "material",
+  "updated_at": "2026-09-18T15:00:37.452795Z"
 }
