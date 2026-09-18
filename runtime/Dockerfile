@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY runtime/imagemagick-policy.xml /etc/ImageMagick-6/policy.xml
 COPY runtime/capabilities.py runtime/smoke.py /opt/creative-runtime/
 COPY runtime/material-maker.lock.json runtime/install_material_maker.py runtime/material-maker-LICENSE.md /opt/creative-runtime/
+COPY runtime/material-maker-renderer.gd /opt/creative-runtime/
 RUN python3 /opt/creative-runtime/install_material_maker.py
 RUN python3 /opt/creative-runtime/capabilities.py --require-base \
       --output /opt/creative-runtime/capabilities.json

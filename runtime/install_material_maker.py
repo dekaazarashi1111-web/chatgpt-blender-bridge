@@ -23,6 +23,9 @@ with tempfile.TemporaryDirectory() as temporary:
         package.extractall(Path(temporary) / "unpacked", filter="data")
     shutil.move(str(Path(temporary) / "unpacked" / release["archive_root"]), destination)
 (destination / release["executable"]).chmod(0o755)
+shim = root / "material-maker-renderer.gd"
+release["compatibility_shim_sha256"] = hashlib.sha256(shim.read_bytes()).hexdigest()
+(destination / "override.cfg").write_text('[autoload]\nmm_renderer="*' + str(shim) + '"\n')
 (destination / "release.json").write_text(json.dumps(release, indent=2) + "\n")
 shutil.copyfile(root / "material-maker-LICENSE.md", destination / "LICENSE.md")
 Path("/usr/local/bin/material-maker").symlink_to(destination / release["executable"])

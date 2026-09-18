@@ -22,12 +22,14 @@ jobs:
         run: |
           python3 - <<'PY'
           import hashlib, json, pathlib, urllib.request, tarfile
-          lock = {'url': 'https://github.com/RodZill4/material-maker/releases/download/1.6/material_maker_1_6_linux.tar.gz', 'sha256': 'c4673a964ef39b4a705bcafb55b5214ac2f966c995aef3efe5636a4036883c1e'}
+          lock = json.loads(pathlib.Path('runtime/material-maker.lock.json').read_text())
           path = pathlib.Path('/tmp/mm-diagnostic.tar.gz')
           urllib.request.urlretrieve(lock['url'], path)
           assert hashlib.sha256(path.read_bytes()).hexdigest() == lock['sha256']
           with tarfile.open(path) as archive:
               archive.extractall('/tmp/mm-diagnostic', filter='data')
+          patch = pathlib.Path('runtime/material-maker-renderer.gd').resolve()
+          (pathlib.Path('/tmp/mm-diagnostic') / lock['archive_root'] / 'override.cfg').write_text('[autoload]\nmm_renderer="*' + str(patch) + '"\n')
           PY
           mkdir -p /tmp/mm-diagnostic-output
-          timeout 90s xvfb-run -a gdb --batch -ex 'set pagination off' -ex run -ex 'bt 15' --args /tmp/mm-diagnostic/material_maker_1_6_linux/material_maker.x86_64 --verbose --audio-driver Dummy --accessibility disabled --export-material --target Blender -o /tmp/mm-diagnostic-output --output-file test "$PWD/runtime/fixtures/material/terracotta.ptex"
+          timeout 180s xvfb-run -a /tmp/mm-diagnostic/material_maker_1_7_linux/material_maker.x86_64 --verbose --audio-driver Dummy --accessibility disabled --export-material --target Blender -o /tmp/mm-diagnostic-output --output-file test "$PWD/runtime/fixtures/material/terracotta.ptex"
