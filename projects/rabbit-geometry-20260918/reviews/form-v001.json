@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "project_id": "rabbit-geometry-20260918",
+  "job_id": "form-v001",
+  "source_commit": "71b31cce0136ea645abf692bdfb41f3162136796",
+  "snapshot_sha256": "c4653aff5afb32c80af011d97d6b201bc969d5bd5145e8d2ae40f9c3a14bb61f",
+  "verdict": "changes_requested",
+  "criteria": {
+    "Editable self-contained metric T-pose rabbit model, with geometry matching the supplied front/right/back reference rather than a generic rabbit.": "fail",
+    "Actual modeled ear channels, orbital sockets, muzzle, U-shaped open jaw, rounded dental arches, fingers, toes, bow and damaged shell sections.": "pass",
+    "Geometry audit and both saved-scene reopen validations pass, all mandatory images decode, and actual high-resolution views are reviewed by ChatGPT against the reference.": "fail",
+    "No texture generation or projected image camouflage; neutral inspection materials only. Record remaining geometric deviations explicitly.": "pass",
+    "Release archive and manifest hashes and workspace-state must be read back before reporting durable save.": "pass"
+  },
+  "summary": "Actual downloaded front/right/back and detailed/uniform-clay images were inspected, not merely job status. Technical construction and reopen checks passed with no missing resources, and exact Release manifest evidence was read back. Visual fidelity is not yet acceptable: raised goggle-like sockets, excessive jaw/nose projection, narrow pipe-like jaw sides, thin ears with flat side tips, primitive-looking digits/toes, and a clipped nose in the head-right close-up. Preserve this snapshot and create a new revision from it. See form-v001.md for measured differences and mask-method limitations. Geometry only; textures remain intentionally out of scope."
+}
