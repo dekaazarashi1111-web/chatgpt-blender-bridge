@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "violet-rabbit-replica-20260918",
   "job_id": "build-v001",
-  "state": "needs_review",
+  "state": "changes_requested",
   "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
   "run_id": "35372299694",
@@ -110,7 +110,7 @@
     "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance."
   ],
   "review_required": true,
-  "next_action": "Inspect real previews against references; submit a pinned review or a new revision.",
+  "next_action": "Create a new revision using latest_snapshot.",
   "current_step": "package",
   "finished_at": "2026-09-18T17:11:18.995115Z",
   "publication_errors": [],
@@ -176,5 +176,20 @@
       "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/surface.png"
     }
   ],
-  "updated_at": "2026-09-18T17:11:39.703719Z"
+  "updated_at": "2026-09-18T17:41:14.028212Z",
+  "review": {
+    "schema_version": 1,
+    "project_id": "violet-rabbit-replica-20260918",
+    "job_id": "build-v001",
+    "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f",
+    "snapshot_sha256": "3983aa75878c17d00535d3c9dda4d9992a2a5f4ee5dc28cc5548225ef0a6502b",
+    "verdict": "changes_requested",
+    "criteria": {
+      "Compare actual front, right and back renders with the supplied three-view reference; match the T-pose proportions, thick ears, recessed black eyes, continuous muzzle and deep lower jaw.": "fail",
+      "Match the subdued worn violet and grey-lilac mottled cloth appearance; avoid bright white belly, stone-like relief, regular cloud grids and excessive gloss.": "fail",
+      "Preserve an editable packed Blender scene, explicit UVs, reconstructed texture maps, source scripts and the genuine saved reference copy; reopen with no missing external dependencies.": "pass",
+      "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance.": "pass"
+    },
+    "summary": "Actual comparison/front/right/back, face, face_profile, surface and three_quarter images inspected. Technical save/reopen and all 83 downloaded files verified against the exact Release manifest. Visual changes required: excessive brightness, smeared mottling, thin diagonal jaw profile, floating nose/split, oval ears, intersecting upper bib/bow, coarse tear edges and spherical toe caps. Resume this exact snapshot; revise affected meshes/materials only. Detailed evidence and limitations are in reviews/build-v001.md."
+  }
 }
