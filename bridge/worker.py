@@ -14,7 +14,7 @@ from typing import Iterator
 from .config import ROOT, locate_blender
 from .git_queue import GitError, github_author, publish, sync
 from .jobs import JobError, load_job
-from .state import atomic_write_json, file_record, publish_artifacts, utc_now
+from .state import atomic_write_json, file_record, public_value, publish_artifacts, utc_now
 
 
 TERMINAL_STATES = {"needs_review", "changes_requested", "complete", "failed", "blocked"}
@@ -294,7 +294,10 @@ def process_job(
         "acceptance_criteria": criteria,
         "review_required": job["review_required"],
         "artifacts": published_artifacts,
-        "checkpoint": json.loads((run_dir / "checkpoint.json").read_text(encoding="utf-8"))
+        "checkpoint": public_value(
+            json.loads((run_dir / "checkpoint.json").read_text(encoding="utf-8")),
+            run_dir,
+        )
         if (run_dir / "checkpoint.json").is_file() else None,
     }
     manifest_path = (destination / "manifest.json") if destination else (run_dir / "manifest.json")

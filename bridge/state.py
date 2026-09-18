@@ -51,6 +51,16 @@ def file_record(path: Path, *, published_path: str | None = None) -> dict:
     return record
 
 
+def public_value(value: object, run_dir: Path) -> object:
+    if isinstance(value, str):
+        return value.replace(str(run_dir), ".worker/run").replace(str(ROOT), ".")
+    if isinstance(value, list):
+        return [public_value(item, run_dir) for item in value]
+    if isinstance(value, dict):
+        return {key: public_value(item, run_dir) for key, item in value.items()}
+    return value
+
+
 def publish_artifacts(job_id: str, run_dir: Path, max_bytes: int) -> tuple[Path, dict]:
     destination = ROOT / "results" / job_id
     destination.mkdir(parents=True, exist_ok=True)
@@ -70,7 +80,12 @@ def publish_artifacts(job_id: str, run_dir: Path, max_bytes: int) -> tuple[Path,
             }
             return
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, target)
+        if source.suffix in {".json", ".log"}:
+            text = source.read_text(encoding="utf-8", errors="replace")
+            text = text.replace(str(run_dir), ".worker/run").replace(str(ROOT), ".")
+            target.write_text(text, encoding="utf-8")
+        else:
+            shutil.copy2(source, target)
         published[relative.as_posix()] = {
             **file_record(target, published_path=(Path("results") / job_id / relative).as_posix()),
             "published": True,

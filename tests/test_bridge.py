@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 from bridge.jobs import JobError, load_job, validate_script
-from bridge.state import atomic_write_json, sha256_file
+from bridge.state import atomic_write_json, public_value, sha256_file
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +40,12 @@ class StateTests(unittest.TestCase):
             atomic_write_json(path, {"state": "complete"})
             self.assertEqual(json.loads(path.read_text(encoding="utf-8"))["state"], "complete")
             self.assertEqual(len(sha256_file(path)), 64)
+
+    def test_public_value_removes_machine_path(self) -> None:
+        run_dir = ROOT / ".worker" / "runs" / "demo"
+        payload = {"path": str(run_dir / "previews" / "front.png")}
+        cleaned = public_value(payload, run_dir)
+        self.assertEqual(cleaned["path"], ".worker/run/previews/front.png")
 
 
 if __name__ == "__main__":
