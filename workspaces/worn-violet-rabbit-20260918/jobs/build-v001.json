@@ -80,5 +80,29 @@
   "next_action": "Read logs and latest_snapshot; submit a new job ID with that resume record.",
   "current_step": "model",
   "error": "Step presentation failed with exit code 1; inspect Actions logs",
-  "updated_at": "2026-09-18T15:47:06.466748Z"
+  "finished_at": "2026-09-18T15:47:08.337975Z",
+  "publication_errors": [],
+  "previews": [
+    {
+      "path": "output/model/previews/back.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/back.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/back.png"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/front.png"
+    },
+    {
+      "path": "output/model/previews/right.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/right.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/right.png"
+    },
+    {
+      "path": "output/model/previews/three_quarter.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/three_quarter.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/build-v001/output/model/previews/three_quarter.png"
+    }
+  ],
+  "updated_at": "2026-09-18T15:47:13.367373Z"
 }
