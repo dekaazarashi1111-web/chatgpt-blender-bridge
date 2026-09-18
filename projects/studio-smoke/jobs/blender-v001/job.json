@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "project_id": "studio-smoke",
+  "job_id": "blender-v001",
+  "title": "Blender units, saved checkpoint, four renders and reopen check",
+  "timeout_seconds": 600,
+  "review_required": false,
+  "acceptance_criteria": ["Technical Blender execution saves and reopens an editable model with four previews."],
+  "steps": [
+    {"id": "model", "tool": "blender", "script": "model.py", "preview": {"views": ["front", "right", "back", "three_quarter"], "width": 256, "height": 256, "samples": 8}}
+  ]
+}

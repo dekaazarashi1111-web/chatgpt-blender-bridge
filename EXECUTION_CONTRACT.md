@@ -1,43 +1,62 @@
-# 実行契約
+# 実行・保存・完成判定の契約
 
-## 状態
+## v2 の対象
 
-| Status | 意味 |
+`projects/<project_id>/jobs/<job_id>/job.json` が共通のジョブ定義です。ジョブは登録済みツールの step を順番に実行します。必須項目、パス、引数、時間制限は JSON Schema と実行側の検査が正本です。
+
+実行するソースの commit を固定して記録します。同じ job ID を別内容に置き換えません。修正・再実行・再開には新しい job ID を使います。実行中のジョブを重複起動しないことを、呼び出し側と実行側の両方で確認します。
+
+## 実行境界
+
+- 制作ツールは準備済みのコンテナで動かし、ツール実行中のネットワークを無効にします。
+- 制作コンテナへ GitHub トークン、認証情報、Docker ソケットを渡しません。
+- ソースと入力、出力と作業領域を区別し、許可されたパス以外を受け付けません。
+- 許可された操作・Python の静的検査は補助です。任意のコードを安全にする証明としては扱いません。
+- コンテナの構築・取得、入力取得、成果物の公開は制作処理の外側で行うため、ネットワークを使います。
+- ジョブ定義と workflow はリポジトリへの書き込み権限を持つ人が管理します。外部 PR のコードを権限付きで実行しません。
+
+`scene.unit_settings.system = 'METRIC'` のような Blender の正当な属性設定を、名前が `system` という理由だけで禁止しません。一方、外部コマンド実行の許可は別の問題です。
+
+## 時間予算
+
+Actions の workflow ジョブ全体は最大 360 分です。制作処理の合計予算は既定 18,000 秒、最大 19,800 秒とし、環境準備・入力復元・検証・公開の時間を確保します。
+
+制作予算の上限は、全工程を完了できる保証ではありません。メモリ不足、ディスク不足、ツールの不具合、転送失敗、Actions の停止でも中断します。複数の step を並べても合計予算は増えません。長い制作は保存地点を設けて複数のジョブに分けます。
+
+## 永続化の順序
+
+1. 出力と必要な制作ファイルを確定する。
+2. manifest にファイル・サイズ・SHA-256 と実行情報を記録する。
+3. 制作ファイルのアーカイブと manifest を識別可能な Release に保存する。
+4. 保存の完了後に、`workspace-state` ブランチへ保存先・hash・状態を記録する。
+
+公開できなかったローカル成果物を、復元可能な checkpoint と呼びません。状態だけを先に進めず、前回の有効な保存先を維持します。Actions artifact は確認・調査の補助手段であり、長期間の再開を保証する保管先にはしません。
+
+## 再開
+
+再開要求は対象 snapshot の `release_tag`、`project_id`、`job_id`、`archive_sha256`、`manifest_sha256` を明示します。アーカイブと manifest を照合し、不一致・不正なパス・不足したファイルがあれば失敗として扱います。
+
+`latest_snapshot` は最新保存先、`step_snapshots[step_id]` は完了済み工程ごとの全作業領域の保存先です。定期 checkpoint は現在の工程の出力が中心であり、すべての過去の工程を含むとは限りません。全作業領域の保存からは `checkpoints/` と `resume/` を除外するため、再利用する依存ファイルを現在の出力へコピーするか pack します。
+
+復元データは制作コンテナの `/work/resume` に展開されます。ジョブからは実装の許可する `workspace/resume/...` のパスで参照します。実行中のメモリ、途中の描画サンプル、保存されていない編集は復元されません。
+
+ChatGPT の切断と Actions の停止を区別します。前者だけなら投入済みの Actions は通常継続します。新しいセッションは実行状態を確認してから、継続を待つか、保存済み地点から新しいジョブを作るか判断します。
+
+## 成功と完成
+
+| 判定 | 必要な根拠 |
 |---|---|
-| `pending` | 未着手 |
-| `running` | workerがclaimしBlenderを実行中 |
-| `needs_review` | 技術検証PASS。画像による品質確認待ち |
-| `changes_requested` | preview確認で修正が必要 |
-| `complete` | 技術検証と必要なreviewがすべてPASS |
-| `failed` | 実行または検証に失敗 |
-| `blocked` | 入力不足など、外部対応が必要 |
+| 実行成功 | ツールの終了が正常で、必須出力と自動検査が揃う |
+| 保存成功 | Release の成果物と対応する状態記録を読み戻せる |
+| 品質確認済み | 対象版のプレビューを実際に確認し、完成基準と比較する |
+| 完成 | 実行・保存・必要な品質レビューがすべて合格する |
 
-## 完了gate
+Blender の完成には編集可能な `.blend`、保存後の再読込検証、指定プレビューを要求します。画像など別ツールの出力には、その処理に適した存在・サイズ・形式などの検査を適用します。
 
-`complete`には次をすべて要求します。
+必要なレビューが終わっていない成果物は確認待ちです。レビューは job ID と成果物の版に紐付け、後続の修正版に承認を持ち越しません。画像を確認できていない場合や、必須の自動検査が失敗している場合は完成と報告しません。実際の状態名とフィールドは runner が書いた JSON を参照してください。
 
-1. ジョブschemaが有効である。
-2. `job.json`、`script.py`、入力`.blend`のauthorがすべて`trusted_authors`に含まれる。
-3. Blender processの終了コードが0である。
-4. `.blend`が保存され、空でない。
-5. 保存ファイルをBlenderで開き直し、検査reportを生成できる。
-6. 指定previewがすべて存在し、空でない。
-7. 必須automatic criterionがすべてPASSである。
-8. `review_required=true`の場合、reviewが`approved`である。
+## v1 との関係
 
-## 中断と再開
+既存 `queue/pending/`、`queue/status/`、`results/` と worker は互換用に残します。v1 worker には従来の commit author 検査、ローカル checkpoint、review gate があります。これらのローカル保存だけで v2 の Release 再開が成立したとは扱いません。
 
-- `running`へ移る前にstatusをGitHubへ記録します。
-- Blender内の`checkpoint()`は`.worker/runs/<job-id>/checkpoint.json`をatomic更新します。
-- timeoutやprocess異常終了でもlog、checkpoint、途中成果をlocal run directoryへ残します。
-- 同じjob IDは自動再実行しません。原因修正後は新しいrevision jobを追加します。
-- `complete`以外を完成品として報告しません。
-
-## 信頼境界
-
-- workerは`main`ブランチだけをpollします。
-- GitHub APIが返すcommit author loginを検査します。
-- 許可外moduleや危険builtinを含むPythonはBlender起動前に拒否します。
-- path traversal、絶対path、リポジトリ外sourceは拒否します。
-- workerのOS userがアクセスできる範囲を最小化します。
-- Blender scriptは強いsandboxではありません。workerは制作専用環境で動かします。
+新規制作の標準は v2 の Actions 経路です。v1 worker は [`docs/LEGACY_WORKER.md`](docs/LEGACY_WORKER.md) に従って別途運用します。

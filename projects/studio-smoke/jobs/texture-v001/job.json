@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "project_id": "studio-smoke",
+  "job_id": "texture-v001",
+  "title": "Texture processing and reusable workspace smoke test",
+  "timeout_seconds": 600,
+  "review_required": false,
+  "acceptance_criteria": ["Technical image processing steps exit successfully and preserve editable source outputs."],
+  "steps": [
+    {"id": "texture", "tool": "python", "script": "texture.py"},
+    {"id": "resize", "tool": "imagemagick", "operation": "resize", "params": {"input": "workspace/output/texture/albedo.png", "output": "albedo-small.png", "width": 128, "height": 128}},
+    {"id": "export", "tool": "krita", "operation": "export", "params": {"input": "workspace/output/texture/albedo.png", "output": "export.png"}}
+  ]
+}

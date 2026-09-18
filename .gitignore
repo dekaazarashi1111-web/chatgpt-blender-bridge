@@ -1,5 +1,7 @@
 config.json
 .worker/
+.creative-runs/
+.runtime-smoke/
 __pycache__/
 *.py[cod]
 *.log

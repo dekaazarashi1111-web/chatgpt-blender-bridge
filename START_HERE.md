@@ -1,99 +1,70 @@
-# START HERE
+# 最初の準備と制作の始め方
 
-## 1. 必要なもの
+新しい制作は GitHub Actions で実行します。Oracle、手元の Blender、常駐 worker は不要です。既存 worker の手順は [`docs/LEGACY_WORKER.md`](docs/LEGACY_WORKER.md) に移しました。
 
-- Python 3.11以上
-- Git
-- GitHub CLI (`gh`)
-- Blender 4.x
-- このリポジトリへcommitできるGitHubアカウント
+## 1. 初回だけ制作環境を用意する
 
-## 2. cloneと設定
+1. リポジトリの **Actions** を有効にする。
+2. **Build creative runtime** の workflow（`runtime.yml`）を実行して完了を確認する。
+3. GitHub Packages に `chatgpt-creative-runtime:runtime-v2` が作成されていることを確認する。
+4. **Creative workspace** の workflow（`creative-job.yml`）で同梱の v2 サンプルを実行し、ログ・出力・保存先を確認する。
 
-```bash
-git clone https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge.git
-cd chatgpt-blender-bridge
-cp config.example.json config.json
-```
+サンプルは [Blender の保存・4方向プレビュー](projects/studio-smoke/jobs/blender-v001/job.json) と [画像生成・リサイズ・Krita 書き出し](projects/studio-smoke/jobs/texture-v001/job.json) です。これらの `review_required=false` は技術動作確認用です。参考画像に合わせて作る実作品では、品質レビューを有効にしてください。
 
-Windows PowerShellでは次を使えます。
+ワークフロー名の表示が異なる場合は括弧内のファイル名で探してください。runtime は Blender・画像処理ツールを入れた共通環境です。毎回ソフトをインストールせず、この環境を取得して制作を始めます。環境を変更したときは `runtime.yml` を再実行します。
 
-```powershell
-./scripts/setup_windows.ps1
-```
+Actions は `GITHUB_TOKEN` を使って実行環境と成果物を管理します。通常の同一リポジトリ運用に個人の PAT を設定する必要はありません。リポジトリや組織のポリシーで Packages の公開・利用や Actions の書き込みが制限されている場合は、その設定を確認してください。
 
-Linuxでは次を使えます。
+実行環境の参照先は `ghcr.io/<owner>/chatgpt-creative-runtime:runtime-v2` です。制作開始時にイメージの digest を解決して記録し、どの環境で実行したか追跡します。ソフトのバージョンは runtime の実際の出力を確認してください。過去の会話で挙がった Blender のバージョンがそのまま導入されているとは限りません。
 
-```bash
-bash scripts/setup_linux.sh
-```
+## 2. 同じプロンプトと画像を渡す
 
-`config.json`の`blender_bin`が空なら、PATHと一般的なinstall先から自動検出します。検出されない場合だけ絶対pathを指定してください。
+[`CHATGPT_JOB_PROMPT.md`](CHATGPT_JOB_PROMPT.md) の短いプロンプトと、参考画像・制作依頼を ChatGPT へ渡してください。GitHub へ読み書きできる接続が必要です。
 
-## 3. 認証と診断
-
-```bash
-gh auth login
-gh auth setup-git
-python bridge_cli.py doctor
-```
-
-`DOCTOR=PASS`になるまでworkerを常駐させないでください。
-
-## 4. Blender smoke test
-
-```bash
-python bridge_cli.py smoke
-```
-
-合格時は`.worker/smoke/latest/`に次が作られます。
-
-- `output/model.blend`
-- `previews/front.png`
-- `previews/right.png`
-- `previews/back.png`
-- `previews/three_quarter.png`
-- `validation.json`
-- `manifest.json`
-
-## 5. worker起動
-
-一度だけ処理:
-
-```bash
-python bridge_cli.py worker --once
-```
-
-常駐:
-
-```bash
-python bridge_cli.py worker
-```
-
-Windowsならタスクスケジューラ、Linuxならsystemd等で`python bridge_cli.py worker`を再起動可能にしておくと安定します。
-
-## 6. ChatGPTからjobを追加
-
-通常チャットに[`CHATGPT_JOB_PROMPT.md`](CHATGPT_JOB_PROMPT.md)の内容を貼り、参照画像と制作指示を渡します。
-
-ChatGPTは次の順でファイルを作ります。
-
-1. `queue/pending/<job-id>/script.py`
-2. `queue/pending/<job-id>/job.json`（最後に作成）
-
-`job.json`が追加された時点でworkerが処理対象として認識します。
-
-## 7. 結果確認と修正
-
-結果は次へ返ります。
+ChatGPT は作品の brief、決定事項、入力、ジョブを `projects/<project_id>/` に保存します。ジョブ本体は次の場所です。
 
 ```text
-queue/status/<job-id>.json
-results/<job-id>/manifest.json
-results/<job-id>/previews/*.png
-results/<job-id>/blender.log
+projects/<project_id>/jobs/<job_id>/job.json
 ```
 
-`needs_review`ならpreviewを確認します。合格なら`queue/reviews/<job-id>.json`を追加し、不一致があれば元の結果を`source_blend`に指定した新しいjobを追加します。
+ファイル名や項目を会話から推測せず、現在の schema とサンプルを読みます。制作処理は `tools.json` に登録されたツールから選びます。
 
-同じjobを上書きせず、`character-v002`、`character-v003`のように新しいIDで履歴を残してください。
+**添付画像は自動的には Actions へ届きません。** 画像を実際に加工したり、テクスチャとして使ったりする場合は、実ファイルを入力として保存する必要があります。[`docs/INPUTS.md`](docs/INPUTS.md) を確認してください。
+
+## 3. ジョブを起動する
+
+新しい v2 ジョブを既定ブランチへ追加したときは、workflow の push 条件に従って対象を検出します。手動では Actions の `creative-job.yml` の **Run workflow** を使い、`job_path` に対象の `job.json` を指定します。空欄は未実行の対象ジョブを検出します。
+
+GitHub CLI を使える環境からの例です。
+
+```bash
+gh workflow run creative-job.yml \
+  --repo dekaazarashi1111-web/chatgpt-blender-bridge \
+  -f job_path=projects/my-project/jobs/model-v001/job.json
+```
+
+`my-project` と `model-v001` は実在する作品とジョブへ置き換えます。通常の GitHub 接続に workflow dispatch の操作がない場合も、対応する push 起動経路を確認できます。いずれも Actions の実行 URL を確認してから「投入済み」と扱ってください。
+
+1 回の検出は最大 32 件で、現在は順番に実行します。同時に重複実行しないよう workflow 全体を制御します。大量の未実行ジョブを置くより、前の工程の結果を確認してから次のジョブを作る方が制作に適しています。
+
+## 4. 結果を見る
+
+| 場所 | 確認するもの |
+|---|---|
+| Actions の実行 | step の成功・失敗、ツールのログ |
+| `workspace-state` ブランチの `workspaces/<project_id>/state.json` | 作品の現在の状態と最新保存地点 |
+| 同ブランチの `workspaces/<project_id>/jobs/<job_id>.json` | 対象ジョブの状態・実行情報・snapshot |
+| 状態から参照される Release | 制作ファイル、manifest、復元するアーカイブ |
+| Actions artifact | 調査用のログや出力。保存期限がある |
+
+ツールが正常終了しただけでは完成ではありません。Blender なら保存後の開き直し検査とプレビューを、テクスチャなら画像そのものと必要なマップを確認します。レビューが必要なジョブは対象版のレビューを追加します。詳細は [`EXECUTION_CONTRACT.md`](EXECUTION_CONTRACT.md) と [`docs/REVIEW.md`](docs/REVIEW.md) にあります。
+
+## 5. 別セッションで再開する
+
+同じ短い開始プロンプトへ作品 ID と「続きから」を付けて渡してください。新しい ChatGPT は `workspace-state` を読み、まだ動いているジョブを確認します。
+
+- 実行中なら新規ジョブを重ねず、既存の実行を確認する。
+- 停止・失敗していたら、最後に保存できた snapshot を復元する。
+- 完了済みなら、成果物とレビューを読み、次の作業へ進む。
+
+復元できるのは保存済みのファイルです。途中のメモリ状態は引き継がれません。[`docs/RESUME.md`](docs/RESUME.md) に具体的な再開情報をまとめています。

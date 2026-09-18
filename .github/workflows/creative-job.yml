@@ -1,0 +1,94 @@
+name: Creative workspace
+
+on:
+  push:
+    branches: [main]
+    paths: ['projects/*/jobs/*/job.json', 'projects/*/reviews/*.json']
+  workflow_dispatch:
+    inputs:
+      job_path:
+        description: 'Optional projects/<project>/jobs/<job>/job.json; empty processes pending jobs'
+        required: false
+        default: ''
+  workflow_run:
+    workflows: ['Build creative runtime']
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: write
+  packages: read
+  actions: read
+
+# Each run scans all durable pending descriptors; a later queued run includes earlier submissions.
+concurrency:
+  group: creative-workspace-main
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: >-
+      github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.actor.login == github.repository_owner ||
+      github.event_name != 'workflow_run' && github.actor == github.repository_owner
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.select.outputs.matrix }}
+      has_jobs: ${{ steps.select.outputs.has_jobs }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Apply pinned image reviews
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 ci/review_workspace.py
+      - id: select
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUESTED_JOB: ${{ inputs.job_path }}
+        run: python3 ci/select_creative_jobs.py --job "$REQUESTED_JOB"
+
+  create:
+    needs: prepare
+    if: needs.prepare.outputs.has_jobs == 'true'
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch the verified tool environment and pin this run's digest
+        id: runtime
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/chatgpt-creative-runtime"
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          if ! docker pull "$image:runtime-v2"; then
+            echo 'Runtime is not published yet. Build creative runtime, then this workflow will retry pending jobs.'
+            exit 1
+          fi
+          digest=$(docker image inspect "$image:runtime-v2" --format '{{index .RepoDigests 0}}')
+          echo "image=$digest" >> "$GITHUB_OUTPUT"
+          docker logout ghcr.io
+      - name: Execute isolated tools and publish durable checkpoints
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_PATH: ${{ matrix.job }}
+          RUNTIME_IMAGE: ${{ steps.runtime.outputs.image }}
+        run: python3 ci/run_creative_job.py --job "$JOB_PATH" --image "$RUNTIME_IMAGE"
+      - name: Preserve host logs even on failure
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: creative-host-${{ matrix.project }}-${{ strategy.job-index }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .creative-runs/*/trusted/*.log
+            .creative-runs/*/trusted/result.json
+          include-hidden-files: true
+          retention-days: 30

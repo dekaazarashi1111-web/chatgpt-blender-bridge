@@ -1,0 +1,54 @@
+# 参考画像と素材の入力
+
+## チャットの画像と制作入力は別
+
+ChatGPT が添付画像を見られる場合でも、Actions のコンテナはその添付ファイルを自動的に読めません。
+
+- **画像を見て形状や配色を考える**：ChatGPT が画像を読み、制作指示とスクリプトへ反映できる。
+- **画像を加工する・テクスチャとして貼る**：画像の実バイトを保存し、Actions の入力にする必要がある。
+
+後者では元画像の保存ができていないのに、代替画像を作って「参考画像を取り込んだ」と扱わないでください。
+
+## 保存の方針
+
+作品の入力は `projects/<project_id>/inputs/` にまとめ、元ファイル名、役割、入手元、利用条件を brief か入力一覧へ記録します。ジョブの `inputs` には `path`（`projects/<project_id>/inputs/` または `source/` 以下）、`target`（コンテナへ配置する相対パス）、`sha256`（元ファイルの SHA-256）を指定します。例えば target が `references/front.png` なら、ツールの入力は `input/references/front.png`、script では `INPUT_DIR / "references/front.png"` です。SHA-256 が一致しない入力は受け付けません。
+
+GitHub 接続でバイナリを直接アップロードできるなら、その操作で保存します。ローカル実行環境を使える場合は、同梱 helper でファイルを配置し、job 用の入力定義を生成できます。
+
+入力が大きい場合は Release などの保存先から runner 側で事前取得する経路が必要です。制作中のコンテナから外部 URL をダウンロードすることはできません。現在の実装に存在しない取得経路を使えると主張しないでください。
+
+## 入力を配置する helper
+
+リポジトリのルートで実行します。`--source` は取得済みの実ファイル、`--target` は作品の `inputs/` 以下に配置する相対パスです。
+
+```bash
+python ci/import_reference.py \
+  --project my-project \
+  --source /path/to/front.png \
+  --target references/front.png
+```
+
+元画像の実バイトを base64 にしたテキストファイルがある場合は、`--base64` を付けます。
+
+```bash
+python ci/import_reference.py \
+  --project my-project \
+  --source /path/to/front.png.base64 \
+  --target references/front.png \
+  --base64
+```
+
+helper はローカルの `projects/my-project/inputs/references/front.png` を新規作成し、`path`・`target`・`sha256` の JSON を出力します。その JSON を job の `inputs` 配列へ追加します。既存ファイルは上書きせず、デコード後のサイズは最大 20 MiB です。
+
+**helper 自体は GitHub へアップロードしません。** 作成されたバイナリを Git の commit/push または対応するアップロード操作で保存してからジョブを追加してください。テキストしか書けない GitHub 接続単独で、この helper を実行して添付画像を自動転送できるわけではありません。実ファイル取得・ローカル実行・GitHub 保存のいずれかが使えなければ、その制約を明示します。
+
+## 再現性
+
+- 入力と script が揃った後にジョブ定義を追加し、実行対象 commit を固定する。
+- 入力を変えて再制作する場合は新しい job ID を使う。
+- 外部依存テクスチャは出力 snapshot に含めるか、Blender ファイルへ pack する。
+- 復元対象の入力・成果物は manifest のサイズと SHA-256 で照合する。
+
+制作コンテナにネットワークがないため、CC0 素材サイトなどから新しい素材を探してダウンロードする工程は制作実行の外側で行います。収録済み素材がない場合は、手元の入力と登録済みツールで生成できるものを使います。
+
+このリポジトリは公開です。入力画像とその派生物を保存すると公開されるため、公開可能な素材を使ってください。

@@ -1,0 +1,50 @@
+name: Build creative runtime
+
+on:
+  push:
+    branches: [main]
+    paths: ['runtime/**', '.github/workflows/runtime.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: creative-runtime-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.actor == github.repository_owner
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Build reusable tool environment
+        run: |
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/chatgpt-creative-runtime"
+          echo "RUNTIME_IMAGE=$image" >> "$GITHUB_ENV"
+          docker build -f runtime/Dockerfile --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" --label "org.opencontainers.image.revision=$GITHUB_SHA" -t "$image:runtime-v2" .
+      - name: Test actual tools without network or credentials
+        run: |
+          mkdir -p .runtime-smoke
+          docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --user "$(id -u):$(id -g)" --tmpfs /tmp:rw,nosuid,size=2147483648 -e HOME=/tmp/creative-home -e LIBGL_ALWAYS_SOFTWARE=1 -e PYTHONDONTWRITEBYTECODE=1 -v "$PWD:/repo:ro" -v "$PWD/.runtime-smoke:/work" "$RUNTIME_IMAGE:runtime-v2" xvfb-run -a python3 /repo/runtime/smoke.py --output /work/smoke
+      - name: Publish verified runtime
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker tag "$RUNTIME_IMAGE:runtime-v2" "$RUNTIME_IMAGE:build-$GITHUB_SHA"
+          docker push "$RUNTIME_IMAGE:build-$GITHUB_SHA"
+          docker push "$RUNTIME_IMAGE:runtime-v2"
+          docker logout ghcr.io
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: creative-runtime-smoke-${{ github.run_id }}
+          path: .runtime-smoke/
+          include-hidden-files: true
+          retention-days: 30

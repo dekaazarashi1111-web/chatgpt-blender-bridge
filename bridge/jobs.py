@@ -16,6 +16,14 @@ AUTOMATIC_CHECKS = {"script_exit", "blend_exists", "reopen_ok", "report_exists"}
 ALLOWED_IMPORT_ROOTS = {"bpy", "math", "mathutils", "json", "random"}
 DENIED_NAMES = {"open", "eval", "exec", "compile", "__import__", "input", "breakpoint"}
 DENIED_ATTRIBUTES = {"system", "popen", "spawn", "unlink", "rmdir", "remove", "rmtree"}
+BLENDER_DATA_COLLECTIONS = {
+    "actions", "armatures", "brushes", "cache_files", "cameras", "collections", "curves",
+    "fonts", "grease_pencils", "hair_curves", "images", "lattices", "libraries", "lightprobes",
+    "lights", "linestyles", "masks", "materials", "meshes", "metaballs", "movieclips",
+    "node_groups", "objects", "paint_curves", "palettes", "particles", "pointclouds",
+    "scenes", "screens", "shape_keys", "sounds", "speakers", "texts", "textures", "volumes",
+    "window_managers", "workspaces", "worlds",
+}
 
 
 class JobError(RuntimeError):
@@ -46,7 +54,36 @@ def resolve_repo_path(value: str, *, must_exist: bool = True) -> Path:
     return path
 
 
+def _attribute_path(node: ast.AST) -> str | None:
+    if isinstance(node, ast.Name):
+        return node.id
+    if isinstance(node, ast.Attribute):
+        parent = _attribute_path(node.value)
+        if parent is not None:
+            return f"{parent}.{node.attr}"
+    return None
+
+
+def _known_scene(node: ast.AST) -> bool:
+    if _attribute_path(node) == "bpy.context.scene":
+        return True
+    if isinstance(node, ast.Subscript) and _attribute_path(node.value) == "bpy.data.scenes":
+        return True
+    return isinstance(node, ast.Call) and _attribute_path(node.func) == "bpy.data.scenes.new"
+
+
+def _safe_blender_attribute(node: ast.Attribute, scene_aliases: set[str]) -> bool:
+    if node.attr == "remove":
+        receiver = _attribute_path(node.value)
+        return receiver in {f"bpy.data.{name}" for name in BLENDER_DATA_COLLECTIONS}
+    if node.attr == "system" and isinstance(node.value, ast.Attribute) and node.value.attr == "unit_settings":
+        scene = node.value.value
+        return _known_scene(scene) or isinstance(scene, ast.Name) and scene.id in scene_aliases
+    return False
+
+
 def validate_script(path: Path) -> None:
+    """Legacy restrictive lint; this is not a security sandbox for Python."""
     source = path.read_text(encoding="utf-8")
     if len(source.encode("utf-8")) > 1_000_000:
         raise JobError("script.py exceeds 1,000,000 bytes")
@@ -54,6 +91,18 @@ def validate_script(path: Path) -> None:
         tree = ast.parse(source, filename=str(path))
     except SyntaxError as exc:
         raise JobError(f"Invalid Python syntax: {exc}") from exc
+    # Only accept scene aliases assigned once from a known Blender scene. An
+    # arbitrary object's .system or .remove remains forbidden by this lint.
+    stores: dict[str, int] = {}
+    aliases: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Name) and isinstance(node.ctx, (ast.Store, ast.Del)):
+            stores[node.id] = stores.get(node.id, 0) + 1
+        if isinstance(node, ast.Assign) and _known_scene(node.value):
+            aliases.update(target.id for target in node.targets if isinstance(target, ast.Name))
+        elif isinstance(node, ast.AnnAssign) and node.value is not None and _known_scene(node.value) and isinstance(node.target, ast.Name):
+            aliases.add(node.target.id)
+    scene_aliases = {name for name in aliases if stores.get(name) == 1}
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
             for alias in node.names:
@@ -66,7 +115,7 @@ def validate_script(path: Path) -> None:
         elif isinstance(node, ast.Name) and node.id in DENIED_NAMES:
             raise JobError(f"Builtin is not allowed: {node.id}")
         elif isinstance(node, ast.Attribute):
-            if node.attr.startswith("__") or node.attr in DENIED_ATTRIBUTES:
+            if node.attr.startswith("__") or node.attr in DENIED_ATTRIBUTES and not _safe_blender_attribute(node, scene_aliases):
                 raise JobError(f"Attribute is not allowed: {node.attr}")
 
 

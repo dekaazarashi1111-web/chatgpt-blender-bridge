@@ -1,70 +1,72 @@
-# ChatGPT Blender Bridge
+# ChatGPT Creative Bridge
 
-GitHubをジョブキューとして使い、別のPCやサーバーでBlenderを継続実行するための公開ワークスペースです。
+参考画像と制作指示を渡し、ChatGPT が GitHub Actions 上の制作ツールを使うためのワークスペースです。Blender による造形・UV・材質・レンダーに加え、画像・テクスチャの加工を共通のジョブで扱います。通常の利用に Oracle や自宅 PC の常駐 worker は不要です。
 
-通常チャットはBlender用Pythonと`job.json`をGitHubへ追加します。常駐workerは`main`ブランチを監視し、信頼済みauthorのジョブだけをBlenderで実行します。結果の`.blend`、複数方向preview、検証report、ログ、SHA-256をGitHubへ返します。
+**毎回使う入口は [`CHATGPT_JOB_PROMPT.md`](CHATGPT_JOB_PROMPT.md) です。** 初回の実行環境の準備は [`START_HERE.md`](START_HERE.md) を参照してください。
 
-```text
-ChatGPT
-  └─ queue/pending/<job-id>/script.py と job.json を作成
-       ↓
-GitHub main branch
-       ↓ git pull
-Blender worker
-  ├─ author・schema・scriptを検証
-  ├─ Blender background実行
-  ├─ .blendを保存して開き直し検査
-  ├─ 正面・側面・背面・斜めpreviewを生成
-  └─ queue/status と resultsへ結果をpush
-       ↓
-ChatGPTがpreviewを比較し、reviewまたは次の修正jobを追加
-```
+## 制作の流れ
 
-このリポジトリは公開され、ジョブ、スクリプト、ログ、preview、公開可能な成果物はGitHub上から閲覧できます。
+1. ChatGPT が作品の指示・参考画像・前回の進捗と、利用可能なツールを読む。
+2. `projects/<project_id>/jobs/<job_id>/` に入力と処理を定義する。
+3. Actions が登録済みツールを順番に実行する。
+4. 成果物・ログ・プレビュー・再開データを保存する。
+5. ChatGPT が成果物を確認し、必要なら新しいジョブで修正する。
 
-## 最短手順
+制作処理はネットワークを無効にしたコンテナ内で実行します。実行環境の構築・取得、GitHub からの入力取得、成果物の保存にはネットワークが必要です。「GitHub 上で完結」は、完全オフラインという意味ではありません。
 
-1. [`START_HERE.md`](START_HERE.md)に従ってworkerを準備する。
-2. `python bridge_cli.py doctor`でGit・GitHub・Blenderを確認する。
-3. `python bridge_cli.py smoke`で実際のBlender保存・preview・再読込を確認する。
-4. `python bridge_cli.py worker`を常駐させる。
-5. [`CHATGPT_JOB_PROMPT.md`](CHATGPT_JOB_PROMPT.md)を通常チャットへ貼る。
+## 制作ツール
 
-WindowsとLinuxに対応します。Pythonの追加パッケージは不要です。Blender 4.x、Git、GitHub CLIを使います。
+実際に呼び出せる操作と引数は [`tools.json`](tools.json) が正本です。
 
-## 完成判定
-
-workerが終了コード0を返しただけでは完成になりません。
-
-- 出力`.blend`が存在する。
-- Blenderで保存後のファイルを開き直せる。
-- 指定した方向のpreviewがすべて存在する。
-- 必須の自動基準がすべてPASSしている。
-- `review_required=true`なら、preview確認後のreviewが`approved`である。
-
-未達時は`failed`、`blocked`、`needs_review`、`changes_requested`のいずれかになり、`complete`にはなりません。詳しくは[`EXECUTION_CONTRACT.md`](EXECUTION_CONTRACT.md)を参照してください。
-
-## ディレクトリ
-
-| Path | 用途 |
+| ツール | 用途 |
 |---|---|
-| `queue/pending/` | ChatGPTが追加する実行job |
-| `queue/reviews/` | preview確認後の判定 |
-| `queue/status/` | workerが返す状態 |
-| `results/` | report、preview、ログ、公開可能な`.blend` |
-| `.worker/` | workerのlocal stateと全成果物。Git管理外 |
-| `bridge/` | queue、検証、Blender実行コード |
-| `examples/` | 動作確認job |
+| Blender | 造形、UV、材質、ベイク、レンダー、保存後の検証 |
+| Python + Pillow / NumPy | テクスチャ、マスク、画像合成、数値処理 |
+| ImageMagick | 画像形式の変換・縦横比を保ったリサイズ |
+| FFmpeg | 画像列や動画の変換、プレビュー作成 |
+| Krita CLI | 登録済みのコマンドライン書き出し操作 |
 
-## 安全境界
+Krita を導入しても任意の画面操作や手描きが自動化されるわけではありません。Material Maker は追加候補であり、標準環境で利用可能と扱わないでください。ゲームエンジンは対象に含めていません。ツールの追加方法は [`docs/TOOLS.md`](docs/TOOLS.md) を参照してください。
 
-- workerは`main`だけを監視します。
-- `job.json`、`script.py`、入力`.blend`の最終commit authorが、すべて`config.json`の`trusted_authors`に一致する場合だけ実行します。
-- ジョブscriptは許可moduleを静的検査し、`os`、`subprocess`、`socket`、`open`、`eval`等を拒否します。
-- `source_blend`とscriptはリポジトリ内だけを参照できます。
-- workerはBlender専用のOS userまたはcontainerで実行してください。
-- pull requestのコードをworker上で実行しないでください。
+## 実行時間と保存
+
+| 項目 | 設定・意味 |
+|---|---|
+| Actions の 1 ジョブ | 最大 360 分。準備と保存を含む |
+| 制作処理の合計予算 | 既定 18,000 秒（5 時間）、最大 19,800 秒（5 時間半） |
+| 残り時間 | 実行環境・入力の取得、検証、成果物保存のための余裕 |
+| 長い制作 | 工程を複数ジョブに分割し、保存済みデータから続行 |
+
+これは実行可能な上限であり、ChatGPT のセッションがその時間ずっと継続する保証ではありません。コンテナの取得や大きな成果物の転送時間によっては、余裕をさらに増やす必要があります。
+
+制作指示・ソースは通常のブランチに、機械が更新する状態は専用の `workspace-state` ブランチに保存します。大きな制作データは Releases のスナップショットとして保存し、SHA-256 で照合して復元します。キャッシュや保存期限付きの Actions artifact だけに再開を依存させません。
+
+ChatGPT のセッションが消えても、投入済みの Actions は通常そのまま動きます。別セッションでは作品 ID から保存済み状態を読みます。復元できるのは GitHub に保存を完了した地点までです。詳しくは [`docs/RESUME.md`](docs/RESUME.md) を参照してください。
+
+## 主なファイル
+
+| パス | 用途 |
+|---|---|
+| `CHATGPT_JOB_PROMPT.md` | 固定の開始プロンプト |
+| `EXECUTION_CONTRACT.md` | 実行・保存・完成判定のルール |
+| `tools.json` | 利用可能なツールと操作 |
+| `creative-job.schema.json` | v2 ジョブの形式 |
+| `projects/studio-smoke/jobs/` | Blender・画像処理の v2 サンプル |
+| `projects/` | 作品ごとの指示、入力、ジョブ、レビュー |
+| `.github/workflows/creative-job.yml` | 汎用制作ジョブ |
+| `.github/workflows/runtime.yml` | 制作環境の構築・登録 |
+| `ci/run_creative_job.py` | 実行、検証、保存の調整 |
+| `docs/` | 入力・再開・ツール追加の説明 |
+| `queue/`, `results/`, `bridge/worker.py` | 既存 v1 worker と制作記録 |
+
+## 完成と安全境界
+
+処理の終了コードが 0 でも作品の完成を意味しません。指定した成果物と検査結果が揃い、必要なプレビューを実際に確認してから完成と判断します。失敗・途中版・品質確認待ちを完成品として報告しません。
+
+制作コンテナに GitHub の書き込みトークンを渡さず、保存を行う処理と分離します。静的検査は補助的な検査であり、単独の安全境界として扱いません。未確認の PR を書き込み権限付きで実行しないでください。公開リポジトリへ保存した参考画像・制作物・ログも公開されます。
+
+既存 worker を使いたい場合だけ [`docs/LEGACY_WORKER.md`](docs/LEGACY_WORKER.md) を参照してください。v1 のジョブと記録は保存してあります。
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE)。取り込む参考画像・素材・ツールにはそれぞれの利用条件が適用されます。
