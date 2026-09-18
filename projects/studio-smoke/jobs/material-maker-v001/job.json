@@ -1,0 +1,57 @@
+{
+  "schema_version": 2,
+  "project_id": "studio-smoke",
+  "job_id": "material-maker-v001",
+  "title": "Material Maker six PBR maps imported, packed and reopened in Blender",
+  "timeout_seconds": 1200,
+  "review_required": false,
+  "acceptance_criteria": [
+    "Material Maker exports six real 2048px PBR maps and preserves editable source.",
+    "Blender imports verified maps, connects PBR inputs, packs images, renders four views and reopens its saved model."
+  ],
+  "inputs": [
+    {
+      "path": "projects/studio-smoke/inputs/material/terracotta.ptex",
+      "target": "material/terracotta.ptex",
+      "sha256": "dd1cf0d5120c6d9bcdf8ed820f8b410ada6cf5d0a92fd0e4c5bb6c96d1bce8a6"
+    }
+  ],
+  "steps": [
+    {
+      "id": "material",
+      "tool": "material_maker",
+      "operation": "export",
+      "params": {
+        "input": "input/material/terracotta.ptex",
+        "output": "terracotta",
+        "maps": [
+          "albedo",
+          "roughness",
+          "metallic",
+          "normal",
+          "height",
+          "ao"
+        ]
+      }
+    },
+    {
+      "id": "model",
+      "tool": "blender",
+      "script": "model.py",
+      "params": {
+        "material_dir": "output/material"
+      },
+      "preview": {
+        "views": [
+          "front",
+          "right",
+          "back",
+          "three_quarter"
+        ],
+        "width": 256,
+        "height": 256,
+        "samples": 8
+      }
+    }
+  ]
+}

@@ -11,8 +11,9 @@
 | 画像の形式変換・リサイズ | ImageMagick |
 | レンダーした画像列の動画化・変換 | FFmpeg |
 | 対応形式からの Krita CLI 書き出し | Krita CLI |
+| ノードグラフからPBRテクスチャ生成 | Material Maker |
 
-Krita は画面上で筆を自由に操作する仕組みではありません。Material Maker はまだ標準の登録ツールではありません。必要な書き出し操作を実装し、Actions で検証してから利用可能にします。ゲームエンジンは現在の対象外です。
+KritaはCLI書き出しに対応します。Material Makerは `.ptex` からBlender向けPBR画像を書き出します。具体例は [`MATERIAL_MAKER.md`](MATERIAL_MAKER.md) を参照してください。ゲーム制作の機能は現在の対象外です。
 
 ## 呼び出し形式
 
@@ -25,6 +26,7 @@ Krita は画面上で筆を自由に操作する仕組みではありません�
 | `ffmpeg` | `encode` | `input`、`output`、任意の `fps`、`crf`、`width` |
 | `ffmpeg` | `thumbnail` | `input`、`output`、任意の `time_seconds`、`width` |
 | `krita` | `export` | `input`、`output` |
+| `material_maker` | `export` | `input`（`.ptex`）、`output`（ファイル名の接頭辞）、任意の必須出力 `maps` |
 
 script は `PARAMS`、`INPUT_DIR`、`OUTPUT_DIR`、`WORKSPACE_DIR` を使います。入力パスは `input/` または `workspace/`、外部ツールの出力パスは現在の step の出力ディレクトリからの相対パスです。通常の工程出力は `workspace/output/<step_id>/` 以下にあります。任意の CLI オプションや shell command を job に渡すことはできません。詳細なスクリプト API は [`../runtime/README.md`](../runtime/README.md) を参照してください。
 

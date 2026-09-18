@@ -21,7 +21,7 @@ GitHub の dekaazarashi1111-web/chatgpt-blender-bridge を使って制作して�
 3. `workspace-state` ブランチの対象作品の状態と、対応する Actions 実行・Release manifest。ブランチがない場合は未作成として扱う。
 4. 入力を追加する場合は `docs/INPUTS.md`、再開する場合は `docs/RESUME.md`。
 
-使えるツール・操作・設定値は実ファイルから確認する。会話中の過去の説明より、現在の実装と実行記録を優先する。Material Maker など未登録のツールを利用済みと主張しない。
+使えるツール・操作・設定値は実ファイルから確認する。会話中の過去の説明より、現在の実装と実行記録を優先する。Material Makerを使う場合は `docs/MATERIAL_MAKER.md` を読み、編集可能な `.ptex` と必要な入力画像を保存する。未登録の操作を利用済みと主張しない。
 
 ### 指示と入力を残す
 

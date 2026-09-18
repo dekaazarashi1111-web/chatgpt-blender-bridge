@@ -25,8 +25,9 @@
 | ImageMagick | 画像形式の変換・縦横比を保ったリサイズ |
 | FFmpeg | 画像列や動画の変換、プレビュー作成 |
 | Krita CLI | 登録済みのコマンドライン書き出し操作 |
+| Material Maker | 編集可能なノードグラフからPBRテクスチャを生成、Blenderへ取り込み |
 
-Krita を導入しても任意の画面操作や手描きが自動化されるわけではありません。Material Maker は追加候補であり、標準環境で利用可能と扱わないでください。ゲームエンジンは対象に含めていません。ツールの追加方法は [`docs/TOOLS.md`](docs/TOOLS.md) を参照してください。
+KritaはCLI書き出し、Material Makerは材質グラフの書き出しに対応します。Material Makerの使い方は [`docs/MATERIAL_MAKER.md`](docs/MATERIAL_MAKER.md) にあります。ゲーム制作の機能は対象に含めていません。ツールの追加方法は [`docs/TOOLS.md`](docs/TOOLS.md) を参照してください。
 
 ## 実行時間と保存
 

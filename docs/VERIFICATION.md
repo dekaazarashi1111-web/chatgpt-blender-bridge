@@ -48,4 +48,12 @@ ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:3e7adf0a7a1aaab0f21
 | Pillow | 10.2 |
 | NumPy | 1.26.4 |
 
-制作予算の既定5時間・最大5時間半は設定値です。5時間連続の負荷試験を完了したという意味ではありません。この確認は技術動作のサンプルを対象とし、実作品の品質レビューは各制作で行います。参考画像の実ファイルは別途 GitHub へ保存する必要があり、チャット添付の自動転送は含みません。Material Maker は未導入です。
+制作予算の既定5時間・最大5時間半は設定値です。5時間連続の負荷試験を完了したという意味ではありません。この確認は技術動作のサンプルを対象とし、実作品の品質レビューは各制作で行います。参考画像の実ファイルは別途 GitHub へ保存する必要があり、チャット添付の自動転送は含みません。Material Maker の追加後の確認は末尾を参照してください。
+
+## Material Maker 追加後の確認
+
+Material Maker 1.7 の公式配布ファイルに、CPU描画の初期化待ちとCLI終了時のスレッド終了処理を追加しました。
+
+- [実行環境の構築・ネットワークなしの実ツール検証](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35359330307)：6種類の2048×2048 PBR画像を生成し、Blenderで接続・画像pack・保存後再読込・4方向レンダーを検証。
+- [schema・単体テスト](https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35359330358)：59件成功、skipなし。
+- 使用するジョブは [`material-maker-v001`](../projects/studio-smoke/jobs/material-maker-v001/job.json)。
