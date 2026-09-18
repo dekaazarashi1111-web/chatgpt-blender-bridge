@@ -113,7 +113,7 @@ class CreativeJobTests(unittest.TestCase):
 
     def test_unavailable_tool_and_duplicate_step_are_rejected(self) -> None:
         job = copy.deepcopy(self.job)
-        job["steps"][0]["tool"] = "material_maker"
+        job["steps"][0]["tool"] = "meshroom"
         with self.assertRaisesRegex(JobError, "unavailable"):
             self.load(job)
         self.job["steps"].append(copy.deepcopy(self.job["steps"][0]))
@@ -185,6 +185,24 @@ class CreativeJobTests(unittest.TestCase):
             job = copy.deepcopy(self.job)
             job["inputs"][0]["target"] = value
             self.assertTrue(list(Draft202012Validator(schema).iter_errors(job)), value)
+        job = copy.deepcopy(self.job)
+        job["steps"] = [{"id": "material", "tool": "material_maker", "operation": "export",
+                         "params": {"input": "workspace/material/graph.ptex", "output": "clay", "maps": ["albedo", "normal"]}}]
+        Draft202012Validator(schema).validate(self.load(job)[0])
+
+    def test_material_maker_parameters_reject_invalid_exports(self) -> None:
+        job = copy.deepcopy(self.job)
+        step = {"id": "material", "tool": "material_maker", "operation": "export",
+                "params": {"input": "workspace/material/graph.ptex", "output": "clay"}}
+        job["steps"] = [step]
+        self.load(job)
+        for key, value in (("input", "input/not-declared.ptex"), ("input", "workspace/graph.png"),
+                           ("output", "dir/clay"), ("maps", []), ("maps", ["albedo", "albedo"]),
+                           ("maps", [True]), ("size", 128)):
+            invalid = copy.deepcopy(job)
+            invalid["steps"][0]["params"][key] = value
+            with self.subTest(key=key, value=value), self.assertRaises(JobError):
+                self.load(invalid)
 
 
 if __name__ == "__main__":

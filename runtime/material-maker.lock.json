@@ -1,0 +1,9 @@
+{
+  "version": "1.7",
+  "url": "https://github.com/RodZill4/material-maker/releases/download/1.7/material_maker_1_7_linux.tar.gz",
+  "sha256": "c8e3b6f1993540875d26fe49645c91511bba36cda0412c715bd13249f7141647",
+  "archive_root": "material_maker_1_7_linux",
+  "executable": "material_maker.x86_64",
+  "source_commit": "4c6cea67b659e1eb472f91590e06b2b1c5245916",
+  "source_url": "https://github.com/RodZill4/material-maker/tree/1.7"
+}

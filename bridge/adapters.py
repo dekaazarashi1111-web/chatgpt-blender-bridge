@@ -168,4 +168,21 @@ def build_command(step: dict, context: Mapping[str, Any]) -> list[str]:
         target = output_path(params["output"], context, {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"})
         return ["xvfb-run", "-a", "env", "QT_QPA_PLATFORM=xcb", "krita", "--nosplash",
                 "--export", "--export-filename", str(target), str(source)]
+    if tool == "material_maker":
+        if step.get("operation") != "export":
+            raise AdapterError("Material Maker supports export")
+        params = parameters(step, {"input", "output", "maps"}, {"input", "output"})
+        source = input_path(params["input"], context)
+        if source.suffix.lower() != ".ptex":
+            raise AdapterError("Material Maker input must be a .ptex graph")
+        prefix = params["output"]
+        if not isinstance(prefix, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,79}", prefix):
+            raise AdapterError("Material Maker output must be a filename prefix (letters, digits, _ or -)")
+        maps = params.get("maps", ["albedo"])
+        allowed = {"albedo", "roughness", "metallic", "normal", "height", "ao", "emission", "sss"}
+        if not isinstance(maps, list) or not 1 <= len(maps) <= 8 or any(not isinstance(m, str) or m not in allowed for m in maps) or len(set(maps)) != len(maps):
+            raise AdapterError("Material Maker maps must be a nonempty unique list of supported map names")
+        return ["python3", "-u", str(Path(context["repo_root"]) / "bridge/material_maker.py"),
+                "--input", str(source), "--output-dir", str(context["output_dir"]),
+                "--prefix", prefix, "--maps", json.dumps(maps)]
     raise AdapterError(f"Tool is not available in this runtime: {tool}")

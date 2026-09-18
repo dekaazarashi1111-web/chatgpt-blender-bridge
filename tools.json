@@ -12,8 +12,18 @@
     {
       "id": "blender",
       "status": "included",
-      "operations": ["script"],
-      "uses": ["modeling", "UV", "procedural materials", "PBR baking", "rigging", "animation", "rendering"],
+      "operations": [
+        "script"
+      ],
+      "uses": [
+        "modeling",
+        "UV",
+        "procedural materials",
+        "PBR baking",
+        "rigging",
+        "animation",
+        "rendering"
+      ],
       "entry": "bridge/tool_entry.py",
       "editable_output": "model.blend",
       "notes": "CPU/software rendering. bpy scripts can call checkpoint(stage, summary) to save a packed editable scene. References must be declared job inputs. No model-generation API or pretrained model is included."
@@ -21,38 +31,74 @@
     {
       "id": "python",
       "status": "included",
-      "operations": ["script"],
-      "modules": ["Pillow", "numpy", "Python standard library"],
-      "uses": ["texture generation", "masks", "image compositing", "contact sheets", "normal/height map processing"],
+      "operations": [
+        "script"
+      ],
+      "modules": [
+        "Pillow",
+        "numpy",
+        "Python standard library"
+      ],
+      "uses": [
+        "texture generation",
+        "masks",
+        "image compositing",
+        "contact sheets",
+        "normal/height map processing"
+      ],
       "notes": "Script-defined image processing. Save results under OUTPUT_DIR; checkpoint copies completed output files. Algorithms such as normal-map synthesis must be supplied in the script."
     },
     {
       "id": "imagemagick",
       "status": "included",
-      "operations": ["resize", "convert"],
-      "uses": ["image format conversion", "aspect-preserving resizing"],
+      "operations": [
+        "resize",
+        "convert"
+      ],
+      "uses": [
+        "image format conversion",
+        "aspect-preserving resizing"
+      ],
       "notes": "Explicit params only: input, output, quality; resize also requires width and height. No arbitrary CLI flags, external delegates, or document/URL coders."
     },
     {
       "id": "ffmpeg",
       "status": "included",
-      "operations": ["encode", "thumbnail"],
-      "uses": ["turntable video encoding", "image-sequence video", "preview frames"],
+      "operations": [
+        "encode",
+        "thumbnail"
+      ],
+      "uses": [
+        "turntable video encoding",
+        "image-sequence video",
+        "preview frames"
+      ],
       "notes": "Encode outputs MP4 or WebM, input may contain one %d or %04d image-sequence token. No network protocols."
     },
     {
       "id": "krita",
       "status": "included",
-      "operations": ["export"],
-      "uses": ["export layered KRA/ORA/PSD artwork to raster images"],
+      "operations": [
+        "export"
+      ],
+      "uses": [
+        "export layered KRA/ORA/PSD artwork to raster images"
+      ],
       "notes": "Headless export only. Installing Krita does not provide automated GUI painting, brush interaction, or arbitrary layer editing."
     },
     {
       "id": "material_maker",
-      "status": "optional_unavailable",
-      "operations": [],
-      "uses": ["future procedural PBR material graph export"],
-      "notes": "Not installed or callable. Enable only after adding a pinned runtime, explicit adapter, and actual headless smoke test. Blender material nodes and Python handle procedural textures today."
+      "status": "included",
+      "operations": [
+        "export"
+      ],
+      "uses": [
+        "procedural PBR graph export",
+        "editable material graphs",
+        "Blender PBR texture sets"
+      ],
+      "notes": "Official SHA-256 pinned release; Vulkan compute on CPU via Mesa lavapipe. params: input (.ptex in a dedicated folder), output (filename prefix), optional maps (required outputs). One Static PBR Material per graph. Blender target exports 2048px PNG/EXR maps; upstream 1.7 --size is not used because it does not affect export resolution. Source folder and relative image dependencies are saved under source/. No website downloads or GUI painting. See docs/MATERIAL_MAKER.md.",
+      "version": "1.7"
     }
   ]
 }

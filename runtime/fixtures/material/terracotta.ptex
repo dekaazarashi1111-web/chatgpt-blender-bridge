@@ -1,0 +1,187 @@
+{
+  "type": "graph",
+  "name": "terracotta",
+  "label": "Editable terracotta bricks",
+  "node_position": {
+    "x": 0,
+    "y": 0
+  },
+  "parameters": {},
+  "nodes": [
+    {
+      "name": "Bricks",
+      "type": "bricks",
+      "node_position": {
+        "x": 0,
+        "y": 0
+      },
+      "parameters": {
+        "bevel": 0.08,
+        "columns": 4,
+        "rows": 8,
+        "mortar": 0.07,
+        "pattern": 0,
+        "repeat": 1,
+        "round": 0,
+        "row_offset": 0.5,
+        "corner": 0.1
+      },
+      "seed_int": 17
+    },
+    {
+      "name": "Color",
+      "type": "colorize",
+      "node_position": {
+        "x": 220,
+        "y": 0
+      },
+      "parameters": {
+        "gradient": {
+          "type": "Gradient",
+          "interpolation": 1,
+          "points": [
+            {
+              "pos": 0,
+              "r": 0.12,
+              "g": 0.09,
+              "b": 0.06,
+              "a": 1
+            },
+            {
+              "pos": 1,
+              "r": 0.64,
+              "g": 0.18,
+              "b": 0.07,
+              "a": 1
+            }
+          ]
+        }
+      },
+      "seed_int": 17
+    },
+    {
+      "name": "Normal",
+      "type": "normal_map",
+      "node_position": {
+        "x": 220,
+        "y": 0
+      },
+      "parameters": {
+        "amount": 0.08,
+        "size": 11
+      },
+      "seed_int": 17
+    },
+    {
+      "name": "Roughness",
+      "type": "uniform",
+      "node_position": {
+        "x": 220,
+        "y": 0
+      },
+      "parameters": {
+        "color": {
+          "type": "Color",
+          "r": 0.65,
+          "g": 0.65,
+          "b": 0.65,
+          "a": 1
+        }
+      },
+      "seed_int": 17
+    },
+    {
+      "name": "Metallic",
+      "type": "uniform",
+      "node_position": {
+        "x": 220,
+        "y": 0
+      },
+      "parameters": {
+        "color": {
+          "type": "Color",
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "seed_int": 17
+    },
+    {
+      "name": "Material",
+      "type": "material",
+      "node_position": {
+        "x": 480,
+        "y": 0
+      },
+      "parameters": {
+        "size": 11,
+        "albedo_color": {
+          "type": "Color",
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "roughness": 1,
+        "metallic": 1,
+        "normal": 1,
+        "depth_scale": 0.04,
+        "ao": 1,
+        "flags_transparent": false
+      },
+      "seed_int": 17
+    }
+  ],
+  "connections": [
+    {
+      "from": "Bricks",
+      "from_port": 0,
+      "to": "Color",
+      "to_port": 0
+    },
+    {
+      "from": "Bricks",
+      "from_port": 0,
+      "to": "Normal",
+      "to_port": 0
+    },
+    {
+      "from": "Color",
+      "from_port": 0,
+      "to": "Material",
+      "to_port": 0
+    },
+    {
+      "from": "Metallic",
+      "from_port": 0,
+      "to": "Material",
+      "to_port": 1
+    },
+    {
+      "from": "Roughness",
+      "from_port": 0,
+      "to": "Material",
+      "to_port": 2
+    },
+    {
+      "from": "Normal",
+      "from_port": 0,
+      "to": "Material",
+      "to_port": 4
+    },
+    {
+      "from": "Bricks",
+      "from_port": 0,
+      "to": "Material",
+      "to_port": 5
+    },
+    {
+      "from": "Bricks",
+      "from_port": 0,
+      "to": "Material",
+      "to_port": 6
+    }
+  ]
+}

@@ -21,7 +21,7 @@ IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,79}\Z")
 SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 RELEASE_TAG = re.compile(r"creative-[A-Za-z0-9][A-Za-z0-9._-]{0,220}\Z")
 FRAME_PATTERN = re.compile(r"%0?[1-9]?d")
-TOOLS = {"blender", "python", "imagemagick", "ffmpeg", "krita"}
+TOOLS = {"blender", "python", "imagemagick", "ffmpeg", "krita", "material_maker"}
 DEFAULT_CRITERIA = ["Inspect generated previews against the project references before completion."]
 
 
@@ -195,6 +195,7 @@ def _operation(step: dict, targets: set[str]) -> None:
         ("ffmpeg", "encode"): ({"input", "output"}, {"fps", "crf", "width"}),
         ("ffmpeg", "thumbnail"): ({"input", "output"}, {"time_seconds", "width"}),
         ("krita", "export"): ({"input", "output"}, set()),
+        ("material_maker", "export"): ({"input", "output"}, {"maps"}),
     }
     if not isinstance(operation, str) or (tool, operation) not in options:
         raise JobError(f"Unsupported operation for {tool}: {operation}")
@@ -202,6 +203,16 @@ def _operation(step: dict, targets: set[str]) -> None:
     params = _object(step.get("params", {}), "operation.params", required, optional)
     source = _logical_input(params["input"], targets, sequence=(tool, operation) == ("ffmpeg", "encode"))
     output = safe_relative_path(params["output"], "operation output")
+    if tool == "material_maker":
+        if Path(source).suffix.lower() != ".ptex":
+            raise JobError("Material Maker input must be a .ptex graph")
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,79}", output):
+            raise JobError("Material Maker output must be a filename prefix (letters, digits, _ or -)")
+        maps = params.get("maps", ["albedo"])
+        allowed = {"albedo", "roughness", "metallic", "normal", "height", "ao", "emission", "sss"}
+        if not isinstance(maps, list) or not 1 <= len(maps) <= 8 or any(not isinstance(m, str) or m not in allowed for m in maps) or len(set(maps)) != len(maps):
+            raise JobError("Material Maker maps must be a nonempty unique list of supported map names")
+        return
     suffixes = {
         "imagemagick": {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp", ".tga", ".exr", ".hdr"},
         "krita": {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"},

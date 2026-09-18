@@ -111,6 +111,18 @@ def main() -> int:
         assert len(scene_checkpoints) >= 3
         assert all((path.parent / "scene.blend").is_file() for path in scene_checkpoints)
         assert list((checkpoints / "texture").glob("*/output/checker.png"))
+        shutil.copytree(repo / "runtime/fixtures/material", inputs / "material")
+        exported = execute({"id": "material", "tool": "material_maker", "operation": "export",
+                            "params": {"input": "input/material/terracotta.ptex", "output": "terracotta",
+                                       "maps": ["albedo", "roughness", "metallic", "normal", "height", "ao"]}})
+        material_report = json.loads((exported / "material_report.json").read_text())
+        assert material_report["state"] == "succeeded" and len(material_report["maps"]) >= 6
+        assert (exported / material_report["source"]).is_file()
+        material_scene = execute({"id": "material_scene", "tool": "blender", "script": "runtime/fixtures/material_scene.py",
+                                  "preview": {"views": ["front", "right", "back", "three_quarter"],
+                                              "width": 256, "height": 256, "samples": 8}})
+        assert json.loads((material_scene / "material_integration.json").read_text())["pass"]
+        assert json.loads((material_scene / "tool_report.json").read_text())["validation"]["pass"]
         report["pass"] = True
     except Exception as error:
         report["error"] = str(error)

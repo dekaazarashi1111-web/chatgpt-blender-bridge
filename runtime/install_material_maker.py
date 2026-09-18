@@ -1,0 +1,29 @@
+"""Install an official release at build time, verifying its pinned archive."""
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import tarfile
+import tempfile
+import urllib.request
+
+root = Path(__file__).parent
+release = json.loads((root / "material-maker.lock.json").read_text())
+destination = Path("/opt/material-maker")
+with tempfile.TemporaryDirectory() as temporary:
+    archive = Path(temporary) / "release.tar.gz"
+    digest = hashlib.sha256()
+    with urllib.request.urlopen(release["url"], timeout=120) as response, archive.open("wb") as output:
+        while chunk := response.read(1024 * 1024):
+            digest.update(chunk)
+            output.write(chunk)
+    if digest.hexdigest() != release["sha256"]:
+        raise RuntimeError("Material Maker release SHA-256 mismatch")
+    with tarfile.open(archive) as package:
+        package.extractall(Path(temporary) / "unpacked", filter="data")
+    shutil.move(str(Path(temporary) / "unpacked" / release["archive_root"]), destination)
+(destination / release["executable"]).chmod(0o755)
+(destination / "release.json").write_text(json.dumps(release, indent=2) + "\n")
+shutil.copyfile(root / "material-maker-LICENSE.md", destination / "LICENSE.md")
+Path("/usr/local/bin/material-maker").symlink_to(destination / release["executable"])
+print("Installed verified Material Maker", release["version"])

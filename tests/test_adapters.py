@@ -73,9 +73,17 @@ class AdapterTests(unittest.TestCase):
                 build_command({"tool": "ffmpeg", "operation": "encode",
                                "params": {"input": pattern, "output": "preview.mp4"}}, self.context)
 
-    def test_material_maker_is_not_claimed_available(self) -> None:
-        with self.assertRaises(AdapterError):
-            build_command({"tool": "material_maker", "operation": "export"}, self.context)
+    def test_material_maker_export_is_typed_and_local(self) -> None:
+        (self.inputs / "sample.ptex").write_text('{}')
+        step = {"tool": "material_maker", "operation": "export",
+                "params": {"input": "input/sample.ptex", "output": "clay", "maps": ["albedo", "normal"]}}
+        command = build_command(step, self.context)
+        self.assertIn("--maps", command)
+        self.assertEqual(json.loads(command[-1]), ["albedo", "normal"])
+        for key, value in (("output", "../bad"), ("output", "--help"), ("maps", []),
+                           ("maps", ["albedo", "albedo"]), ("maps", ["script"]), ("args", ["--script", "bad.gd"])):
+            with self.subTest(key=key, value=value), self.assertRaises(AdapterError):
+                build_command({**step, "params": {**step["params"], key: value}}, self.context)
 
     def test_python_checkpoint_retains_previous_editable_output(self) -> None:
         (self.repo / "build.py").write_text(

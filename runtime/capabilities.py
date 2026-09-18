@@ -80,10 +80,15 @@ def capabilities() -> dict:
             modules[name] = {"available": False}
     tools["python"] = {"available": all(item["available"] for item in modules.values()),
                        "version": sys.version.split()[0], "modules": modules}
-    tools["material_maker"] = {"available": False, "reason": "optional; adapter and headless smoke test not implemented"}
+    tools["material_maker"] = executable("material-maker", ["--version"])
+    release_file = Path("/opt/material-maker/release.json")
+    if tools["material_maker"]["available"] and release_file.is_file():
+        release = json.loads(release_file.read_text())
+        tools["material_maker"].update(engine_version=tools["material_maker"]["version"],
+                                       version=release["version"], archive_sha256=release["sha256"])
     return {"schema_version": 1, "generated_at": datetime.now(timezone.utc).isoformat(),
             "tools": tools, "execution_network": "caller must use docker --network none",
-            "base_ready": all(tools[name]["available"] for name in ("blender", "python", "imagemagick", "ffmpeg", "krita"))}
+            "base_ready": all(tools[name]["available"] for name in ("blender", "python", "imagemagick", "ffmpeg", "krita", "material_maker"))}
 
 
 def main() -> int:
