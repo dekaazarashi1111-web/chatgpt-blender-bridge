@@ -1,0 +1,47 @@
+name: Blue character - actual Blender test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'queue/pending/blue-animatronic-v*/job.json'
+      - 'ci/run_character_test.py'
+      - '.github/workflows/blue-character-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: blue-character-test
+  cancel-in-progress: false
+
+jobs:
+  blender:
+    if: github.repository == 'dekaazarashi1111-web/chatgpt-blender-bridge' && github.actor == github.repository_owner
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      OMP_NUM_THREADS: '2'
+    steps:
+      - name: Checkout trusted main-branch source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Blender and virtual display
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends blender xvfb xauth
+          blender --version
+      - name: Build, render four views, and reopen saved blend
+        run: xvfb-run -a python3 ci/run_character_test.py
+      - name: Preserve actual results and logs, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blue-character-blender-test-${{ github.run_id }}
+          path: ci_artifacts/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 6
