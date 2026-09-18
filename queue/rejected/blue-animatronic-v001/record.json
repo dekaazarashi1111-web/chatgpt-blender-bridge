@@ -1,0 +1,15 @@
+{
+  "job_id": "blue-animatronic-v001",
+  "state": "rejected_before_blender",
+  "reported_by": "chat-review-of-github-actions-log",
+  "oracle_execution_claimed": false,
+  "source_commit": "c9c693c30cd0e4d92f7ab616ea5854b08f272962",
+  "original_descriptor_blob_sha": "fd36e559c99d52ca98154c8e33aa2394ed7ed30a",
+  "original_script_path": "queue/pending/blue-animatronic-v001/script.py",
+  "validation_run_id": 35335746167,
+  "validation_job_id": 105570057338,
+  "observed_error": "JOB_SCHEMA=FAIL ... error=Attribute is not allowed: system",
+  "explanation": "The optional Blender scene.unit_settings.system property collides with the static prohibited attribute name. No validator rules were weakened.",
+  "replacement_job_id": "blue-animatronic-v002",
+  "recovery": "Retire only the invalid pending job.json, preserving its exact content in source_commit and the original script; submit v002 without the unnecessary unit setting."
+}
