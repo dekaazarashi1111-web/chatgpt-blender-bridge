@@ -1,97 +1,23 @@
 {
   "schema_version": 2,
   "project_id": "studio-smoke",
-  "job_id": "texture-v001",
-  "state": "complete",
-  "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807",
+  "job_id": "blender-resume-v001",
+  "state": "running",
+  "source_commit": "5007df31ab31903cae4a2526bf3dac1a861e9930",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:3e7adf0a7a1aaab0f218c3a6c8ac572a14b266d21cbafcd74acc19573d62e5b6",
-  "run_id": "35353573199",
+  "run_id": "35353761801",
   "run_attempt": "1",
-  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35353573199",
-  "started_at": "2026-09-18T14:01:58.682416Z",
-  "steps": [
-    {
-      "id": "texture",
-      "tool": "python",
-      "exit_code": 0
-    },
-    {
-      "id": "resize",
-      "tool": "imagemagick",
-      "exit_code": 0
-    },
-    {
-      "id": "export",
-      "tool": "krita",
-      "exit_code": 0
-    }
-  ],
-  "latest_snapshot": {
-    "release_tag": "creative-studio-smoke-texture-v001-35353573199-1-3",
-    "release_id": 391521233,
-    "project_id": "studio-smoke",
-    "job_id": "texture-v001",
-    "archive_sha256": "909e094ac320d3103f13df3484035e2d0f0ff9f6898d51cb1c774e4bce5d1086",
-    "manifest_sha256": "ae9ff4ac87e8faffd2eacabc8eae246a715df659ea1b4528548f294feeca97cc",
-    "archive_asset_id": 572746333,
-    "manifest_asset_id": 572746353,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-texture-v001-35353573199-1-3",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-3/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-3/manifest.json",
-    "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
-  },
-  "step_snapshots": {
-    "texture": {
-      "release_tag": "creative-studio-smoke-texture-v001-35353573199-1-1",
-      "release_id": 391520805,
-      "project_id": "studio-smoke",
-      "job_id": "texture-v001",
-      "archive_sha256": "7444ea027090b301a744c05ec451dfa5464545a372d26aeb1ca59e52587cc772",
-      "manifest_sha256": "c66234142f5ddc8fb948b8d3db83b584a91832175e18922a1c18959890c2227b",
-      "archive_asset_id": 572745363,
-      "manifest_asset_id": 572745371,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-texture-v001-35353573199-1-1",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-1/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-1/manifest.json",
-      "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
-    },
-    "resize": {
-      "release_tag": "creative-studio-smoke-texture-v001-35353573199-1-2",
-      "release_id": 391520937,
-      "project_id": "studio-smoke",
-      "job_id": "texture-v001",
-      "archive_sha256": "861c6e83fb7973624d518c58cbfe5149f99b27880c4fe31a560612976d2ced34",
-      "manifest_sha256": "48722972725cd2280b7a3ffeb5e6ec8addbcf8775b92830995d9a52f6aca1a46",
-      "archive_asset_id": 572745711,
-      "manifest_asset_id": 572745731,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-texture-v001-35353573199-1-2",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-2/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-2/manifest.json",
-      "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
-    },
-    "export": {
-      "release_tag": "creative-studio-smoke-texture-v001-35353573199-1-3",
-      "release_id": 391521233,
-      "project_id": "studio-smoke",
-      "job_id": "texture-v001",
-      "archive_sha256": "909e094ac320d3103f13df3484035e2d0f0ff9f6898d51cb1c774e4bce5d1086",
-      "manifest_sha256": "ae9ff4ac87e8faffd2eacabc8eae246a715df659ea1b4528548f294feeca97cc",
-      "archive_asset_id": 572746333,
-      "manifest_asset_id": 572746353,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-texture-v001-35353573199-1-3",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-3/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-3/manifest.json",
-      "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
-    }
-  },
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35353761801",
+  "started_at": "2026-09-18T14:03:51.286485Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
   "acceptance_criteria": [
-    "Technical image processing steps exit successfully and preserve editable source outputs."
+    "Restore the exact pinned blender-v001 workspace and load its editable model.",
+    "Assert the metric scene, named cube, mesh, bevel and original blue material before editing.",
+    "Persist resume_evidence.json plus the renamed and recolored cube, reopen the new blend and render four previews."
   ],
   "review_required": false,
-  "next_action": "Technical job completed; artifacts are available.",
-  "current_step": "export",
-  "finished_at": "2026-09-18T14:02:41.408286Z",
-  "publication_errors": [],
-  "previews": [],
-  "updated_at": "2026-09-18T14:02:41.599117Z"
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T14:03:51.569822Z"
 }
