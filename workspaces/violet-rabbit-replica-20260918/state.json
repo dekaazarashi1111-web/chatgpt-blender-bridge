@@ -1,108 +1,17 @@
 {
   "schema_version": 2,
   "project_id": "violet-rabbit-replica-20260918",
-  "job_id": "build-v001",
-  "state": "changes_requested",
-  "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f",
+  "job_id": "refine-v002",
+  "state": "running",
+  "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
-  "run_id": "35372299694",
+  "run_id": "35375819841",
   "run_attempt": "1",
-  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35372299694",
-  "started_at": "2026-09-18T17:06:27.631463Z",
-  "steps": [
-    {
-      "id": "surfaces",
-      "tool": "python",
-      "exit_code": 0
-    },
-    {
-      "id": "model",
-      "tool": "blender",
-      "exit_code": 0
-    },
-    {
-      "id": "lookdev",
-      "tool": "blender",
-      "exit_code": 0
-    },
-    {
-      "id": "package",
-      "tool": "python",
-      "exit_code": 0
-    }
-  ],
-  "latest_snapshot": {
-    "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4",
-    "release_id": 391647757,
-    "project_id": "violet-rabbit-replica-20260918",
-    "job_id": "build-v001",
-    "archive_sha256": "3983aa75878c17d00535d3c9dda4d9992a2a5f4ee5dc28cc5548225ef0a6502b",
-    "manifest_sha256": "cecd13eb98bb4a9fc8e435de844673af67d9d05607a7bb9964c5de4f80fe33d2",
-    "archive_asset_id": 573075779,
-    "manifest_asset_id": 573075997,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4/manifest.json",
-    "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
-  },
-  "step_snapshots": {
-    "surfaces": {
-      "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1",
-      "release_id": 391645128,
-      "project_id": "violet-rabbit-replica-20260918",
-      "job_id": "build-v001",
-      "archive_sha256": "98939a7819564d7881f06fd4d6316e5d5420b785dfda2014438fe890e756211f",
-      "manifest_sha256": "2ab1d25b32b1d175ba61ac9fdb2d1843f99228868df5d81ef86e5fc2b97881d3",
-      "archive_asset_id": 573068630,
-      "manifest_asset_id": 573068683,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-1/manifest.json",
-      "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
-    },
-    "model": {
-      "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2",
-      "release_id": 391645819,
-      "project_id": "violet-rabbit-replica-20260918",
-      "job_id": "build-v001",
-      "archive_sha256": "196402cb022254ce643a8ecd950fbbf04d7642c6f81934888192ac3c4e688bda",
-      "manifest_sha256": "4791682d809f133efc3c6b3a4d865ea8b62595d89d8b4a41581ce3953f3a0f57",
-      "archive_asset_id": 573070385,
-      "manifest_asset_id": 573070529,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-2/manifest.json",
-      "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
-    },
-    "lookdev": {
-      "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-3",
-      "release_id": 391647439,
-      "project_id": "violet-rabbit-replica-20260918",
-      "job_id": "build-v001",
-      "archive_sha256": "cf581917ed58eab73e9d85ccb97850f345457878285cdfb733bf6f007a191ad6",
-      "manifest_sha256": "668a700681e2092734f48379b2494ac6ba73c430d0aed6617aa3608fa976d41b",
-      "archive_asset_id": 573074889,
-      "manifest_asset_id": 573075018,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-3",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-3/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-3/manifest.json",
-      "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
-    },
-    "package": {
-      "release_tag": "creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4",
-      "release_id": 391647757,
-      "project_id": "violet-rabbit-replica-20260918",
-      "job_id": "build-v001",
-      "archive_sha256": "3983aa75878c17d00535d3c9dda4d9992a2a5f4ee5dc28cc5548225ef0a6502b",
-      "manifest_sha256": "cecd13eb98bb4a9fc8e435de844673af67d9d05607a7bb9964c5de4f80fe33d2",
-      "archive_asset_id": 573075779,
-      "manifest_asset_id": 573075997,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-violet-rabbit-replica-20260918-build-v001-35372299694-1-4/manifest.json",
-      "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f"
-    }
-  },
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35375819841",
+  "started_at": "2026-09-18T17:42:04.875128Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
   "acceptance_criteria": [
     "Compare actual front, right and back renders with the supplied three-view reference; match the T-pose proportions, thick ears, recessed black eyes, continuous muzzle and deep lower jaw.",
     "Match the subdued worn violet and grey-lilac mottled cloth appearance; avoid bright white belly, stone-like relief, regular cloud grids and excessive gloss.",
@@ -110,86 +19,6 @@
     "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance."
   ],
   "review_required": true,
-  "next_action": "Create a new revision using latest_snapshot.",
-  "current_step": "package",
-  "finished_at": "2026-09-18T17:11:18.995115Z",
-  "publication_errors": [],
-  "previews": [
-    {
-      "path": "output/lookdev/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/lookdev/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/lookdev/previews/front.png"
-    },
-    {
-      "path": "output/model/previews/back.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/back.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/back.png"
-    },
-    {
-      "path": "output/model/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/front.png"
-    },
-    {
-      "path": "output/model/previews/right.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/right.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/right.png"
-    },
-    {
-      "path": "output/model/previews/three_quarter.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/three_quarter.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/model/previews/three_quarter.png"
-    },
-    {
-      "path": "output/package/previews/back.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/back.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/back.png"
-    },
-    {
-      "path": "output/package/previews/comparison.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/comparison.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/comparison.png"
-    },
-    {
-      "path": "output/package/previews/face.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/face.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/face.png"
-    },
-    {
-      "path": "output/package/previews/face_profile.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/face_profile.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/face_profile.png"
-    },
-    {
-      "path": "output/package/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/front.png"
-    },
-    {
-      "path": "output/package/previews/right.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/right.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/right.png"
-    },
-    {
-      "path": "output/package/previews/surface.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/surface.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/build-v001/output/package/previews/surface.png"
-    }
-  ],
-  "updated_at": "2026-09-18T17:41:14.028212Z",
-  "review": {
-    "schema_version": 1,
-    "project_id": "violet-rabbit-replica-20260918",
-    "job_id": "build-v001",
-    "source_commit": "fa62aa2422961ed324297bf23440c3cbb493282f",
-    "snapshot_sha256": "3983aa75878c17d00535d3c9dda4d9992a2a5f4ee5dc28cc5548225ef0a6502b",
-    "verdict": "changes_requested",
-    "criteria": {
-      "Compare actual front, right and back renders with the supplied three-view reference; match the T-pose proportions, thick ears, recessed black eyes, continuous muzzle and deep lower jaw.": "fail",
-      "Match the subdued worn violet and grey-lilac mottled cloth appearance; avoid bright white belly, stone-like relief, regular cloud grids and excessive gloss.": "fail",
-      "Preserve an editable packed Blender scene, explicit UVs, reconstructed texture maps, source scripts and the genuine saved reference copy; reopen with no missing external dependencies.": "pass",
-      "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance.": "pass"
-    },
-    "summary": "Actual comparison/front/right/back, face, face_profile, surface and three_quarter images inspected. Technical save/reopen and all 83 downloaded files verified against the exact Release manifest. Visual changes required: excessive brightness, smeared mottling, thin diagonal jaw profile, floating nose/split, oval ears, intersecting upper bib/bow, coarse tear edges and spherical toe caps. Resume this exact snapshot; revise affected meshes/materials only. Detailed evidence and limitations are in reviews/build-v001.md."
-  }
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T17:42:05.161587Z"
 }
