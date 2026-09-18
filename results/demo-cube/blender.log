@@ -1,0 +1,116 @@
+COMMAND=/usr/bin/blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python ./bridge/blender_entry.py -- --job ./queue/pending/demo-cube/job.json --script ./queue/pending/demo-cube/script.py --run-dir .worker/run
+CHECKPOINT stage=script_start summary=Blender user scriptを開始
+CHECKPOINT stage=geometry_ready summary=demo形状とmaterialを作成
+CHECKPOINT stage=script_complete summary=Blender user scriptが終了
+Blender 4.0.2
+Info: Total files 0 | Changed 0 | Failed 0
+Info: Saved "model.blend"
+CHECKPOINT stage=blend_saved summary=編集可能なblendを保存
+Fra:1 Mem:14.02M (Peak 15.10M) | Time:00:00.48 | Syncing BridgeDemoBody
+Fra:1 Mem:14.11M (Peak 15.10M) | Time:00:00.55 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.55 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.55 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.55 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.55 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.56 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 15.10M) | Time:00:02.19 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/front.png'
+Time: 00:02.53 (Saving: 00:00.26)
+
+Fra:1 Mem:14.09M (Peak 14.09M) | Time:00:00.08 | Syncing BridgeDemoBody
+Fra:1 Mem:14.12M (Peak 14.12M) | Time:00:00.08 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.10 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 14.17M) | Time:00:01.52 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/right.png'
+Time: 00:01.61 (Saving: 00:00.02)
+
+Fra:1 Mem:14.09M (Peak 14.09M) | Time:00:00.08 | Syncing BridgeDemoBody
+Fra:1 Mem:14.12M (Peak 14.12M) | Time:00:00.08 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 14.17M) | Time:00:01.50 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/back.png'
+Time: 00:01.61 (Saving: 00:00.02)
+
+Fra:1 Mem:14.09M (Peak 14.09M) | Time:00:00.08 | Syncing BridgeDemoBody
+Fra:1 Mem:14.12M (Peak 14.12M) | Time:00:00.08 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.08 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.09 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 14.17M) | Time:00:01.48 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/three_quarter.png'
+Time: 00:01.58 (Saving: 00:00.02)
+
+CHECKPOINT stage=previews_complete summary=指定方向のpreviewを生成
+BLENDER_JOB=PASS output=.worker/run/output/model.blend previews=4 report=.worker/run/blender_report.json
+COMMAND=/usr/bin/blender --background --disable-autoexec .worker/run/output/model.blend --python-exit-code 1 --python ./bridge/blender_validate.py -- --report .worker/run/validation.json
+Blender 4.0.2
+Read blend: ".worker/run/output/model.blend"
+BLEND_REOPEN=PASS objects=2 report=.worker/run/validation.json
+COMMAND=/usr/bin/blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python ./bridge/blender_entry.py -- --job ./queue/pending/demo-cube/job.json --script ./queue/pending/demo-cube/script.py --run-dir .worker/run
+CHECKPOINT stage=script_start summary=Blender user scriptを開始
+CHECKPOINT stage=geometry_ready summary=demo形状とmaterialを作成
+CHECKPOINT stage=script_complete summary=Blender user scriptが終了
+Blender 4.0.2
+Info: Total files 0 | Changed 0 | Failed 0
+Info: Saved "model.blend"
+CHECKPOINT stage=blend_saved summary=編集可能なblendを保存
+Fra:1 Mem:14.02M (Peak 15.10M) | Time:00:00.16 | Syncing BridgeDemoBody
+Fra:1 Mem:14.11M (Peak 15.10M) | Time:00:00.19 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.19 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.19 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.19 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.19 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 15.10M) | Time:00:00.19 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 15.10M) | Time:00:00.82 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/front.png'
+Time: 00:00.94 (Saving: 00:00.09)
+
+Fra:1 Mem:14.09M (Peak 14.09M) | Time:00:00.03 | Syncing BridgeDemoBody
+Fra:1 Mem:14.12M (Peak 14.12M) | Time:00:00.03 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.04 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 14.17M) | Time:00:00.61 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/right.png'
+Time: 00:00.65 (Saving: 00:00.01)
+
+Fra:1 Mem:14.09M (Peak 14.09M) | Time:00:00.03 | Syncing BridgeDemoBody
+Fra:1 Mem:14.12M (Peak 14.12M) | Time:00:00.03 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 14.17M) | Time:00:00.58 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/back.png'
+Time: 00:00.62 (Saving: 00:00.01)
+
+Fra:1 Mem:14.09M (Peak 14.09M) | Time:00:00.03 | Syncing BridgeDemoBody
+Fra:1 Mem:14.12M (Peak 14.12M) | Time:00:00.03 | Syncing BridgeDemoDetail
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgePreviewCamera
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeKey
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeFill
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Syncing BridgeRim
+Fra:1 Mem:14.17M (Peak 14.17M) | Time:00:00.03 | Rendering 1 / 8 samples
+Fra:1 Mem:14.11M (Peak 14.17M) | Time:00:00.60 | Rendering 8 / 8 samples
+Saved: '.worker/run/previews/three_quarter.png'
+Time: 00:00.65 (Saving: 00:00.01)
+
+CHECKPOINT stage=previews_complete summary=指定方向のpreviewを生成
+BLENDER_JOB=PASS output=.worker/run/output/model.blend previews=4 report=.worker/run/blender_report.json
+COMMAND=/usr/bin/blender --background --disable-autoexec .worker/run/output/model.blend --python-exit-code 1 --python ./bridge/blender_validate.py -- --report .worker/run/validation.json
+Blender 4.0.2
+Read blend: ".worker/run/output/model.blend"
+BLEND_REOPEN=PASS objects=2 report=.worker/run/validation.json
