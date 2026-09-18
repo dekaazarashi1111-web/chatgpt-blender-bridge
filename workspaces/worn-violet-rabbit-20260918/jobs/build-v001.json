@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "project_id": "worn-violet-rabbit-20260918",
+  "job_id": "build-v001",
+  "state": "running",
+  "source_commit": "397cbc69c21c323727da2e3e6163ce23586d357d",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:2d4029b9359dcac82a21e726787fa6df0f1d35504d2bcdf1f8506031b62fa8b9",
+  "run_id": "35364229702",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35364229702",
+  "started_at": "2026-09-18T15:44:44.113706Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Front, side and back silhouettes and facial features correspond to the supplied rabbit reference.",
+    "Worn low-saturation violet and pale mottled surfaces, dark eyes, aged teeth and cloth bow match the reference character.",
+    "Editable Blender scene reopens successfully with packed dependencies, real image outputs and verified file hashes.",
+    "Exact-version three-view, face and surface previews are visually inspected; major intersections or framing faults are absent."
+  ],
+  "review_required": true,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T15:44:44.298249Z"
+}
