@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "project_id": "violet-rabbit-replica-20260918",
+  "job_id": "build-v001",
+  "title": "Measured violet rabbit reconstruction and reference-matched surface lookdev",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "acceptance_criteria": [
+    "Compare actual front, right and back renders with the supplied three-view reference; match the T-pose proportions, thick ears, recessed black eyes, continuous muzzle and deep lower jaw.",
+    "Match the subdued worn violet and grey-lilac mottled cloth appearance; avoid bright white belly, stone-like relief, regular cloud grids and excessive gloss.",
+    "Preserve an editable packed Blender scene, explicit UVs, reconstructed texture maps, source scripts and the genuine saved reference copy; reopen with no missing external dependencies.",
+    "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance."
+  ],
+  "inputs": [
+    {
+      "path": "projects/violet-rabbit-replica-20260918/inputs/reference.webp",
+      "target": "reference.webp",
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    }
+  ],
+  "steps": [
+    {"id": "surfaces", "tool": "python", "script": "surfaces.py", "timeout_seconds": 1800},
+    {
+      "id": "model", "tool": "blender", "script": "model.py", "timeout_seconds": 5400,
+      "preview": {"views": ["front", "right", "back", "three_quarter"], "width": 384, "height": 384, "samples": 8}
+    },
+    {
+      "id": "lookdev", "tool": "blender", "script": "render.py",
+      "source_blend": "workspace/output/model/model.blend",
+      "params": {"resolution": 768, "samples": 72},
+      "timeout_seconds": 7200,
+      "preview": {"views": ["front"], "width": 128, "height": 128, "samples": 1}
+    },
+    {"id": "package", "tool": "python", "script": "package.py", "timeout_seconds": 600}
+  ]
+}
