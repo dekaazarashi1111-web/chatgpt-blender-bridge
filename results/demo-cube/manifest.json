@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "job_id": "demo-cube",
+  "title": "Blender bridge smoke cube",
+  "state": "complete",
+  "started_from_commit": "e7a4ae3790cbae3b54da39da4eb3ee63e5d9970f",
+  "author": "dekaazarashi1111-web",
+  "finished_at": "2026-09-18T10:24:00.432231Z",
+  "blender_exit_code": 0,
+  "validation_exit_code": 0,
+  "timed_out": false,
+  "checks": {
+    "script_exit": true,
+    "blend_exists": true,
+    "reopen_ok": true,
+    "report_exists": true,
+    "preview:front": true,
+    "preview:right": true,
+    "preview:back": true,
+    "preview:three_quarter": true
+  },
+  "acceptance_criteria": [
+    {
+      "id": "C01",
+      "description": "Blender scriptが正常終了する",
+      "kind": "automatic",
+      "check": "script_exit",
+      "status": "pass"
+    },
+    {
+      "id": "C02",
+      "description": "編集可能なblendが保存される",
+      "kind": "automatic",
+      "check": "blend_exists",
+      "status": "pass"
+    },
+    {
+      "id": "C03",
+      "description": "保存したblendを開き直せる",
+      "kind": "automatic",
+      "check": "reopen_ok",
+      "status": "pass"
+    },
+    {
+      "id": "C04",
+      "description": "正面previewが生成される",
+      "kind": "automatic",
+      "check": "preview:front",
+      "status": "pass"
+    },
+    {
+      "id": "C05",
+      "description": "斜めpreviewが生成される",
+      "kind": "automatic",
+      "check": "preview:three_quarter",
+      "status": "pass"
+    }
+  ],
+  "review_required": false,
+  "artifacts": {
+    "model.blend": {
+      "exists": true,
+      "bytes": 896596,
+      "sha256": "6e0ef309213c11323fff1817fb8edff73f368388bf95ea27431161eb3960284b",
+      "path": "results/demo-cube/model.blend",
+      "published": true
+    },
+    "blender.log": {
+      "exists": true,
+      "bytes": 7360,
+      "sha256": "e34e92eed2b62955a79f6f6cf20b21709d26c1460fd7d604cf2c065adfc85c73",
+      "path": "results/demo-cube/blender.log",
+      "published": true
+    },
+    "blender_report.json": {
+      "exists": true,
+      "bytes": 762,
+      "sha256": "b9389f0eebfea69e67e23f26ab371426c9c3ff07a94caccd4edac843c97364a8",
+      "path": "results/demo-cube/blender_report.json",
+      "published": true
+    },
+    "validation.json": {
+      "exists": true,
+      "bytes": 236,
+      "sha256": "bf9cecc2cfbe0bfa6f044ce31f88f03268a16e9ae07543d67a3eed169e405524",
+      "path": "results/demo-cube/validation.json",
+      "published": true
+    },
+    "previews/back.png": {
+      "exists": true,
+      "bytes": 124704,
+      "sha256": "572af62982a3ea29fd8237d04bc191db7a0579578a40d806f38ce411a9843b35",
+      "path": "results/demo-cube/previews/back.png",
+      "published": true
+    },
+    "previews/front.png": {
+      "exists": true,
+      "bytes": 127658,
+      "sha256": "8e38b7ea149f3ea29c7f5c1d32a43f8bdc04287d2677b6a5f7bca2fb15c010fc",
+      "path": "results/demo-cube/previews/front.png",
+      "published": true
+    },
+    "previews/right.png": {
+      "exists": true,
+      "bytes": 122658,
+      "sha256": "07eea394eb666ac4d2e6cae22721d4de878adbb5f368c897d6d4927efdacd0bc",
+      "path": "results/demo-cube/previews/right.png",
+      "published": true
+    },
+    "previews/three_quarter.png": {
+      "exists": true,
+      "bytes": 137017,
+      "sha256": "a60484c50aebfc0924198bb3bbac764dcd2d813b36d56cb4a61a137fb9bfac79",
+      "path": "results/demo-cube/previews/three_quarter.png",
+      "published": true
+    }
+  },
+  "checkpoint": {
+    "schema_version": 1,
+    "job_id": "demo-cube",
+    "updated_at": "2026-09-18T10:24:00.565505Z",
+    "stage": "previews_complete",
+    "summary": "指定方向のpreviewを生成",
+    "evidence": [
+      ".worker/run/previews/front.png",
+      ".worker/run/previews/right.png",
+      ".worker/run/previews/back.png",
+      ".worker/run/previews/three_quarter.png"
+    ]
+  }
+}

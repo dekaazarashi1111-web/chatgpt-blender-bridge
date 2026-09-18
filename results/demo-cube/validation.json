@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "validated_at": "2026-09-18T10:24:00.160473Z",
+  "blend_file": ".worker/run/output/model.blend",
+  "object_count": 2,
+  "mesh_count": 2,
+  "material_count": 3,
+  "missing_external_files": [],
+  "pass": true
+}

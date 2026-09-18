@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "job_id": "demo-cube",
+  "finished_at": "2026-09-18T10:24:00.569844Z",
+  "output_blend": ".worker/run/output/model.blend",
+  "objects": [
+    {
+      "name": "BridgeDemoBody",
+      "type": "MESH"
+    },
+    {
+      "name": "BridgeDemoDetail",
+      "type": "MESH"
+    }
+  ],
+  "previews": [
+    {
+      "view": "front",
+      "path": ".worker/run/previews/front.png",
+      "bytes": 127658
+    },
+    {
+      "view": "right",
+      "path": ".worker/run/previews/right.png",
+      "bytes": 122658
+    },
+    {
+      "view": "back",
+      "path": ".worker/run/previews/back.png",
+      "bytes": 124704
+    },
+    {
+      "view": "three_quarter",
+      "path": ".worker/run/previews/three_quarter.png",
+      "bytes": 137017
+    }
+  ]
+}
