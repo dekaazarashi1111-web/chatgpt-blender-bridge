@@ -14,20 +14,25 @@
       "id": "texture",
       "tool": "python",
       "exit_code": 0
+    },
+    {
+      "id": "resize",
+      "tool": "imagemagick",
+      "exit_code": 0
     }
   ],
   "latest_snapshot": {
-    "release_tag": "creative-studio-smoke-texture-v001-35353573199-1-1",
-    "release_id": 391520805,
+    "release_tag": "creative-studio-smoke-texture-v001-35353573199-1-2",
+    "release_id": 391520937,
     "project_id": "studio-smoke",
     "job_id": "texture-v001",
-    "archive_sha256": "7444ea027090b301a744c05ec451dfa5464545a372d26aeb1ca59e52587cc772",
-    "manifest_sha256": "c66234142f5ddc8fb948b8d3db83b584a91832175e18922a1c18959890c2227b",
-    "archive_asset_id": 572745363,
-    "manifest_asset_id": 572745371,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-texture-v001-35353573199-1-1",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-1/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-1/manifest.json",
+    "archive_sha256": "861c6e83fb7973624d518c58cbfe5149f99b27880c4fe31a560612976d2ced34",
+    "manifest_sha256": "48722972725cd2280b7a3ffeb5e6ec8addbcf8775b92830995d9a52f6aca1a46",
+    "archive_asset_id": 572745711,
+    "manifest_asset_id": 572745731,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-texture-v001-35353573199-1-2",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-2/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-2/manifest.json",
     "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
   },
   "step_snapshots": {
@@ -44,6 +49,20 @@
       "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-1/workspace.tar.gz",
       "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-1/manifest.json",
       "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
+    },
+    "resize": {
+      "release_tag": "creative-studio-smoke-texture-v001-35353573199-1-2",
+      "release_id": 391520937,
+      "project_id": "studio-smoke",
+      "job_id": "texture-v001",
+      "archive_sha256": "861c6e83fb7973624d518c58cbfe5149f99b27880c4fe31a560612976d2ced34",
+      "manifest_sha256": "48722972725cd2280b7a3ffeb5e6ec8addbcf8775b92830995d9a52f6aca1a46",
+      "archive_asset_id": 572745711,
+      "manifest_asset_id": 572745731,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-studio-smoke-texture-v001-35353573199-1-2",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-2/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-studio-smoke-texture-v001-35353573199-1-2/manifest.json",
+      "source_commit": "925ad076d5721956bfc0f48349ac918e2acb1807"
     }
   },
   "acceptance_criteria": [
@@ -51,6 +70,6 @@
   ],
   "review_required": false,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "current_step": "texture",
-  "updated_at": "2026-09-18T14:02:08.929692Z"
+  "current_step": "resize",
+  "updated_at": "2026-09-18T14:02:18.941634Z"
 }
