@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "job_id": "demo-cube",
+  "title": "Blender bridge smoke cube",
+  "state": "complete",
+  "started_from_commit": "e7a4ae3790cbae3b54da39da4eb3ee63e5d9970f",
+  "author": "dekaazarashi1111-web",
+  "finished_at": "2026-09-18T10:22:53.783252Z",
+  "blender_exit_code": 0,
+  "validation_exit_code": 0,
+  "timed_out": false,
+  "checks": {
+    "script_exit": true,
+    "blend_exists": true,
+    "reopen_ok": true,
+    "report_exists": true,
+    "preview:front": true,
+    "preview:right": true,
+    "preview:back": true,
+    "preview:three_quarter": true
+  },
+  "acceptance_criteria": [
+    {
+      "id": "C01",
+      "description": "Blender scriptが正常終了する",
+      "kind": "automatic",
+      "check": "script_exit",
+      "status": "pass"
+    },
+    {
+      "id": "C02",
+      "description": "編集可能なblendが保存される",
+      "kind": "automatic",
+      "check": "blend_exists",
+      "status": "pass"
+    },
+    {
+      "id": "C03",
+      "description": "保存したblendを開き直せる",
+      "kind": "automatic",
+      "check": "reopen_ok",
+      "status": "pass"
+    },
+    {
+      "id": "C04",
+      "description": "正面previewが生成される",
+      "kind": "automatic",
+      "check": "preview:front",
+      "status": "pass"
+    },
+    {
+      "id": "C05",
+      "description": "斜めpreviewが生成される",
+      "kind": "automatic",
+      "check": "preview:three_quarter",
+      "status": "pass"
+    }
+  ],
+  "review_required": false,
+  "artifacts": {
+    "model.blend": {
+      "exists": true,
+      "bytes": 896596,
+      "sha256": "34f55f9dfce205375bcf0639c18febb663dbdd829397e06a81c1191af5ef3158",
+      "path": "results/demo-cube/model.blend",
+      "published": true
+    },
+    "blender.log": {
+      "exists": true,
+      "bytes": 4596,
+      "sha256": "018743f13ae2e6709fd5e72a83dc4f3d53af08f48f7f381e13428782bdbd478b",
+      "path": "results/demo-cube/blender.log",
+      "published": true
+    },
+    "blender_report.json": {
+      "exists": true,
+      "bytes": 1102,
+      "sha256": "a7a35eab3ceb0ecc73c0c629d3f0d95c276aa6da98800fcf5e39c68ca45b5f7b",
+      "path": "results/demo-cube/blender_report.json",
+      "published": true
+    },
+    "validation.json": {
+      "exists": true,
+      "bytes": 304,
+      "sha256": "1cec28beda452f710258764f3b4cbcdf71af7111d07ba409ceadb4b9bd76ba34",
+      "path": "results/demo-cube/validation.json",
+      "published": true
+    },
+    "previews/back.png": {
+      "exists": true,
+      "bytes": 124704,
+      "sha256": "1b9f6a2579f88b5c39d48f1bf749316922e1ce2b9d3d7d9f4d2d5afb5d8fd92e",
+      "path": "results/demo-cube/previews/back.png",
+      "published": true
+    },
+    "previews/front.png": {
+      "exists": true,
+      "bytes": 127658,
+      "sha256": "7024af75eb86ffa344e93658b41da8e04a85161cc2f6a15803bde367af70c75d",
+      "path": "results/demo-cube/previews/front.png",
+      "published": true
+    },
+    "previews/right.png": {
+      "exists": true,
+      "bytes": 122658,
+      "sha256": "6fa9a1b79b920b0921166719d46d7661fce3138ef8ed3baf7d91fe198fd0c95f",
+      "path": "results/demo-cube/previews/right.png",
+      "published": true
+    },
+    "previews/three_quarter.png": {
+      "exists": true,
+      "bytes": 137017,
+      "sha256": "f00956133a6d28151ca41f084c696b763572c78828e9fa62716a65f3f88cbab9",
+      "path": "results/demo-cube/previews/three_quarter.png",
+      "published": true
+    }
+  },
+  "checkpoint": {
+    "schema_version": 1,
+    "job_id": "demo-cube",
+    "updated_at": "2026-09-18T10:22:50.846744Z",
+    "stage": "previews_complete",
+    "summary": "指定方向のpreviewを生成",
+    "evidence": [
+      "/home/dekaa/projects/chatgpt-blender-bridge/.worker/runs/demo-cube/e7a4ae3790cb/previews/front.png",
+      "/home/dekaa/projects/chatgpt-blender-bridge/.worker/runs/demo-cube/e7a4ae3790cb/previews/right.png",
+      "/home/dekaa/projects/chatgpt-blender-bridge/.worker/runs/demo-cube/e7a4ae3790cb/previews/back.png",
+      "/home/dekaa/projects/chatgpt-blender-bridge/.worker/runs/demo-cube/e7a4ae3790cb/previews/three_quarter.png"
+    ]
+  }
+}
