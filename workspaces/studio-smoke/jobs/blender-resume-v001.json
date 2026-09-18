@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "project_id": "studio-smoke",
+  "job_id": "blender-resume-v001",
+  "state": "running",
+  "source_commit": "5007df31ab31903cae4a2526bf3dac1a861e9930",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:3e7adf0a7a1aaab0f218c3a6c8ac572a14b266d21cbafcd74acc19573d62e5b6",
+  "run_id": "35353761801",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35353761801",
+  "started_at": "2026-09-18T14:03:51.286485Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Restore the exact pinned blender-v001 workspace and load its editable model.",
+    "Assert the metric scene, named cube, mesh, bevel and original blue material before editing.",
+    "Persist resume_evidence.json plus the renamed and recolored cube, reopen the new blend and render four previews."
+  ],
+  "review_required": false,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T14:03:51.569822Z"
+}
