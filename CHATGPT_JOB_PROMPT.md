@@ -43,7 +43,7 @@ GitHub の dekaazarashi1111-web/chatgpt-blender-bridge を使って制作して�
 - 新規制作は schema version 2 の `projects/<project_id>/jobs/<job_id>/job.json` を使う。既存 v1 worker の起動をユーザーに要求しない。
 - script、入力、必要な補助ファイルを先に揃え、ジョブ定義を最後に追加する。実行対象の commit を固定し、その `source_commit` を実行記録から追跡する。
 - job ID は改版ごとに新しくする。実行済み ID を別内容に書き換えない。実行中または完了済みの同じジョブを重複投入しない。
-- `tools.json` の登録済み操作を順番に組み合わせる。追加操作は Python step からインストール済み CLI を呼び出せる。制作中に使うソフトは runtime に、入力素材は GitHub に先に揃える。
+- `tools.json` の登録済み操作を順番に組み合わせる。追加操作は Python step からインストール済み CLI を呼び出せる。追加した依存ソフトや素材は版・取得元と一緒に記録する。
 - 既定の制作予算は合計 18,000 秒、最大 19,800 秒。長時間処理は工程とチェックポイントで分割し、保存の余裕を確保する。
 - Actions の起動に利用可能な GitHub の操作を使い、実行 URL を記録する。接続が dispatch 操作に対応していない場合、できたと装わず、対応する起動経路を確認する。
 

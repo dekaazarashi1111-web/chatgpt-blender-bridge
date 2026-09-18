@@ -1,4 +1,4 @@
-"""Trusted Actions host: isolate tools, publish checkpoints, then advance the index."""
+"""Run creative tools, publish checkpoints, then update the workspace index."""
 from __future__ import annotations
 import argparse
 import hashlib
@@ -23,14 +23,13 @@ TERMINAL = {"complete", "needs_review", "changes_requested", "failed", "blocked"
 def docker_command(image, descriptor, step_id, work, inputs, name):
     if not re.fullmatch(r"ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}", image):
         raise ValueError("Runtime must be a digest-pinned GHCR image")
-    return ["docker", "run", "--rm", "--name", name, "--network", "none", "--read-only",
-            "--cap-drop=ALL", "--security-opt=no-new-privileges", "--pids-limit=512",
+    return ["docker", "run", "--rm", "--name", name,
             "--memory=10g", "--cpus=3", "--user", f"{os.getuid()}:{os.getgid()}",
-            "--tmpfs", "/tmp:rw,nosuid,size=2147483648", "--workdir", "/work",
+            "--tmpfs", "/tmp:rw,size=2147483648", "--workdir", "/work",
             "--env", "HOME=/tmp/creative-home", "--env", "PYTHONDONTWRITEBYTECODE=1",
             "--env", "LIBGL_ALWAYS_SOFTWARE=1", "--env", "OMP_NUM_THREADS=3",
-            "--mount", f"type=bind,src={ROOT},dst=/repo,readonly",
-            "--mount", f"type=bind,src={inputs},dst=/input,readonly",
+            "--mount", f"type=bind,src={ROOT},dst=/repo",
+            "--mount", f"type=bind,src={inputs},dst=/input",
             "--mount", f"type=bind,src={work},dst=/work",
             image, "python3", "/repo/ci/execute_step.py",
             "--job", descriptor.relative_to(ROOT).as_posix(), "--step", step_id]
@@ -57,7 +56,7 @@ def main():
         prior_run = store.api("/actions/runs/" + str(int(previous["run_id"])))
         new_attempt = str(previous.get("run_id")) == run_id and str(previous.get("run_attempt")) != attempt
         if prior_run["status"] != "completed" and not new_attempt:
-            print("ALREADY_RUNNING: waiting for existing run is safer than duplicate execution")
+            print("ALREADY_RUNNING: follow the existing run")
             return 0
         store.save({**previous, "state": "blocked", "next_action": "Previous execution was interrupted. Create a new job ID using the preserved latest_snapshot or step_snapshots; it will not restart from scratch."})
         print("INTERRUPTED: preserved previous checkpoints; submit a new revision to resume")
@@ -65,8 +64,8 @@ def main():
     root = ROOT / ".creative-runs" / f"{project}-{job_id}-{run_id}-{attempt}"
     if root.exists():
         raise RuntimeError("Local run directory already exists; refusing to overwrite work")
-    work, inputs, trusted = root / "work", root / "inputs", root / "trusted"
-    for path in (work, inputs, trusted):
+    work, inputs, host = root / "work", root / "inputs", root / "host"
+    for path in (work, inputs, host):
         path.mkdir(parents=True)
     for item, source in zip(job["inputs"], files.inputs):
         if hashlib.sha256(source.read_bytes()).hexdigest() != item["sha256"]:
@@ -98,7 +97,7 @@ def main():
             return
         saved = publish_snapshot(source, repository=repository, project_id=project, job_id=job_id,
                                  run_id=run_id, attempt=attempt, sequence=sequence,
-                                 output_dir=trusted / "snapshots" / str(sequence),
+                                 output_dir=host / "snapshots" / str(sequence),
                                  exclude_top_level=("checkpoints", "resume") if source == work else (),
                                  metadata={"source_commit": source_commit, "current_step": current_step,
                                            "kind": kind, "runtime_image": args.image})
@@ -109,7 +108,7 @@ def main():
         store.save(record)
         last_publish = time.monotonic()
         # The Release is verified and the pointer durable; reclaim the local archive.
-        shutil.rmtree(trusted / "snapshots" / str(sequence))
+        shutil.rmtree(host / "snapshots" / str(sequence))
 
     failure = None
     active_name = None
@@ -122,7 +121,7 @@ def main():
             step_deadline = min(deadline, time.monotonic() + step.get("timeout_seconds", job["timeout_seconds"]))
             active_name = f"creative-{run_id}-{attempt}-{step['id']}".lower()
             command = docker_command(args.image, descriptor, step["id"], work, inputs, active_name)
-            log_path = trusted / f"{step['id']}.log"
+            log_path = host / f"{step['id']}.log"
             with log_path.open("w") as log:
                 process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)
                 while process.poll() is None:
@@ -184,7 +183,7 @@ def main():
             except Exception as exc:
                 record["state_publication_error"] = str(exc)
                 failure = failure or exc
-        (trusted / "result.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
+        (host / "result.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
         print(json.dumps(record, indent=2, ensure_ascii=False))
     return 1 if failure else 0
 

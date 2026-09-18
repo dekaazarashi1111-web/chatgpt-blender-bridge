@@ -35,7 +35,7 @@ def main():
         if not blend.is_file() or blend.stat().st_size == 0:
             raise RuntimeError("Blender did not produce model.blend")
         report = output / "validation.json"
-        check = subprocess.run(["blender", "--background", "--disable-autoexec", str(blend),
+        check = subprocess.run(["blender", "--background", str(blend),
                                 "--python-exit-code", "1", "--python", str(ROOT / "bridge/blender_validate.py"),
                                 "--", "--report", str(report)], check=False)
         if check.returncode or not json.loads(report.read_text()).get("pass"):

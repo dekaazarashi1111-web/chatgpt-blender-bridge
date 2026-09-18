@@ -28,7 +28,7 @@ KritaはCLI書き出しに対応します。Material Makerは `.ptex` からBlen
 | `krita` | `export` | `input`、`output` |
 | `material_maker` | `export` | `input`（`.ptex`）、`output`（ファイル名の接頭辞）、任意の必須出力 `maps` |
 
-script は `PARAMS`、`INPUT_DIR`、`OUTPUT_DIR`、`WORKSPACE_DIR` を使います。入力パスは `input/` または `workspace/`、外部ツールの出力パスは現在の step の出力ディレクトリからの相対パスです。通常の工程出力は `workspace/output/<step_id>/` 以下にあります。任意の CLI オプションや shell command を job に渡すことはできません。詳細なスクリプト API は [`../runtime/README.md`](../runtime/README.md) を参照してください。
+script は `PARAMS`、`INPUT_DIR`、`OUTPUT_DIR`、`WORKSPACE_DIR` を使います。入力パスは `input/` または `workspace/`、外部ツールの出力パスは現在の step の出力ディレクトリからの相対パスです。通常の工程出力は `workspace/output/<step_id>/` 以下にあります。表にない CLI 操作は Python step の script から呼び出せます。詳細なスクリプト API は [`../runtime/README.md`](../runtime/README.md) を参照してください。
 
 ## step の組み合わせ
 
@@ -44,7 +44,7 @@ Blender では、script が正常終了しても保存・プレビュー・再�
 2. 実行環境へバージョンを管理した依存ソフトを追加する。
 3. `tools.json` と runner の双方で対応する操作・引数・パス検査を追加する。
 4. 失敗・timeout・出力不足を検出し、共通のログと manifest に記録する。
-5. ネットワークなし・認証情報なしの制作コンテナで実行できることを確認する。
+5. 制作コンテナで必要な入出力が揃って動作することを確認する。
 6. 小さな実入力で smoke test を行い、出力と再開を確認する。
 7. runtime を再構築し、使い方とサンプルを更新する。
 

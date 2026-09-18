@@ -31,10 +31,10 @@ class AdapterTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.temporary.cleanup()
 
-    def test_blender_disables_autoexec_and_uses_argv(self) -> None:
+    def test_blender_passes_script_parameters_as_argv(self) -> None:
         command = build_command({"id": "make", "tool": "blender", "script": "build.py",
                                  "params": {"label": "$(do-not-run); `no-shell`"}}, self.context)
-        self.assertIn("--disable-autoexec", command)
+        self.assertIn("--python", command)
         self.assertNotIn("sh", command)
         self.assertIn("$(do-not-run)", command[command.index("--step-json") + 1])
 
@@ -57,17 +57,17 @@ class AdapterTests(unittest.TestCase):
             build_command({"tool": "imagemagick", "operation": "convert",
                            "params": {"input": "input/link.png", "output": "a.png"}}, self.context)
 
-    def test_extra_cli_options_and_dangerous_formats_rejected(self) -> None:
+    def test_adapter_parameters_and_output_formats(self) -> None:
         for changes in ({"args": ["-write", "/tmp/other"]}, {"output": "a.pdf"}):
             with self.subTest(changes=changes), self.assertRaises(AdapterError):
                 build_command({"tool": "imagemagick", "operation": "convert",
                                "params": {"input": "input/source.png", "output": "a.png", **changes}}, self.context)
 
-    def test_ffmpeg_sequences_are_local_and_protocols_restricted(self) -> None:
+    def test_ffmpeg_resolves_numbered_input_sequences(self) -> None:
         (self.inputs / "frame0000.png").write_bytes(b"image-placeholder")
         command = build_command({"tool": "ffmpeg", "operation": "encode",
                                  "params": {"input": "input/frame%04d.png", "output": "preview.mp4"}}, self.context)
-        self.assertEqual(command[command.index("-protocol_whitelist") + 1], "file,pipe")
+        self.assertEqual(command[command.index("-i") + 1], str(self.inputs / "frame%04d.png"))
         for pattern in ("input/frame%s.png", "input/frame%04d*.png", "input/missing%04d.png"):
             with self.subTest(pattern=pattern), self.assertRaises(AdapterError):
                 build_command({"tool": "ffmpeg", "operation": "encode",

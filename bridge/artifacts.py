@@ -1,7 +1,4 @@
 """Durable, hash-pinned workspace snapshots in the current GitHub repository.
-
-Only the trusted Actions supervisor imports this module. Tokens are used for
-GitHub HTTP requests here, never copied into an archive or a tool container.
 """
 from __future__ import annotations
 
@@ -64,7 +61,7 @@ def _safe_path(value: object) -> str:
         raise ArtifactError("Invalid snapshot path")
     path = PurePosixPath(value)
     if path.is_absolute() or any(part in {"", ".", ".."} for part in value.split("/")) or "\\" in value or ":" in value or "\x00" in value:
-        raise ArtifactError("Unsafe snapshot path")
+        raise ArtifactError("Invalid snapshot path")
     return value
 
 
@@ -77,7 +74,7 @@ def _quota(value: object, maximum: int, name: str) -> int:
 def _directory_fd(path: Path) -> int:
     """Open EVERY absolute path component without following symlinks."""
     if not hasattr(os, "O_NOFOLLOW"):
-        raise ArtifactError("Safe workspace snapshots require O_NOFOLLOW support")
+        raise ArtifactError("Workspace snapshots require O_NOFOLLOW support")
     descriptor = os.open("/", os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
     try:
         for component in Path(os.path.abspath(path)).parts[1:]:
@@ -94,7 +91,7 @@ def _directory_fd(path: Path) -> int:
 def _regular_file(root: Path, relative: str):
     """Walk using directory descriptors; a symlink swap cannot escape root."""
     if not hasattr(os, "O_NOFOLLOW"):
-        raise ArtifactError("Safe workspace snapshots require O_NOFOLLOW support")
+        raise ArtifactError("Workspace snapshots require O_NOFOLLOW support")
     directory = None
     descriptor = None
     try:
@@ -111,7 +108,7 @@ def _regular_file(root: Path, relative: str):
             descriptor = None
             yield stream
     except OSError as exc:
-        raise ArtifactError("Snapshot file changed or could not be safely opened") from exc
+        raise ArtifactError("Snapshot file changed or could not be opened consistently") from exc
     finally:
         if directory is not None:
             os.close(directory)
@@ -154,7 +151,7 @@ def _list_files(root: Path, maximum: int, excluded: tuple[str, ...]) -> list[str
         finally:
             os.close(descriptor)
     except OSError as exc:
-        raise ArtifactError("Snapshot source changed or cannot be safely opened") from exc
+        raise ArtifactError("Snapshot source changed or cannot be opened consistently") from exc
     return sorted(found)
 
 

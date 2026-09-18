@@ -77,7 +77,7 @@ jobs:
           digest=$(docker image inspect "$image:runtime-v2" --format '{{index .RepoDigests 0}}')
           echo "image=$digest" >> "$GITHUB_OUTPUT"
           docker logout ghcr.io
-      - name: Execute isolated tools and publish durable checkpoints
+      - name: Execute tools and publish durable checkpoints
         env:
           GH_TOKEN: ${{ github.token }}
           JOB_PATH: ${{ matrix.job }}
@@ -89,8 +89,8 @@ jobs:
         with:
           name: creative-host-${{ matrix.project }}-${{ strategy.job-index }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
-            .creative-runs/*/trusted/*.log
-            .creative-runs/*/trusted/result.json
+            .creative-runs/*/host/*.log
+            .creative-runs/*/host/result.json
           include-hidden-files: true
           retention-days: 30
       # Connector-readable copies for actual visual review; Releases remain authoritative.

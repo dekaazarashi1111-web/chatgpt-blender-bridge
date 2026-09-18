@@ -5,7 +5,7 @@ Material Maker 1.7. `tools.json` describes exactly which operations are callable
 Material Maker's official distribution includes its Godot runtime internally;
 game creation tools and external AI APIs are not exposed.
 
-## Build once, execute without external networking
+## Build once and reuse the environment
 
 Build `runtime/Dockerfile` from the repository root and run `runtime/smoke.py`
 before publishing that image. Build-time apt downloads require network
@@ -19,10 +19,11 @@ production jobs to the tested GHCR image's `sha256` digest, so later apt/base
 image changes cannot alter an existing job's environment.
 
 The host downloads the image and stages declared inputs before processing.
-The tools run in their own container. Inputs are mounted at `/input`, source at
-`/repo`, and generated files at `/work`. Creative tools use local files; the
-outer runner handles network transfers, GitHub uploads, and state updates.
-ChatGPT uses its available GitHub connection to update source and submit jobs.
+Jobs use Docker's default networking and writable `/repo`, `/input`, and `/work`
+mounts. CPU/memory settings allocate runner resources; the matching host UID/GID
+keeps generated files writable by the publisher. GitHub uploads and workspace
+state updates are handled by the outer runner. The bundled tools work without
+additional downloads. Python steps can also call installed CLI programs.
 
 ## Script contract
 
@@ -72,7 +73,7 @@ portable paths. The automatic reopen check covers images and linked libraries;
 project-specific cache dependencies need their own validation.
 
 Blender always saves a checkpoint before generating previews, actually reopens
-the saved scene with embedded Python disabled, checks missing external image and
+the saved scene, checks missing external image and
 library paths, renders requested views, and restores the original saved scene.
 The final editable file keeps the user's scene lighting/camera. Successful
 execution is followed by a separate visual quality review by ChatGPT.

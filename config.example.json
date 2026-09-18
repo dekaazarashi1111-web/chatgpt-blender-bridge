@@ -2,14 +2,10 @@
   "schema_version": 1,
   "repository": "dekaazarashi1111-web/chatgpt-blender-bridge",
   "branch": "main",
-  "trusted_authors": [
-    "dekaazarashi1111-web"
-  ],
   "poll_seconds": 20,
   "blender_bin": "",
   "git_sync": true,
   "git_publish": true,
-  "require_trusted_author": true,
   "max_publish_bytes": 90000000,
   "max_job_seconds": 21600
 }

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/creative-job.schema.json",
   "title": "Creative workspace job (version 2)",
-  "description": "Store at projects/<project_id>/jobs/<job_id>/job.json. The stdlib validator additionally verifies matching IDs, file existence, checksums, duplicate targets/steps, script syntax, and safe project ownership. Script params are limited to 32768 serialized bytes and eight nesting levels. Execution requires the isolated runtime; validation is not a Python sandbox.",
+  "description": "Store at projects/<project_id>/jobs/<job_id>/job.json. The stdlib validator verifies matching IDs, file existence, checksums, duplicate targets/steps, script syntax, and project-relative paths. Script params use at most 32768 serialized bytes and eight nesting levels.",
   "type": "object",
   "additionalProperties": false,
   "required": [

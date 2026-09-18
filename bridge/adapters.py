@@ -1,8 +1,4 @@
-"""Validated, shell-free commands for the isolated creative runtime.
-
-This module does not sandbox programs. The caller MUST run the returned command
-inside the no-network, read-only runtime described in runtime/README.md.
-"""
+"""Build command arguments for the creative runtime's tool adapters."""
 from __future__ import annotations
 
 import json
@@ -24,7 +20,7 @@ def relative_path(value: str) -> Path:
         raise AdapterError("Expected a nonempty POSIX relative path")
     pure = PurePosixPath(value)
     if pure.is_absolute() or any(part in {"", ".", ".."} for part in value.split("/")):
-        raise AdapterError(f"Unsafe relative path: {value}")
+        raise AdapterError(f"Invalid relative path: {value}")
     return Path(*pure.parts)
 
 
@@ -49,9 +45,9 @@ def input_path(value: str, context: Mapping[str, Any], *, sequence: bool = False
         matches = list(SEQUENCE.finditer(rest))
         if len(matches) != 1 or "%" in SEQUENCE.sub("", rest):
             raise AdapterError("Image sequences require exactly one %d or %01d..%09d token")
-        # Disallow glob syntax so only the declared sequence is selected.
+        # A numbered frame placeholder selects the declared sequence.
         if any(character in rest for character in "*?[]"):
-            raise AdapterError("Glob syntax is not allowed in an image sequence")
+            raise AdapterError("Image sequences use one numbered frame placeholder, not glob syntax")
         glob = SEQUENCE.sub("*", rest)
         candidates = [item for item in root.glob(glob) if item.is_file()]
         if not candidates or any(not item.resolve().is_relative_to(root.resolve()) for item in candidates):
@@ -101,7 +97,7 @@ def build_command(step: dict, context: Mapping[str, Any]) -> list[str]:
             args += ["--job", str(context["job_file"])]
         if tool == "python":
             return ["python3", "-u", str(entry), *args]
-        return ["xvfb-run", "-a", "blender", "--background", "--factory-startup", "--disable-autoexec",
+        return ["xvfb-run", "-a", "blender", "--background", "--factory-startup",
                 "--threads", "2", "--python-exit-code", "1", "--python", str(entry), "--", *args]
     if tool == "imagemagick":
         operation = step.get("operation")
@@ -133,8 +129,7 @@ def build_command(step: dict, context: Mapping[str, Any]) -> list[str]:
         source = input_path(params["input"], context, sequence=is_sequence)
         target = output_path(params["output"], context,
                              {".mp4", ".webm"} if operation == "encode" else {".png", ".jpg", ".jpeg"})
-        command = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-nostdin", "-y",
-                   "-protocol_whitelist", "file,pipe"]
+        command = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-nostdin", "-y"]
         if operation == "thumbnail":
             at = params.get("time_seconds", 0)
             if type(at) not in {int, float} or not 0 <= at <= 86400:

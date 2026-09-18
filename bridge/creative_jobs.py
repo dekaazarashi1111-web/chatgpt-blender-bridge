@@ -1,9 +1,4 @@
-"""Validate durable creative jobs, without pretending to sandbox Python.
-
-Version 2 scripts run only in the isolated runtime. Validation controls the
-descriptor, repository reads and typed tool operations; it is not a security
-boundary for arbitrary Python (including Blender's Python API).
-"""
+"""Validate job structure, file references, script syntax, and input hashes."""
 from __future__ import annotations
 
 import ast
@@ -57,7 +52,7 @@ def _integer(value: object, label: str, low: int, high: int) -> int:
 
 def _identifier(value: object, label: str) -> str:
     if not isinstance(value, str) or not IDENTIFIER.fullmatch(value):
-        raise JobError(f"{label} is not a safe identifier")
+        raise JobError(f"{label} is not a valid identifier")
     return value
 
 
@@ -66,7 +61,7 @@ def safe_relative_path(value: object, label: str = "path") -> str:
     if not isinstance(value, str) or not 1 <= len(value) <= 1024:
         raise JobError(f"{label} must be a relative path of 1..1024 characters")
     if any(c in value for c in "\\:") or any(ord(c) < 32 or ord(c) == 127 for c in value):
-        raise JobError(f"{label} contains a forbidden character")
+        raise JobError(f"{label} contains a non-portable character")
     if any(part in {"", ".", ".."} for part in value.split("/")):
         raise JobError(f"{label} must not be absolute or contain empty/dot/traversal components")
     return value

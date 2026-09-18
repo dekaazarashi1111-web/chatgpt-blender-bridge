@@ -40,7 +40,7 @@ def main():
     blender = shutil.which('blender')
     if not blender:
         raise RuntimeError('Blender executable not found')
-    command = [blender, '--background', '--factory-startup', '--disable-autoexec', '--threads', '2']
+    command = [blender, '--background', '--factory-startup', '--threads', '2']
     if job.get('source_blend'):
         command.append(str(ROOT / job['source_blend']))
     command += ['--python-exit-code', '1', '--python', str(ROOT / 'bridge/blender_entry.py'),
@@ -49,7 +49,7 @@ def main():
     blend = output / 'output/model.blend'
     validate_code = None
     if code == 0 and blend.is_file():
-        validate_code = run([blender, '--background', '--disable-autoexec', str(blend),
+        validate_code = run([blender, '--background', str(blend),
             '--python-exit-code', '1', '--python', str(ROOT / 'bridge/blender_validate.py'),
             '--', '--report', str(output / 'validation.json')], log, 240)
     validation = json.loads((output/'validation.json').read_text()) if (output/'validation.json').is_file() else {}

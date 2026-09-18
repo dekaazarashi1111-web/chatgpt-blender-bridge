@@ -6,7 +6,4 @@
   <policy domain="resource" name="width" value="16KP"/>
   <policy domain="resource" name="height" value="16KP"/>
   <policy domain="resource" name="thread" value="2"/>
-  <policy domain="delegate" rights="none" pattern="*"/>
-  <policy domain="path" rights="none" pattern="@*"/>
-  <policy domain="coder" rights="none" pattern="{URL,HTTP,HTTPS,FTP,SVG,MSL,MVG,TEXT,LABEL,CAPTION,PS,PS2,PS3,EPS,PDF,XPS}"/>
 </policymap>

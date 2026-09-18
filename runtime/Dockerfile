@@ -1,5 +1,4 @@
-# Build-time networking installs the tools once. Production jobs use this image
-# by sha256 digest with --network none; they never run apt or pip.
+# Build the shared tool environment once; jobs record its sha256 image digest.
 FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive

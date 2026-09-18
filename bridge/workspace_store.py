@@ -1,4 +1,4 @@
-"""Trusted host-side state index. Never import this module into user tool processes."""
+"""Publish and read the workspace state index on GitHub."""
 from __future__ import annotations
 
 import base64
@@ -24,7 +24,7 @@ class WorkspaceStore:
         self.source_commit = source_commit
         self.token = token or os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
         if not self.token:
-            raise RuntimeError("GitHub token missing from trusted publisher")
+            raise RuntimeError("GitHub token missing from workspace publisher")
 
     def api(self, path, data=None, method=None):
         request = Request("https://api.github.com/repos/" + self.repository + path,

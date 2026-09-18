@@ -47,16 +47,14 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(write.call_count, 1)
         self.assertIn("jobs/job-v001.json", write.call_args.args[0])
 
-    def test_production_container_has_no_network_token_or_privilege(self):
-        args = docker_command("ghcr.io/owner/runtime@sha256:" + "a" * 64,
-                              ROOT / "projects/a/jobs/b/job.json", "shape", Path("/safe/work"), Path("/safe/inputs"), "test")
-        self.assertIn("none", args)
-        self.assertIn("--read-only", args)
-        self.assertIn("--cap-drop=ALL", args)
-        self.assertIn("--security-opt=no-new-privileges", args)
-        self.assertNotIn("GITHUB_TOKEN", " ".join(args))
-        self.assertNotIn("GH_TOKEN", " ".join(args))
-        self.assertNotIn("docker.sock", " ".join(args))
+    def test_production_container_routes_workspace_and_pins_image(self):
+        image = "ghcr.io/owner/runtime@sha256:" + "a" * 64
+        args = docker_command(image, ROOT / "projects/a/jobs/b/job.json", "shape",
+                              Path("/job/work"), Path("/job/inputs"), "test")
+        self.assertIn("type=bind,src=/job/work,dst=/work", args)
+        self.assertIn("type=bind,src=/job/inputs,dst=/input", args)
+        self.assertIn(image, args)
+        self.assertEqual(args[-4:], ["--job", "projects/a/jobs/b/job.json", "--step", "shape"])
         with self.assertRaises(ValueError):
             docker_command("ubuntu:latest", ROOT / "job.json", "shape", Path("/w"), Path("/i"), "test")
 

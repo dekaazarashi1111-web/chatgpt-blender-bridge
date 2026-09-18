@@ -1,6 +1,6 @@
-"""Run real headless tool operations in the same isolation as production jobs.
+"""Run real headless tool operations in the same environment as production jobs.
 
-Example: docker run --network none --read-only ... -v "$PWD:/repo:ro" \
+Example: docker run -v "$PWD:/repo" \
   IMAGE python3 /repo/runtime/smoke.py --output /work/smoke
 """
 from __future__ import annotations

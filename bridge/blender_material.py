@@ -18,7 +18,7 @@ def load_material_maker(directory, name="Material Maker", height_distance=0.04):
     for index, (kind, record) in enumerate(report["maps"].items()):
         path = (root / record["path"]).resolve()
         if not path.is_relative_to(root) or not path.is_file():
-            raise ValueError("Missing or unsafe Material Maker map")
+            raise ValueError("Missing or invalid Material Maker map")
         if hashlib.sha256(path.read_bytes()).hexdigest() != record["sha256"]:
             raise ValueError("Material Maker map SHA-256 mismatch: " + kind)
         image = bpy.data.images.load(str(path), check_existing=True)

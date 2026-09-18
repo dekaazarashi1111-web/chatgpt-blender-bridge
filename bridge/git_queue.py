@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 import subprocess
 
@@ -43,17 +42,6 @@ def commit_sha_for_path(path: Path) -> str:
     if not sha:
         raise GitError(f"No commit found for {relative}")
     return sha
-
-
-def github_author(path: Path, repository: str) -> tuple[str, str]:
-    sha = commit_sha_for_path(path)
-    completed = run(["gh", "api", f"repos/{repository}/commits/{sha}"])
-    payload = json.loads(completed.stdout)
-    author = payload.get("author") or {}
-    login = author.get("login")
-    if not login:
-        raise GitError(f"GitHub author login is unavailable for commit {sha}")
-    return str(login), sha
 
 
 def publish(paths: list[Path], message: str, branch: str, *, push: bool) -> str:

@@ -6,9 +6,7 @@
 
 - Python 3.11以上
 - Git
-- GitHub CLI (`gh`)
 - Blender 4.x
-- このリポジトリへcommitできるGitHubアカウント
 
 ## 2. cloneと設定
 
@@ -32,15 +30,13 @@ bash scripts/setup_linux.sh
 
 `config.json`の`blender_bin`が空なら、PATHと一般的なinstall先から自動検出します。検出されない場合だけ絶対pathを指定してください。
 
-## 3. 認証と診断
+## 3. 動作環境の診断
 
 ```bash
-gh auth login
-gh auth setup-git
 python bridge_cli.py doctor
 ```
 
-`DOCTOR=PASS`になるまでworkerを常駐させないでください。
+Git と Blender の検出結果を表示します。Git の接続は普段利用している設定を使います。
 
 ## 4. Blender smoke test
 

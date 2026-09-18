@@ -1,7 +1,4 @@
 """Export one portable .ptex material through the installed official CLI.
-
-This entry point runs ONLY inside the same isolated container as other tools.
-Graphs may contain shaders; JSON validation is not a sandbox.
 """
 from __future__ import annotations
 

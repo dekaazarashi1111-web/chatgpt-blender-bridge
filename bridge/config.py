@@ -61,12 +61,10 @@ def load_config(path: Path | None = None) -> dict:
         "schema_version",
         "repository",
         "branch",
-        "trusted_authors",
         "poll_seconds",
         "blender_bin",
         "git_sync",
         "git_publish",
-        "require_trusted_author",
         "max_publish_bytes",
         "max_job_seconds",
     }
@@ -75,6 +73,4 @@ def load_config(path: Path | None = None) -> dict:
         raise ConfigError(f"Missing config keys: {sorted(missing)}")
     if data["schema_version"] != 1:
         raise ConfigError("Unsupported config schema_version")
-    if not isinstance(data["trusted_authors"], list) or not data["trusted_authors"]:
-        raise ConfigError("trusted_authors must contain at least one GitHub login")
     return data

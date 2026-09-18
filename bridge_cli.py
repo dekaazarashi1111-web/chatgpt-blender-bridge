@@ -19,8 +19,6 @@ def command_doctor(args: argparse.Namespace) -> int:
     checks = []
     for name, command in (
         ("git", ["git", "--version"]),
-        ("gh", ["gh", "--version"]),
-        ("github_auth", ["gh", "auth", "status"]),
         ("blender", [str(blender), "--version"]),
     ):
         completed = subprocess.run(command, cwd=ROOT, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, check=False)
@@ -64,7 +62,6 @@ def command_smoke(args: argparse.Namespace) -> int:
     manifest = process_job(
         queue_root / "job.json",
         smoke_config,
-        check_author=False,
         publish_updates=False,
         publish_results=False,
         run_dir_override=run_dir,

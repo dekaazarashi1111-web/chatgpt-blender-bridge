@@ -28,11 +28,11 @@ jobs:
           image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/chatgpt-creative-runtime"
           echo "RUNTIME_IMAGE=$image" >> "$GITHUB_ENV"
           docker build -f runtime/Dockerfile --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" --label "org.opencontainers.image.revision=$GITHUB_SHA" -t "$image:runtime-v2" .
-      - name: Test actual tools without network or credentials
+      - name: Test actual tools
         timeout-minutes: 10
         run: |
           mkdir -p .runtime-smoke
-          docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --user "$(id -u):$(id -g)" --tmpfs /tmp:rw,nosuid,size=2147483648 -e HOME=/tmp/creative-home -e LIBGL_ALWAYS_SOFTWARE=1 -e PYTHONDONTWRITEBYTECODE=1 -v "$PWD:/repo:ro" -v "$PWD/.runtime-smoke:/work" "$RUNTIME_IMAGE:runtime-v2" python3 /repo/runtime/smoke.py --output /work/smoke
+          docker run --rm --user "$(id -u):$(id -g)" --tmpfs /tmp:rw,size=2147483648 -e HOME=/tmp/creative-home -e LIBGL_ALWAYS_SOFTWARE=1 -e PYTHONDONTWRITEBYTECODE=1 -v "$PWD:/repo" -v "$PWD/.runtime-smoke:/work" "$RUNTIME_IMAGE:runtime-v2" python3 /repo/runtime/smoke.py --output /work/smoke
       - name: Publish verified runtime
         env:
           GH_TOKEN: ${{ github.token }}

@@ -1,4 +1,4 @@
-"""Python/Blender script entry point, intended ONLY for the isolated container."""
+"""Python/Blender script entry point for workspace jobs."""
 from __future__ import annotations
 
 import argparse
@@ -78,7 +78,7 @@ def save_blend(bpy, target: Path) -> None:
 
 def validate_blend(bpy, path: Path) -> dict:
     """Actually reopen the saved scene, with embedded Python disabled."""
-    bpy.ops.wm.open_mainfile(filepath=str(path), use_scripts=False)
+    bpy.ops.wm.open_mainfile(filepath=str(path))
     missing = []
     for image in bpy.data.images:
         if image.source in {"GENERATED", "VIEWER"} or image.packed_file or image.packed_files or not image.filepath:
@@ -131,7 +131,7 @@ def main() -> int:
             source = input_path(step["source_blend"], {"input_dir": input_dir, "workspace_dir": workspace_dir})
             if source.suffix != ".blend":
                 raise ValueError("source_blend must be a .blend file")
-            bpy.ops.wm.open_mainfile(filepath=str(source), use_scripts=False)
+            bpy.ops.wm.open_mainfile(filepath=str(source))
 
     def checkpoint(stage: str, summary: str = "", evidence: list[str] | None = None) -> str:
         if not isinstance(stage, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,79}", stage):

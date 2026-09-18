@@ -87,7 +87,7 @@ def capabilities() -> dict:
         tools["material_maker"].update(engine_version=tools["material_maker"]["version"],
                                        version=release["version"], archive_sha256=release["sha256"])
     return {"schema_version": 1, "generated_at": datetime.now(timezone.utc).isoformat(),
-            "tools": tools, "execution_network": "caller must use docker --network none",
+            "tools": tools, "execution_network": "Docker default networking",
             "base_ready": all(tools[name]["available"] for name in ("blender", "python", "imagemagick", "ffmpeg", "krita", "material_maker"))}
 
 

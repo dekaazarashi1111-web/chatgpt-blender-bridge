@@ -12,7 +12,7 @@ import traceback
 from typing import Iterator
 
 from .config import ROOT, locate_blender
-from .git_queue import GitError, github_author, publish, sync
+from .git_queue import GitError, commit_sha_for_path, publish, sync
 from .jobs import JobError, load_job
 from .state import atomic_write_json, file_record, public_value, publish_artifacts, utc_now
 
@@ -135,7 +135,6 @@ def process_job(
     descriptor: Path,
     config: dict,
     *,
-    check_author: bool = True,
     publish_updates: bool = True,
     publish_results: bool = True,
     run_dir_override: Path | None = None,
@@ -165,49 +164,17 @@ def process_job(
             )
         return payload
 
-    author = "local-smoke"
-    source_commit = "local"
-    source_commits: dict[str, dict[str, str]] = {
-        "job": {"author": author, "commit": source_commit},
-        "script": {"author": author, "commit": source_commit},
-    }
-    if check_author:
-        descriptor_author, source_commit = github_author(files.descriptor, config["repository"])
-        script_author, script_commit = github_author(files.script, config["repository"])
-        source_commits = {
-            "job": {"author": descriptor_author, "commit": source_commit},
-            "script": {"author": script_author, "commit": script_commit},
-        }
-        if job.get("source_blend"):
-            source_path = (ROOT / job["source_blend"]).resolve()
-            blend_author, blend_commit = github_author(source_path, config["repository"])
-            source_commits["source_blend"] = {"author": blend_author, "commit": blend_commit}
-        untrusted = {
-            name: record["author"]
-            for name, record in source_commits.items()
-            if record["author"] not in config["trusted_authors"]
-        }
-        author = descriptor_author
-        if config["require_trusted_author"] and untrusted:
-            payload = {
-                "schema_version": 1,
-                "job_id": job_id,
-                "state": "blocked",
-                "updated_at": utc_now(),
-                "reason_code": "untrusted_author",
-                "reason_detail": f"Untrusted GitHub authors: {untrusted}",
-                "source_commit": source_commit,
-                "author": author,
-                "source_commits": source_commits,
-            }
-            _write_status(
-                job_id,
-                payload,
-                config=config,
-                publish_update=publish_updates,
-                path_override=status_path_override,
-            )
-            return payload
+    source_files = {"job": files.descriptor, "script": files.script}
+    if job.get("source_blend"):
+        source_files["source_blend"] = (ROOT / job["source_blend"]).resolve()
+    source_commits = {}
+    for name, path in source_files.items():
+        try:
+            commit = commit_sha_for_path(path)
+        except GitError:
+            commit = "local"
+        source_commits[name] = {"commit": commit}
+    source_commit = source_commits["job"]["commit"]
 
     run_dir = run_dir_override or (ROOT / ".worker" / "runs" / job_id / source_commit[:12])
     run_dir.mkdir(parents=True, exist_ok=True)
@@ -219,7 +186,6 @@ def process_job(
         "updated_at": utc_now(),
         "source_commit": source_commit,
         "source_commits": source_commits,
-        "author": author,
         "checkpoint": ".worker runtime checkpoint",
     }
     _write_status(
@@ -231,7 +197,7 @@ def process_job(
     )
 
     blender = locate_blender(config["blender_bin"])
-    command = [str(blender), "--background", "--factory-startup", "--disable-autoexec"]
+    command = [str(blender), "--background", "--factory-startup"]
     source_blend = job.get("source_blend")
     if source_blend:
         command.append(str((ROOT / source_blend).resolve()))
@@ -252,7 +218,7 @@ def process_job(
     validation_code = 1
     if blender_code == 0 and output_blend.is_file():
         validation_command = [
-            str(blender), "--background", "--disable-autoexec", str(output_blend),
+            str(blender), "--background", str(output_blend),
             "--python-exit-code", "1",
             "--python", str(ROOT / "bridge" / "blender_validate.py"),
             "--", "--report", str(validation_path),
@@ -307,7 +273,6 @@ def process_job(
         "state": state,
         "started_from_commit": source_commit,
         "source_commits": source_commits,
-        "author": author,
         "finished_at": utc_now(),
         "blender_exit_code": blender_code,
         "validation_exit_code": validation_code,
@@ -331,7 +296,6 @@ def process_job(
         "state": state,
         "updated_at": utc_now(),
         "source_commit": source_commit,
-        "author": author,
         "reason_code": "timeout" if timed_out else ("verification_failed" if state == "failed" else None),
         "manifest": (Path("results") / job_id / "manifest.json").as_posix() if publish_results else str(manifest_path),
     }
@@ -358,7 +322,7 @@ def process_job(
     return manifest
 
 
-def reconcile_reviews(config: dict, *, publish_updates: bool = True, check_author: bool = True) -> int:
+def reconcile_reviews(config: dict, *, publish_updates: bool = True) -> int:
     changed = 0
     for review_path in sorted((ROOT / "queue" / "reviews").glob("*.json")):
         try:
@@ -375,11 +339,6 @@ def reconcile_reviews(config: dict, *, publish_updates: bool = True, check_autho
             status = json.loads(status_path.read_text(encoding="utf-8"))
             if status.get("state") != "needs_review":
                 continue
-            author = "local"
-            if check_author:
-                author, _ = github_author(review_path, config["repository"])
-                if config["require_trusted_author"] and author not in config["trusted_authors"]:
-                    raise JobError(f"Review author {author!r} is not trusted")
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
             review_ids = {item["id"] for item in manifest["acceptance_criteria"] if item["kind"] == "review"}
             supplied = review["criteria"]
@@ -392,10 +351,10 @@ def reconcile_reviews(config: dict, *, publish_updates: bool = True, check_autho
                     item["status"] = supplied[item["id"]]
             new_state = "complete" if review["verdict"] == "approved" else "changes_requested"
             manifest["state"] = new_state
-            manifest["review"] = {**review, "author": author}
+            manifest["review"] = dict(review)
             status["state"] = new_state
             status["updated_at"] = utc_now()
-            status["review"] = {"verdict": review["verdict"], "author": author, "summary": review["summary"]}
+            status["review"] = {"verdict": review["verdict"], "summary": review["summary"]}
             atomic_write_json(manifest_path, manifest)
             atomic_write_json(status_path, status)
             if publish_updates:

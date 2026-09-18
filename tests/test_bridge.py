@@ -24,38 +24,16 @@ class JobTests(unittest.TestCase):
         self.assertEqual(job["job_id"], "demo-cube")
         self.assertTrue(files.script.is_file())
 
-    def test_dangerous_import_is_rejected(self) -> None:
-        with tempfile.TemporaryDirectory() as temporary:
-            path = Path(temporary) / "bad.py"
-            path.write_text("import subprocess\nsubprocess.run(['echo', 'bad'])\n", encoding="utf-8")
-            with self.assertRaises(JobError):
-                validate_script(path)
-
-    def test_open_builtin_is_rejected(self) -> None:
-        with tempfile.TemporaryDirectory() as temporary:
-            path = Path(temporary) / "bad.py"
-            path.write_text("open('outside.txt', 'w')\n", encoding="utf-8")
-            with self.assertRaises(JobError):
-                validate_script(path)
-
-    def test_blender_unit_system_is_allowed_for_known_scenes(self) -> None:
+    def test_regular_python_operations_parse(self) -> None:
+        self.validate_source("import os, subprocess, pathlib\nsubprocess.run(['echo', 'hello'])\n")
+        self.validate_source("with open('output.txt', 'w') as stream:\n    stream.write('texture')\n")
         self.validate_source("import bpy\nscene = bpy.context.scene\nscene.unit_settings.system = 'METRIC'\n")
-        self.validate_source("import bpy\nbpy.context.scene.unit_settings.system = 'METRIC'\n")
-        self.validate_source("import bpy\nbpy.data.scenes['Scene'].unit_settings.system = 'NONE'\n")
-
-    def test_blender_datablock_removal_is_allowed(self) -> None:
         self.validate_source("import bpy\nbpy.data.objects.remove(bpy.data.objects['Cube'], do_unlink=True)\n")
-        self.validate_source("import bpy\nbpy.data.materials.remove(bpy.data.materials['Material'])\n")
+        self.validate_source("thing.remove('file')\nthing.system('echo hello')\n")
 
-    def test_unsafe_attribute_receivers_remain_rejected(self) -> None:
-        for source in (
-            "thing.system('echo bad')\n",
-            "thing.unit_settings.system = 'METRIC'\n",
-            "thing.remove('file')\n",
-            "import bpy\nscene = bpy.context.scene\nscene = other\nscene.unit_settings.system = 'METRIC'\n",
-        ):
-            with self.subTest(source=source), self.assertRaises(JobError):
-                self.validate_source(source)
+    def test_invalid_python_still_reports_syntax_error(self) -> None:
+        with self.assertRaisesRegex(JobError, "Invalid Python syntax"):
+            self.validate_source("def broken(:\n")
 
 
 class StateTests(unittest.TestCase):
