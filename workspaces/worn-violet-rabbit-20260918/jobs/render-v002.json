@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "worn-violet-rabbit-20260918",
   "job_id": "render-v002",
-  "state": "running",
+  "state": "needs_review",
   "source_commit": "437b1cdceb06e5129ee51b858581db1f2cc6dfcc",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
   "run_id": "35365556050",
@@ -91,7 +91,71 @@
     "Appearance is inspected against the supplied reference and remaining differences are recorded honestly."
   ],
   "review_required": true,
-  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "next_action": "Inspect real previews against references; submit a pinned review or a new revision.",
   "current_step": "package",
-  "updated_at": "2026-09-18T16:06:58.311814Z"
+  "finished_at": "2026-09-18T16:07:00.166106Z",
+  "publication_errors": [],
+  "previews": [
+    {
+      "path": "output/model/previews/back.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/back.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/back.png"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/front.png"
+    },
+    {
+      "path": "output/model/previews/right.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/right.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/right.png"
+    },
+    {
+      "path": "output/model/previews/three_quarter.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/three_quarter.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/model/previews/three_quarter.png"
+    },
+    {
+      "path": "output/package/previews/back.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/back.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/back.png"
+    },
+    {
+      "path": "output/package/previews/comparison.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/comparison.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/comparison.png"
+    },
+    {
+      "path": "output/package/previews/details.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/details.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/details.png"
+    },
+    {
+      "path": "output/package/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/front.png"
+    },
+    {
+      "path": "output/package/previews/right.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/right.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/right.png"
+    },
+    {
+      "path": "output/package/previews/three_quarter.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_quarter.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_quarter.png"
+    },
+    {
+      "path": "output/package/previews/three_view.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_view.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/package/previews/three_view.png"
+    },
+    {
+      "path": "output/presentation/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/presentation/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/worn-violet-rabbit-20260918/previews/render-v002/output/presentation/previews/front.png"
+    }
+  ],
+  "updated_at": "2026-09-18T16:07:15.972423Z"
 }
