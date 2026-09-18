@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "studio-smoke",
   "job_id": "blender-resume-v001",
-  "state": "running",
+  "state": "complete",
   "source_commit": "5007df31ab31903cae4a2526bf3dac1a861e9930",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:3e7adf0a7a1aaab0f218c3a6c8ac572a14b266d21cbafcd74acc19573d62e5b6",
   "run_id": "35353761801",
@@ -52,7 +52,31 @@
     "Persist resume_evidence.json plus the renamed and recolored cube, reopen the new blend and render four previews."
   ],
   "review_required": false,
-  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "next_action": "Technical job completed; artifacts are available.",
   "current_step": "model",
-  "updated_at": "2026-09-18T14:04:13.857491Z"
+  "finished_at": "2026-09-18T14:04:16.017864Z",
+  "publication_errors": [],
+  "previews": [
+    {
+      "path": "output/model/previews/back.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/back.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/back.png"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/front.png"
+    },
+    {
+      "path": "output/model/previews/right.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/right.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/right.png"
+    },
+    {
+      "path": "output/model/previews/three_quarter.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/three_quarter.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/studio-smoke/previews/blender-resume-v001/output/model/previews/three_quarter.png"
+    }
+  ],
+  "updated_at": "2026-09-18T14:04:22.360674Z"
 }
