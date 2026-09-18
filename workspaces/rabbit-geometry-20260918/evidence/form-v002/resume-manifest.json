@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "format": "creative-workspace",
+  "repository": "dekaazarashi1111-web/chatgpt-blender-bridge",
+  "project_id": "rabbit-geometry-20260918",
+  "job_id": "form-v001",
+  "run_id": "35388084369",
+  "attempt": 1,
+  "sequence": 3,
+  "release_tag": "creative-rabbit-geometry-20260918-form-v001-35388084369-1-3",
+  "created_at": "2026-09-18T19:55:33.673775Z",
+  "archive": {
+    "name": "workspace.tar.gz",
+    "bytes": 34548740,
+    "sha256": "c4653aff5afb32c80af011d97d6b201bc969d5bd5145e8d2ae40f9c3a14bb61f"
+  },
+  "unpacked_bytes": 78284573,
+  "file_count": 45,
+  "files": [
+    {
+      "path": "output/model/geometry_audit.json",
+      "bytes": 1043,
+      "sha256": "3fda42c58f03c1171cb010324159551f55647eeb2d1b2206f96162bab176c242"
+    },
+    {
+      "path": "output/model/geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/model/model.blend",
+      "bytes": 21380444,
+      "sha256": "289754f38674d6fa6f430beef20cffdbecee62030eceabc8bc0f2a8a930a7c92"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "bytes": 15712,
+      "sha256": "bdbc417d4407e6a95189ae38f93eb776582f3c3b7a098310b23dbce4abba5574"
+    },
+    {
+      "path": "output/model/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/model/tool_report.json",
+      "bytes": 446,
+      "sha256": "e03100eba7b18b86e74e593568f60d519bf6a21ebc2afba9903b5c717c602443"
+    },
+    {
+      "path": "output/model/validation.json",
+      "bytes": 239,
+      "sha256": "4f77a21d176b92c4fde13370a76f90df06e69ae547014eca6e121a06220b2a8e"
+    },
+    {
+      "path": "output/package/README.txt",
+      "bytes": 484,
+      "sha256": "4597418a7bb8e6fa23b5ff648c74ea9555043519033b157faa6cc9238fcb2d55"
+    },
+    {
+      "path": "output/package/back.png",
+      "bytes": 326768,
+      "sha256": "f728bd4dc231c7aa9a9580c0e395370340be82e3f1c16d4e066fc8a25c93721d"
+    },
+    {
+      "path": "output/package/delivery_report.json",
+      "bytes": 4152,
+      "sha256": "1345e3bc21532c67a3f2a0383d684373e6cb58ed7a47daacc7b8d525f8a12a10"
+    },
+    {
+      "path": "output/package/front.png",
+      "bytes": 376855,
+      "sha256": "207a6388c99d9a043bd35a6a4487e5cb732f936fa81752c6262107895326d832"
+    },
+    {
+      "path": "output/package/geometry_audit.json",
+      "bytes": 1043,
+      "sha256": "3fda42c58f03c1171cb010324159551f55647eeb2d1b2206f96162bab176c242"
+    },
+    {
+      "path": "output/package/geometry_contact_sheet.jpg",
+      "bytes": 257965,
+      "sha256": "0dc44a8b8867a094bec7ec842cb39b495cd783bdff9390cbc15cc2a220c1df64"
+    },
+    {
+      "path": "output/package/geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/package/hands_feet.png",
+      "bytes": 429400,
+      "sha256": "d0b3fcfc5a03f67e38dd02d92903c0eaa8e43a33d65cc79d315de43c72094c5b"
+    },
+    {
+      "path": "output/package/head_front.png",
+      "bytes": 1232708,
+      "sha256": "a6924e177c1caa38aa0606c30ea86d6a0741c64a4c1cf9df144c42efb523e793"
+    },
+    {
+      "path": "output/package/head_right.png",
+      "bytes": 982981,
+      "sha256": "15d3bbfd2c1bd7cb4a37e5be0b8936e67d7663f884df5f33646b32bd2943cceb"
+    },
+    {
+      "path": "output/package/head_three_quarter.png",
+      "bytes": 1349477,
+      "sha256": "0e164de96531cfe048f24e49f4c6d8a1ed9ca33fcf2982ecb794b5037a1c6ad6"
+    },
+    {
+      "path": "output/package/head_uniform_clay.png",
+      "bytes": 1379869,
+      "sha256": "02c24761193617622db09522ad5ac77fb256c7cf5706f79496d19dda598c9733"
+    },
+    {
+      "path": "output/package/package_source.py",
+      "bytes": 3418,
+      "sha256": "76779928ee48413cd3782d1a281c7b6d461e140637fbd2033aed2eac41558cee"
+    },
+    {
+      "path": "output/package/rabbit_geometry.blend",
+      "bytes": 21380444,
+      "sha256": "289754f38674d6fa6f430beef20cffdbecee62030eceabc8bc0f2a8a930a7c92"
+    },
+    {
+      "path": "output/package/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/package/reference_comparison.jpg",
+      "bytes": 221801,
+      "sha256": "01d181c73b212287f8adb7c48eec324013ab21d3798d282603c7a790f74870b6"
+    },
+    {
+      "path": "output/package/render_manifest.json",
+      "bytes": 2030,
+      "sha256": "a00ce7c1558874be854360ddc76566e594f223a03752c08c2a91a377e73bc2d2"
+    },
+    {
+      "path": "output/package/right.png",
+      "bytes": 235385,
+      "sha256": "7a86be2663a1afc752aa3ab0d2901b4f82e4f2e0f361ed65eff01fde1a386288"
+    },
+    {
+      "path": "output/package/three_quarter.png",
+      "bytes": 419822,
+      "sha256": "ffcbd0abd7a2627de68038ff36ceaea15693ffcf0d0ba9c843ea8ecc4172e8e2"
+    },
+    {
+      "path": "output/package/tool_report.json",
+      "bytes": 207,
+      "sha256": "cb55272fd75caf316b613d4fc46eb57a08d495ad0c7a7323af1e8653876f64ef"
+    },
+    {
+      "path": "output/render/back.png",
+      "bytes": 326768,
+      "sha256": "f728bd4dc231c7aa9a9580c0e395370340be82e3f1c16d4e066fc8a25c93721d"
+    },
+    {
+      "path": "output/render/front.png",
+      "bytes": 376855,
+      "sha256": "207a6388c99d9a043bd35a6a4487e5cb732f936fa81752c6262107895326d832"
+    },
+    {
+      "path": "output/render/geometry_audit.json",
+      "bytes": 1043,
+      "sha256": "3fda42c58f03c1171cb010324159551f55647eeb2d1b2206f96162bab176c242"
+    },
+    {
+      "path": "output/render/geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/render/hands_feet.png",
+      "bytes": 429400,
+      "sha256": "d0b3fcfc5a03f67e38dd02d92903c0eaa8e43a33d65cc79d315de43c72094c5b"
+    },
+    {
+      "path": "output/render/head_front.png",
+      "bytes": 1232708,
+      "sha256": "a6924e177c1caa38aa0606c30ea86d6a0741c64a4c1cf9df144c42efb523e793"
+    },
+    {
+      "path": "output/render/head_right.png",
+      "bytes": 982981,
+      "sha256": "15d3bbfd2c1bd7cb4a37e5be0b8936e67d7663f884df5f33646b32bd2943cceb"
+    },
+    {
+      "path": "output/render/head_three_quarter.png",
+      "bytes": 1349477,
+      "sha256": "0e164de96531cfe048f24e49f4c6d8a1ed9ca33fcf2982ecb794b5037a1c6ad6"
+    },
+    {
+      "path": "output/render/head_uniform_clay.png",
+      "bytes": 1379869,
+      "sha256": "02c24761193617622db09522ad5ac77fb256c7cf5706f79496d19dda598c9733"
+    },
+    {
+      "path": "output/render/model.blend",
+      "bytes": 21380444,
+      "sha256": "f0687e030babd46a2cc7e857303d47ca375d9f1ea9112d09f70fdd8392852c15"
+    },
+    {
+      "path": "output/render/previews/three_quarter.png",
+      "bytes": 19773,
+      "sha256": "20c1eedf113c0d53c879051dec4787f48c6dfed5cbbb0dc8dadd68922fe865ea"
+    },
+    {
+      "path": "output/render/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/render/render_manifest.json",
+      "bytes": 2030,
+      "sha256": "a00ce7c1558874be854360ddc76566e594f223a03752c08c2a91a377e73bc2d2"
+    },
+    {
+      "path": "output/render/render_source.py",
+      "bytes": 3456,
+      "sha256": "1992e3b3e01eecd255664094928cf0135e3ca550dd58494eb6488405d9b43c8a"
+    },
+    {
+      "path": "output/render/right.png",
+      "bytes": 235385,
+      "sha256": "7a86be2663a1afc752aa3ab0d2901b4f82e4f2e0f361ed65eff01fde1a386288"
+    },
+    {
+      "path": "output/render/three_quarter.png",
+      "bytes": 419822,
+      "sha256": "ffcbd0abd7a2627de68038ff36ceaea15693ffcf0d0ba9c843ea8ecc4172e8e2"
+    },
+    {
+      "path": "output/render/tool_report.json",
+      "bytes": 464,
+      "sha256": "cefc3f677a6eb7cc1080781ff0b8169b45a61cef8110d3ff8e029382be35c154"
+    },
+    {
+      "path": "output/render/validation.json",
+      "bytes": 240,
+      "sha256": "e76a7264347af87fbb22224ae045447ad598cfe006a1383980a98c64164d97e0"
+    }
+  ],
+  "metadata": {
+    "source_commit": "71b31cce0136ea645abf692bdfb41f3162136796",
+    "current_step": "package",
+    "kind": "step_complete",
+    "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327"
+  },
+  "excluded_top_level": [
+    "checkpoints",
+    "resume"
+  ]
+}
