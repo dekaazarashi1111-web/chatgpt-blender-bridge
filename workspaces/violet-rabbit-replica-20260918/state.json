@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "violet-rabbit-replica-20260918",
   "job_id": "refine-v002",
-  "state": "running",
+  "state": "needs_review",
   "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
   "run_id": "35375819841",
@@ -110,7 +110,71 @@
     "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance."
   ],
   "review_required": true,
-  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "next_action": "Inspect real previews against references; submit a pinned review or a new revision.",
   "current_step": "package",
-  "updated_at": "2026-09-18T17:47:38.358424Z"
+  "finished_at": "2026-09-18T17:47:40.594372Z",
+  "publication_errors": [],
+  "previews": [
+    {
+      "path": "output/lookdev/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/lookdev/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/lookdev/previews/front.png"
+    },
+    {
+      "path": "output/model/previews/back.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/back.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/back.png"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/front.png"
+    },
+    {
+      "path": "output/model/previews/right.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/right.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/right.png"
+    },
+    {
+      "path": "output/model/previews/three_quarter.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/three_quarter.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/model/previews/three_quarter.png"
+    },
+    {
+      "path": "output/package/previews/back.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/back.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/back.png"
+    },
+    {
+      "path": "output/package/previews/comparison.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/comparison.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/comparison.png"
+    },
+    {
+      "path": "output/package/previews/face.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/face.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/face.png"
+    },
+    {
+      "path": "output/package/previews/face_profile.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/face_profile.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/face_profile.png"
+    },
+    {
+      "path": "output/package/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/front.png"
+    },
+    {
+      "path": "output/package/previews/right.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/right.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/right.png"
+    },
+    {
+      "path": "output/package/previews/surface.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/surface.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/violet-rabbit-replica-20260918/previews/refine-v002/output/package/previews/surface.png"
+    }
+  ],
+  "updated_at": "2026-09-18T17:48:01.559895Z"
 }
