@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "project_id": "violet-rabbit-replica-20260918",
+  "job_id": "refine-v002",
+  "state": "running",
+  "source_commit": "45fa6ed93f73fde3bdb502150b371c52dc054a59",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
+  "run_id": "35375819841",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35375819841",
+  "started_at": "2026-09-18T17:42:04.875128Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Compare actual front, right and back renders with the supplied three-view reference; match the T-pose proportions, thick ears, recessed black eyes, continuous muzzle and deep lower jaw.",
+    "Match the subdued worn violet and grey-lilac mottled cloth appearance; avoid bright white belly, stone-like relief, regular cloud grids and excessive gloss.",
+    "Preserve an editable packed Blender scene, explicit UVs, reconstructed texture maps, source scripts and the genuine saved reference copy; reopen with no missing external dependencies.",
+    "Inspect the exact job version's comparison sheet, face/profile and surface closeups; execution success alone is not visual acceptance."
+  ],
+  "review_required": true,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-18T17:42:05.161587Z"
+}
