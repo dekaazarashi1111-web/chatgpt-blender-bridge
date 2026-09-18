@@ -26,4 +26,10 @@ with tempfile.TemporaryDirectory() as temporary:
 (destination / "release.json").write_text(json.dumps(release, indent=2) + "\n")
 shutil.copyfile(root / "material-maker-LICENSE.md", destination / "LICENSE.md")
 Path("/usr/local/bin/material-maker").symlink_to(destination / release["executable"])
+# Ubuntu's Mesa updates may change whether the ICD filename has an arch suffix.
+icds = list(Path("/usr/share/vulkan/icd.d").glob("*lvp*.json"))
+if len(icds) != 1:
+    raise RuntimeError("Expected exactly one installed Mesa lavapipe ICD")
+shutil.copyfile(icds[0], root / "lavapipe.json")
+print("Vulkan CPU driver:", icds[0])
 print("Installed verified Material Maker", release["version"])

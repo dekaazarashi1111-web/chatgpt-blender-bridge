@@ -20,7 +20,7 @@ RUN python3 /opt/creative-runtime/capabilities.py --require-base \
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     LIBGL_ALWAYS_SOFTWARE=1 \
-    VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/lvp_icd.x86_64.json \
+    VK_ICD_FILENAMES=/opt/creative-runtime/lavapipe.json \
     OMP_NUM_THREADS=2 \
     OPENBLAS_NUM_THREADS=2 \
     QT_QPA_PLATFORM=xcb \

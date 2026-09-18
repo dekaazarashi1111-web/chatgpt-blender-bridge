@@ -106,7 +106,7 @@ def main() -> int:
         command = ["xvfb-run", "-a", "-e", "/dev/stderr", "material-maker", "--export-material",
                    "--target", "Blender", "-o", str(output), "--output-file", args.prefix, str(staged)]
         print("MATERIAL_MAKER_EXPORT " + str(staged), flush=True)
-        subprocess.run(command, check=True)
+        subprocess.run(command, check=True, env={**os.environ, "VK_LOADER_DEBUG": "error,warn"})
         report["maps"] = inspect_outputs(output, args.prefix, required)
         report["source"] = staged.relative_to(output).as_posix()
         report["source_sha256"] = hashlib.sha256(staged.read_bytes()).hexdigest()
