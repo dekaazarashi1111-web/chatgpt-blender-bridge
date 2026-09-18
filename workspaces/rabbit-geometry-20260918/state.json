@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "rabbit-geometry-20260918",
   "job_id": "form-v002",
-  "state": "running",
+  "state": "needs_review",
   "source_commit": "0fdebb95a32118f8bfa2e75da4ee0ecb2de23170",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
   "run_id": "35390326287",
@@ -92,7 +92,21 @@
     "Release archive and manifest hashes and workspace-state must be read back before reporting durable save."
   ],
   "review_required": true,
-  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "next_action": "Inspect real previews against references; submit a pinned review or a new revision.",
   "current_step": "package",
-  "updated_at": "2026-09-18T20:17:38.167742Z"
+  "finished_at": "2026-09-18T20:17:40.575380Z",
+  "publication_errors": [],
+  "previews": [
+    {
+      "path": "output/model/previews/front.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/model/previews/front.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/model/previews/front.png"
+    },
+    {
+      "path": "output/render/previews/three_quarter.png",
+      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/render/previews/three_quarter.png",
+      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/render/previews/three_quarter.png"
+    }
+  ],
+  "updated_at": "2026-09-18T20:17:43.809165Z"
 }
