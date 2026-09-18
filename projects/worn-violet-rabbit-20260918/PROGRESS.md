@@ -1,28 +1,30 @@
 # 進捗と再開入口
 
-## 現在の作業
-`build-v001` を投入し、Actions が実行中であることを確認した。重複投入しない。
+## 現在
+`render-v002` 実行中。最新確認でcarry工程が成功し、保存済みモデルから比較レンダー中。重複投入しない。
+- Source: `437b1cdceb06e5129ee51b858581db1f2cc6dfcc`
+- Actions: https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35365556050
+- Runtime: `ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327`
+- Started: `2026-09-18T15:58:03.638369Z`
+このruntime digestはbuild-v001と異なる。各実行の実測reportを優先する。
 
-- Project: `worn-violet-rabbit-20260918`
-- Job descriptor: `projects/worn-violet-rabbit-20260918/jobs/build-v001/job.json`
-- Source commit: `397cbc69c21c323727da2e3e6163ce23586d357d`
-- Actions run: https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35364229702
-- Actions create job ID: `105662681961`
-- Runtime: `ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:2d4029b9359dcac82a21e726787fa6df0f1d35504d2bcdf1f8506031b62fa8b9`
-- Runner started: `2026-09-18T15:44:44.113706Z`
-- Descriptor/source validation Actions succeeded: https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35364229489
+## 完了／失敗
+`build-v001` は textures と model 成功。実 .blend 再読込pass、外部依存欠落0、155 renderable objects、149845頂点、全高約2.599m。これらの技術検査と実ファイルを確認した。
+presentationは実環境のOpenImageDenoiser非対応で失敗、package未実行。実際の512px front/right/back/three_quarterを開いたが、明るさ、目の突出、損傷の四角さ、耳の板状感に差があり、外観合格とはしない。
+詳しくは `reviews/build-v001-diagnostic.md`。render-v002はノイズ除去無効・128samplesとし、造形とマップを作り直さずモデル完了snapshotを復元した。
 
-## 現時点で確認した内容
-実際のユーザー画像の圧縮参照版が GitHub の inputs/reference.webp に保存され、ジョブのSHA検査を通って選択された。4本の制作ソースが定義より先にcommitされた。2K材質生成はローカルでも実行して画像を開いた。Blender本体の保存・外観の最終合格はまだ確認していない。
+## 有効なモデル保存地点
+Release: https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-worn-violet-rabbit-20260918-build-v001-35364229702-1-2
+- archive_sha256: `ef849df8211ccb60e4fc64a3899384720f1e31d428575e432d8b1a4e2da30ef8`
+- manifest_sha256: `a05be2b321e5345acac7f6905dce8fb63d4a33d702c92139ec580ac6da929dc1`
+- source blend: `output/model/model.blend`
+本体と2KテクスチャがGitHub Releaseに保存済み。元添付PNGは未保存で、実画像由来のフル解像度WebP参照版をmainへ保存済み（INPUTS.md参照）。
 
-## 継続時は必ず実状態を読み直す
-この文書の実行中表示よりも、以下の最新実行記録を優先する。
-- workspace-state: `workspaces/worn-violet-rabbit-20260918/state.json`
-- per-job: `workspaces/worn-violet-rabbit-20260918/jobs/build-v001.json`
-- 上記 Actions のstatus/logs
-- latest_snapshot / step_snapshots に対応するRelease manifestとarchive
+## 継続の必須確認
+この文書より最新実状態を優先する。
+`workspace-state` の `workspaces/worn-violet-rabbit-20260918/state.json` と `jobs/render-v002.json`、対応Actions、Release manifestを照合する。
+実行中なら追跡。失敗・中断ならdocs/RESUME.mdに従い別job IDで復元。完了ならActionsのcreative-review artifactをダウンロードし、package/comparison.png, three_view.png, details.png, presentation/viewsを開いて比較する。
+`evidence/render-v002/` にreadback.jsonとReleaseから再取得した正確なmanifestが保存される予定。まだ監査成功と主張しない。
 
-実行中なら追跡し、同一内容を再投入しない。失敗・中断なら docs/RESUME.md に従って有効なsnapshotを検証し、別job IDから再開する。完了なら `creative-review-worn-violet-rabbit-20260918-0-35364229702-1` artifactをダウンロードし、package/three_view.png, comparison.png, details.pngと各実レンダーを開く。Releaseを永続保存の正本とする。
-
-## 未完了
-実モデルと保存ファイルの検証、参考画像との実レンダー比較、必要な造形・質感修正、対象版にpinしたレビュー、最終成果物リンクと引継ぎ記録。実行成功だけでapprovedにしない。
+## 次の作業
+水平・同縮尺・中性照明の実画像で参考との違いを確認し、目／顔のつながり、耳の厚み、不規則な損傷、紫の明度・模様を必要に応じて部分修正する。対象版のレビューをpinして保存し、最終成果物を案内する。現状は完成・外観承認ではない。
