@@ -89,3 +89,5 @@ thumbnail extraction, and a textured Blender cube with four rendered previews,
 packed images, reopen validation and editable checkpoints. The CI runtime build
 must pass it before its image is promoted for production use. Krita is an export
 adapter here, not automated brush painting or a general GUI-control tool.
+Its version probe and export commands run under Xvfb with Qt's `xcb` backend:
+Krita still initializes its window system for these command-line operations.

@@ -16,13 +16,22 @@ def executable(name: str, arguments: list[str]) -> dict:
     path = shutil.which(name)
     if not path:
         return {"available": False, "reason": "not installed"}
+    command = [path, *arguments]
+    environment = dict(os.environ)
+    if name == "krita":
+        # Krita 5.2 selects xcb even for --version; Docker builds have no DISPLAY.
+        display = shutil.which("xvfb-run")
+        if not display:
+            return {"available": False, "reason": "xvfb-run is required for headless Krita"}
+        command = [display, "-a", *command]
+        environment["QT_QPA_PLATFORM"] = "xcb"
     try:
-        result = subprocess.run([path, *arguments], text=True, stdout=subprocess.PIPE,
+        result = subprocess.run(command, text=True, stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT, timeout=30, check=False,
-                                env={**os.environ, "QT_QPA_PLATFORM": "offscreen"})
+                                env=environment)
         lines = [line for line in result.stdout.splitlines() if line.strip()]
         if result.returncode:
-            return {"available": False, "reason": f"version probe exited {result.returncode}", "output": lines[-3:]}
+            return {"available": False, "reason": f"version probe exited {result.returncode}", "output": lines[-10:]}
         # Qt may print an XDG warning before its actual version.
         versions = [line for line in lines if any(token in line.lower() for token in (name, "version", "blender"))]
         return {"available": True, "executable": path, "version": (versions or lines or ["unknown"])[0]}

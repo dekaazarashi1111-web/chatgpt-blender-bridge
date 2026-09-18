@@ -166,5 +166,6 @@ def build_command(step: dict, context: Mapping[str, Any]) -> list[str]:
         if source.suffix.lower() not in IMAGE_SUFFIXES | {".kra", ".ora", ".psd"}:
             raise AdapterError("Unsupported Krita input format")
         target = output_path(params["output"], context, {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"})
-        return ["krita", "--nosplash", "--export", "--export-filename", str(target), str(source)]
+        return ["xvfb-run", "-a", "env", "QT_QPA_PLATFORM=xcb", "krita", "--nosplash",
+                "--export", "--export-filename", str(target), str(source)]
     raise AdapterError(f"Tool is not available in this runtime: {tool}")
