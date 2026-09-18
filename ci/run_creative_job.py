@@ -32,7 +32,7 @@ def docker_command(image, descriptor, step_id, work, inputs, name):
             "--mount", f"type=bind,src={ROOT},dst=/repo,readonly",
             "--mount", f"type=bind,src={inputs},dst=/input,readonly",
             "--mount", f"type=bind,src={work},dst=/work",
-            image, "xvfb-run", "-a", "python3", "/repo/ci/execute_step.py",
+            image, "python3", "/repo/ci/execute_step.py",
             "--job", descriptor.relative_to(ROOT).as_posix(), "--step", step_id]
 
 
