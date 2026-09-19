@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "rabbit-geometry-20260918",
   "job_id": "form-v003",
-  "state": "needs_review",
+  "state": "changes_requested",
   "source_commit": "0aa4a5c068c925266e536b582a329bd273ceccf1",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
   "run_id": "35427795287",
@@ -92,7 +92,7 @@
     "Release archive and manifest hashes and workspace-state must be read back before reporting durable save."
   ],
   "review_required": true,
-  "next_action": "Inspect real previews against references; submit a pinned review or a new revision.",
+  "next_action": "Create a new revision using latest_snapshot.",
   "current_step": "package",
   "finished_at": "2026-09-19T06:59:30.511762Z",
   "publication_errors": [],
@@ -108,5 +108,21 @@
       "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v003/output/render/previews/three_quarter.png"
     }
   ],
-  "updated_at": "2026-09-19T06:59:32.956688Z"
+  "updated_at": "2026-09-19T07:12:11.429032Z",
+  "review": {
+    "schema_version": 1,
+    "project_id": "rabbit-geometry-20260918",
+    "job_id": "form-v003",
+    "source_commit": "0aa4a5c068c925266e536b582a329bd273ceccf1",
+    "snapshot_sha256": "2f3aae4e8f79ccb4e16abcfc618c9d6adb0d53d4ff225a23cf84f9b99d525cf5",
+    "verdict": "changes_requested",
+    "criteria": {
+      "Editable self-contained metric T-pose rabbit model, with geometry matching the supplied front/right/back reference rather than a generic rabbit.": "fail",
+      "Actual modeled ear channels, orbital sockets, muzzle, U-shaped open jaw, rounded dental arches, fingers, toes, bow and damaged shell sections.": "pass",
+      "Geometry audit and both saved-scene reopen validations pass, all mandatory images decode, and actual high-resolution views are reviewed by ChatGPT against the reference.": "pass",
+      "No texture generation or projected image camouflage; neutral inspection materials only. Record remaining geometric deviations explicitly.": "pass",
+      "Release archive and manifest hashes and workspace-state must be read back before reporting durable save.": "pass"
+    },
+    "summary": "Actual v003 images were inspected against the reference: matched three-view comparison, face, uniform clay, hand, ear and foot details. Both downloaded artifact digests, exact Release manifest bytes and model hash match; real Blender 4.0.2 reopen checks pass and CI readback verifies 66 files. C-shaped jaw and continuous digits improve v002, but geometry is not accepted: exposed upper jaw tube ends form cheek fins, the oral floor has a see-through gap, an overlong foot base hides most toe domes, torso/limb curves remain boxy, damage edges are sawtoothed, the thumb has a double bulge and ear/bow surfaces need local smoothing. Create NEW form-v004 from this valid snapshot. No texture work. See form-v003.md."
+  }
 }
