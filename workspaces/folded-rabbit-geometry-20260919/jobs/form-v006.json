@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v006",
+  "state": "running",
+  "source_commit": "a2c964a566719aaa8364947a1ecddf9c0a35165b",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
+  "run_id": "35439434026",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35439434026",
+  "started_at": "2026-09-19T11:12:14.481033Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Match the native folded-ear original-character references with a smoothly continuous nasal rise and two convex muzzle lobes, an integrated cheek silhouette with thin fitted lower covers and real joints, a soft small nose, clean central cleft and seated eyes; no remaining slab muzzle or floating petal cheeks.",
+    "Keep geometry-only scope and a self-contained editable metric blend, real reference derivatives and full executable source dependencies; no final textures, finished UVs, rig or image-texture camouflage.",
+    "Restore the exact v005 final snapshot and hash-verify its source blend; preserve unchanged arms, hands, body, hip, legs, feet, folded ears, jaw, teeth, bow and tail by fingerprints without reconstructing them.",
+    "Pass finite-coordinate, required-part, muzzle-region, closed-mesh, actual-dimension, missing-dependency and both saved-file reopen checks. Save all 13 framed images, with nine new affected views and four unchanged isolated views backed by exact hashes and geometry evidence.",
+    "Close the model-checkpoint render-cache dependencies, preserve partial face-view evidence and export exact head geometry for independent inspection; verify actual execution, manifest and output bytes, then inspect actual images and save a source-and-snapshot-pinned visual verdict before completion."
+  ],
+  "review_required": true,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-19T11:12:14.673610Z"
+}
