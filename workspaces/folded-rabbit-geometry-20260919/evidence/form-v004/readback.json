@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v004",
+  "run_id": "35433907363",
+  "source_commit": "e67bb2848173b8c31f4b28e2b054999ed3c951de",
+  "evidence": [
+    {
+      "label": "resume",
+      "release_tag": "creative-folded-rabbit-geometry-20260919-form-v003-35432676691-1-3",
+      "manifest_sha256": "45d3eab89f2912a10bcdb42038b4a017d9ffaaf76718480809c639191cad358e",
+      "archive_sha256": "eab8cfd9b794382f18439f37dcbda061040f551052c6f6040537d71e845b9a3f",
+      "archive_bytes": 172080545,
+      "manifest_downloaded_and_hash_verified": true,
+      "server_archive_digest_verified": true,
+      "local_files_verified_against_manifest": 96,
+      "manifest_state_path": "workspaces/folded-rabbit-geometry-20260919/evidence/form-v004/resume-manifest.json"
+    },
+    {
+      "label": "latest",
+      "release_tag": "creative-folded-rabbit-geometry-20260919-form-v004-35433907363-1-3",
+      "manifest_sha256": "6dddb80268cde1edb1c508b228cc1314fc9c48b21b1295d1d6e0b6cb8a357184",
+      "archive_sha256": "079b97150104e94be776e3396ae06b112f416a5680f8d45b919d4030ba4f3be2",
+      "archive_bytes": 191794083,
+      "manifest_downloaded_and_hash_verified": true,
+      "server_archive_digest_verified": true,
+      "local_files_verified_against_manifest": 99,
+      "manifest_state_path": "workspaces/folded-rabbit-geometry-20260919/evidence/form-v004/latest-manifest.json"
+    }
+  ],
+  "scope": "Downloaded exact Release manifest bytes; matched every manifest file to stopped local outputs/resume and server archive digest. The archive itself was not downloaded again by this audit."
+}
