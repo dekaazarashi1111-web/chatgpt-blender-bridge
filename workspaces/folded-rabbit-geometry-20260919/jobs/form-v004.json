@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v004",
+  "state": "running",
+  "source_commit": "e67bb2848173b8c31f4b28e2b054999ed3c951de",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
+  "run_id": "35433907363",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35433907363",
+  "started_at": "2026-09-19T09:10:00.156417Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Reproduce the supplied folded-ear, lowered-arm character's geometry: continuous nasal bridge and twin muzzle lobes, substantial forward cheek covers, seated eyes, a restrained upper dental display, padded segmented limbs, natural curled digits and broad softly squared toes.",
+    "Preserve geometry-only scope, with no final textures, UV finishing, rig or image-texture camouflage; retain real reference derivatives and the full editable source/dependency closure.",
+    "Restore and hash-verify the exact same-project v003 snapshot and source blend; do not rerun the accepted base import or rebuild unaffected torso, lower-leg, tail, bow and folded-cap geometry.",
+    "Pass required-part and muzzle-region checks, finite coordinates, all-mesh closedness, actual mesh-extrema dimensions, both saved-file reopen checks, dependency checks and all 13 actual image/framing validations.",
+    "Independently read back artifact/Release evidence, compare the exact generated full/clay/detail previews with the native references and record a snapshot-pinned visual verdict. Exit zero alone is not visual acceptance."
+  ],
+  "review_required": true,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-19T09:10:00.513721Z"
+}
