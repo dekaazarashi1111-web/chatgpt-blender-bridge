@@ -1,35 +1,36 @@
 # 進捗 / folded-rabbit-geometry-20260919
 
-対象は折れ耳・腕を下ろしたオリジナルキャラクター。今回も造形のみ。テクスチャ、UV仕上げ、リグは別セッション。旧rabbit-geometry-20260918/T-poseやstudio-smokeとは別作品。
+対象は折れ耳・腕を下ろしたオリジナルキャラクター。2026-09-19追加依頼は造形の仕上げのみ。テクスチャ・UV仕上げ・リグは別セッション。旧rabbit-geometry-20260918/T-poseやstudio-smokeを対象と取り違えない。
 
-## 実行中 — form-v005
+## 最新実行 — form-v006 / running
+source `a2c964a566719aaa8364947a1ecddf9c0a35165b`。
+Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35439434026 attempt1。11:11 UTCにpush起動/in_progressを実確認。対応するstate/Actionsを追跡し、重複投入しない。
+ソース保存commit `342b29979a329b091ee8e3142f14387d3e811807` の全5スクリプトのGit blob SHA/bytesをローカルで検査したファイルと照合した後、job.jsonを最後に追加。総予算18000秒、model5400/render7200/package900。既存の検証済みruntimeを利用し、不要な再buildはしない。
+
+v005実画像の不合格部分を修正する顔のみの版。角丸box口元を凸曲面の左右ローブと連続鼻梁へ置換。頬の膨らみを頭部へ統合し、実曲面に沿う薄い下側カバーをBooleanによる浅い接合溝へ収める。丸い小鼻と中央溝、目の位置を微調整。胴・改善済み肩腕と指・骨盤・脚足・耳・顎・歯・蝶ネクタイ・尾はfingerprintで保持し再制作しない。
+影響のない耳、足detail/clay、手detailの4画像はhashと対象geometry不変証拠で再利用し、9枚の影響する全身/頭部画像を新規描画。頭部4ビューの部分記録も先にcheckpointする。model工程の出力へ親の描画cache/manifest/sourceをコピーし、model-only保存地点から先の描画依存も残す。正確な頭部meshのNumPy書出しも.blendと共に保存する。
+新しいBlender実行、保存、造形検査、実画像レビューの結果はまだ未確認。ローカルNumPyの同解像度閉形状検査、頬カバーの閉辺/有限値、構文/補助関数hash照合は成功。初期ローカルsource assemblerの区切り文字誤りと未実行package案の変数名は投入前に検出・修正した。VTKのローカル形状試作はBlender保存シーンの実画像ではなく、完成証拠に扱わない。
+
+## 最新の実取得・検証済み保存地点 — form-v005
 source `464b693576b7ef291ab475149d3b9932e2014359`。
-Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35437918879 attempt1。2026-09-19 10:37 UTC、pushによるCreative workspace起動/in_progressを実確認。実行直前のin_progress/queued一覧はともに空で、重複投入していない。
-ソース保存commit `43478916527fadc952a6d3da623b1c3f19f1299d` の後でjob.jsonを追加。総予算18000秒、model/render/packageの3工程。対象版のBlender造形、保存、実画像合格はまだ未確認。
+Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35437918879 attempt1。10:56:57 UTCにmodel/render/package全exit0で完了。publication_errors=[]。
+Release `creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3`
+- archive262359909 bytes、SHA256 `88ddbc0eb62eb3805c2b1d283699bdff3b7ba9d7fc1c51a824b8c1454cc73f17`
+- manifestSHA256 `a9e70d2357c836ecc733efac24d3cb625809595b20f6049bf551ab1c8929f199`
+- 復元model `workspace/resume/output/model/model.blend`、185443584 bytes、SHA256 `1b03ae315e87e6243b57349532e954fe71f9a375cdc9c02d240a8d136e3daf44`
+- 納品model `output/package/folded_rabbit_geometry.blend`、185448184 bytes、SHA256 `afe1a24c860d3fc2f42b61c8027eed68025eedd05808edb965151c633bdcd6db`
 
-v004原寸比較の欠点を直す版。頭部を断面loftではなく連続したimplicit fieldから作り、狭い左右口元と鼻梁、下側だけの小さい中央溝、曲線的な頬カバー、丸い小鼻、眼球の収まりを調整。肩カバーと上腕外装を連続した曲面へ統合。指の狭い中間制御点を除き、指先を少しずらす。胴、骨盤、下腿、足、尾、蝶ネクタイ、折れ耳は再制作せずfingerprintで保持。
-影響のない足detail/clay・耳detailの3画像はv004の実画像・hashと対象geometry fingerprintを確認して再利用。残る10画像を新しく描画し、全13ビューを納品する。Python構文検査とNumPy mesherの同解像度ローカル閉形状検査（1成分、watertight）は成功したが、Blender実行や視覚合格の代わりではない。
+review ZIP10583151870 / host ZIP10583321690の実バイトhash、CI読戻しmanifest実バイトhash、manifest全105ファイルのsize/SHA256を独立照合。不一致/欠落0。両CI再読込、外部依存、全mesh閉形状、有限座標、必須部品/口元group、実寸、no image-texture nodes、13画像/frustum、再利用3画像hash/geometry保持は合格。
+実際の参照比較、原寸head_front、変更10ビューを原寸参考画像3枚と比較。頭頂の段差と指くびれは改善したが、口元の板状形、浮いた花弁状頬、口元と眼窩の微細うねりが残るため `changes_requested`。source/archive固定レビューを `reviews/form-v005.json/.md` に保存（commit0dbd6bf837a27981d8532747a6b351cd7e8bcd7e）。完成ではない。
+最終Release TAR自体をこのセッションが再取得したという意味ではない。実際に独立照合したものはActionsの完全ZIP/出力と、CIがReleaseから読戻したmanifest/server archive digest。v005 model-step単独checkpointは.blend自体有効だが、既存cache再利用rendererの継続にはv004親cacheも必要だった。この不足をv006で解消する。次版の親はv005の最終snapshotを使う。
 
-## 最新の実取得・検証済み保存地点 — form-v004
-source `e67bb2848173b8c31f4b28e2b054999ed3c951de`。
-Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35433907363 attempt1。実際は09:17 UTCに完走しており、前回の実行中表記は古かった。prepare/create成功、model/render/package全exit0、publication_errors=[]。
-Release `creative-folded-rabbit-geometry-20260919-form-v004-35433907363-1-3`
-- archive: 191794083 bytes / SHA256 `079b97150104e94be776e3396ae06b112f416a5680f8d45b919d4030ba4f3be2`
-- manifest SHA256 `6dddb80268cde1edb1c508b228cc1314fc9c48b21b1295d1d6e0b6cb8a357184`
-- 復元model: `workspace/resume/output/model/model.blend`、135385476 bytes / SHA256 `6f9c5d9fc58968a0b819b21b1239948b7f29db0ac424e313b9ff3f9878a16269`
-- 納品model: `output/package/folded_rabbit_geometry.blend`、135390076 bytes / SHA256 `9ab637f33aafb8f6f751c752ed0047152f650477a81a446755e818304713175e`
+## 以前の保存地点・レビュー
+v004 sourcee67bb2848173b8c31f4b28e2b054999ed3c951de、run35433907363、最終Release `creative-folded-rabbit-geometry-20260919-form-v004-35433907363-1-3`、archive079b97150104e94be776e3396ae06b112f416a5680f8d45b919d4030ba4f3be2、manifest6dddb80268cde1edb1c508b228cc1314fc9c48b21b1295d1d6e0b6cb8a357184。全99出力独立hash一致、技術検査成功、実画像レビューchanges_requested。詳細 `reviews/form-v004.*`。
+v003以前の経緯・失敗した形・保存地点は各reviews、job PLAN、Git履歴に保存済み。受入済み元作品importや影響のない部品の再作成は行わない。
 
-host/review ZIPを実取得してAPI digestを照合。CIがReleaseから読戻したmanifest実バイトhashをstateと照合し、manifest全99ファイルのsize/hashを今回独立照合、欠落/不一致0。両CI再読込成功、外部依存欠落なし、全visible meshの非manifold/境界辺0、必須部品・口元group・有限座標・no image-texture node検査成功。13画像/フレーミング検証成功。
-ただし実画像には広い板状の口元、頭頂の横段差、丸いボタン状の頬、指のくびれ、肩の接合が残るため完成ではない。reviews/form-v004.md/jsonへsource/archive固定のchanges_requestedを保存（commit ef8543cd3090b6f9d67a81d0c7808bd8430f05c4）。レビュー適用結果はworkspace-stateの実際の記録を読む。
+## 再開時の最初の作業
+main最新HEADの指示とv006のworkspace-state/各job/Actions/Release manifestを照合。runningなら同runを待ち重複投入しない。完了なら両artifact、再読込、形状監査、13ビュー（9新規/4継承）、cache依存、頭部meshを書戻し照合し、原寸参考画像と実画像比較する。実行成功だけで完成にしない。必要なら新IDで修正し、対象source/archive固定レビューをcommitして状態反映する。失敗はdocs/RESUME.mdと公開済み工程snapshotから再開する。
 
-## 以前の保存地点
-form-v003: Release `creative-folded-rabbit-geometry-20260919-form-v003-35432676691-1-3`、archive `eab8cfd9b794382f18439f37dcbda061040f551052c6f6040537d71e845b9a3f`、manifest `45d3eab89f2912a10bcdb42038b4a017d9ffaaf76718480809c639191cad358e`。レビューはchanges_requested。v004が実復元済み。
-form-v002: Release `creative-folded-rabbit-geometry-20260919-form-v002-35430997050-1-3`、archive `536ed187f54383979428459739169a9405394d76caf55476e5f74472306d5c4c`、manifest `2496607eb41d29ecc00d75a2f404c59f4c00d875df9ccb6cae0d368798663c47`。過去の詳細は各reviewsとGit履歴に保存。
-
-## 次の作業
-同じv005 Actionsとworkspace-stateを追跡。完了後にログ・manifest・実出力・再読込・形状監査・新規10画像と再利用3画像の証拠を確認し、原寸参照と比較する。実行成功だけでは完成としない。必要なら新IDで修正、対象source/archive固定レビューを保存・状態反映する。
-失敗時はdocs/RESUME.mdに従い公開完了済み工程snapshotから再開。今回の変更に影響のない工程を繰り返さない。ローカルだけを保存済みと呼ばない。現時点の最終Release確認はCI読戻しmanifest・server digestとActions artifact実ファイルの照合であり、最終Release TARをこのセッションが再取得したという意味ではない。
-
-## 原寸入力・実行経路
-Libraryから元の1086x1448 PNG3枚を取得でき、INPUTS.mdの元画像SHA256とすべて一致した。原寸を今回の視覚比較に使用する。GitHub/Release/blendに保存済みの300x400 WebPは同じ画像の実画素派生であり代替生成画像ではない。各jobへ復元・持越し。原寸PNGそのものはGitHub未アップロードのまま。テクスチャ貼付けは行わない。
-今回開始HEAD `9160fcd1aaa5fabec4cbc040e0d60750a42990d1` の実装/契約/ツール/schema/再開説明/レビュー実装を確認。再帰treeにAGENTS.md該当なし。shell gitとBlender/PyPI外部接続はDNS失敗。接続済みGitHub APIでmain非force更新とpushイベント起動が成功。既存の検証済みruntimeを継続し、不要な再buildはしていない。
+## 原寸入力と実行経路
+Libraryから1086x1448元PNG3枚を回収し、INPUTS.md記載の元SHA256との一致を確認した。原寸は今回の視覚比較に使用。GitHub/Release/blendに保存された300x400 WebPは同じ画像の実画素派生であり生成代替画像ではない。各jobへ復元/持越し。原寸PNG自体はGitHubへ未アップロードで、ローカルのみをGitHub保存済みとは呼ばない。
+開始HEAD9160fcd1aaa5fabec4cbc040e0d60750a42990d1のexecutor指示、README、contract、tools、v2 schema/sample、INPUTS/RESUME、runtime説明、Actions/review実装を確認。再帰treeに適用AGENTS.md該当なし。シェルgit/Blender/PyPIはDNS失敗だが、接続済みGitHub APIのmain非force更新とpushイベント実行が成功している。
