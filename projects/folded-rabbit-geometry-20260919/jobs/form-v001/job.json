@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v001",
+  "title": "Current-reference folded-ear rabbit: lowered pose, geometry-only reconstruction and review",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "acceptance_criteria": [
+    "Editable self-contained metric model following the CURRENT three supplied folded-ear and lowered-arm images, not the prior T-pose.",
+    "Thick folded ears with actual recesses, shaped sockets and muzzle, cheek pads and U jaw, dental arches, segmented lowered limbs, curled fingers, broad three-toed feet, fitted belly panel, bow and tail.",
+    "Exact parent Release import, model identity, finite geometry, required-part counts, closed revised shells, saved-file reopen checks and image/frustum validations pass.",
+    "ChatGPT must inspect actual full and detailed previews against the original reference images, correct meaningful discrepancies and write the exact-version review before acceptance.",
+    "Geometry only: no texture generation, image-texture camouflage, finished UVs or rig. Preserve remaining limitations and durable continuation data.",
+    "Read back Release manifest, artifact hashes and workspace-state before claiming durable save."
+  ],
+  "inputs": [
+    {"path":"projects/folded-rabbit-geometry-20260919/inputs/front.webp","target":"references/front.webp","sha256":"5bc9453676cd565de87b3d7932bd313fef6f436ad83799789f055c58697c6856"},
+    {"path":"projects/folded-rabbit-geometry-20260919/inputs/side.webp","target":"references/side.webp","sha256":"e8561ec50343c90bdf84de990e2226232581f5bf74759fbd6162ec3c9755e5a2"},
+    {"path":"projects/folded-rabbit-geometry-20260919/inputs/back.webp","target":"references/back.webp","sha256":"02d44e650c353453bc553179497e51519ccca1167f0c4909ac90a79089cdead8"}
+  ],
+  "steps": [
+    {"id":"import","tool":"python","script":"import_parent.py","timeout_seconds":1800},
+    {"id":"model","tool":"blender","script":"model.py","source_blend":"workspace/output/import/parent/model.blend","timeout_seconds":5400,"preview":{"views":["front"],"width":128,"height":128,"samples":1}},
+    {"id":"render","tool":"blender","script":"render.py","source_blend":"workspace/output/model/model.blend","timeout_seconds":7200,"preview":{"views":["three_quarter"],"width":128,"height":128,"samples":1}},
+    {"id":"package","tool":"python","script":"package.py","timeout_seconds":900}
+  ]
+}
