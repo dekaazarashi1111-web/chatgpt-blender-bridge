@@ -1,0 +1,29 @@
+{
+  "schema_version":2,
+  "project_id":"folded-rabbit-geometry-20260919",
+  "job_id":"form-v002",
+  "title":"Refine current folded-rabbit geometry from actual reviewed v001 previews",
+  "timeout_seconds":18000,
+  "review_required":true,
+  "resume":{
+    "project_id":"folded-rabbit-geometry-20260919",
+    "job_id":"form-v001",
+    "release_tag":"creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-4",
+    "archive_sha256":"d22896786f350e02e96e07920797a619dbfc076d85f855bcb1352329da33ec77",
+    "manifest_sha256":"eda577fc0f024e9259fff0eae2f747db2c0a8b4c243903e0769c1f9595316807"
+  },
+  "acceptance_criteria":[
+    "Editable self-contained metric model following the CURRENT three supplied folded-ear and lowered-arm images, not the prior T-pose.",
+    "Thick folded ears with actual recesses, shaped sockets and muzzle, cheek pads and U jaw, dental arches, segmented lowered limbs, curled fingers, broad three-toed feet, fitted belly panel, bow and tail.",
+    "Exact parent Release import, model identity, finite geometry, required-part counts, closed revised shells, saved-file reopen checks and image/frustum validations pass.",
+    "ChatGPT must inspect actual full and detailed previews against the original reference images, correct meaningful discrepancies and write the exact-version review before acceptance.",
+    "Geometry only: no texture generation, image-texture camouflage, finished UVs or rig. Preserve remaining limitations and durable continuation data.",
+    "Read back Release manifest, artifact hashes and workspace-state before claiming durable save."
+  ],
+  "inputs":[],
+  "steps":[
+    {"id":"model","tool":"blender","script":"model.py","source_blend":"workspace/resume/output/model/model.blend","timeout_seconds":5400,"preview":{"views":["front"],"width":128,"height":128,"samples":1}},
+    {"id":"render","tool":"blender","script":"render.py","source_blend":"workspace/output/model/model.blend","timeout_seconds":7200,"preview":{"views":["three_quarter"],"width":128,"height":128,"samples":1}},
+    {"id":"package","tool":"python","script":"package.py","timeout_seconds":900}
+  ]
+}
