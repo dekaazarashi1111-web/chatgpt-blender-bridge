@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v003",
+  "source_commit": "c89554674a7ed6a55bcb6a2d0ecefb8ffcb7711f",
+  "snapshot_sha256": "eab8cfd9b794382f18439f37dcbda061040f551052c6f6040537d71e845b9a3f",
+  "verdict": "changes_requested",
+  "criteria": {
+    "Match the three current folded-ear, lowered-arm original-character references, with padded changing limb sections, sloping shoulder covers, a continuous bridge and two muzzle lobes, fuller recessed eyes, rounded toes and articulated fingers.": "fail",
+    "Keep geometry-only scope. No final textures, UV finishing, rig or image-texture camouflage. Real restored reference derivatives and all construction dependencies must be retained.": "pass",
+    "Restore the exact pinned same-project parent archive, verify the source blend and helper hashes, and preserve fingerprints of unchanged components without rerunning the accepted import.": "pass",
+    "Save a self-contained editable metric blend, pass finite-coordinate, required-part, continuous-muzzle-region and closed-mesh checks, reopen both saved scenes, and validate all 13 full/clay/detail image files and framing.": "pass",
+    "Read back Release evidence and independently compare the exact new previews with the native reference images. Record a job/source/snapshot-pinned visual review; execution success alone is not acceptance.": "pass"
+  },
+  "summary": "Downloaded both evidence artifacts, verified their API digests, exact Release-manifest bytes and all 96 output sizes/hashes. Reopen, missing-dependency, all-mesh closedness, required groups/counts, image and framing checks pass. Actual full/reference, face, hand and ear previews still show insufficient front-facing cheek coverage, raised muzzle-boss boundaries, protruding eyes, too many exposed upper teeth, bead-like fingers, a hip band and fragile ear-channel rims. These require a new geometry revision, detailed in form-v003.md. This output is not visually approved."
+}
