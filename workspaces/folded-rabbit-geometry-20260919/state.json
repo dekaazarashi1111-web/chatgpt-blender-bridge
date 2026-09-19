@@ -9,9 +9,43 @@
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35429889918",
   "started_at": "2026-09-19T07:39:37.629809Z",
-  "steps": [],
-  "latest_snapshot": null,
-  "step_snapshots": {},
+  "steps": [
+    {
+      "id": "import",
+      "tool": "python",
+      "exit_code": 0
+    }
+  ],
+  "latest_snapshot": {
+    "release_tag": "creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1",
+    "release_id": 391985661,
+    "project_id": "folded-rabbit-geometry-20260919",
+    "job_id": "form-v001",
+    "archive_sha256": "22c93f6b71feddf2e2384747d732f8d12b1e62772c3bc3b4027ac2459b4fb7c2",
+    "manifest_sha256": "40242cd5803f1277ac0a33ce4216c333d33db8499e5e59454e9c177d20ee0b7d",
+    "archive_asset_id": 574323938,
+    "manifest_asset_id": 574323974,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1/manifest.json",
+    "source_commit": "0eb25f886539d7aa9b4b37b60337a46c75ebd086"
+  },
+  "step_snapshots": {
+    "import": {
+      "release_tag": "creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1",
+      "release_id": 391985661,
+      "project_id": "folded-rabbit-geometry-20260919",
+      "job_id": "form-v001",
+      "archive_sha256": "22c93f6b71feddf2e2384747d732f8d12b1e62772c3bc3b4027ac2459b4fb7c2",
+      "manifest_sha256": "40242cd5803f1277ac0a33ce4216c333d33db8499e5e59454e9c177d20ee0b7d",
+      "archive_asset_id": 574323938,
+      "manifest_asset_id": 574323974,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-1/manifest.json",
+      "source_commit": "0eb25f886539d7aa9b4b37b60337a46c75ebd086"
+    }
+  },
   "acceptance_criteria": [
     "Editable self-contained metric model following the CURRENT three supplied folded-ear and lowered-arm images, not the prior T-pose.",
     "Thick folded ears with actual recesses, shaped sockets and muzzle, cheek pads and U jaw, dental arches, segmented lowered limbs, curled fingers, broad three-toed feet, fitted belly panel, bow and tail.",
@@ -22,5 +56,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-19T07:39:37.904773Z"
+  "current_step": "import",
+  "updated_at": "2026-09-19T07:40:06.691152Z"
 }
