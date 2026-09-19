@@ -1,0 +1,18 @@
+{
+  "scope": "NumPy mesher algorithm only, not Blender execution or visual acceptance",
+  "grid_shape": [208, 234, 185],
+  "active_cells": 153232,
+  "spacing_requested": 0.0025,
+  "vertices": 461440,
+  "triangles": 922876,
+  "method": "six-tetrahedra / exact shared-grid-edge welding",
+  "watertight": true,
+  "body_count": 1,
+  "local_check": "trimesh closedness and component count; actual Blender mesh audit is still required in Actions",
+  "source_sha256": {
+    "implicit.py": "42c64e06f52018d9c3983f75a25ea53c3f041a8bd536b65533956b02f11cdf77",
+    "model.py": "5662f624110e206b4057f6ea9fe839946efd21a8320d02b7b2d12695e1b60b93",
+    "render.py": "5876564a0c1abc387e0e33c18c7c6ad519b74f5408274feb00019c775e4dcdfa",
+    "package.py": "9511aed29099eb0e4bda972fb9db50e4828054e04bfad4aad41ed924bc4d3e2c"
+  }
+}
