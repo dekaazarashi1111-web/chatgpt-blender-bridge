@@ -1,0 +1,17 @@
+{
+  "schema_version":1,
+  "project_id":"folded-rabbit-geometry-20260919",
+  "job_id":"form-v001",
+  "source_commit":"0eb25f886539d7aa9b4b37b60337a46c75ebd086",
+  "snapshot_sha256":"d22896786f350e02e96e07920797a619dbfc076d85f855bcb1352329da33ec77",
+  "verdict":"changes_requested",
+  "criteria":{
+    "Editable self-contained metric model following the CURRENT three supplied folded-ear and lowered-arm images, not the prior T-pose.":"fail",
+    "Thick folded ears with actual recesses, shaped sockets and muzzle, cheek pads and U jaw, dental arches, segmented lowered limbs, curled fingers, broad three-toed feet, fitted belly panel, bow and tail.":"fail",
+    "Exact parent Release import, model identity, finite geometry, required-part counts, closed revised shells, saved-file reopen checks and image/frustum validations pass.":"pass",
+    "ChatGPT must inspect actual full and detailed previews against the original reference images, correct meaningful discrepancies and write the exact-version review before acceptance.":"fail",
+    "Geometry only: no texture generation, image-texture camouflage, finished UVs or rig. Preserve remaining limitations and durable continuation data.":"pass",
+    "Read back Release manifest, artifact hashes and workspace-state before claiming durable save.":"pass"
+  },
+  "summary":"実取得したレビューZIPとhostZIPのdigest、Release manifest実バイト、全80出力を照合。両再読込・形状検査pass。実際の全身/頭部/耳/手/足と新しい元PNGを比較し、箱状すぎる外装、浮く耳先板と眼窩リング、連続しない鼻梁、球状の頬、歯の露出、骨盤の盛上り、指根元と卵形爪先を不合格とした。form-v001.mdに修正を記録。受入済みimportを繰り返さず、この正確なsnapshotからform-v002で修正する。"
+}
