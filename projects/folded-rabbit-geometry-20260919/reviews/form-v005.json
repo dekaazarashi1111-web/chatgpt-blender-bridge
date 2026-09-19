@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v005",
+  "source_commit": "464b693576b7ef291ab475149d3b9932e2014359",
+  "snapshot_sha256": "88ddbc0eb62eb3805c2b1d283699bdff3b7ba9d7fc1c51a824b8c1454cc73f17",
+  "verdict": "changes_requested",
+  "criteria": {
+    "Match the original folded-ear lowered-arm character using a smooth crown, two narrow continuous muzzle lobes, a nasal bridge and central lower cleft, shaped cheek covers, a rounded small nose and seated eyes, with padded shoulder transitions and naturally curled fingers.": "fail",
+    "Keep geometry-only scope: no final textures, UV finishing or rig. Preserve real reference derivatives, the editable blend and complete source dependencies.": "pass",
+    "Restore and hash-verify the exact v004 snapshot and source blend. Preserve fingerprints of unaffected torso, hip, lower legs, feet, bow, tail and folded ears without repeating their construction.": "pass",
+    "Pass finite-coordinate, required-part, continuous-muzzle-region, closed-mesh, actual-dimension and both saved-file reopen checks; deliver 13 valid framed views, reusing only unchanged isolated foot and ear views with their exact hashes and geometry evidence.": "pass",
+    "Read back the actual execution and Release evidence, independently verify saved files, inspect the exact changed previews against native references and record a source-and-snapshot-pinned visual verdict before calling the form complete.": "pass"
+  },
+  "summary": "All three steps completed; actual host/review ZIP digests, final Release readback manifest bytes and all 105 output sizes/hashes independently match. Both CI reopen reports, closedness/finite/parts/dimensions/dependency checks, and all 13 framed views pass. The three reused isolated views have exact verified hashes and preserved geometry. Opened actual reference comparison, full-resolution head front and all ten changed views, comparing with native front/side/back reference pixels. Crown band and finger pinching improved; the rounded-box muzzle remains an incorrect slab, cheek covers still float as separate petals instead of following the integrated cheek volume, and the mouth cleft and socket rims show micro-rippling. Continue with a face-only revision, retaining the improved limbs and other unaffected parts. No visual approval or exact-reproduction claim."
+}

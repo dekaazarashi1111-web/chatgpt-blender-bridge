@@ -1,0 +1,9 @@
+# form-v006 — face-only continuation from actually reviewed v005
+
+Source parent:464b693576b7ef291ab475149d3b9932e2014359. Use final v005 snapshot and blend hash in reviews/form-v005.md. Geometry only; original native reference pixels are available locally/Library, genuine WebP derivatives are already in the repository and snapshots. No native PNG upload or texture creation is claimed.
+
+Correct the slab-like muzzle with two convex smoothly united lobes and a broad continuous nasal/lower-face transition. A log-sum-exp smooth minimum avoids the old finite-support curvature transitions. The cheek bulges belong to the head; thin lower covers should follow that exact face surface and have a real shallow joint, not be large separate petals. Round/lower the small nose slightly and clean the narrow central mouth cleft. Preserve all unaffected body, folded ears, improved arms/hands, jaw, teeth and accessories using exact geometry fingerprints.
+
+The local NumPy mesher and offscreen VTK can rapidly inspect a geometric hypothesis before running Blender. These are not actual Blender execution, exact saved scene renders, or visual acceptance of the new job. The actual Actions blend, automatic checks and resulting images must still be fetched and reviewed.
+
+Copy the parent render cache and manifest into the current model output before checkpointing; a model-only snapshot must retain dependencies needed by the later renderer. Reuse isolated unchanged ears, feet and hand imagery only with geometry fingerprints and file hashes. Render all nine affected whole/head views. Save an exact geometry-only interchange mesh alongside the editable blend for independent inspection, where practical. Keep the existing tested runtime and18000-second budget. Source/dependencies first, job.json last, new job ID, no duplicate submission.
