@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v006",
+  "title": "Continuous convex muzzle and integrated cheek volume with fitted lower covers",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "resume": {
+    "project_id": "folded-rabbit-geometry-20260919",
+    "job_id": "form-v005",
+    "release_tag": "creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3",
+    "archive_sha256": "88ddbc0eb62eb3805c2b1d283699bdff3b7ba9d7fc1c51a824b8c1454cc73f17",
+    "manifest_sha256": "a9e70d2357c836ecc733efac24d3cb625809595b20f6049bf551ab1c8929f199"
+  },
+  "inputs": [],
+  "acceptance_criteria": [
+    "Match the native folded-ear original-character references with a smoothly continuous nasal rise and two convex muzzle lobes, an integrated cheek silhouette with thin fitted lower covers and real joints, a soft small nose, clean central cleft and seated eyes; no remaining slab muzzle or floating petal cheeks.",
+    "Keep geometry-only scope and a self-contained editable metric blend, real reference derivatives and full executable source dependencies; no final textures, finished UVs, rig or image-texture camouflage.",
+    "Restore the exact v005 final snapshot and hash-verify its source blend; preserve unchanged arms, hands, body, hip, legs, feet, folded ears, jaw, teeth, bow and tail by fingerprints without reconstructing them.",
+    "Pass finite-coordinate, required-part, muzzle-region, closed-mesh, actual-dimension, missing-dependency and both saved-file reopen checks. Save all 13 framed images, with nine new affected views and four unchanged isolated views backed by exact hashes and geometry evidence.",
+    "Close the model-checkpoint render-cache dependencies, preserve partial face-view evidence and export exact head geometry for independent inspection; verify actual execution, manifest and output bytes, then inspect actual images and save a source-and-snapshot-pinned visual verdict before completion."
+  ],
+  "steps": [
+    {"id":"model","tool":"blender","script":"model.py","source_blend":"workspace/resume/output/model/model.blend","timeout_seconds":5400,"preview":{"views":["front"],"width":128,"height":128,"samples":1}},
+    {"id":"render","tool":"blender","script":"render.py","source_blend":"workspace/output/model/model.blend","timeout_seconds":7200,"preview":{"views":["three_quarter"],"width":128,"height":128,"samples":1}},
+    {"id":"package","tool":"python","script":"package.py","timeout_seconds":900}
+  ]
+}
