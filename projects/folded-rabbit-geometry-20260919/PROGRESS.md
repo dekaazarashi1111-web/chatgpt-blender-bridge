@@ -1,27 +1,29 @@
 # 進捗 / folded-rabbit-geometry-20260919
 
-対象は2026-09-19に添付された折れ耳・腕下ろしの3面図。今回の範囲は造形のみ。旧rabbit-geometry-20260918のTポーズ版や並行form-v004は別の制作対象として残している。
+今回の対象は折れ耳・腕を下ろした添付オリジナルキャラクター。造形のみを仕上げる。テクスチャ、UV仕上げ、リグは別セッション。旧rabbit-geometry-20260918やstudio-smokeを今回の対象にしない。
 
-## 現在の実行 — form-v002
+## 現在の実行 — form-v003
+source `c89554674a7ed6a55bcb6a2d0ecefb8ffcb7711f`。
+Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35432676691 、attempt1。2026-09-19 08:41 UTC、pushイベントでin_progressを実確認。重複投入しない。
+スクリプトと復元依存を先に揃え、job.jsonを最後に追加。実行予算18000秒、model/render/packageの3工程で保存。新しい造形の成功と視覚合格はまだ未確認。
+
+v002の実画像レビューから、連続した鼻梁と二つの口元、より充実した眼球、滑らかな眼窩縁、傾斜した肩カバー、変化する断面の四肢、骨盤の稜線、指の関節と根元、丸い爪先、厚い折れ耳、蝶ネクタイ先端を修正。口元は偽の交差面を避けるため頭部と連続メッシュ化し、左右の編集用vertex groupを残す。未変更部品はfingerprint照合。受入済み親importを再実行しない。
+
+## 最新の確認済み保存地点 — form-v002
 source `72039ccb10a6b1b83d23f14abe84c46a6c416e45`。
-Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35430997050 、attempt1、2026-09-19 08:04 UTCに実際のpush起動を確認。実行中は重複投入しない。v002の生成成功・視覚受入はまだ未確認。
+Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35430997050 、attempt1、prepare/create成功、model/render/package全exit0、state=needs_review。
+Release `creative-folded-rabbit-geometry-20260919-form-v002-35430997050-1-3`
+- archive SHA256 `536ed187f54383979428459739169a9405394d76caf55476e5f74472306d5c4c`
+- manifest SHA256 `2496607eb41d29ecc00d75a2f404c59f4c00d875df9ccb6cae0d368798663c47`
+- resume blend `workspace/resume/output/model/model.blend`
+- blend SHA256 `adbb099ed8f76fc69a6c309064ad82b04c472c6e8d8457a3b4be49b73374d3f3`
 
-## 直前の保存とレビュー — form-v001
-source `0eb25f886539d7aa9b4b37b60337a46c75ebd086`。
-Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35429889918 、attempt1、全4工程exit0。
-最終Release `creative-folded-rabbit-geometry-20260919-form-v001-35429889918-1-4`
-- archive SHA256 `d22896786f350e02e96e07920797a619dbfc076d85f855bcb1352329da33ec77`
-- manifest SHA256 `eda577fc0f024e9259fff0eae2f747db2c0a8b4c243903e0769c1f9595316807`
-- 再開元blend `workspace/resume/output/model/model.blend`
-- blend SHA256 `76f7e0926c7ebdcc45b34e0f608ebe5b7de9c77d77999b859b0948b85dd6e3ef`
-
-host/review ZIPを実取得。API digest、Release manifest実バイトhash、全80出力のsize/hash、両Blender再読込、必須部品と主要閉曲面を検査済み。原寸の新しいPNGと実際の全身/頭部/耳/手/足画像を比較し、不一致を認めた。レビューはreviews/form-v001.mdと同jsonに正確なsource/archiveを固定して保存。実行成功だけで完成とはしていない。
-
-## v002の修正
-眼球を顔面内へ沈め、浮くリングを撤去。鼻梁とマズルを連続化、頬を球でなく参照形のパッドに、歯を口腔内へ配置。耳先の余計な板を撤去し、前方への折れを深めて高さを調整。腕・手掌の箱状面を曲面化し、指根元、膝/骨盤、太い爪先、ネクタイの厚みを修正。
-受入済み親importは再実行せず、同一projectのv001最終snapshotから継承。未変更部品のfingerprintを検査。3工程の新ジョブで実行し、既存の検証済みレンダー/パッケージ実装をhash確認して利用する。
+このセッションでhost/review ZIPを実取得し、API digest、Releaseから読み戻されたmanifest実バイトhash、全93出力のsize/hashを照合。両再読込検証成功、外部依存欠落なし。Release APIのassetも一致。最終Release archive本体をこの監査で再ダウンロードしたとは主張しない。v003のrunnerが指定archiveを復元・検証する。
+実画像を開いて不一致を確認し、reviews/form-v002.mdへ保存。v002は完成扱いにしない。v001の検証と不合格理由はreviews/form-v001.md/jsonを参照。
 
 ## 次の確認
-同じv002 Actionsとworkspace-stateを追跡。完了後、実画像/ログ/manifestを取得して検証・比較し、必要なら新job IDで修正する。対象版のレビューと保存地点を更新する。失敗時はdocs/RESUME.mdに従い有効な工程snapshotへ戻る。現在のローカルデータだけを保存済みとは扱わない。
+v003の同じActionsとworkspace-stateを追跡。終了後にログ、manifest、実出力、再読込、形状監査、13方向/詳細画像を確認し、原寸参照と比較する。問題は新job IDで修正し、対象版に固定したレビューと次の保存地点を記録する。
+失敗ならdocs/RESUME.mdに従い、公開完了済みの有効な工程snapshotから再開する。ローカルだけのデータを保存済みと呼ばない。
 
-入力は実画素から作成した3枚の縮小WebPをGitHubとblendへ保存済み。原寸PNGのGitHub保存は未実施（INPUTS参照）。次回のテクスチャ制作は今回の造形完成版の承認状態を確認してから行う。
+## 入力
+再添付された原寸PNG3枚のSHA256はINPUTS.mdの元画像と完全一致。比較用300x400 WebPの実画素とソースはGitHub/Release/blendに既存保存済みで、v003へ復元・持越し。原寸PNGそのもののGitHubアップロードは未実施。今回画像をテクスチャとして貼り付けない。
