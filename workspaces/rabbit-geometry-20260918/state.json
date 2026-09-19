@@ -9,9 +9,43 @@
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35428887665",
   "started_at": "2026-09-19T07:18:24.808861Z",
-  "steps": [],
-  "latest_snapshot": null,
-  "step_snapshots": {},
+  "steps": [
+    {
+      "id": "model",
+      "tool": "blender",
+      "exit_code": 0
+    }
+  ],
+  "latest_snapshot": {
+    "release_tag": "creative-rabbit-geometry-20260918-form-v004-35428887665-1-1",
+    "release_id": 391980712,
+    "project_id": "rabbit-geometry-20260918",
+    "job_id": "form-v004",
+    "archive_sha256": "e0846e9f08f22e8fb08639089db96f3e5a0c52a2896c7e6daddc194a16787aee",
+    "manifest_sha256": "e9ae4572f1e9cd0d3c8e5118b1d226ccd9aa8017fe8a14e3a6357ac8d0f38296",
+    "archive_asset_id": 574297125,
+    "manifest_asset_id": 574297171,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v004-35428887665-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-1/manifest.json",
+    "source_commit": "dd37d7b8a04c7f65ab35b2e98af2e0c7afc9be8d"
+  },
+  "step_snapshots": {
+    "model": {
+      "release_tag": "creative-rabbit-geometry-20260918-form-v004-35428887665-1-1",
+      "release_id": 391980712,
+      "project_id": "rabbit-geometry-20260918",
+      "job_id": "form-v004",
+      "archive_sha256": "e0846e9f08f22e8fb08639089db96f3e5a0c52a2896c7e6daddc194a16787aee",
+      "manifest_sha256": "e9ae4572f1e9cd0d3c8e5118b1d226ccd9aa8017fe8a14e3a6357ac8d0f38296",
+      "archive_asset_id": 574297125,
+      "manifest_asset_id": 574297171,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v004-35428887665-1-1",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-1/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-1/manifest.json",
+      "source_commit": "dd37d7b8a04c7f65ab35b2e98af2e0c7afc9be8d"
+    }
+  },
   "acceptance_criteria": [
     "Editable self-contained metric T-pose rabbit model, with geometry matching the supplied front/right/back reference rather than a generic rabbit.",
     "Actual modeled ear channels, orbital sockets, muzzle, U-shaped open jaw, rounded dental arches, fingers, toes, bow and damaged shell sections.",
@@ -21,5 +55,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-19T07:18:24.994943Z"
+  "current_step": "model",
+  "updated_at": "2026-09-19T07:19:32.792349Z"
 }
