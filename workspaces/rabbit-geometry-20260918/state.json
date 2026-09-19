@@ -19,20 +19,25 @@
       "id": "render",
       "tool": "blender",
       "exit_code": 0
+    },
+    {
+      "id": "package",
+      "tool": "python",
+      "exit_code": 0
     }
   ],
   "latest_snapshot": {
-    "release_tag": "creative-rabbit-geometry-20260918-form-v004-35428887665-1-2",
-    "release_id": 391981748,
+    "release_tag": "creative-rabbit-geometry-20260918-form-v004-35428887665-1-3",
+    "release_id": 391981999,
     "project_id": "rabbit-geometry-20260918",
     "job_id": "form-v004",
-    "archive_sha256": "1d6060a2d722183794b7fe626b5a3f614793b4b10d4f4638c723abe492c8c414",
-    "manifest_sha256": "fae2dd286c6396fb498335a91ba697569df2f6a8809552f7b1b2236cd011affb",
-    "archive_asset_id": 574302739,
-    "manifest_asset_id": 574302784,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v004-35428887665-1-2",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-2/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-2/manifest.json",
+    "archive_sha256": "ed2278f7cd7c15fcff27dde028edae34bd381d354ea498496a01fab44f93a69c",
+    "manifest_sha256": "2344237556163060eb71b1ac358f7d5be5ffe4127bdea9f8486307f37272ed86",
+    "archive_asset_id": 574304319,
+    "manifest_asset_id": 574304410,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v004-35428887665-1-3",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-3/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-3/manifest.json",
     "source_commit": "dd37d7b8a04c7f65ab35b2e98af2e0c7afc9be8d"
   },
   "step_snapshots": {
@@ -63,6 +68,20 @@
       "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-2/workspace.tar.gz",
       "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-2/manifest.json",
       "source_commit": "dd37d7b8a04c7f65ab35b2e98af2e0c7afc9be8d"
+    },
+    "package": {
+      "release_tag": "creative-rabbit-geometry-20260918-form-v004-35428887665-1-3",
+      "release_id": 391981999,
+      "project_id": "rabbit-geometry-20260918",
+      "job_id": "form-v004",
+      "archive_sha256": "ed2278f7cd7c15fcff27dde028edae34bd381d354ea498496a01fab44f93a69c",
+      "manifest_sha256": "2344237556163060eb71b1ac358f7d5be5ffe4127bdea9f8486307f37272ed86",
+      "archive_asset_id": 574304319,
+      "manifest_asset_id": 574304410,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v004-35428887665-1-3",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-3/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v004-35428887665-1-3/manifest.json",
+      "source_commit": "dd37d7b8a04c7f65ab35b2e98af2e0c7afc9be8d"
     }
   },
   "acceptance_criteria": [
@@ -74,6 +93,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "current_step": "render",
-  "updated_at": "2026-09-19T07:23:51.432151Z"
+  "current_step": "package",
+  "updated_at": "2026-09-19T07:25:00.775257Z"
 }
