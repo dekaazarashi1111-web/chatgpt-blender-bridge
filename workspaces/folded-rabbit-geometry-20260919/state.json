@@ -19,20 +19,25 @@
       "id": "render",
       "tool": "blender",
       "exit_code": 0
+    },
+    {
+      "id": "package",
+      "tool": "python",
+      "exit_code": 0
     }
   ],
   "latest_snapshot": {
-    "release_tag": "creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-2",
-    "release_id": 392036105,
+    "release_tag": "creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3",
+    "release_id": 392036800,
     "project_id": "folded-rabbit-geometry-20260919",
     "job_id": "form-v005",
-    "archive_sha256": "9838a6d0f3658c92f721393fa4b8f3551a00c412592fd56284f055bf10dab5ad",
-    "manifest_sha256": "d0e12214b22696a73d099655bca4448afb579c15f0df2d932c76020987e89677",
-    "archive_asset_id": 574600978,
-    "manifest_asset_id": 574601123,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-2",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-2/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-2/manifest.json",
+    "archive_sha256": "88ddbc0eb62eb3805c2b1d283699bdff3b7ba9d7fc1c51a824b8c1454cc73f17",
+    "manifest_sha256": "a9e70d2357c836ecc733efac24d3cb625809595b20f6049bf551ab1c8929f199",
+    "archive_asset_id": 574603263,
+    "manifest_asset_id": 574603517,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3/manifest.json",
     "source_commit": "464b693576b7ef291ab475149d3b9932e2014359"
   },
   "step_snapshots": {
@@ -63,6 +68,20 @@
       "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-2/workspace.tar.gz",
       "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-2/manifest.json",
       "source_commit": "464b693576b7ef291ab475149d3b9932e2014359"
+    },
+    "package": {
+      "release_tag": "creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3",
+      "release_id": 392036800,
+      "project_id": "folded-rabbit-geometry-20260919",
+      "job_id": "form-v005",
+      "archive_sha256": "88ddbc0eb62eb3805c2b1d283699bdff3b7ba9d7fc1c51a824b8c1454cc73f17",
+      "manifest_sha256": "a9e70d2357c836ecc733efac24d3cb625809595b20f6049bf551ab1c8929f199",
+      "archive_asset_id": 574603263,
+      "manifest_asset_id": 574603517,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3/manifest.json",
+      "source_commit": "464b693576b7ef291ab475149d3b9932e2014359"
     }
   },
   "acceptance_criteria": [
@@ -74,6 +93,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "current_step": "render",
-  "updated_at": "2026-09-19T10:55:10.218114Z"
+  "current_step": "package",
+  "updated_at": "2026-09-19T10:56:54.829917Z"
 }
