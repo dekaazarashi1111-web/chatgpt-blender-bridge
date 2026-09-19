@@ -1,11 +1,17 @@
 # 進捗 / 再開ポイント
 
-## 2026-09-19 セッション開始照合
-開始時リモートmain `18a05d7d2de20618c9002db243340fd685f37089` のCHATGPT_JOB_PROMPT/README/EXECUTION_CONTRACT/tools/schema/v2サンプル/RESUME/INPUTS/runtime説明と作品指示を確認。再帰tree内に適用AGENTS.mdは検出されなかった。GitHub接続でread/write権限を確認。shell cloneとraw/API DNSは失敗。接続のGit Data APIおよびActions artifact downloadは実際に利用可能。dispatch専用操作はなく、現在のworkflowのmain job.json/review JSON push起動を利用する。
+## 現在: form-v003 実行中、重複投入禁止
+2026-09-19 の依頼も造形のみ。テクスチャ、UV仕上げ、リグは開始しない。
+開始時main `18a05d7d2de20618c9002db243340fd685f37089` の開始プロンプト・規約・schema・ツール・説明・作品指示と実装を確認。再帰tree内にAGENTS.mdは検出されなかった。shell DNSは失敗するがGitHub接続の読み書きとartifact downloadは利用できた。
 
-旧メモの『form-v002未投入』は古い。実際にはform-v002の全3工程と公開が終了済み。重複実行していない。実画像レビューを `reviews/form-v002.md/.json` に保存し、造形修正要求とした。ユーザーの今回の指定も造形のみ、テクスチャ等は別セッション。
+古い『v002未投入』メモは誤りで、v002はすでに完了していた。実画像を読み、顎・眼窩・曲面の段差・手指・爪先等の修正要求をreviews/form-v002.md/.jsonに保存した。v002を重複実行していない。
 
-## 最新の有効な制作保存地点
+スクリプト先行commit `ee60639f9900120ed51c8d4c043d951786e827ff`。
+新規job.json投入source `0aa4a5c068c925266e536b582a329bd273ceccf1`。
+実際のActions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35427795287 （attempt 1）。
+workspace-state jobs/form-v003.jsonはrunning、開始06:54:11Z。このメモ時点でv003の新規Release保存・実画像レビューは未確認。まずこの実行を追跡する。
+
+## 有効な直前の制作保存地点
 job `form-v002` / source `0fdebb95a32118f8bfa2e75da4ee0ecb2de23170`
 Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35390326287
 Release tag `creative-rabbit-geometry-20260918-form-v002-35390326287-1-3`
@@ -14,8 +20,8 @@ manifest SHA256 `d61ae5dce72b2b3480183cc76a8387ede3804026d3ec91ec18c2a1bb5c89f1b
 再開source_blend `workspace/resume/output/model/model.blend`
 モデルSHA256 `f028acd02a8dd1ddd57f64d260e75fb50382151c72668cb1ea0fec39bc8f1f4f`
 
-## 今行うこと
-form-v003を準備し、v002から顔のC字顎・眼窩の丸い縁・耳の溝と丸い端部・掌につながる指・丸い爪先を修正する。現在このメモ時点でv003は未投入。必ず最新state/Actionsを再確認する。スクリプトと入力を先にcommitし、job.jsonは最後に追加。実行後は版を固定した画像レビューとRelease読戻しまで行う。完成と未確認を区別する。
+## 次の作業
+v003完了後、その版のRelease/state/manifest/ログを照合し、実際の全身3方向、顔、単色クレイ、耳、手、足の画像を参考画像と比較する。実行成功だけで完成扱いしない。残る差異があれば新しいjob IDで修正し、レビューと保存地点を更新する。v003は頭部・耳・手足・蝶ネクタイを編集、胴・脚・内部ジョイント等の未変更部位はfingerprint照合で保持している。
 
-## 過去
-form-v001の記録と失敗方法はreviews/form-v001.mdに保存。過去の成功を次版に持ち越さない。未変更ジョイントなどは保持し、不要な工程の再実行は避ける。
+## 失敗した方法と履歴
+reviews/form-v001.mdとform-v002.mdに実画像の不合格理由、過大なmouth cutter、C1断面補間の帯状陰影、指の端面、比較マスク手法の限界を保存。局所checkpointはリモート公開されるまで保存済みと呼ばない。工程内で中断した場合はmanifestの実パスを確認し、docs/RESUME.mdに従う。
