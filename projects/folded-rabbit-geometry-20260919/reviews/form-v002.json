@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v002",
+  "source_commit": "72039ccb10a6b1b83d23f14abe84c46a6c416e45",
+  "snapshot_sha256": "536ed187f54383979428459739169a9405394d76caf55476e5f74472306d5c4c",
+  "verdict": "changes_requested",
+  "criteria": {
+    "Editable self-contained metric model following the CURRENT three supplied folded-ear and lowered-arm images, not the prior T-pose.": "pass",
+    "Thick folded ears with actual recesses, shaped sockets and muzzle, cheek pads and U jaw, dental arches, segmented lowered limbs, curled fingers, broad three-toed feet, fitted belly panel, bow and tail.": "fail",
+    "Exact parent Release import, model identity, finite geometry, required-part counts, closed revised shells, saved-file reopen checks and image/frustum validations pass.": "pass",
+    "ChatGPT must inspect actual full and detailed previews against the original reference images, correct meaningful discrepancies and write the exact-version review before acceptance.": "fail",
+    "Geometry only: no texture generation, image-texture camouflage, finished UVs or rig. Preserve remaining limitations and durable continuation data.": "pass",
+    "Read back Release manifest, artifact hashes and workspace-state before claiming durable save.": "pass"
+  },
+  "summary": "Actual reference comparison, head and hand previews reveal exposed shoulder balls, straight cylindrical limbs, raised muzzle boundaries, deficient cheek/front coverage and overly flat toe tops. See form-v002.md for exact artifact/manifest/file hashes and actual-image evidence. Both reopen checks and all 93 downloaded output hashes pass, but geometry fidelity does not. Correct with a new job ID; do not rerun or approve this output merely because execution succeeded."
+}
