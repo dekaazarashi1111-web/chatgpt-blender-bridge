@@ -1,89 +1,17 @@
 {
   "schema_version": 2,
   "project_id": "rabbit-geometry-20260918",
-  "job_id": "form-v002",
-  "state": "changes_requested",
-  "source_commit": "0fdebb95a32118f8bfa2e75da4ee0ecb2de23170",
+  "job_id": "form-v003",
+  "state": "running",
+  "source_commit": "0aa4a5c068c925266e536b582a329bd273ceccf1",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
-  "run_id": "35390326287",
+  "run_id": "35427795287",
   "run_attempt": "1",
-  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35390326287",
-  "started_at": "2026-09-18T20:14:48.710294Z",
-  "steps": [
-    {
-      "id": "model",
-      "tool": "blender",
-      "exit_code": 0
-    },
-    {
-      "id": "render",
-      "tool": "blender",
-      "exit_code": 0
-    },
-    {
-      "id": "package",
-      "tool": "python",
-      "exit_code": 0
-    }
-  ],
-  "latest_snapshot": {
-    "release_tag": "creative-rabbit-geometry-20260918-form-v002-35390326287-1-3",
-    "release_id": 391760762,
-    "project_id": "rabbit-geometry-20260918",
-    "job_id": "form-v002",
-    "archive_sha256": "93dbd6936c126531da994e2ac3905af380b84f362275e5064f33d4ebf6cdb123",
-    "manifest_sha256": "d61ae5dce72b2b3480183cc76a8387ede3804026d3ec91ec18c2a1bb5c89f1b1",
-    "archive_asset_id": 573378544,
-    "manifest_asset_id": 573378607,
-    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v002-35390326287-1-3",
-    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-3/workspace.tar.gz",
-    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-3/manifest.json",
-    "source_commit": "0fdebb95a32118f8bfa2e75da4ee0ecb2de23170"
-  },
-  "step_snapshots": {
-    "model": {
-      "release_tag": "creative-rabbit-geometry-20260918-form-v002-35390326287-1-1",
-      "release_id": 391759656,
-      "project_id": "rabbit-geometry-20260918",
-      "job_id": "form-v002",
-      "archive_sha256": "e95609c693616f283d4001d92ec48f312c81bf703f6d59204e14f367fd344c4a",
-      "manifest_sha256": "b385ac3e0093a4148c9047d498f67f0174a256c0c0013c10663e669d9729b233",
-      "archive_asset_id": 573375011,
-      "manifest_asset_id": 573375037,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v002-35390326287-1-1",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-1/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-1/manifest.json",
-      "source_commit": "0fdebb95a32118f8bfa2e75da4ee0ecb2de23170"
-    },
-    "render": {
-      "release_tag": "creative-rabbit-geometry-20260918-form-v002-35390326287-1-2",
-      "release_id": 391760520,
-      "project_id": "rabbit-geometry-20260918",
-      "job_id": "form-v002",
-      "archive_sha256": "5133b398f07ca88fe6848134f5f36c958cade881cd423efa86d00fb2ad1b6151",
-      "manifest_sha256": "f74489ef2575201040dc1178c1e18183bf5e262e2837b608faa1432794078e38",
-      "archive_asset_id": 573377486,
-      "manifest_asset_id": 573377568,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v002-35390326287-1-2",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-2/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-2/manifest.json",
-      "source_commit": "0fdebb95a32118f8bfa2e75da4ee0ecb2de23170"
-    },
-    "package": {
-      "release_tag": "creative-rabbit-geometry-20260918-form-v002-35390326287-1-3",
-      "release_id": 391760762,
-      "project_id": "rabbit-geometry-20260918",
-      "job_id": "form-v002",
-      "archive_sha256": "93dbd6936c126531da994e2ac3905af380b84f362275e5064f33d4ebf6cdb123",
-      "manifest_sha256": "d61ae5dce72b2b3480183cc76a8387ede3804026d3ec91ec18c2a1bb5c89f1b1",
-      "archive_asset_id": 573378544,
-      "manifest_asset_id": 573378607,
-      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-rabbit-geometry-20260918-form-v002-35390326287-1-3",
-      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-3/workspace.tar.gz",
-      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-rabbit-geometry-20260918-form-v002-35390326287-1-3/manifest.json",
-      "source_commit": "0fdebb95a32118f8bfa2e75da4ee0ecb2de23170"
-    }
-  },
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35427795287",
+  "started_at": "2026-09-19T06:54:11.811612Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
   "acceptance_criteria": [
     "Editable self-contained metric T-pose rabbit model, with geometry matching the supplied front/right/back reference rather than a generic rabbit.",
     "Actual modeled ear channels, orbital sockets, muzzle, U-shaped open jaw, rounded dental arches, fingers, toes, bow and damaged shell sections.",
@@ -92,37 +20,6 @@
     "Release archive and manifest hashes and workspace-state must be read back before reporting durable save."
   ],
   "review_required": true,
-  "next_action": "Create a new revision using latest_snapshot.",
-  "current_step": "package",
-  "finished_at": "2026-09-18T20:17:40.575380Z",
-  "publication_errors": [],
-  "previews": [
-    {
-      "path": "output/model/previews/front.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/model/previews/front.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/model/previews/front.png"
-    },
-    {
-      "path": "output/render/previews/three_quarter.png",
-      "url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/blob/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/render/previews/three_quarter.png",
-      "raw_url": "https://raw.githubusercontent.com/dekaazarashi1111-web/chatgpt-blender-bridge/workspace-state/workspaces/rabbit-geometry-20260918/previews/form-v002/output/render/previews/three_quarter.png"
-    }
-  ],
-  "updated_at": "2026-09-19T06:43:47.986991Z",
-  "review": {
-    "schema_version": 1,
-    "project_id": "rabbit-geometry-20260918",
-    "job_id": "form-v002",
-    "source_commit": "0fdebb95a32118f8bfa2e75da4ee0ecb2de23170",
-    "snapshot_sha256": "93dbd6936c126531da994e2ac3905af380b84f362275e5064f33d4ebf6cdb123",
-    "verdict": "changes_requested",
-    "criteria": {
-      "Editable self-contained metric T-pose rabbit model, with geometry matching the supplied front/right/back reference rather than a generic rabbit.": "fail",
-      "Actual modeled ear channels, orbital sockets, muzzle, U-shaped open jaw, rounded dental arches, fingers, toes, bow and damaged shell sections.": "pass",
-      "Geometry audit and both saved-scene reopen validations pass, all mandatory images decode, and actual high-resolution views are reviewed by ChatGPT against the reference.": "fail",
-      "No texture generation or projected image camouflage; neutral inspection materials only. Record remaining geometric deviations explicitly.": "pass",
-      "Release archive and manifest hashes and workspace-state must be read back before reporting durable save.": "pass"
-    },
-    "summary": "Downloaded exact v002 review and host artifacts and verified ZIP digests, Release manifest bytes, model hash and actual Blender reopen logs. Opened the matched-scale three-view comparison, head three-quarter/right, hand and foot images against both supplied references. Geometry is not accepted: a straight diagonal jaw instead of the reference C-shaped cheek wall, sharp orbital rims, ring-like surface discontinuities, capped cylindrical finger roots, squared toe tips and excessive ear-channel bottom bridge remain. See form-v002.md. Resume from the pinned v002 snapshot in a NEW form-v003 job; no duplicate run and no texture work."
-  }
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-19T06:54:12.038222Z"
 }
