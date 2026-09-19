@@ -1,0 +1,556 @@
+{
+  "schema_version": 1,
+  "format": "creative-workspace",
+  "repository": "dekaazarashi1111-web/chatgpt-blender-bridge",
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v005",
+  "run_id": "35437918879",
+  "attempt": 1,
+  "sequence": 3,
+  "release_tag": "creative-folded-rabbit-geometry-20260919-form-v005-35437918879-1-3",
+  "created_at": "2026-09-19T10:56:41.165921Z",
+  "archive": {
+    "name": "workspace.tar.gz",
+    "bytes": 262359909,
+    "sha256": "88ddbc0eb62eb3805c2b1d283699bdff3b7ba9d7fc1c51a824b8c1454cc73f17"
+  },
+  "unpacked_bytes": 569703614,
+  "file_count": 105,
+  "files": [
+    {
+      "path": "output/model/accepted_parent_import.json",
+      "bytes": 1398,
+      "sha256": "e6f2ef6c01168d129afd2d3bc004cbc249ed11978d0063c089cf84063d756004"
+    },
+    {
+      "path": "output/model/back.webp",
+      "bytes": 3616,
+      "sha256": "02d44e650c353453bc553179497e51519ccca1167f0c4909ac90a79089cdead8"
+    },
+    {
+      "path": "output/model/base_geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/model/executed_refine.py",
+      "bytes": 18591,
+      "sha256": "023d673f457493a9e6385a900694ffdff02f09aabe4cfc983396335d58390a46"
+    },
+    {
+      "path": "output/model/form-v001_source.py",
+      "bytes": 19256,
+      "sha256": "5d1276e96ed77008f7d02b409644c6bf5656991ecfbcbce0d5f0f44e2cfa63f0"
+    },
+    {
+      "path": "output/model/form-v002_source.py",
+      "bytes": 18591,
+      "sha256": "023d673f457493a9e6385a900694ffdff02f09aabe4cfc983396335d58390a46"
+    },
+    {
+      "path": "output/model/form-v003_source.py",
+      "bytes": 16936,
+      "sha256": "26a1c6b8d55d238c1ca0e9eafb2d15e93bb5d8a869a3e774331f068547bc5099"
+    },
+    {
+      "path": "output/model/form-v004_source.py",
+      "bytes": 14460,
+      "sha256": "05dc9fc28b3a7e1e2d31e71debbe9cc5b2f0573bddb4794c37831fd49b935b8b"
+    },
+    {
+      "path": "output/model/front.webp",
+      "bytes": 4230,
+      "sha256": "5bc9453676cd565de87b3d7932bd313fef6f436ad83799789f055c58697c6856"
+    },
+    {
+      "path": "output/model/geometry_audit.json",
+      "bytes": 33398,
+      "sha256": "57474e883d9af228455d7852b82ba046e2c27694c963415623398937299e4b8f"
+    },
+    {
+      "path": "output/model/geometry_source.py",
+      "bytes": 9960,
+      "sha256": "5662f624110e206b4057f6ea9fe839946efd21a8320d02b7b2d12695e1b60b93"
+    },
+    {
+      "path": "output/model/implicit.py",
+      "bytes": 4604,
+      "sha256": "42c64e06f52018d9c3983f75a25ea53c3f041a8bd536b65533956b02f11cdf77"
+    },
+    {
+      "path": "output/model/implicit_surface_audit.json",
+      "bytes": 216,
+      "sha256": "e4fbae6474dfce8ba11557f63ca6def072bb9a87cf2bdaabe550e4cfddeca016"
+    },
+    {
+      "path": "output/model/lineage.json",
+      "bytes": 2196,
+      "sha256": "443e35d64f9e775263fe0a809e4ad254f85f848ca32f2f4c8f3926381454cfd1"
+    },
+    {
+      "path": "output/model/model.blend",
+      "bytes": 185443584,
+      "sha256": "1b03ae315e87e6243b57349532e954fe71f9a375cdc9c02d240a8d136e3daf44"
+    },
+    {
+      "path": "output/model/model_entry.py",
+      "bytes": 887,
+      "sha256": "5ebfa59e151ff9467ec7bdef18e853b8447bc77620f514607b68b929c406f902"
+    },
+    {
+      "path": "output/model/parent_form-v003_source.py",
+      "bytes": 14968,
+      "sha256": "ebcc13bb2adc28e9f331f2279137c81ba3d0fbb845e93e38735a65771d85765c"
+    },
+    {
+      "path": "output/model/parent_release_manifest.json",
+      "bytes": 12042,
+      "sha256": "dccba482459774e15e1dac8250b298778acee37937da4bc901b7217019efe74a"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "bytes": 16599,
+      "sha256": "c14082f4012eae71ab836b693d89b2610bedf31541c870ac8c967fd281e4d925"
+    },
+    {
+      "path": "output/model/refine_template.py",
+      "bytes": 18477,
+      "sha256": "ae787a3228ab9e0ab61bab6cc8310c294a3f514874ddeecde4c68361441e2dd0"
+    },
+    {
+      "path": "output/model/side.webp",
+      "bytes": 2480,
+      "sha256": "e8561ec50343c90bdf84de990e2226232581f5bf74759fbd6162ec3c9755e5a2"
+    },
+    {
+      "path": "output/model/tool_report.json",
+      "bytes": 445,
+      "sha256": "244d2704b125259075697d036c725a300abecd850d3fc1fc2ef0c5fe02f60b7a"
+    },
+    {
+      "path": "output/model/validation.json",
+      "bytes": 238,
+      "sha256": "eee3f003b326a0bc8cf1fbde35f542a3cfe982961df74c79bf3cd68dab2aab84"
+    },
+    {
+      "path": "output/package/README.txt",
+      "bytes": 596,
+      "sha256": "742cdef2b79306cf3520e001fd50fc16d5defb53b405afbdb66bf2e504d8c2d5"
+    },
+    {
+      "path": "output/package/accepted_parent_import.json",
+      "bytes": 1398,
+      "sha256": "e6f2ef6c01168d129afd2d3bc004cbc249ed11978d0063c089cf84063d756004"
+    },
+    {
+      "path": "output/package/back.png",
+      "bytes": 440291,
+      "sha256": "f22f1feda33ec49bcca0c96d778ae73b65ae9423b473dd8f9ac687e6bcab66bd"
+    },
+    {
+      "path": "output/package/back.webp",
+      "bytes": 3616,
+      "sha256": "02d44e650c353453bc553179497e51519ccca1167f0c4909ac90a79089cdead8"
+    },
+    {
+      "path": "output/package/base_geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/package/delivery_manifest.json",
+      "bytes": 6598,
+      "sha256": "3506aeaf892c1d1b29d0a3224bf1a2935f00917880221ff19f9fe190620696d5"
+    },
+    {
+      "path": "output/package/ears_detail.png",
+      "bytes": 225774,
+      "sha256": "bbc183d980a33648bb6e7ded6bbfd1f2693eba48508cf93cb62e4540b9379ca9"
+    },
+    {
+      "path": "output/package/executed_refine.py",
+      "bytes": 18591,
+      "sha256": "023d673f457493a9e6385a900694ffdff02f09aabe4cfc983396335d58390a46"
+    },
+    {
+      "path": "output/package/feet_detail.png",
+      "bytes": 387752,
+      "sha256": "1990751c17c277c3704dc579e1717897ee515007928370488cf4e71b93450c18"
+    },
+    {
+      "path": "output/package/feet_uniform_clay.png",
+      "bytes": 389984,
+      "sha256": "961a4d09436f722c91174e4364cb649773e3c9a0638dea2148d65f969e04e588"
+    },
+    {
+      "path": "output/package/folded_rabbit_geometry.blend",
+      "bytes": 185448184,
+      "sha256": "afe1a24c860d3fc2f42b61c8027eed68025eedd05808edb965151c633bdcd6db"
+    },
+    {
+      "path": "output/package/form-v001_source.py",
+      "bytes": 19256,
+      "sha256": "5d1276e96ed77008f7d02b409644c6bf5656991ecfbcbce0d5f0f44e2cfa63f0"
+    },
+    {
+      "path": "output/package/form-v002_source.py",
+      "bytes": 18591,
+      "sha256": "023d673f457493a9e6385a900694ffdff02f09aabe4cfc983396335d58390a46"
+    },
+    {
+      "path": "output/package/form-v003_source.py",
+      "bytes": 16936,
+      "sha256": "26a1c6b8d55d238c1ca0e9eafb2d15e93bb5d8a869a3e774331f068547bc5099"
+    },
+    {
+      "path": "output/package/form-v004_source.py",
+      "bytes": 14460,
+      "sha256": "05dc9fc28b3a7e1e2d31e71debbe9cc5b2f0573bddb4794c37831fd49b935b8b"
+    },
+    {
+      "path": "output/package/front.png",
+      "bytes": 483076,
+      "sha256": "99d5c0fd4219f54c1545871379c6388a7084af46923cc7cd35f8b6b4b967b42a"
+    },
+    {
+      "path": "output/package/front.webp",
+      "bytes": 4230,
+      "sha256": "5bc9453676cd565de87b3d7932bd313fef6f436ad83799789f055c58697c6856"
+    },
+    {
+      "path": "output/package/front_uniform_clay.png",
+      "bytes": 490725,
+      "sha256": "630bc22a180fccb9d5d9ed623c52653c139f58e949e0a864d46615739fffb347"
+    },
+    {
+      "path": "output/package/geometry_audit.json",
+      "bytes": 33398,
+      "sha256": "57474e883d9af228455d7852b82ba046e2c27694c963415623398937299e4b8f"
+    },
+    {
+      "path": "output/package/geometry_contact_sheet.jpg",
+      "bytes": 140231,
+      "sha256": "3276ce15d9766ac04b089c597cb62f9deeab4ce4b5cfd866ff5548fda389b48f"
+    },
+    {
+      "path": "output/package/geometry_source.py",
+      "bytes": 9960,
+      "sha256": "5662f624110e206b4057f6ea9fe839946efd21a8320d02b7b2d12695e1b60b93"
+    },
+    {
+      "path": "output/package/hand_detail.png",
+      "bytes": 286720,
+      "sha256": "465e7632bed1391e3a002088558ac4dce8be2507657182eea0eb4455fc9e5476"
+    },
+    {
+      "path": "output/package/head_front.png",
+      "bytes": 735346,
+      "sha256": "375f57de52d5aa114c1b8ea73d21e47ff84463e6b3fc09c95f30a262f6799929"
+    },
+    {
+      "path": "output/package/head_right.png",
+      "bytes": 641508,
+      "sha256": "6559d8e147d351be6600688e180c03b1467729235e5f379773d9f390dce64eb5"
+    },
+    {
+      "path": "output/package/head_three_quarter.png",
+      "bytes": 643992,
+      "sha256": "e8b36490ca579772d0896669a97fbe1ec3da723ea5b24887828ddbb8ae38b715"
+    },
+    {
+      "path": "output/package/head_uniform_clay.png",
+      "bytes": 655456,
+      "sha256": "06235d3c90575a98761edfb5ab0047d631b6ededd3eade53dd5be3a6dc98def5"
+    },
+    {
+      "path": "output/package/implicit.py",
+      "bytes": 4604,
+      "sha256": "42c64e06f52018d9c3983f75a25ea53c3f041a8bd536b65533956b02f11cdf77"
+    },
+    {
+      "path": "output/package/implicit_surface_audit.json",
+      "bytes": 216,
+      "sha256": "e4fbae6474dfce8ba11557f63ca6def072bb9a87cf2bdaabe550e4cfddeca016"
+    },
+    {
+      "path": "output/package/lineage.json",
+      "bytes": 2196,
+      "sha256": "443e35d64f9e775263fe0a809e4ad254f85f848ca32f2f4c8f3926381454cfd1"
+    },
+    {
+      "path": "output/package/model_entry.py",
+      "bytes": 887,
+      "sha256": "5ebfa59e151ff9467ec7bdef18e853b8447bc77620f514607b68b929c406f902"
+    },
+    {
+      "path": "output/package/package_source.py",
+      "bytes": 3790,
+      "sha256": "9511aed29099eb0e4bda972fb9db50e4828054e04bfad4aad41ed924bc4d3e2c"
+    },
+    {
+      "path": "output/package/parent_form-v003_source.py",
+      "bytes": 14968,
+      "sha256": "ebcc13bb2adc28e9f331f2279137c81ba3d0fbb845e93e38735a65771d85765c"
+    },
+    {
+      "path": "output/package/parent_release_manifest.json",
+      "bytes": 12042,
+      "sha256": "dccba482459774e15e1dac8250b298778acee37937da4bc901b7217019efe74a"
+    },
+    {
+      "path": "output/package/reference_comparison.jpg",
+      "bytes": 144438,
+      "sha256": "c633376f997ab02e12de53df7fe88a6f49c865a03de33cede3582e0d9591662a"
+    },
+    {
+      "path": "output/package/refine_template.py",
+      "bytes": 18477,
+      "sha256": "ae787a3228ab9e0ab61bab6cc8310c294a3f514874ddeecde4c68361441e2dd0"
+    },
+    {
+      "path": "output/package/render_manifest.json",
+      "bytes": 6828,
+      "sha256": "b59d231e46113896d790e879ff6d6a6f5965a601beb6ea999ad9b70ba5ab77b0"
+    },
+    {
+      "path": "output/package/render_reopen_validation.json",
+      "bytes": 239,
+      "sha256": "3bbea35171be123bf0055bbf563a80863e89ab8f25de00196644c3e255e36560"
+    },
+    {
+      "path": "output/package/render_source.py",
+      "bytes": 5465,
+      "sha256": "620bf498b60347281d8b9384b0c55c9dab6a7d77c55f85171b7ed145a096a49c"
+    },
+    {
+      "path": "output/package/right.png",
+      "bytes": 301084,
+      "sha256": "793e8015cedfdede9c94ba142764efbb3bbdc8d9980fc394799878781a7caa5f"
+    },
+    {
+      "path": "output/package/side.webp",
+      "bytes": 2480,
+      "sha256": "e8561ec50343c90bdf84de990e2226232581f5bf74759fbd6162ec3c9755e5a2"
+    },
+    {
+      "path": "output/package/three_quarter.png",
+      "bytes": 488778,
+      "sha256": "61dbba41ddf2e1441a28ff49a4625fd953af495eb948fc3f7d3895f759932451"
+    },
+    {
+      "path": "output/package/tool_report.json",
+      "bytes": 207,
+      "sha256": "5b9f1be9aa0e77d5247723378b6bf41b8bf855043585fa761f68766d7863fe2d"
+    },
+    {
+      "path": "output/package/validation.json",
+      "bytes": 238,
+      "sha256": "eee3f003b326a0bc8cf1fbde35f542a3cfe982961df74c79bf3cd68dab2aab84"
+    },
+    {
+      "path": "output/render/accepted_parent_import.json",
+      "bytes": 1398,
+      "sha256": "e6f2ef6c01168d129afd2d3bc004cbc249ed11978d0063c089cf84063d756004"
+    },
+    {
+      "path": "output/render/back.png",
+      "bytes": 440291,
+      "sha256": "f22f1feda33ec49bcca0c96d778ae73b65ae9423b473dd8f9ac687e6bcab66bd"
+    },
+    {
+      "path": "output/render/back.webp",
+      "bytes": 3616,
+      "sha256": "02d44e650c353453bc553179497e51519ccca1167f0c4909ac90a79089cdead8"
+    },
+    {
+      "path": "output/render/base_geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/render/ears_detail.png",
+      "bytes": 225774,
+      "sha256": "bbc183d980a33648bb6e7ded6bbfd1f2693eba48508cf93cb62e4540b9379ca9"
+    },
+    {
+      "path": "output/render/executed_refine.py",
+      "bytes": 18591,
+      "sha256": "023d673f457493a9e6385a900694ffdff02f09aabe4cfc983396335d58390a46"
+    },
+    {
+      "path": "output/render/feet_detail.png",
+      "bytes": 387752,
+      "sha256": "1990751c17c277c3704dc579e1717897ee515007928370488cf4e71b93450c18"
+    },
+    {
+      "path": "output/render/feet_uniform_clay.png",
+      "bytes": 389984,
+      "sha256": "961a4d09436f722c91174e4364cb649773e3c9a0638dea2148d65f969e04e588"
+    },
+    {
+      "path": "output/render/form-v001_source.py",
+      "bytes": 19256,
+      "sha256": "5d1276e96ed77008f7d02b409644c6bf5656991ecfbcbce0d5f0f44e2cfa63f0"
+    },
+    {
+      "path": "output/render/form-v002_source.py",
+      "bytes": 18591,
+      "sha256": "023d673f457493a9e6385a900694ffdff02f09aabe4cfc983396335d58390a46"
+    },
+    {
+      "path": "output/render/form-v003_source.py",
+      "bytes": 16936,
+      "sha256": "26a1c6b8d55d238c1ca0e9eafb2d15e93bb5d8a869a3e774331f068547bc5099"
+    },
+    {
+      "path": "output/render/form-v004_source.py",
+      "bytes": 14460,
+      "sha256": "05dc9fc28b3a7e1e2d31e71debbe9cc5b2f0573bddb4794c37831fd49b935b8b"
+    },
+    {
+      "path": "output/render/front.png",
+      "bytes": 483076,
+      "sha256": "99d5c0fd4219f54c1545871379c6388a7084af46923cc7cd35f8b6b4b967b42a"
+    },
+    {
+      "path": "output/render/front.webp",
+      "bytes": 4230,
+      "sha256": "5bc9453676cd565de87b3d7932bd313fef6f436ad83799789f055c58697c6856"
+    },
+    {
+      "path": "output/render/front_uniform_clay.png",
+      "bytes": 490725,
+      "sha256": "630bc22a180fccb9d5d9ed623c52653c139f58e949e0a864d46615739fffb347"
+    },
+    {
+      "path": "output/render/geometry_audit.json",
+      "bytes": 33398,
+      "sha256": "57474e883d9af228455d7852b82ba046e2c27694c963415623398937299e4b8f"
+    },
+    {
+      "path": "output/render/geometry_source.py",
+      "bytes": 9960,
+      "sha256": "5662f624110e206b4057f6ea9fe839946efd21a8320d02b7b2d12695e1b60b93"
+    },
+    {
+      "path": "output/render/hand_detail.png",
+      "bytes": 286720,
+      "sha256": "465e7632bed1391e3a002088558ac4dce8be2507657182eea0eb4455fc9e5476"
+    },
+    {
+      "path": "output/render/head_front.png",
+      "bytes": 735346,
+      "sha256": "375f57de52d5aa114c1b8ea73d21e47ff84463e6b3fc09c95f30a262f6799929"
+    },
+    {
+      "path": "output/render/head_right.png",
+      "bytes": 641508,
+      "sha256": "6559d8e147d351be6600688e180c03b1467729235e5f379773d9f390dce64eb5"
+    },
+    {
+      "path": "output/render/head_three_quarter.png",
+      "bytes": 643992,
+      "sha256": "e8b36490ca579772d0896669a97fbe1ec3da723ea5b24887828ddbb8ae38b715"
+    },
+    {
+      "path": "output/render/head_uniform_clay.png",
+      "bytes": 655456,
+      "sha256": "06235d3c90575a98761edfb5ab0047d631b6ededd3eade53dd5be3a6dc98def5"
+    },
+    {
+      "path": "output/render/implicit.py",
+      "bytes": 4604,
+      "sha256": "42c64e06f52018d9c3983f75a25ea53c3f041a8bd536b65533956b02f11cdf77"
+    },
+    {
+      "path": "output/render/implicit_surface_audit.json",
+      "bytes": 216,
+      "sha256": "e4fbae6474dfce8ba11557f63ca6def072bb9a87cf2bdaabe550e4cfddeca016"
+    },
+    {
+      "path": "output/render/lineage.json",
+      "bytes": 2196,
+      "sha256": "443e35d64f9e775263fe0a809e4ad254f85f848ca32f2f4c8f3926381454cfd1"
+    },
+    {
+      "path": "output/render/model.blend",
+      "bytes": 185448184,
+      "sha256": "afe1a24c860d3fc2f42b61c8027eed68025eedd05808edb965151c633bdcd6db"
+    },
+    {
+      "path": "output/render/model_entry.py",
+      "bytes": 887,
+      "sha256": "5ebfa59e151ff9467ec7bdef18e853b8447bc77620f514607b68b929c406f902"
+    },
+    {
+      "path": "output/render/parent_form-v003_source.py",
+      "bytes": 14968,
+      "sha256": "ebcc13bb2adc28e9f331f2279137c81ba3d0fbb845e93e38735a65771d85765c"
+    },
+    {
+      "path": "output/render/parent_release_manifest.json",
+      "bytes": 12042,
+      "sha256": "dccba482459774e15e1dac8250b298778acee37937da4bc901b7217019efe74a"
+    },
+    {
+      "path": "output/render/previews/three_quarter.png",
+      "bytes": 20514,
+      "sha256": "ead7bb904ba0d21fc0c27826cd545b93855e6b0365e924bf840bdb335475de56"
+    },
+    {
+      "path": "output/render/refine_template.py",
+      "bytes": 18477,
+      "sha256": "ae787a3228ab9e0ab61bab6cc8310c294a3f514874ddeecde4c68361441e2dd0"
+    },
+    {
+      "path": "output/render/render_entry_v005.py",
+      "bytes": 2150,
+      "sha256": "5876564a0c1abc387e0e33c18c7c6ad519b74f5408274feb00019c775e4dcdfa"
+    },
+    {
+      "path": "output/render/render_manifest.json",
+      "bytes": 6828,
+      "sha256": "b59d231e46113896d790e879ff6d6a6f5965a601beb6ea999ad9b70ba5ab77b0"
+    },
+    {
+      "path": "output/render/render_source.py",
+      "bytes": 5465,
+      "sha256": "620bf498b60347281d8b9384b0c55c9dab6a7d77c55f85171b7ed145a096a49c"
+    },
+    {
+      "path": "output/render/right.png",
+      "bytes": 301084,
+      "sha256": "793e8015cedfdede9c94ba142764efbb3bbdc8d9980fc394799878781a7caa5f"
+    },
+    {
+      "path": "output/render/side.webp",
+      "bytes": 2480,
+      "sha256": "e8561ec50343c90bdf84de990e2226232581f5bf74759fbd6162ec3c9755e5a2"
+    },
+    {
+      "path": "output/render/three_quarter.png",
+      "bytes": 488778,
+      "sha256": "61dbba41ddf2e1441a28ff49a4625fd953af495eb948fc3f7d3895f759932451"
+    },
+    {
+      "path": "output/render/tool_report.json",
+      "bytes": 463,
+      "sha256": "ddc0775f1cb0230af422379e54762c02f291de856db64520d75f3763d643d5e6"
+    },
+    {
+      "path": "output/render/validation.json",
+      "bytes": 239,
+      "sha256": "3bbea35171be123bf0055bbf563a80863e89ab8f25de00196644c3e255e36560"
+    }
+  ],
+  "metadata": {
+    "source_commit": "464b693576b7ef291ab475149d3b9932e2014359",
+    "current_step": "package",
+    "kind": "step_complete",
+    "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327"
+  },
+  "excluded_top_level": [
+    "checkpoints",
+    "resume"
+  ]
+}
