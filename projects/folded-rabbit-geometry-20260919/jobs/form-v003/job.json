@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v003",
+  "title": "Finish padded character forms from reviewed v002: continuous muzzle, shaped limbs, thick folds",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "resume": {
+    "project_id": "folded-rabbit-geometry-20260919",
+    "job_id": "form-v002",
+    "release_tag": "creative-folded-rabbit-geometry-20260919-form-v002-35430997050-1-3",
+    "archive_sha256": "536ed187f54383979428459739169a9405394d76caf55476e5f74472306d5c4c",
+    "manifest_sha256": "2496607eb41d29ecc00d75a2f404c59f4c00d875df9ccb6cae0d368798663c47"
+  },
+  "inputs": [],
+  "acceptance_criteria": [
+    "Match the three current folded-ear, lowered-arm original-character references, with padded changing limb sections, sloping shoulder covers, a continuous bridge and two muzzle lobes, fuller recessed eyes, rounded toes and articulated fingers.",
+    "Keep geometry-only scope. No final textures, UV finishing, rig or image-texture camouflage. Real restored reference derivatives and all construction dependencies must be retained.",
+    "Restore the exact pinned same-project parent archive, verify the source blend and helper hashes, and preserve fingerprints of unchanged components without rerunning the accepted import.",
+    "Save a self-contained editable metric blend, pass finite-coordinate, required-part, continuous-muzzle-region and closed-mesh checks, reopen both saved scenes, and validate all 13 full/clay/detail image files and framing.",
+    "Read back Release evidence and independently compare the exact new previews with the native reference images. Record a job/source/snapshot-pinned visual review; execution success alone is not acceptance."
+  ],
+  "steps": [
+    {"id":"model","tool":"blender","script":"model.py","source_blend":"workspace/resume/output/model/model.blend","timeout_seconds":5400,"preview":{"views":["front"],"width":128,"height":128,"samples":1}},
+    {"id":"render","tool":"blender","script":"render.py","source_blend":"workspace/output/model/model.blend","timeout_seconds":7200,"preview":{"views":["three_quarter"],"width":128,"height":128,"samples":1}},
+    {"id":"package","tool":"python","script":"package.py","timeout_seconds":900}
+  ]
+}
