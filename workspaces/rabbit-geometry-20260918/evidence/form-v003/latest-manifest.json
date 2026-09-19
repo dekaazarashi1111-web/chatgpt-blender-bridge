@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "format": "creative-workspace",
+  "repository": "dekaazarashi1111-web/chatgpt-blender-bridge",
+  "project_id": "rabbit-geometry-20260918",
+  "job_id": "form-v003",
+  "run_id": "35427795287",
+  "attempt": 1,
+  "sequence": 3,
+  "release_tag": "creative-rabbit-geometry-20260918-form-v003-35427795287-1-3",
+  "created_at": "2026-09-19T06:59:23.814223Z",
+  "archive": {
+    "name": "workspace.tar.gz",
+    "bytes": 116917907,
+    "sha256": "2f3aae4e8f79ccb4e16abcfc618c9d6adb0d53d4ff225a23cf84f9b99d525cf5"
+  },
+  "unpacked_bytes": 273276104,
+  "file_count": 66,
+  "files": [
+    {
+      "path": "output/model/base_geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/model/geometry_audit.json",
+      "bytes": 2017,
+      "sha256": "c9db947a6a3ea9a19708658c93652c923c22ee7cfac71c15ccdcf8a9c2ec246a"
+    },
+    {
+      "path": "output/model/geometry_source.py",
+      "bytes": 14968,
+      "sha256": "ebcc13bb2adc28e9f331f2279137c81ba3d0fbb845e93e38735a65771d85765c"
+    },
+    {
+      "path": "output/model/lineage.json",
+      "bytes": 858,
+      "sha256": "4bee4318aaa6e7c129b338a3f4e2a57487e2f15a2926991949fb42f1d3611179"
+    },
+    {
+      "path": "output/model/model.blend",
+      "bytes": 86647456,
+      "sha256": "4a22745761274f797c9a8f10766d653cd1196ef249bd940b98ee60244a5e6c1f"
+    },
+    {
+      "path": "output/model/parent_form-v002_source.py",
+      "bytes": 15303,
+      "sha256": "249d267f46abed42e25abbd7a67fab78bf241684b381ef70f05afcb575004d84"
+    },
+    {
+      "path": "output/model/previews/front.png",
+      "bytes": 15660,
+      "sha256": "c62c7e4603e3bf6a24120f869c5e0f14cada600e706ea83826cff4f1bccd5de7"
+    },
+    {
+      "path": "output/model/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/model/tool_report.json",
+      "bytes": 445,
+      "sha256": "a2f02ba12d921b8249aa1f0d6f1f28ea557fc7167db2456b85bcbd611c9445c8"
+    },
+    {
+      "path": "output/model/validation.json",
+      "bytes": 238,
+      "sha256": "71c5b5bd0d3bd79759053ea68fa50628aa5faddb34dc8257ee95246550d82ea2"
+    },
+    {
+      "path": "output/package/README.txt",
+      "bytes": 545,
+      "sha256": "e8d760c3e86504731e9489a30fd9223f15a008f12fb7dc34719c9866e96dfbe0"
+    },
+    {
+      "path": "output/package/back.png",
+      "bytes": 325860,
+      "sha256": "4abce5c047948e05490be585545c06653d302c36088ed21ec42049e572b2cccd"
+    },
+    {
+      "path": "output/package/base_geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/package/delivery_report.json",
+      "bytes": 7208,
+      "sha256": "d40f2629831e8cb3cfac6d88068a2575895fd079041ba92bbd0803a1cc64fdba"
+    },
+    {
+      "path": "output/package/ears_detail.png",
+      "bytes": 429304,
+      "sha256": "89b6f485f1a824e2fd2b4fb5fabc445955f397e2cad8ded48df668f01fea40b1"
+    },
+    {
+      "path": "output/package/feet_detail.png",
+      "bytes": 272211,
+      "sha256": "8cbdce18a1976957d82a3688eaafc665cc8871e2ab077e249d38819a06357128"
+    },
+    {
+      "path": "output/package/feet_uniform_clay.png",
+      "bytes": 273395,
+      "sha256": "445bb8f8d8b39408850973ac7c139b49d3d8083b160117ec606c8e6149ce6139"
+    },
+    {
+      "path": "output/package/front.png",
+      "bytes": 368905,
+      "sha256": "db432a516927761adcb2e1e7d31e49f10da96d5f151711200a6e64c96bc527f7"
+    },
+    {
+      "path": "output/package/front_uniform_clay.png",
+      "bytes": 374972,
+      "sha256": "d441fd8825b1eebae178b85664ef838c6ac42806efc8535c6ee515a5dc799fbb"
+    },
+    {
+      "path": "output/package/geometry_audit.json",
+      "bytes": 2017,
+      "sha256": "c9db947a6a3ea9a19708658c93652c923c22ee7cfac71c15ccdcf8a9c2ec246a"
+    },
+    {
+      "path": "output/package/geometry_contact_sheet.jpg",
+      "bytes": 176466,
+      "sha256": "4e7aa0976ce110e0ac671c105cf0e2753ed955f2a9a7490d200d7ca518eb213f"
+    },
+    {
+      "path": "output/package/geometry_source.py",
+      "bytes": 14968,
+      "sha256": "ebcc13bb2adc28e9f331f2279137c81ba3d0fbb845e93e38735a65771d85765c"
+    },
+    {
+      "path": "output/package/hand_detail.png",
+      "bytes": 206368,
+      "sha256": "5c721eb187a448334dc105d9130eee9ff12cc56e4c3e4db73525c880c17cabc8"
+    },
+    {
+      "path": "output/package/head_front.png",
+      "bytes": 869789,
+      "sha256": "26edf01122a75aa336229d6947d5450e5e0816f92bc37dcd0ee48e0443acf829"
+    },
+    {
+      "path": "output/package/head_right.png",
+      "bytes": 721514,
+      "sha256": "1c2ad0cbb348e74abc45e1b1cf9ca1db560bedfe161fea7ef0f91e5130c813be"
+    },
+    {
+      "path": "output/package/head_three_quarter.png",
+      "bytes": 746005,
+      "sha256": "d8053670074e75471a83340bf735ddf7533a1fc88528f72bf167880072f30a9f"
+    },
+    {
+      "path": "output/package/head_uniform_clay.png",
+      "bytes": 755425,
+      "sha256": "f5a717c29f67cb64a650942bf6cb3594dbe14e849359b6db3b2b44a4aa96ff97"
+    },
+    {
+      "path": "output/package/lineage.json",
+      "bytes": 858,
+      "sha256": "4bee4318aaa6e7c129b338a3f4e2a57487e2f15a2926991949fb42f1d3611179"
+    },
+    {
+      "path": "output/package/matched_scale_turnaround.png",
+      "bytes": 271590,
+      "sha256": "87af2b0144a8ca47a2cd8df013986aa745d91ce3f21b40adbd84c40164a2b51d"
+    },
+    {
+      "path": "output/package/package_source.py",
+      "bytes": 5621,
+      "sha256": "169c0d95be992cded6debdac732596cf7d9953e5bde86e2b231ec32943b06d57"
+    },
+    {
+      "path": "output/package/parent_form-v002_source.py",
+      "bytes": 15303,
+      "sha256": "249d267f46abed42e25abbd7a67fab78bf241684b381ef70f05afcb575004d84"
+    },
+    {
+      "path": "output/package/rabbit_geometry.blend",
+      "bytes": 86647456,
+      "sha256": "4a22745761274f797c9a8f10766d653cd1196ef249bd940b98ee60244a5e6c1f"
+    },
+    {
+      "path": "output/package/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/package/reference_comparison.jpg",
+      "bytes": 229717,
+      "sha256": "ba0667b85004d1c4ef4cd1d1e7ffbd0a68885ddb4346b2931a9a2b87ed2cbd25"
+    },
+    {
+      "path": "output/package/render_manifest.json",
+      "bytes": 6323,
+      "sha256": "2b8caf20f1191c526a2ed35e267858eed6f602ace6fdd7dd25db2da130b7d2eb"
+    },
+    {
+      "path": "output/package/render_source.py",
+      "bytes": 4354,
+      "sha256": "89237380f97a2284ec45f4000770e7602c9c6d4e4445c0f42631cc629d6162f4"
+    },
+    {
+      "path": "output/package/right.png",
+      "bytes": 231927,
+      "sha256": "f747de2d0c90d03671b3ba1864c7db39d0215cb8c1be9cfe2f9b4c0e07c62420"
+    },
+    {
+      "path": "output/package/silhouette_estimates.json",
+      "bytes": 646,
+      "sha256": "515aeb9791b95c4b86aff44635a32a883de5c10d3bab74e47bdbdf39845bba08"
+    },
+    {
+      "path": "output/package/silhouette_overlay.png",
+      "bytes": 387013,
+      "sha256": "de0c54b84aa56ceeed3c5417af96b0a534ca27baec84e17b6a5074b8c42386ad"
+    },
+    {
+      "path": "output/package/three_quarter.png",
+      "bytes": 402251,
+      "sha256": "a78b69f06fad878f9f74a3223a8106d2811a27f799ca10f460399ee858dde8cd"
+    },
+    {
+      "path": "output/package/tool_report.json",
+      "bytes": 207,
+      "sha256": "f246efe8471f8cc7c7e0cab3ef3af34cc0fe98c37c1c06f3d6ab157d9a9120d2"
+    },
+    {
+      "path": "output/render/back.png",
+      "bytes": 325860,
+      "sha256": "4abce5c047948e05490be585545c06653d302c36088ed21ec42049e572b2cccd"
+    },
+    {
+      "path": "output/render/base_geometry_source.py",
+      "bytes": 24067,
+      "sha256": "4a81f39cf97f8990133e98de9f9c834e259b213a9699b25eab3020b53d554b5f"
+    },
+    {
+      "path": "output/render/ears_detail.png",
+      "bytes": 429304,
+      "sha256": "89b6f485f1a824e2fd2b4fb5fabc445955f397e2cad8ded48df668f01fea40b1"
+    },
+    {
+      "path": "output/render/feet_detail.png",
+      "bytes": 272211,
+      "sha256": "8cbdce18a1976957d82a3688eaafc665cc8871e2ab077e249d38819a06357128"
+    },
+    {
+      "path": "output/render/feet_uniform_clay.png",
+      "bytes": 273395,
+      "sha256": "445bb8f8d8b39408850973ac7c139b49d3d8083b160117ec606c8e6149ce6139"
+    },
+    {
+      "path": "output/render/front.png",
+      "bytes": 368905,
+      "sha256": "db432a516927761adcb2e1e7d31e49f10da96d5f151711200a6e64c96bc527f7"
+    },
+    {
+      "path": "output/render/front_uniform_clay.png",
+      "bytes": 374972,
+      "sha256": "d441fd8825b1eebae178b85664ef838c6ac42806efc8535c6ee515a5dc799fbb"
+    },
+    {
+      "path": "output/render/geometry_audit.json",
+      "bytes": 2017,
+      "sha256": "c9db947a6a3ea9a19708658c93652c923c22ee7cfac71c15ccdcf8a9c2ec246a"
+    },
+    {
+      "path": "output/render/geometry_source.py",
+      "bytes": 14968,
+      "sha256": "ebcc13bb2adc28e9f331f2279137c81ba3d0fbb845e93e38735a65771d85765c"
+    },
+    {
+      "path": "output/render/hand_detail.png",
+      "bytes": 206368,
+      "sha256": "5c721eb187a448334dc105d9130eee9ff12cc56e4c3e4db73525c880c17cabc8"
+    },
+    {
+      "path": "output/render/head_front.png",
+      "bytes": 869789,
+      "sha256": "26edf01122a75aa336229d6947d5450e5e0816f92bc37dcd0ee48e0443acf829"
+    },
+    {
+      "path": "output/render/head_right.png",
+      "bytes": 721514,
+      "sha256": "1c2ad0cbb348e74abc45e1b1cf9ca1db560bedfe161fea7ef0f91e5130c813be"
+    },
+    {
+      "path": "output/render/head_three_quarter.png",
+      "bytes": 746005,
+      "sha256": "d8053670074e75471a83340bf735ddf7533a1fc88528f72bf167880072f30a9f"
+    },
+    {
+      "path": "output/render/head_uniform_clay.png",
+      "bytes": 755425,
+      "sha256": "f5a717c29f67cb64a650942bf6cb3594dbe14e849359b6db3b2b44a4aa96ff97"
+    },
+    {
+      "path": "output/render/lineage.json",
+      "bytes": 858,
+      "sha256": "4bee4318aaa6e7c129b338a3f4e2a57487e2f15a2926991949fb42f1d3611179"
+    },
+    {
+      "path": "output/render/model.blend",
+      "bytes": 86647456,
+      "sha256": "052d5cf6fdb889f2ce24559a7faf42231913b78ea0677056883b03b760a2cc28"
+    },
+    {
+      "path": "output/render/parent_form-v002_source.py",
+      "bytes": 15303,
+      "sha256": "249d267f46abed42e25abbd7a67fab78bf241684b381ef70f05afcb575004d84"
+    },
+    {
+      "path": "output/render/previews/three_quarter.png",
+      "bytes": 19869,
+      "sha256": "d25d9228a5fa816b31fd5b3535c2f761ccc0d40eec766630a4a7e8e9acbc708c"
+    },
+    {
+      "path": "output/render/reference.webp",
+      "bytes": 22988,
+      "sha256": "c878b9f1522a412c8b1174333ac456939307f3e048aea2b86120ef388d5aeaf0"
+    },
+    {
+      "path": "output/render/render_manifest.json",
+      "bytes": 6323,
+      "sha256": "2b8caf20f1191c526a2ed35e267858eed6f602ace6fdd7dd25db2da130b7d2eb"
+    },
+    {
+      "path": "output/render/render_source.py",
+      "bytes": 4354,
+      "sha256": "89237380f97a2284ec45f4000770e7602c9c6d4e4445c0f42631cc629d6162f4"
+    },
+    {
+      "path": "output/render/right.png",
+      "bytes": 231927,
+      "sha256": "f747de2d0c90d03671b3ba1864c7db39d0215cb8c1be9cfe2f9b4c0e07c62420"
+    },
+    {
+      "path": "output/render/three_quarter.png",
+      "bytes": 402251,
+      "sha256": "a78b69f06fad878f9f74a3223a8106d2811a27f799ca10f460399ee858dde8cd"
+    },
+    {
+      "path": "output/render/tool_report.json",
+      "bytes": 463,
+      "sha256": "a3c321911d3ce5f33d137595349d698adce155c89a61e9ceae2c00a5c8838e88"
+    },
+    {
+      "path": "output/render/validation.json",
+      "bytes": 239,
+      "sha256": "e25925a33461ff9d8c070cd43623e614b1d7ec2ee760c69e589ce49297cac4b1"
+    }
+  ],
+  "metadata": {
+    "source_commit": "0aa4a5c068c925266e536b582a329bd273ceccf1",
+    "current_step": "package",
+    "kind": "step_complete",
+    "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327"
+  },
+  "excluded_top_level": [
+    "checkpoints",
+    "resume"
+  ]
+}
