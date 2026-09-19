@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v004",
+  "source_commit": "e67bb2848173b8c31f4b28e2b054999ed3c951de",
+  "snapshot_sha256": "079b97150104e94be776e3396ae06b112f416a5680f8d45b919d4030ba4f3be2",
+  "verdict": "changes_requested",
+  "criteria": {
+    "Reproduce the supplied folded-ear, lowered-arm character's geometry: continuous nasal bridge and twin muzzle lobes, substantial forward cheek covers, seated eyes, a restrained upper dental display, padded segmented limbs, natural curled digits and broad softly squared toes.": "fail",
+    "Preserve geometry-only scope, with no final textures, UV finishing, rig or image-texture camouflage; retain real reference derivatives and the full editable source/dependency closure.": "pass",
+    "Restore and hash-verify the exact same-project v003 snapshot and source blend; do not rerun the accepted base import or rebuild unaffected torso, lower-leg, tail, bow and folded-cap geometry.": "pass",
+    "Pass required-part and muzzle-region checks, finite coordinates, all-mesh closedness, actual mesh-extrema dimensions, both saved-file reopen checks, dependency checks and all 13 actual image/framing validations.": "pass",
+    "Independently read back artifact/Release evidence, compare the exact generated full/clay/detail previews with the native references and record a snapshot-pinned visual verdict. Exit zero alone is not visual acceptance.": "pass"
+  },
+  "summary": "The actual completed v004 Actions run, state, both downloaded artifacts, CI Release readback and saved outputs were reconciled. Both ZIP digests, the exact final manifest SHA and all 99 output sizes/SHA-256 values match. Both CI saved-file reopen checks, dependency checks and geometry/image/framing audits pass. Native reference PNGs recovered from the user's Library match the recorded original hashes. Actual rendered reference comparison, front/side face, head clay, hand, ear and foot images show a broad slab-like lower face instead of two narrower muzzle lobes, a crown curvature shelf and surface banding, button-like cheek pads and a pinched finger junction. Shoulder-cap/upper-arm junctions also need blending. Geometry-only continuation is required; this is not a visual approval. Native PNGs have not been uploaded to GitHub, and the final Release TAR itself has not been independently downloaded in this session; CI readback plus downloaded Actions outputs are the verified evidence."
+}
