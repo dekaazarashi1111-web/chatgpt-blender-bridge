@@ -1,0 +1,25 @@
+{
+  "grid_shape": [236,254,201],
+  "active_cells": 203566,
+  "spacing_requested": 0.0023,
+  "vertices": 595680,
+  "triangles": 1191356,
+  "method": "six-tetrahedra / exact shared-grid-edge welding",
+  "watertight": true,
+  "components": 1,
+  "seconds": 9.169720725999923,
+  "scope": "Local NumPy isosurface before Blender voxel smoothing and Boolean seams; not an actual Blender test",
+  "script_sha256": {
+    "model.py": "d5456546c2b5fe36e3bf926b454de92ed5190f48002e20b40af4663c42b7b5cd",
+    "implicit.py": "ff1559dc22a21a0d86deacda6ab73cd2c76f019bb18ce7cb37ced6f38695b3be",
+    "cheek.py": "1573c965865da49b915a807a87d7b7b00be3708ca2da564d383a2d9dde3ad2e7",
+    "render.py": "bb7f777a207c2994f0a24a76d0fbc821ea6ffb682b4549d6e520ca7608ae7491",
+    "package.py": "b206f56c5be3de5e91c99f98ccfa0dd8fa52a760ab6f19a58531e26639ae0715"
+  },
+  "syntax_check": "pass",
+  "verified_helper_sources": "pass",
+  "local_preflight_corrections": [
+    "Initial local source assembler matched == instead of the intended assignment, caught by py_compile before submission; corrected to a line-anchored delimiter.",
+    "An unexecuted package append used draft variable aliases; replaced by the actual validated package copy loop before submission."
+  ]
+}
