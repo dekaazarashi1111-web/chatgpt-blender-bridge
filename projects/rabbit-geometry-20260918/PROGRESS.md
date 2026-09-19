@@ -1,17 +1,21 @@
 # 進捗 / 再開ポイント
 
-## form-v001 実行済み・造形修正要求
-Source: `71b31cce0136ea645abf692bdfb41f3162136796`。
-Actions: https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35388084369
-全3工程success。Blender4.0.2。保存sceneの実再読込pass、依存欠落なし、45ファイルのRelease manifest読戻し照合pass。
+## 2026-09-19 セッション開始照合
+開始時リモートmain `18a05d7d2de20618c9002db243340fd685f37089` のCHATGPT_JOB_PROMPT/README/EXECUTION_CONTRACT/tools/schema/v2サンプル/RESUME/INPUTS/runtime説明と作品指示を確認。再帰tree内に適用AGENTS.mdは検出されなかった。GitHub接続でread/write権限を確認。shell cloneとraw/API DNSは失敗。接続のGit Data APIおよびActions artifact downloadは実際に利用可能。dispatch専用操作はなく、現在のworkflowのmain job.json/review JSON push起動を利用する。
 
-**完成扱いしない。** 実際にダウンロードした全身三面、頭部正面/側面/斜め/単色クレイを確認し、眼窩、顎の厚みと突出量、耳の厚みと端部、指と爪先、近接カメラの切れを修正要求として記録した。`reviews/form-v001.md` と pinned JSON を参照。
+旧メモの『form-v002未投入』は古い。実際にはform-v002の全3工程と公開が終了済み。重複実行していない。実画像レビューを `reviews/form-v002.md/.json` に保存し、造形修正要求とした。ユーザーの今回の指定も造形のみ、テクスチャ等は別セッション。
 
-## 保存先
-Release tag `creative-rabbit-geometry-20260918-form-v001-35388084369-1-3`。
-archive SHA-256 `c4653aff5afb32c80af011d97d6b201bc969d5bd5145e8d2ae40f9c3a14bb61f`。
-manifest SHA-256 `0f4a1c5df7f382d84ca1715eec125f6bd99c0dade7e665591b6b399131bd260a`。
-再開するモデル: `workspace/resume/output/model/model.blend`。ソース、参照コピー、プレビュー、検査結果もsnapshotにある。
+## 最新の有効な制作保存地点
+job `form-v002` / source `0fdebb95a32118f8bfa2e75da4ee0ecb2de23170`
+Actions https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35390326287
+Release tag `creative-rabbit-geometry-20260918-form-v002-35390326287-1-3`
+archive SHA256 `93dbd6936c126531da994e2ac3905af380b84f362275e5064f33d4ebf6cdb123`
+manifest SHA256 `d61ae5dce72b2b3480183cc76a8387ede3804026d3ec91ec18c2a1bb5c89f1b1`
+再開source_blend `workspace/resume/output/model/model.blend`
+モデルSHA256 `f028acd02a8dd1ddd57f64d260e75fb50382151c72668cb1ea0fec39bc8f1f4f`
 
-## 次の作業
-新規job ID form-v002を用意し、上のsnapshotから復元して該当部位を修正する。まだv002は投入していない。実行前に現在のworkspace-state/Actionsを照合し、既にv002があれば重複投入しない。後工程のテクスチャ、UV仕上げ、リギングは今回行わない。
+## 今行うこと
+form-v003を準備し、v002から顔のC字顎・眼窩の丸い縁・耳の溝と丸い端部・掌につながる指・丸い爪先を修正する。現在このメモ時点でv003は未投入。必ず最新state/Actionsを再確認する。スクリプトと入力を先にcommitし、job.jsonは最後に追加。実行後は版を固定した画像レビューとRelease読戻しまで行う。完成と未確認を区別する。
+
+## 過去
+form-v001の記録と失敗方法はreviews/form-v001.mdに保存。過去の成功を次版に持ち越さない。未変更ジョイントなどは保持し、不要な工程の再実行は避ける。
