@@ -1,0 +1,18 @@
+# 決定と実行記録
+
+開始mainは83739b189d77fb7be963959b7f74d47b9ec1b2c7。固定commitの開始プロンプト、README、EXECUTION_CONTRACT、tools、v2 schema、Blender/Pythonサンプル、INPUTS/RESUME/runtime説明、workflow、既存作品のbrief/decisions/reviewを確認。再帰treeにAGENTS.mdなし。
+GitHub接続のrepo permissionsではpush/maintain/admin=true。shell cloneはCould not resolve host: github.comで実際に失敗。GitHub接続のGit Data API、main非force ref更新、job.json追加によるActions起動を使う。dispatch成功を装わない。Blenderは既存の検証済みruntimeを使用、再ビルド不要。工程別保存を行い既定18000秒の予算内で実行する。
+
+## 継承元（再投入しない）
+rabbit-geometry-20260918/form-v003 は旧PROGRESSのrunning表記に反して実際はneeds_review、全3工程exit0で完了。Actions 35427795287 attempt1、source 0aa4a5c068c925266e536b582a329bd273ceccf1。
+Release creative-rabbit-geometry-20260918-form-v003-35427795287-1-3
+archive SHA256 2f3aae4e8f79ccb4e16abcfc618c9d6adb0d53d4ff225a23cf84f9b99d525cf5
+manifest SHA256 dccba482459774e15e1dac8250b298778acee37937da4bc901b7217019efe74a
+source_blend workspace/resume/output/model/model.blend
+blend SHA256 4a22745761274f797c9a8f10766d653cd1196ef249bd940b98ee60244a5e6c1f
+
+review ZIP10579643025とhost ZIP10579702897を実取得。ZIPのAPI digest、Releaseから読み戻されたmanifestの実バイトhash、収録66出力ファイルのsize/hashをすべて照合。両Blender再読込validation pass、missing_external_files=[]。CIのRelease archive server digest確認もpass。このセッション自身がRelease archive本体を再取得したとは主張しない。
+reference_comparison.jpgの実画像を開き、旧Tポーズ・長耳と今回の差異を確認。旧作に今回の品質合格を付けない。既存 .blend を読み込んでリソース/必要部品/幾何ヘルパーを継承するが、今回の参照変更が影響する全身の外形と姿勢は再制作対象。
+
+## 補完
+正面・側面・背面の画像で高さと姿勢に微小差があり、単一正投影の完全一致にはならない。見えない内部は簡素な関節と暗い口腔、可視外装を優先。汚れ斑点は造形で再現しない。耳の折れは厚みのある2節の部品としてモデル化。指の掌側の奥行きは側面と背面の見え方から補完する。
