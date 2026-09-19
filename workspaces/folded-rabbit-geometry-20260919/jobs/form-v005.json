@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v005",
+  "state": "running",
+  "source_commit": "464b693576b7ef291ab475149d3b9932e2014359",
+  "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
+  "run_id": "35437918879",
+  "run_attempt": "1",
+  "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35437918879",
+  "started_at": "2026-09-19T10:38:26.460750Z",
+  "steps": [],
+  "latest_snapshot": null,
+  "step_snapshots": {},
+  "acceptance_criteria": [
+    "Match the original folded-ear lowered-arm character using a smooth crown, two narrow continuous muzzle lobes, a nasal bridge and central lower cleft, shaped cheek covers, a rounded small nose and seated eyes, with padded shoulder transitions and naturally curled fingers.",
+    "Keep geometry-only scope: no final textures, UV finishing or rig. Preserve real reference derivatives, the editable blend and complete source dependencies.",
+    "Restore and hash-verify the exact v004 snapshot and source blend. Preserve fingerprints of unaffected torso, hip, lower legs, feet, bow, tail and folded ears without repeating their construction.",
+    "Pass finite-coordinate, required-part, continuous-muzzle-region, closed-mesh, actual-dimension and both saved-file reopen checks; deliver 13 valid framed views, reusing only unchanged isolated foot and ear views with their exact hashes and geometry evidence.",
+    "Read back the actual execution and Release evidence, independently verify saved files, inspect the exact changed previews against native references and record a source-and-snapshot-pinned visual verdict before calling the form complete."
+  ],
+  "review_required": true,
+  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "updated_at": "2026-09-19T10:38:26.806025Z"
+}
