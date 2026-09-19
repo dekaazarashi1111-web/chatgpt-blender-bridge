@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-geometry-20260919",
+  "job_id": "form-v005",
+  "title": "Finish the continuous facial form and refine padded shoulder and finger transitions",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "resume": {
+    "project_id": "folded-rabbit-geometry-20260919",
+    "job_id": "form-v004",
+    "release_tag": "creative-folded-rabbit-geometry-20260919-form-v004-35433907363-1-3",
+    "archive_sha256": "079b97150104e94be776e3396ae06b112f416a5680f8d45b919d4030ba4f3be2",
+    "manifest_sha256": "6dddb80268cde1edb1c508b228cc1314fc9c48b21b1295d1d6e0b6cb8a357184"
+  },
+  "inputs": [],
+  "acceptance_criteria": [
+    "Match the original folded-ear lowered-arm character using a smooth crown, two narrow continuous muzzle lobes, a nasal bridge and central lower cleft, shaped cheek covers, a rounded small nose and seated eyes, with padded shoulder transitions and naturally curled fingers.",
+    "Keep geometry-only scope: no final textures, UV finishing or rig. Preserve real reference derivatives, the editable blend and complete source dependencies.",
+    "Restore and hash-verify the exact v004 snapshot and source blend. Preserve fingerprints of unaffected torso, hip, lower legs, feet, bow, tail and folded ears without repeating their construction.",
+    "Pass finite-coordinate, required-part, continuous-muzzle-region, closed-mesh, actual-dimension and both saved-file reopen checks; deliver 13 valid framed views, reusing only unchanged isolated foot and ear views with their exact hashes and geometry evidence.",
+    "Read back the actual execution and Release evidence, independently verify saved files, inspect the exact changed previews against native references and record a source-and-snapshot-pinned visual verdict before calling the form complete."
+  ],
+  "steps": [
+    {"id":"model","tool":"blender","script":"model.py","source_blend":"workspace/resume/output/model/model.blend","timeout_seconds":5400,"preview":{"views":["front"],"width":128,"height":128,"samples":1}},
+    {"id":"render","tool":"blender","script":"render.py","source_blend":"workspace/output/model/model.blend","timeout_seconds":7200,"preview":{"views":["three_quarter"],"width":128,"height":128,"samples":1}},
+    {"id":"package","tool":"python","script":"package.py","timeout_seconds":900}
+  ]
+}
