@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "project_id": "folded-rabbit-finish-20260921",
+  "job_id": "intake-v001",
+  "run_id": "35563023916",
+  "source_commit": "065eb820df9e64af1806c5d1174e3ddd1346c61c",
+  "evidence": [
+    {
+      "label": "latest",
+      "release_tag": "creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1",
+      "manifest_sha256": "50dc6458d91ef183ff68e20110674bf9f0e04bd262c61cbf3f560d1f3f511e4a",
+      "archive_sha256": "c5d41457ff3dbf988a6ac57b5ada016c0d020821be67c33024f1b80e81942bc2",
+      "archive_bytes": 93942945,
+      "manifest_downloaded_and_hash_verified": true,
+      "server_archive_digest_verified": true,
+      "local_files_verified_against_manifest": 134,
+      "manifest_state_path": "workspaces/folded-rabbit-finish-20260921/evidence/intake-v001/latest-manifest.json"
+    }
+  ],
+  "scope": "Downloaded exact Release manifest bytes; matched every manifest file to stopped local outputs/resume and server archive digest. The archive itself was not downloaded again by this audit."
+}
