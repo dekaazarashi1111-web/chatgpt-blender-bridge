@@ -2,7 +2,7 @@
   "schema_version": 2,
   "project_id": "folded-rabbit-finish-20260921",
   "job_id": "intake-v001",
-  "state": "running",
+  "state": "needs_review",
   "source_commit": "065eb820df9e64af1806c5d1174e3ddd1346c61c",
   "runtime_image": "ghcr.io/dekaazarashi1111-web/chatgpt-creative-runtime@sha256:994a4dee98e41654e64d799d830210edd763b8be323d8dfc9f5709d0e6dd7327",
   "run_id": "35563023916",
@@ -53,7 +53,10 @@
     "Inspect the actual inherited previews against the supplied original-character reference images before deciding further geometry-only changes; do not claim visual review from execution success."
   ],
   "review_required": true,
-  "next_action": "Wait for the current Actions run; do not submit duplicate work.",
+  "next_action": "Inspect real previews against references; submit a pinned review or a new revision.",
   "current_step": "intake",
-  "updated_at": "2026-09-21T05:03:06.596004Z"
+  "finished_at": "2026-09-21T05:03:08.930359Z",
+  "publication_errors": [],
+  "previews": [],
+  "updated_at": "2026-09-21T05:03:09.095448Z"
 }
