@@ -1,0 +1,63 @@
+{
+  "record_type": "execution_and_handoff_evidence_not_visual_approval",
+  "project_id": "folded-rabbit-finish-20260921",
+  "job_id": "intake-v001",
+  "source_commit": "065eb820df9e64af1806c5d1174e3ddd1346c61c",
+  "run_id": "35563023916",
+  "run_attempt": 1,
+  "create_workflow_job_id": 106219389179,
+  "validation_run_id": "35563024047",
+  "execution_status": "success",
+  "workspace_state": "needs_review",
+  "geometry_modified": false,
+  "new_blender_execution_this_session": false,
+  "visual_review_status": "not_reviewed_tool_access_blocked",
+  "actually_inspected_render_images": [],
+  "user_geometry_finish_request_complete": false,
+  "release": {
+    "tag": "creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1",
+    "id": 392706422,
+    "archive_asset_id": 578284352,
+    "manifest_asset_id": 578284432,
+    "archive_bytes": 93942945,
+    "manifest_bytes": 25663,
+    "archive_sha256": "c5d41457ff3dbf988a6ac57b5ada016c0d020821be67c33024f1b80e81942bc2",
+    "manifest_sha256": "50dc6458d91ef183ff68e20110674bf9f0e04bd262c61cbf3f560d1f3f511e4a"
+  },
+  "model": {
+    "path": "output/intake/model/model.blend",
+    "bytes": 159212580,
+    "sha256": "aa98019f06ff34ea3d700981ad594947dbb55ac6379bcb22a4a2ab2980d03b08",
+    "original_scene_project_id": "folded-rabbit-geometry-20260919",
+    "original_scene_job_id": "form-v006"
+  },
+  "ci_confirmed": {
+    "downloaded_parent_archive_bytes": 244430468,
+    "parent_archive_and_manifest_hash_checked": true,
+    "verified_parent_files": 128,
+    "new_release_manifest_downloaded_and_hash_verified": true,
+    "new_release_local_files_verified_against_manifest": 134,
+    "new_release_server_archive_digest_verified": true,
+    "image_entries_decoded_including_duplicates_and_references": 35,
+    "publication_errors": []
+  },
+  "assistant_confirmed": {
+    "workflow_jobs_and_console_read": true,
+    "workspace_state_and_manifest_entries_read": true,
+    "release_api_asset_sizes_and_digests_matched": true,
+    "lightweight_visual_zip_retrieved": true,
+    "local_zip_hash_or_extraction_succeeded": false,
+    "actual_render_images_opened": false
+  },
+  "artifacts": [
+    {"kind":"visual","id":10621934842,"bytes":13587953,"sha256":"64f35eae4b692abe12d6356e1bc0821f77c1b17c1063c1a6a5a6237a786bfa19"},
+    {"kind":"host","id":10622368899,"bytes":7230,"sha256":"6e1a9f986d8c911fd0a2354954ef0694d771bef8749791eb5b31628b6d7d3cae"},
+    {"kind":"full_review","id":10622423788,"bytes":98900633,"sha256":"ff1ba07a8b7f8112843c289afbc92aecf6e721b4ba28ebdd779bbc528696fb1e"}
+  ],
+  "remaining": [
+    "Recover actual-image viewing; inspect inherited v006 renders against all three supplied reference images.",
+    "Refine only observed geometry mismatches in a new same-project job, preserving unaffected accepted work.",
+    "Inspect the resulting exact-version previews and record a pinned quality review before completion.",
+    "Keep final textures, UV finishing and rigging out of this geometry-only session scope."
+  ]
+}
