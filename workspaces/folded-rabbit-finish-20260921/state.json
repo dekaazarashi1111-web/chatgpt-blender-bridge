@@ -9,9 +9,43 @@
   "run_attempt": "1",
   "run_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/actions/runs/35563023916",
   "started_at": "2026-09-21T05:02:23.674624Z",
-  "steps": [],
-  "latest_snapshot": null,
-  "step_snapshots": {},
+  "steps": [
+    {
+      "id": "intake",
+      "tool": "python",
+      "exit_code": 0
+    }
+  ],
+  "latest_snapshot": {
+    "release_tag": "creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1",
+    "release_id": 392706422,
+    "project_id": "folded-rabbit-finish-20260921",
+    "job_id": "intake-v001",
+    "archive_sha256": "c5d41457ff3dbf988a6ac57b5ada016c0d020821be67c33024f1b80e81942bc2",
+    "manifest_sha256": "50dc6458d91ef183ff68e20110674bf9f0e04bd262c61cbf3f560d1f3f511e4a",
+    "archive_asset_id": 578284352,
+    "manifest_asset_id": 578284432,
+    "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1",
+    "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1/workspace.tar.gz",
+    "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1/manifest.json",
+    "source_commit": "065eb820df9e64af1806c5d1174e3ddd1346c61c"
+  },
+  "step_snapshots": {
+    "intake": {
+      "release_tag": "creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1",
+      "release_id": 392706422,
+      "project_id": "folded-rabbit-finish-20260921",
+      "job_id": "intake-v001",
+      "archive_sha256": "c5d41457ff3dbf988a6ac57b5ada016c0d020821be67c33024f1b80e81942bc2",
+      "manifest_sha256": "50dc6458d91ef183ff68e20110674bf9f0e04bd262c61cbf3f560d1f3f511e4a",
+      "archive_asset_id": 578284352,
+      "manifest_asset_id": 578284432,
+      "release_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/tag/creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1",
+      "archive_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1/workspace.tar.gz",
+      "manifest_url": "https://github.com/dekaazarashi1111-web/chatgpt-blender-bridge/releases/download/creative-folded-rabbit-finish-20260921-intake-v001-35563023916-1-1/manifest.json",
+      "source_commit": "065eb820df9e64af1806c5d1174e3ddd1346c61c"
+    }
+  },
   "acceptance_criteria": [
     "Import the exact v006 parent Release with independently downloaded archive and manifest SHA-256 checks, validate every archived file and retain the original editable blend and executable dependencies.",
     "Preserve geometry and the 13 inherited real views without unnecessary modeling or rendering; retain exact image hashes and source lineage, plus the three actual reference derivatives.",
@@ -20,5 +54,6 @@
   ],
   "review_required": true,
   "next_action": "Wait for the current Actions run; do not submit duplicate work.",
-  "updated_at": "2026-09-21T05:02:23.913171Z"
+  "current_step": "intake",
+  "updated_at": "2026-09-21T05:03:06.596004Z"
 }
