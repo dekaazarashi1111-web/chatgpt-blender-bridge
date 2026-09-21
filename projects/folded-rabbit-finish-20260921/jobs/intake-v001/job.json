@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "project_id": "folded-rabbit-finish-20260921",
+  "job_id": "intake-v001",
+  "title": "Preserve the existing geometry in the new finish project and recover lightweight real previews",
+  "timeout_seconds": 18000,
+  "review_required": true,
+  "inputs": [
+    {"path":"projects/folded-rabbit-finish-20260921/inputs/front.webp","target":"references/front.webp","sha256":"5bc9453676cd565de87b3d7932bd313fef6f436ad83799789f055c58697c6856"},
+    {"path":"projects/folded-rabbit-finish-20260921/inputs/side.webp","target":"references/side.webp","sha256":"e8561ec50343c90bdf84de990e2226232581f5bf74759fbd6162ec3c9755e5a2"},
+    {"path":"projects/folded-rabbit-finish-20260921/inputs/back.webp","target":"references/back.webp","sha256":"02d44e650c353453bc553179497e51519ccca1167f0c4909ac90a79089cdead8"}
+  ],
+  "acceptance_criteria": [
+    "Import the exact v006 parent Release with independently downloaded archive and manifest SHA-256 checks, validate every archived file and retain the original editable blend and executable dependencies.",
+    "Preserve geometry and the 13 inherited real views without unnecessary modeling or rendering; retain exact image hashes and source lineage, plus the three actual reference derivatives.",
+    "Save a same-project resumable snapshot and a lightweight visual artifact. This is an intake baseline only, not a completed or visually accepted shape revision.",
+    "Inspect the actual inherited previews against the supplied original-character reference images before deciding further geometry-only changes; do not claim visual review from execution success."
+  ],
+  "steps": [
+    {"id":"intake","tool":"python","script":"intake.py","timeout_seconds":7200}
+  ]
+}
