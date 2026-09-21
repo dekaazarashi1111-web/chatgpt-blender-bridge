@@ -89,6 +89,18 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           JOB_PATH: ${{ matrix.job }}
         run: python3 ci/readback_creative_evidence.py --job "$JOB_PATH"
+      - name: Summarize compact continuation evidence
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for path in sorted(Path('.creative-runs').glob('*/work/output/**/continuation_report.json')):
+              report = json.loads(path.read_text())
+              summary = {key: value for key, value in report.items() if key != 'previews'}
+              print('CONTINUATION_EVIDENCE ' + str(path))
+              print(json.dumps(summary, indent=2, ensure_ascii=False))
+          PY
       - name: Preserve host logs even on failure
         uses: actions/upload-artifact@v4
         if: always()
@@ -99,6 +111,23 @@ jobs:
             .creative-runs/*/host/result.json
             .creative-runs/*/host/evidence/
           include-hidden-files: true
+          retention-days: 30
+      - name: Preserve lightweight visual evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: creative-visual-${{ matrix.project }}-${{ strategy.job-index }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .creative-runs/*/work/output/**/*.png
+            .creative-runs/*/work/output/**/*.jpg
+            .creative-runs/*/work/output/**/*.jpeg
+            .creative-runs/*/work/output/**/*.webp
+            .creative-runs/*/work/output/**/*.json
+            .creative-runs/*/work/output/**/*.py
+            .creative-runs/*/work/output/**/*.md
+            .creative-runs/*/work/output/**/*.txt
+          include-hidden-files: true
+          if-no-files-found: warn
           retention-days: 30
       - name: Preserve editable outputs and previews for review download
         uses: actions/upload-artifact@v4
